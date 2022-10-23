@@ -1,0 +1,481 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>About Enrollment Input Files</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\EnrollUsers.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Enrolling Users, Hosts, and Groups\nAbout Enrollment Input Files");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Enrolling_Users_Hosts_and_Groups.htm\">Enrolling Users, Hosts, and Groups<\/a> &gt; About Enrollment Input Files<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_38273_Optional_InputFiles"></a>About Enrollment Input&nbsp;Files</h1>
+ <p class="BodyLevel1">The command lines for enrolling and updating users, hosts and groups have sev&#173;eral filename parameters, which refer to the following kinds of auxiliary input files:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_93922_Directory">Connection Files </a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_50952_Definition_File">Definition Files </a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_23666_Filter_Files">Filter Files</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_19806_Configuration">Configuration Files (Domain Groups Only)</a></p>
+
+ <h2><a name="XREF_93922_Directory"></a>Connection&#160;Files </h2>
+ <p class="BodyLevel1">Connection files, as the name implies, contain the information Control Center needs to locate and connect to some information source your system will need: either to the LDAP directory tree from which you want to enroll information, or to the SharePoint server whose groups you want to enroll. You must specify a directory connection file whenever you use the Enroll<span style="font-style : italic; "><i>&#160;</i></span>or Update commands and type = DIR or PORTAL, but it is not required when type =<span style="font-style : italic; "><i>&#160;</i></span>LDIF or TEXT. Share&#173;Point connections are only relevant if you are installing the Entitlment Manage&#173;ment product. For Domain Groups, Connection files are used for DIR and PORTAL subdomains, but not for LDIF subdomains. Rather than referencing the location of Connection files when you run the Enroll or Update command, you reference the Configuration file.</p>
+ <p class="BodyLevel1">This file also controls the automatic directory synchronization feature, which is available only for directory enrollments, not LDIF file enrollments. For details, see <a href="How_to_Maintain_Enrollments.htm#XREF_49613_Scheduled">Scheduled Synchronization</a>.</p>
+ <p class="BodyLevel1">For an LDAP directory, you can use the sample file<span class="GreyBold">&#160;</span><span style="font-style : italic; "><i>ad.sample.default.conn</i></span>&#160;as a template for your directory connection files. For SharePoint groups (described in the following chapter), you use the file <span style="font-style : italic; "><i>sp.sample.default.conn</i></span>. During installation, these template files are placed in the tools\enrollments directory on the Control Center&#160;host. </p>
+ <p class="BodyLevel1">For details on how the elements in this file function, see <a><span class="FM_blue">Elements of Directory Connection Files</span></a>.</p>
+ <h3>Connection File Details</h3>
+ <p class="BodyLevel1">All the supplied templates for connection files (as well as other input files) include the string <span style="font-style : italic; "><i>.sample</i></span>&#160;in their names. When you edit these files for your own use, you must change the file name. If you do not, the file will be overwrit&#173;ten the next time you upgrade Control Center, and your changes will be lost. You can, for example, simply delete the string <span style="font-style : italic; "><i>.sample</i></span>&#160;from the file name; for example, rename <span style="font-style : italic; "><i>ad.sample.default.conn</i></span>&#160;to <span style="font-style : italic; "><i>ad.default.conn</i></span>. By doing so, you can easily refer to the original template from which your file is derived.</p>
+ <p class="BodyLevel1">The following figure shows the elements in the <span style="font-style : italic; "><i>ad.sample.default.conn</i></span>&#160;file; note that the actual file contains a number of commented lines explaining how to use the elements. Make a copy of this template, rename it however you wish, and, for all the elements indicated by rectangles in the figure, replace the dummy values with your actual values. You may also wish to change one or more of the optional settings, indicated by the ovals in the example.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="EnrollUsers00006.jpg" style="width : 416.520pt; height : 296.364pt; " id="image2" src="EnrollUsers00006.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook"><a name="XREF_39980_Sample_Active"></a>Sample Directory Connection File (ad.sample.default.conn)</p>
+ <h4><a name="XREF_19873_Connection_File"></a>Connection File for Domain Group Enrollment</h4>
+ <p class="BodyLevel1">The connection file is configured mostly the same way for single and Domain Group enrollments, with two important differences. First, you do not specify sync times or intervals in connection files to be used for a Domain Group enroll&#173;ment. Instead, the sync time and interval values must be defined in the configu&#173;ration file for the Domain Group. Secondly, when it comes time to run the Enrollment Manager, you do not point to the location of the connection file in the command line. Instead you point to the location of the configuration file, which points to all input files (connection, definition, and input files) for the listed subdomains. These procedures are discussed in the section <a href="How_to_Enroll_Users_and_Hosts.htm#XREF_11658_How_to_Enroll_a">How to Enroll a Domain Group</a>.</p>
+ <h3>Elements of the Active Directory Connection File</h3>
+ <p class="BodyLevel1">The following table describes the elements of the Directory Connection file.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 487.00pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 76.699pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Element</p>
+</th>
+  <th style="width : 410.301pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 76.699pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">server</p>
+</td>
+  <td style="width : 410.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the host name of the LDAP server to which you want to connect. If you are enrolling </p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 76.699pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody" style="font-weight : bold;">port</p>
+</td>
+  <td style="width : 410.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the port on this LDAP server, where you want to connect. 389 is the default port for LDAP. 636 is the default port used for LDAPS (but these ports can be changed if required for your environment).</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 76.699pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">login</p>
+</td>
+  <td style="width : 410.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies a user name with access privileges sufficient to connect to the LDAP server and access the information you want to enroll. Note that this must be a fully qualified domain name—i.e., in the format &lt;name&gt;@&lt;domain&gt;.com.</p>
+</td>
+</tr>
+  <tr style=" height : 58.00pt;">
+  <td style="width : 76.699pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">password</p>
+</td>
+  <td style="width : 410.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies a valid password for this user, for connecting to the LDAP server.</p>
+  <p class="CellBody">This parameter is optional. Because it is an unencrypted string, you may prefer not to expose it in the connection file this way. If the parameter is not present in the file, the user will be prompted for the connection at the time when he performs the enrollment. If the parameter is present, it will simply be read, with no such prompt. This latter may be preferable for the sake of convenience, during testing or in other restricted-use context when security is not a concern.</p>
+</td>
+</tr>
+  <tr style=" height : 47.00pt;">
+  <td style="width : 76.699pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Secure.transport.mode SSL</p>
+</td>
+  <td style="width : 410.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies whether you want to enable LDAPS for secure communication during manual or automatic (scheduled) sync between the Control Center and the LDAP Server. Currently, the only mode that is supported is LDAPS, so the only valid entry here is SSL. If you comment out this option, standard LDAP communication protocols are used. There are additional steps required to configure secure LDAP. For the complete procedure, see <a href="How_to_Enroll_Users_and_Hosts.htm#XREF_52071_How_to_Configure_a">How to Configure a Secure LDAP Connection</a>. </p>
+</td>
+</tr>
+  <tr style=" height : 47.00pt;">
+  <td style="width : 76.699pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">roots</p>
+</td>
+  <td style="width : 410.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Each line describes one branch in the LDAP directory tree you want to enroll. Although you technically can list any number of root elements in a single connection file, as long as they are separated by the escape string <span style="font-weight : bold; "><b>\n\</b></span>&#160;at the end of each line. (There are three root elements listed in the example above). However, if you specify only one branch per enrollment, they are generally easier to keep track of and manage (update and synchronize, for example) in the future.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 76.699pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">filter</p>
+</td>
+  <td style="width : 410.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">You can define one or more LDAP fIlter strings in this file—for example, objectclass=user and department=HR. The default value, objectclass=*, means no filters will apply.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 76.699pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">IsPagingEnabled</p>
+</td>
+  <td style="width : 410.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">A flag that indicates whether LDAP paging control is supported by your LDAP server. Change this flag to false if your LDAP server does not support this function.</p>
+</td>
+</tr>
+  <tr style=" height : 55.00pt;">
+  <td style="width : 76.699pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">EnableADDirChg Replications</p>
+</td>
+  <td style="width : 410.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">A flag that controls Control Center’s synchronization autotracking feature. When left at the default, false, Control Center will reenroll all entities from your Active Directory source during every synchronization. (This is specific to Active Directory.) When changed to true, the feature is enabled, and during synchronization Control Center will enroll only new entities and those whose properties have changed since the last sync operation. This feature makes sync procedures more efficient and faster, but it requires special permissions. For more information, consult Microsoft documentation at <span class="FM_blue"><a href="http://support.microsoft.com/?kbid=891995">http://support.microsoft.com/?kbid=891995</span></a>.</p>
+</td>
+</tr>
+  <tr style=" height : 132.00pt;">
+  <td style="width : 76.699pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">ScheduledSync Time</p>
+</td>
+  <td style="width : 410.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Allows you to set a specific time when the enrollment will be automatically synchronized with its source. After this date and time, the enrollment will autosynchronize at the interval specified by the ScheduledSyncInterval parameter. </p>
+  <p class="CellBody">The date and time value is locale-specific, and you must use Java's MEDIUM style for the date, and the SHORT style for the time. For example:</p>
+  <ul type="disc" style="">
+   <li style="">
+   <p class="CellBody">For English (US): Sep 18, 2013 6:00PM</p>
+</li>
+   <li style="">
+   <p class="CellBody">For English (UK):18-Sep-2013 18:00</p>
+</li>
+   <li style="">
+   <p class="CellBody">For the German (Germany):18.09.2013 18:00</p>
+</li>
+  </ul>
+  <p class="CellBody">At enroll-time, the date must be a future date.</p>
+  <p class="CellBody">This value is only active if the Scheduled Sync Interval is set to some positive value. If you leave ScheduledSyncInterval at the default, 0, the synchronization feature is disabled. </p>
+  <p class="CellBody">If the connection file is to be used in a configuration file as a part of Domain Group enrollment, no scheduled Sync Time should be specified. The sync time will be defined in the configuration file.</p>
+</td>
+</tr>
+  <tr style=" height : 89.00pt;">
+  <td style="width : 76.699pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">ScheduledSync Interval</p>
+</td>
+  <td style="width : 410.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">When left at the default, 0, disables the automatic synchronization feature. When changed to any positive value, specifies a regular re-synchronization schedule, expressed in minutes following the time specified by the ScheduledSyncTime.</p>
+  <p class="CellBody">This setting has no influence until after the ScheduledSyncTime passes. That is, in the example above Control Center would wait until 1 a.m. on September 26 to synchronize the enrollment to its source, and then would re-sync it every 6 hours (360 minutes) thereafter.</p>
+  <p class="CellBody">If you want to perform manual synchronizations only, set this value to <span class="GreyBold">0</span>.</p>
+  <p class="CellBody">If the connection file is to be used in a configuration file as a part of Domain Group enrollment, no scheduled Sync Time should be specified. The sync time will be defined in the configuration file.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1">&#160;</p>
+ <h2><a name="XREF_50952_Definition_File"></a>Definition Files </h2>
+ <p class="BodyLevel1">Definition files contain all information required to map the data you are enroll&#173;ing from some information source to the format Control Center uses in its Infor&#173;mation Network Directory tables. Templates for these files are automatically copied to your Control Center host during installation.</p>
+ <p class="BodyLevel1">Note that the format and content of these files will differ, depending on the source from which you are enrolling. For this reason, several specialized defini&#173;tion file templates are provided during installation; these are placed in the <span class="GreyBold">\tools\enrollments</span>&#160;directory. </p>
+ <p class="BodyLevel1">They are:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>ad.sample.default.def</b></span>, for use with Active Directory or other LDAP direc&#173;tories (<span class="GreyBold">-enroll -t DIR</span>)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>sp.sample.default.def</b></span>, for use in enrolling SharePoint groups (<span class="GreyBold">-enroll -t PORTAL</span>)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>ldif.sample.default.def</b></span>, for use with LDIF files for users, hosts, and groups (<span class="GreyBold">-enroll -t LDIF</span>) </p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>app.sample.default.def</b></span>, for use with LDIF files for applications, gener&#173;ated with the AppDiscovery utility (<span class="GreyBold">-enroll -t LDIF</span>)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>site.sample.default.def</b></span>, for use in enrolling host sites (<span class="GreyBold">-enroll <br />-t FILE</span>)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>sp.sample.default.def</b></span>, for use in enrolling SharePoint groups <br />(<span class="GreyBold">-enroll -t PORTAL</span>)</p>
+
+ <p class="BodyLevel1">To use these templates, copy them to a known location, rename them, make the changes specified in the procedures outlined below, and then point to them (by file name and path) in the <span class="GreyBold">-d &lt;definitionfile&gt;</span>&#160;parameter in your <span class="GreyBold">-enroll</span>&#160;or <span class="GreyBold">-update</span> commands.</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>You should rename the copy of each template file that you use. If you do not, the files will be overwritten the next time you upgrade Control Center, and your changes will be lost. You can change a file name sim&#173;ply by deleting <span style="font-style : italic; "><i>.sample</i></span>&#160;from the name; this way, you can easily refer to the template from which you derived your file.</p>
+ <h3>The Active Directory Definition File</h3>
+ <p class="BodyLevel1">Typically, you do not need to change any other elements in this file, <span style="font-style : italic; "><i>unless</i></span>&#160;you are changing the mappings. You might do this if you know that you have made changes to your Active Directory that diverge from the default schema, or if you are using some LDAP directory other than AD, that has a different schema.</p>
+ <h3>The LDIF Definition File</h3>
+ <p class="BodyLevel1">The figure below shows the default LDIF definition file <br /><span class="GreyBold">ldif.sample.default.def</span>, which you should use as the template for your def&#173;inition file when you are enrolling or updating users, hosts and groups from an LDIF file. (There is a different template for applications; see <a href="../EnrollOthers/Enrolling_Applications.htm#XREF_84944_LDIF_Definition">LDIF Definition File Template for Applications (app.sample.default.def)</a>.) The actual file, when you open it, displays additional comments and instructions for editing.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="EnrollUsers00009.jpg" style="width : 430.632pt; height : 371.160pt; " id="image3" src="EnrollUsers00009.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook"><a name="XREF_13064_LDIF_Definition"></a>LDIF Definition File Template (ldif.sample.default.def)</p>
+ <p class="BodyLevel1">Normally you will have to edit only the last element in this file, <span class="GreyBold">ldif.filename</span>, which tells the enrollment utility which file you want to enroll. Note that you must provide the full path to your LDIF file, and you must use front-slash charac&#173;ters rather than back slashes for the path separators.</p>
+ <p class="BodyLevel1">This file is based on the default Active Directory schema. If you know that the directory from which you exported the LDIF file is different from this default, you will need to edit other elements in this file accordingly. </p>
+ <h4>DNS Host Name is Required</h4>
+ <p class="BodyLevel1">Note that whether you are enrolling directly from an Active Directory or from an LDIF file, all hosts in the network must have a <span style="font-weight : bold; "><b>dnsHostName</b></span>&#160;attribute defined for them. Though in most cases all hosts will have this attribute, it is not techni&#173;cally required by Active Directory; however, it is required for the Control Center&#160;enrollment. If any hosts do not have a dnsHostName defined, they will still be enrolled, but policies may not deploy properly or may not work as defined.</p>
+ <p class="BodyLevel1">If you know you have any hosts in your network that do not have this attribute, you can avoid problems after enrollment by manually editing the definition file (either <span style="font-style : italic; "><i>ad.default.dif</i></span>&#160;or <span style="font-style : italic; "><i>ldif.default.def</i></span>). In your definition file, locate the line:</p>
+ <h5>computer.requirements &#160;&#160;&#160;(objectClass=Computer)</h5>
+ <p class="BodyLevel1">and change it to the line:</p>
+ <h5>computer.requirements &#160;&#160;&#160;(&amp;(objectClass=computer)(dnsHost&#173;Name=*))</h5>
+ <p class="BodyLevel1">If you use the file with this change, your enrollment will ignore any computers that do not have a dnsHostName, and will otherwise proceed normally.</p>
+ <h4>Definition File for Domain Group Enrollment</h4>
+ <p class="BodyLevel1">There is no difference in how you configure a Definition file for a Domain Group enrollment. There are two differences in how you reference Definition files, however. First, you do not point to the Definition file when you run Enrollment Manager at the command line. Instead, you reference Definition files for each Domain Group listed in the Configuration file. Second, rather than listing sepa&#173;rate Definition files for each domain, you can also use a global Definition file for all subdomains within a Domain Group. In this case, you would enroll the same information from all listed subdomains. Finally, if you do specify a global Defini&#173;tion file, you can also specify exceptions to the global file, by listing a Definition file for individual subdomains. See <a href="#XREF_19806_Configuration">Configuration Files (Domain Groups Only)</a>. </p>
+ <h2><a name="XREF_23666_Filter_Files"></a>Filter Files</h2>
+ <p class="BodyLevel1">A filter file allows you to selectively import leaf element—users, hosts, and groups—from a directory server. If the directory being enrolled contains a large amount of data, you can create a filter file to selectively enroll only those users, hosts, and groups that are relevant to your policy enforcement requirements. You can do this by creating a filter file in comma-separated value (CSV) format. It is easiest to set up the filters using a spreadsheet program like MS Excel and then save it as a .csv file, but you can also create the CSV file directly in any text editor.</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>A new filter file can be defined only during the initial enrollment of a given domain. Once you enroll a domain using a filter file, you can use the same filter when you sync, but you cannot apply a different filter, or define a new one, when syncing an already enrolled domain.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="EnrollUsers00010.jpg" style="width : 361.224pt; height : 90.360pt; " id="image4" src="EnrollUsers00010.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">LDAP Filter File Format</p>
+ <p class="BodyLevel1">The CSV file must use the format shown in the figure above, where <span class="GreyBold">&lt;filter&gt;</span>&#160;is a search specification in LDAP format. When placed in the <span class="GreyBold">Users</span>&#160;column, the filter is applied within the set of all users in the directory; if under <span class="GreyBold">Computers</span>, within all computers; and so on. The filter can be based on any attributes of objects, such as job titles of users, e.g., (<span class="GreyBold">title=Manager</span>). Here are some examples of filters you could put in the Users column:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>(lastName=M*) Everyone whose last name begins with the letter M</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>(firstName=Jack)(firstName=Terry): Everyone whose first name is Jack OR Terry</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>(!firstName=Amy) Everyone but Amy</p>
+
+ <p class="BodyLevel1">As shown in the example above, the first row must contain the header cells, including square brackets:</p>
+ <h5><span class="FM_screencode">[Users], [Computers], [Groups]</span></h5>
+ <p class="BodyLevel1">The remaining rows list the following information:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Under the [<span class="GreyBold">Users</span>] header, each cell is either the login name of a user to be enrolled, or a filter in LDAP format, specifying which users to enroll from the set of all users in the directory.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Under the [<span class="GreyBold">Computers</span>] header, each cell is either the name of a com&#173;puter, or a filter in LDAP format, specifying which computers to enroll from the set of all computers in the directory.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Under the [<span class="GreyBold">Groups</span>] header, each cell is either the name of a group to be enrolled (for example, Hardware Upgrade Project), or a filter in LDAP for&#173;mat, specifying which groups to enroll from the set of all groups in the directory.</p>
+
+ <p class="BodyLevel1">The same search filter syntax can be used in every column. The headers <span class="GreyBold">Users</span>, <span class="GreyBold">Computers</span>, and <span class="GreyBold">Groups</span>&#160;are provided so that you can omit filter criteria based on the <span class="GreyBold">objectClass</span>&#160;or <span class="GreyBold">objectCategory</span>&#160;attributes, since the type of object is already known from the column header. For example, to enroll all managers in an organization, you could use the filter (title=Manager) in a cell in the [Users] column. When the spreadsheet is complete, save it as a CSV file (with commas as the delimiters between cells).</p>
+ <p class="BodyLevel1">For more information about the LDAP filter syntax, consult LDAP documentation or see the proposed standard from the Internet Engineering Task Force.</p>
+ <h3><a name="XREF_45504_Filter_Properties"></a>Filter Properties</h3>
+ <p class="BodyLevel1">When you use a filter, you may need to edit the content of a special file called <span class="GreyBold">selectivefilter.sample.properties</span>, which is stored under the <span class="GreyBold">\tools\enrollment</span> directory. This file contains three settings that control fil&#173;tering behavior for hosts, users, and groups. </p>
+ <p class="BodyLevel1">By default, the filter sample file specifies three entities in the header: users, computers, and groups. If you are going to filter by all three, you do not need to change the filter properties file. If you want to filter by only one or two—say, only by users, or only by users and groups—then you must make the following change to the Filter Properties file:</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>Currently, there can only be one selectivefilter.property file to deter&#173;mine the format of all filter files used in a deployment. It must be named<span class="GreyBold">&#160;selectivefilter.property </span>file.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open the file with any text editor.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Comment out <span style="font-style : italic; "><i>all three</i></span>&#160;lines in the last section of the file, as shown in the figure below.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">For the line or lines representing those entities you want to filter by, copy the first part of the line and paste it as a duplicate below the original, as shown in the figure. The duplicate line should contain <span style="font-style : italic; "><i>only</i></span> the first ele&#173;ment, but not the second (the actual LDAP filter, in parentheses). In the example, the file has been edited to filter by users and groups, but not hosts.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Save the file as <span class="GreyBold">selective.filter.properties</span>&#160;in the <span class="GreyBold">\tools\<br />enrollment</span> directory.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="EnrollUsers00013.jpg" style="width : 459.360pt; height : 201.600pt; " id="image5" src="EnrollUsers00013.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Selective Filter Properties File</p>
+ <p class="BodyLevel1">Once you have edited the filter properties in this way, you can proceed with your enrollment.</p>
+ <h2><a name="XREF_19806_Configuration"></a>Configuration Files (Domain Groups Only)</h2>
+ <p class="BodyLevel1">Domain Group enrollment requires an additional input file: the Configuration file. This file lists each subdomain included in the Domain Group, along with all necessary Connection, Definition, and Filter files for the subdomains. A tem&#173;plate configuration file defaults the enrollment directory upon installation, named <span class="GreyBold">domainGroup.sample.default.cfg</span>. </p>
+ <p class="BodyLevel1">To use this template, copy it to a known location, make the changes necessary to configure it for your environment (see below), and then point to the file when you run enrollment manager (by file name and path) in the <span class="GreyBold">-g &lt;domain&#173;group&gt;</span>&#160;parameter. You need to point to this file in both <span class="GreyBold">-enroll </span>or <span class="GreyBold">-update</span>&#160;commands.</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>You should rename all these files to remove the <span class="GreyBold">.sample</span>&#160;string from the names, just as with other input files.</p>
+ <h3>Order of Subdomains in the Configuration File</h3>
+ <p class="BodyLevel1">Enrollment Manager is designed to permit the subdomains of a Domain Group enrollment to be enrolled in any order. The numbering of subdomains in the Configuration file (<span class="GreyBold">.0, .1, .2</span>) controls the sync order. Note that subdomains must be numbered starting from .<span class="GreyBold">0</span>, and that there should be no gaps between numbers (sequential integers from <span class="GreyBold">.0</span>&#160;to <span class="GreyBold">.n</span>).</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="EnrollUsers00016.jpg" style="width : 462.024pt; height : 422.050pt; " id="image6" src="EnrollUsers00016.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Example Configuration File</p>
+ <h3>Elements of a Configuration File</h3>
+ <p class="BodyLevel1">The following table describes the elements of the Configuration file for Domain Group Enrollment.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 486.00pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 149.337pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Element</p>
+</th>
+  <th style="width : 336.663pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+</tr>
+  <tr style=" height : 47.00pt;">
+  <td style="width : 149.337pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">definition.filename</p>
+</td>
+  <td style="width : 336.663pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the location of the global definition file used to establish what information should be drawn from the enrollment domain’s schema. You can point to other definition files to be used in place of this one for individual subdomains (definition files listed for individual domains will override the global definition file). You can also comment out this value to only specify definition files for individual subdomains. </p>
+</td>
+</tr>
+  <tr style=" height : 156.00pt;">
+  <td style="width : 149.337pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">ScheduledSync Time</p>
+</td>
+  <td style="width : 336.663pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The scheduled sync time to begin the Domain Group enrollment. The sync time for a Domain Group should be defined here and not in the individual connection files for each subdomain.</p>
+  <p class="CellBody">After the date and time specified here, the enrollment will autosynchronize at the interval specified by the ScheduledSyncInterval parameter. The date and time value is locale-specific, and you must use Java's MEDIUM style for the date, and the SHORT style for the time. For example:</p>
+  <ul type="disc" style="">
+   <li style="">
+   <p class="CellBody">For English (US): Sep 18, 2013 6:00PM</p>
+</li>
+   <li style="">
+   <p class="CellBody">For English (UK):18-Sep-2013 18:00</p>
+</li>
+   <li style="">
+   <p class="CellBody">For the German (Germany):18.09.2013 18:00</p>
+</li>
+  </ul>
+  <p class="CellBody">At enroll-time, the sync date must be in the future.</p>
+  <p class="CellBody">For all subdomains listed in the configuration file, processing occurs one subdomain at a time, in the sequence of numbered subdomains &lt;n&gt;. The processing of each subsequent domain will commence upon the completion of the previous domain. </p>
+  <p class="CellBody">Note that if your Domain Group includes an LDIF file, it will only be automatically synced if there are new changes to the LDIF file. </p>
+</td>
+</tr>
+  <tr style=" height : 115.00pt;">
+  <td style="width : 149.337pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">ScheduledSync Interval</p>
+</td>
+  <td style="width : 336.663pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The scheduled sync interval in between Domain Group enrollments. The sync interval for a Domain Group should be defined here and not in the individual connection files for each subdomain.</p>
+  <p class="CellBody">The sync interval should be large enough for the processing of all subdomains to occur. To ascertain how long this interval should be, you can run a trial sync process, note the duration after the sync is complete, and then update the interval as appropriate.</p>
+  <p class="CellBody">When left at the default, 0, disables the automatic synchronization feature. When changed to any positive value, specifies a regular re-synchronization schedule, expressed in minutes following the time specified by the ScheduledSyncTime.</p>
+  <p class="CellBody">This setting has no influence until after the ScheduledSyncTime passes. </p>
+  <p class="CellBody">Note that if your Domain Group includes an LDIF file, it will only be automatically synced if there are new changes to the LDIF file.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 149.337pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Filter File</p>
+</td>
+  <td style="width : 336.663pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">A filter file that should be used across all subdomains in the Domain Group. Just as with a global definition file, you can overwrite the default by specifying a different filter file for subdomains.</p>
+</td>
+</tr>
+  <tr style=" height : 24.00pt;">
+  <td style="width : 149.337pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">subdomain.&lt;n&gt;.type</p>
+</td>
+  <td style="width : 336.663pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The type of enrollment. Valid enrollment types are DIR, PORTAL, and LDIF. &lt;n&gt; should be replaced with an integer for the order of the enrollment, beginning with <span class="GreyBold">0</span>. </p>
+</td>
+</tr>
+  <tr style=" height : 24.00pt;">
+  <td style="width : 149.337pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">subdomain.&lt;n&gt;.name</p>
+</td>
+  <td style="width : 336.663pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name of the subdomain. &lt;n&gt; should be replaced with an integer for the order of the enrollment, beginning with <span class="GreyBold">0</span>. </p>
+</td>
+</tr>
+  <tr style=" height : 32.00pt;">
+  <td style="width : 149.337pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">subdomain.&lt;n&gt;.connection.filename</p>
+</td>
+  <td style="width : 336.663pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The location of the connection file for the subdomain. &lt;n&gt; should be replaced with an integer for the order of the enrollment, beginning with <span class="GreyBold">0</span>. For more information, see <a href="#XREF_93922_Directory">Connection Files </a>.</p>
+</td>
+</tr>
+  <tr style=" height : 48.00pt;">
+  <td style="width : 149.337pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">subdomain.&lt;n&gt;.definition.filename</p>
+</td>
+  <td style="width : 336.663pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The location of the definition file for the subdomain. &lt;n&gt; should be replaced with an integer for the order of the enrollment, beginning with <span class="GreyBold">0</span>. Note that you can specify a global definition file (<span class="GreyBold" style="font-size  : 7.0pt; "><font size="1" style="font-size:7pt;">definition.filename</font></span>). If you also specify a different definition file for a subdomain, it will override the global definition file. For more information, see <a href="#XREF_50952_Definition_File">Definition Files </a>.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 149.337pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">subdomain.&lt;n&gt;.filter.filename</p>
+</td>
+  <td style="width : 336.663pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Filter files are optional. You can supply a global filter file to apply to all subdomains in the Domain Group (Filter File above), or point to individual filter files for each subdomain. For more information, see <a href="#XREF_23666_Filter_Files">Filter Files</a>.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1">&#160;</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

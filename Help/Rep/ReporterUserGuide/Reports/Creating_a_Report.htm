@@ -1,0 +1,573 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Creating a Report</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Reporter_77\FM\Reports.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Working with Reports\nCreating a Report");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../ReporterUserGuideTOC.html", "", "&gt;", "Reporter&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Working_with_Reports.htm\">Working with Reports<\/a> &gt; Creating a Report<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../ReporterUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_75237_Defining_Reports"></a>Creating a Report</h1>
+ <p class="BodyLevel1">A report is a formatted view of a particular set of information extracted from the Activity Journal, a set of database tables in which Control Center logs policy activity data. You create a report by defining a query—criteria, or filters, for the policy activity data you want to include in the report—and specifying the display options that determine how the data is presented.</p>
+ <p class="BodyLevel1">Just as policies can be designed to control information access and usage by types of users, actions, resources, applications, and computers, you can design report queries that filter policy activity data by attributes of those components. The greater the number of filters, the fewer the number of records returned. For example, compare the following queries: One query retrieves data for deny enforcements of any policy (in other words, all policies), covering any action by any user on any resource, for one week. Another query retrieves data for deny enforcements by communication policies that cover only the email action on only documents classified as Confidential, for one week. The first query speci&#173;fies fewer conditions, and most certainly retrieves more data than the second.</p>
+ <p class="BodyLevel1">If you don’t specify any filters or change any of the default settings, the report retrieves all policy activity data categorized as user-level events, for the cur&#173;rent day.</p>
+ <p class="BodyLevel1">To create a report:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the <span class="Bold">Reports</span>&#160;tab, if it is not already open. If the query of an existing report is currently displayed in the <span class="Bold">Report Details</span>&#160;pane, click <span class="Bold">New</span>&#160;at the bottom of the <span class="Bold">Saved Reports</span> pane.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Define the report query. Many of the fields are optional. Required fields contain default values.</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span class="Bold">From</span>&#160;and <span class="Bold">To</span>, specify the start date and time, and end date and time, respectively, of the time period this report covers. Click in the field to choose a date and time from the calendar. When specifying a report period, you need to consider the time zone where Control Center is installed, and the time period of data stored in the Activity Journal. For more information, see <a href="#XREF_20974_Specifying_a">Specifying a Report Period</a>.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span class="Bold">Event Level</span>, select the level of event verbosity the report contains:</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>User Events (default)</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Application Events (application and user-level events)</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>All System Events (system, application, and user-level events)</p>
+
+  <p class="FM_Bulleted1Indent">As a rule, you should leave this setting at User Events. This setting sig&#173;nificantly reduces the amount of system noise. Application- or system-level events are generally not useful in monitoring policy or user activi&#173;ties.</p>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span style="font-weight : bold; "><b>Decision</b></span>, select the type of enforcement effect to include in this report:</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Allow</b></span>: Instances when the policy permitted the user to perform the action covered by the policy. Note that the report results always depend on what information is logged. If the policy does not have any On Allow logging obligation specified, then this report does not return any On Allow data whether or not you select this option.</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Deny</b></span>: Instances when the policy did not allow the user to perform the action. Deny decisions are always logged.</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Both:</b></span>&#160;All instances when the policy was enforced, with either Allow or Deny effect.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span style="font-weight : bold; "><b>Action</b></span>, select the user action or actions to include in this report. The list shows all currently defined actions. To select multiple actions, press Ctrl and click each action. If you do not make any selections, all actions are included. Note that policies involving Paste actions do not support log&#173;ging obligations, therefore, instances of their enforcement are not included in reports.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In&#160;<span style="font-weight : bold; "><b>User</b></span>, specify one or more users on which to filter the activity data, or leave this field blank to include all users. Use the <span class="Bold">User Lookup</span>&#160;window (click the magnifying glass icon), where you can browse through all users currently defined in your Information Network Directory, and select the users you want.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span class="Bold">User Criteria</span>, specify additional user criteria by creating one or more conditions. Each condition consists of a user attribute, an operator, and a value. You must click the <span class="Bold">+</span>&#160;button to add a condition to the query. For more information and guidelines, see <a href="#XREF_51905_Filtering_by">Filtering by criteria</a>.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span style="font-weight : bold; "><b>Resource Path</b></span>, type the network path of the resource on which to fil&#173;ter, or leave this field blank to include all resources.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span class="Bold">Resource Criteria</span>, specify additional resource criteria by creating one or more conditions. Each condition consists of a resource attribute, an oper&#173;ator, and a value. You must click the <span class="Bold">+</span>&#160;button to add a condition to the query. For more information and guidelines, see <a href="#XREF_51905_Filtering_by">Filtering by criteria</a>.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span style="font-weight : bold; "><b>Policy Name</b></span>, specify one or more policies on which to filter, or leave this field blank to include all policies. Use the <span class="Bold">Policy Lookup</span>&#160;window to browse through and select the policies.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span class="Bold">Policy Criteria</span>, specify additional policy criteria by creating one or more conditions. Each condition consists of a policy attribute, an operator, and a value. You must click the <span class="Bold">+</span>&#160;button to add a condition to the query. For more information and guidelines, see <a href="#XREF_51905_Filtering_by">Filtering by criteria</a>.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span class="Bold">Other Criteria</span>, specify additional criteria by creating one or more condi&#173;tions. Each condition consists of a general attribute (for example, host name, host IP, and application name), an operator, and a value. You must click the <span class="Bold">+</span>&#160;button to add a condition to the query. For more information and guidelines, see <a href="#XREF_51905_Filtering_by">Filtering by criteria</a>.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Set the display options.</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span class="Bold">Report Type</span>, select the output format in which to display the data: Table, Bar Chart, Horizontal Bar Chart, or Pie Chart. Use a table to display policy activity details in a row-and-column format. Use a chart to display a summary of policy activities. For examples of reports in different for&#173;mats, see <a href="Sample_Reports.htm#XREF_62752_Sample_Reports">Sample Reports</a>.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>If you selected one of the charts in <span class="Bold">Report Type</span>, in <span class="Bold">Show</span>, select a grouping option. Grouping is not available to a table.</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">Group by User</span>: The chart shows the number of enforcement events for each user covered by the report.</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">Group by Resource</span>: The chart shows the number of enforcement events for each resource covered by the report.</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">Group by Policy</span>: The chart shows the number of enforcement events for each policy covered by the report.</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">Group by Month</span>: The chart shows the number of enforcement events for each month covered by the report. Select this option only if the time period you specified spans more than one month.</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">Group by Day</span>: The chart shows the number of enforcement events for each day covered by the report.<br /></p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span class="Bold">Sort By</span>, select a field on which to sort the data, and select <span class="Bold">Asc</span>&#160;to sort in ascending order or <span class="Bold">Desc</span>&#160;to sort in descending order. If the report type is a table, you can sort the data by any attribute. If the report type is a chart, you can sort either by the grouping item (user, resource, policy, month, or day) or by Result Count (the number of enforcement events for each user, resource, policy, month, or day).</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span class="Bold">Max Results</span>, specify the maximum number of results to display in the table or chart. For charts, this number represents the maximum number of bars in a bar chart, or slices in a pie chart. For readability reasons, charts should display a limited number of bars or slices. For a table, the number represents the maximum number of rows (each row represents an event). Tables that show a large number of rows present the data on mul&#173;tiple pages.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span class="Bold">Display Columns</span>, select the columns to display in a table. This setting applies to a table only. USER_NAME, POLICY_FULLNAME, POLICY_DECISION, HOST_NAME, and APPLICATION_NAME are selected by default. To remove any of those columns or to add other columns, click <img alt="SelectColumnsIcon.png" style="width : 10.800pt; height : 10.800pt; margin-bottom : -2.500pt; " id="image2" src="SelectColumnsIcon.png" />&#160;and use the arrow icons to move columns out of, or into, the <span class="Bold">Selected</span>&#160;pane.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="Bold">Run</span> to generate the report.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">If you want to run this report again in the future, save the report. Click <span class="Bold">Options</span>, and select <span class="Bold">Save</span>. For more information about the save options, see <a href="Saving_a_Report.htm#XREF_90564_Saving_a_Report">Saving a Report</a>.</p>
+</li>
+ </ol>
+ <h2><a name="XREF_20974_Specifying_a"></a>Specifying a Report Period</h2>
+ <p class="BodyLevel1">When specifying the start date and time and end date and time of the time period to cover in a report, you need to take into account the time zone where Control Center is installed, and how long data is stored in the Activity Journal.</p>
+ <h3>Time Zone Considerations</h3>
+ <p class="BodyLevel1">The report period is determined using the time zone where Control Center is installed, not the time zone where you are running Reporter&#160;or the time zone where the events you are querying on occurred. Therefore, you might want to add hours to the beginning or end of your time period, depending on the time difference between the location of the Reporter&#160;application and the location where the events of interest occurred.</p>
+ <p class="BodyLevel1">For example, suppose your Control Center is installed in New York, but you are running Reporter in California, three time zones to the west, and your query is on events in California. If you specify date-time values that start and end at midnight, your query will return three hours of data from the night before the first date in your time period (in California time), and will not include the last three hours of data on the final day of the time period.</p>
+ <h3><a name="XREF_65163_Activity_Journal"></a>Activity Journal Considerations</h3>
+ <p class="BodyLevel1">The Activity Journal retains data for a limited time before it is archived. By default, data is stored for 90 days before it is archived, but this setting can be changed by the database administrator. Therefore, it is possible that data for the period you specify is not available. If your query uses all default values, except for the report period, and it returns no data, try changing the <span class="Bold">From</span>&#160;and <span class="Bold">To</span>&#160;values to later dates. </p>
+ <p class="BodyLevel1">If you need to create a report that uses data that is already archived, you can ask your database administrator to restore the data to the Activity Journal.</p>
+ <p class="BodyLevel1">For information about the report server’s data management features, including archiving and unarchiving data, see the “Database Management” chapter in the Control Center <span style="font-style : italic; "><i>Administrator’s Guide</i></span>.</p>
+ <h2><a name="XREF_44634_Filtering_by_User"></a>Filtering by User, Resource, and Policy</h2>
+ <p class="BodyLevel1">When filtering policy activity data by user, resource, or policy, you can use either, or both, of the following methods:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Filter by one or more user names, resource paths, or policy names</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Filter by user, resource, or policy criteria</p>
+
+ <h3>Filtering by name</h3>
+ <p class="BodyLevel1">To filter by one or more user names, resource paths, or policy names, you spec&#173;ify values in the <span class="Bold">User</span>, <span class="Bold">Resource Path</span>, and <span class="Bold">Policy Name</span> fields.</p>
+ <p class="BodyLevel1">For <span class="Bold">User</span>&#160;and <span class="Bold">Policy Name</span>, use the Lookup tool to browse for and select the names. The following figure shows the User Lookup window. The Policy Lookup tool is similar.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="UserLookup.jpg" style="width : 367.458pt; height : 341.532pt; " id="image3" src="UserLookup.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">User Lookup window</p>
+ <p class="BodyLevel1">There is no lookup tool for <span class="Bold">Resource Path</span>. You must type the resource path value. Make sure you enter the correct information. If you specify a path that does not exist, the filter essentially has no effect. Observe the following guide&#173;lines when typing values:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>You can list multiple values. Separate each value with a comma. </p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Each value must include the full folder path.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The query is not case sensitive.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>You can use the asterisk (*) wildcard, which matches zero or more charac&#173;ters, including the backslash folder separator (\). For example, you can type the following string to specify all content—subfolders and files—in the Finance folder:</p>
+
+ <h5>c:\Finance\* </h5>
+ <h3><a name="XREF_51905_Filtering_by"></a>Filtering by criteria</h3>
+ <p class="BodyLevel1">To filter by user, resource, or policy criteria, you create conditions in the <span class="Bold">User Criteria</span>, <span class="Bold">Resource Criteria</span>, or <span class="Bold">Policy Criteria</span>&#160;fields. Each condition consists of an attribute, an operator, and a value. You can create multiple conditions for each filter type. For example, you can filter resources by the Modified By and Key&#173;words attributes to find documents modified by a particular author <span style="font-style : italic; "><i>and</i></span>&#160;that contain a specified keyword. Both conditions must be true for the filter to return any results.</p>
+ <p class="BodyLevel1">To create a condition for <span class="Bold">User Criteria</span>, <span class="Bold">Resource Criteria</span>, or <span class="Bold">Policy Criteria</span>:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select an attribute from the first drop-down list. The list displays the attributes that are defined in Control Center. The policy attributes list also includes the tags, if any, that were defined for policies in Policy Stu&#173;dio.</p>
+</li>
+  <p class="Title">The following figure shows an example of a list of resource attributes. </p>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="ResourceAttributes.png" style="width : 347.782pt; height : 209.017pt; " id="image4" src="ResourceAttributes.png" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Example of resource attributes</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select a comparison operator from the second drop-down list.</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">Equals</span>: Attribute value matches a specified value. </p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">Not Equals</span>: Attribute value does not match a specified value. Use this operator to exclude the specified value from the result set.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">Like</span>: Attribute value is similar to the specified characters. This operator is similar to the SQL LIKE keyword. Use it to match a specific pattern, or when you do not know the entire value.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">In</span>: Attribute value matches any one of a specified set of values. This oper&#173;ator is similar to the SQL IN keyword. Use it to create an OR condition, that is, when you want to match multiple values.</p>
+
+  <p class="Title">For all the operators, searches are case-insensitive. For example, <span class="Emphasis">Patrick Marleau</span>&#160;is the same as <span class="Emphasis">patrick marleau</span>.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Type a value in the third field. </p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>If you selected the Equals operator, the specified value must be an exact match (aside from case); otherwise, the filter will not find any matches and the report will not return any results.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>If you selected the Not Equals operator, the specified value you do <span class="Emphasis">not</span>&#160;want to match must also be an exact match to an attribute value (aside from case); otherwise, the filter does not exclude any values, and you get more results than you expect.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>If you selected the Like operator, you can use the following wildcard char&#173;acters:</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>%: matches one or more characters.</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>_: matches any single character. You can use more than one under&#173;score consecutively; for example, to match any two consecutive characters, use two underscores.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>If you selected the In operator to specify a set of values, separate each value with a comma.</p>
+
+  <p class="Title">For examples of conditions that use these different operators, see <a href="#XREF_39707_Filter_Examples">Filter Examples</a>.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the <span class="Bold">+</span> button to add the condition to the report query.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Repeat the previous steps to add more conditions. The following figure shows an example of a query where two conditions have been created for <span class="Bold">Resource Criteria</span>. To remove a condition, click the [—] button.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="ResourceCriteria.jpg" style="width : 487.732pt; height : 83.408pt; " id="image5" src="ResourceCriteria.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Two conditions in Resource Criteria</p>
+ <h3><a name="XREF_39707_Filter_Examples"></a>Filter Examples</h3>
+ <p class="BodyLevel1">The following condition searches for resources that contain the keyword Confi&#173;dential (the search is not case sensitive):</p>
+ <p class="FM_Bulleted1Indent" style="margin-top  : 5.000pt; margin-bottom : 9.000pt; font-family : Courier New; font-size  : 9.0pt;"><span class="GreyBold" style="font-family : Courier New; font-style : normal; font-weight : normal; font-size  : 9.0pt; color   : #000000; text-decoration : none; letter-spacing : 0.00em; "><font size="1" color="black" style="font-size:9.000000pt;">Keywords Equals Confidential</font></span></p>
+ <p class="BodyLevel1">The following condition searches for users who are not US citizens:</p>
+ <p class="FM_Bulleted1Indent" style="margin-top  : 5.000pt; margin-bottom : 9.000pt; font-family : Courier New; font-size  : 9.0pt;"><span class="GreyBold" style="font-family : Courier New; font-style : normal; font-weight : normal; font-size  : 9.0pt; color   : #000000; text-decoration : none; letter-spacing : 0.00em; "><font size="1" color="black" style="font-size:9.000000pt;">ISO Country Code Not Equals US</font></span></p>
+ <p class="BodyLevel1">The following condition searches for users whose email addresses end with acme.com:</p>
+ <p class="FM_Bulleted1Indent" style="margin-top  : 5.000pt; margin-bottom : 9.000pt; font-family : Courier New; font-size  : 9.0pt;"><span class="GreyBold" style="font-family : Courier New; font-style : normal; font-weight : normal; font-size  : 9.0pt; color   : #000000; text-decoration : none; letter-spacing : 0.00em; "><font size="1" color="black" style="font-size:9.000000pt;">Email Address Like %acme.com</font></span></p>
+ <p class="BodyLevel1">The following condition searches for machine names that start with NL, fol&#173;lowed by any two characters (represented by two underscores), the letters CC, and other characters, for example, NL03CC-Win64:</p>
+ <p class="FM_Bulleted1Indent" style="margin-top  : 5.000pt; margin-bottom : 9.000pt; font-family : Courier New; font-size  : 9.0pt;"><span class="GreyBold" style="font-family : Courier New; font-style : normal; font-weight : normal; font-size  : 9.0pt; color   : #000000; text-decoration : none; letter-spacing : 0.00em; "><font size="1" color="black" style="font-size:9.000000pt;">HOST_NAME Like NL__CC%</font></span></p>
+ <p class="BodyLevel1">The following condition searches for users who are either in the Accounting or Finance department:</p>
+ <p class="FM_Bulleted1Indent" style="margin-top  : 5.000pt; margin-bottom : 9.000pt; font-family : Courier New; font-size  : 9.0pt;"><span class="GreyBold" style="font-family : Courier New; font-style : normal; font-weight : normal; font-size  : 9.0pt; color   : #000000; text-decoration : none; letter-spacing : 0.00em; "><font size="1" color="black" style="font-size:9.000000pt;">Department In Accounting, Finance</font></span></p>
+ <h2><a name="XREF_92418_Filtering_by_Action"></a>Filtering by Action</h2>
+ <p class="BodyLevel1">You can filter the policy activity data by user actions, such as create, run, or rename. The Action list displays all the actions defined in Control Center. You can select more than one action from the list, for example, for a report on all instances of users moving, renaming, or deleting certain files and those actions triggering policy enforcement.</p>
+ <p class="BodyLevel1">The following table describes the user actions on which you can filter. The actions in the list differ, depending on the policy enforcement software installed in your environment.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 485.63pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 104.378pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Action</p>
+</th>
+  <th style="width : 381.247pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Report will include all instances of:</p>
+</th>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Ask Question</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users submitting a question during a Web meeting, via Live Meeting</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Attach Device</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users attaching removable devices to a computer</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Attach to Item</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users attaching a file to any kind of portal content, such as a list or a library; or uploading a file to a library or list</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Change Attributes</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users changing attributes of a file</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Change File Permissions</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users changing any of the security properties of any file</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Copy/Embed File</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users copying any file, or contents of any file or inserting one file into another</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Create/Edit</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users either editing an existing file, or creating a new file in any location covered by the policy</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Delete</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users deleting any file</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Download</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">User downloading a file from a portal</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">E-Mail</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users sending e-mail to any recipient, with or without an attachment (as dictated by the policy)</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Export</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users export a spreadsheet or datasheet from a collaboration portal.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">FTP</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users FTP files (FTP, SFTP, or FTPS) from one host to another</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Host Connect</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">User connecting to a specified port, as designated in policy; not specific to the resource or document being accessed</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Instant Message</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users sending instant message to any recipient, with or without an attachment (as dictated by the policy)</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Join</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users joining a established Web meeting via Live Meeting</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Meet</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users setting up a meeting via Office Communicator with any user</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Move</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users moving any file from its current location to any other location</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Network Access</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">User connecting to a specified port, as designated in policy; specific to a resource or document that is also defined in the policy</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Open</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users opening any file or portal content item</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Print</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users printing any file or portal content item</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Record</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users using Live Meeting’s Record feature to record a Web meeting</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Rename</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users changing the name of any file or portal content item</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Run</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users running an application covered by the policy</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Share</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users sharing their desktop, via Live Meeting, during a Web meeting</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Screen Capture</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users taking screen captures of content on their desktop</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Upload</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users uploading content to a portal</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Video</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users initiating a video call via Live Meeting</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Voice</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users initiating a voice call via Live Meeting</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 104.378pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Voice Call / Video Call</p>
+</td>
+  <td style="width : 381.247pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users initiating a voice or video call via Office Communicator, with any user covered by the policy</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

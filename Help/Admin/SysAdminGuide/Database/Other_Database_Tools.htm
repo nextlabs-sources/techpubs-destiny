@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Other Database Tools</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\Database.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Database Management\nOther Database Tools");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Database_Management.htm\">Database Management<\/a> &gt; Other Database Tools<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1>Other Database&nbsp;Tools<span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span></h1>
+ <p class="BodyLevel1">As we have noted, in any but a demo setup you should use an external database for all required data stores. Oracle, SQL Server, and PostgreSQL are supported; the installation default is PostgreSQL.</p>
+ <h2>The Vacuum DB Utility</h2>
+ <p class="BodyLevel1">If you are using PostgreSQL, it is a good idea to clean up the database periodi&#173;cally, by running a utility called Vacuum DB. The more you use Control Center, the more often you should use this utility—for example, anywhere from once a week to once a month.</p>
+ <p class="BodyLevel1">The Control Center&#160;installation package includes the vacuum executable, which is installed by default in the following location:</p>
+ <h5>&lt;InstallDirectory&gt;\PolicyServer\Repository\bin\vacuumdb.exe</h5>
+ <p class="BodyLevel1">The recommended options to use are:</p>
+ <h5>vacuumdb -a -U root -W &lt;Administrator password&gt;</h5>
+ <p class="BodyLevel1">You must supply the password of the Administrator account.</p>
+ <p class="BodyLevel1">For more information about what this utility does, refer to the PostgreSQL online help, which you can open from the command line by typing:</p>
+ <h5>vacuumdb.exe -?</h5>
+ <h2>The DB Init Utility</h2>
+ <p class="BodyLevel1">Another utility included with Control Center, <span style="font-style : italic; "><i>dbInit.bat</i></span>, can be used to upgrade the database for an installation of Control Center. It is not required that you use this utility, but it does offer several functions that may be of interest to the database administrator who will likely be coordinating with the Control Center&#160;administrator during an installation or an upgrade. This utility is installed in the following location:</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DBInitTree.jpg" style="width : 100.728pt; height : 135.144pt; " id="image5" src="DBInitTree.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <h5>&lt;InstallDirectory&gt;\PolicyServer\tools\dbInit</h5>
+ <p class="BodyLevel1">You can launch this utility by opening a command window, navigating to that location, and using the command <span style="font-style : italic; "><i>dbInit</i></span>. The following table lists all arguments available for this command. You can also view this information by typing the command:</p>
+ <h5>dbInit -h</h5>
+ <p class="BodyLevel1">The DB Init utility should only be used by knowledgeable database administra&#173;tors. For more detailed information on how you use it, contact NextLabs techni&#173;cal support.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 361.25pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 131.075pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Argument</p>
+</th>
+  <th style="width : 230.175pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 131.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">[-h]</p>
+</td>
+  <td style="width : 230.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Display a list of all commands and arguments. Cannot be used with any other arguments.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 131.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-i, -install</p>
+</td>
+  <td style="width : 230.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Install a new database.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 131.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-u, -upgrade</p>
+</td>
+  <td style="width : 230.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Upgrade from older installed database. Requires the following two arguments.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 131.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;"> &#160;&#160;&#160;-f, -fromV &lt;1.6 | 2.0 | 2.5&gt;</p>
+</td>
+  <td style="width : 230.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies upgrade From version, required only with Upgrade.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 131.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;"> &#160;&#160;&#160;-t, -toV &lt;1.6 | 2.0 | 2.5&gt;</p>
+</td>
+  <td style="width : 230.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies upgrade To version, required only with Upgrade.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 131.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-createschema</p>
+</td>
+  <td style="width : 230.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Generates a SQL statement describing the new schema, to a file specified by the -s argument, which is required. Used in the Install process.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 131.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-dropcreateschema</p>
+</td>
+  <td style="width : 230.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Generates a SQL statement describing the new schema, to a file specified by the -s argument, which is required, and also drops all the tables in the old schema. Used in the Upgrade process.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 131.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-updateschema</p>
+</td>
+  <td style="width : 230.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Generates a SQL statement describing any changes in new schema, to a file specified by the -s argument, which is required. Does not drop the tables in the old schema, but only updates them. Used in the Upgrade process.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 131.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-processsql</p>
+</td>
+  <td style="width : 230.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Imports a SQL statement from the file specified by the -s argument, which is required, and creates the schema based on that. Used in the Upgrade process.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 131.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;"> &#160;&#160;&#160;- s | -schema &lt;schema path&gt;</p>
+</td>
+  <td style="width : 230.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the path and name of the to schema file used by the above four arguments (either as output or as input)</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 131.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-c | -config &lt;config path&gt;</p>
+</td>
+  <td style="width : 230.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the path to the path of Java classes used for importing seed data.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 131.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-C | -connection &lt;configuration.xml path&gt;</p>
+</td>
+  <td style="width : 230.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the path to the configuration files, required by the database.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 131.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-L, -libraryPath &lt;libraryPath&gt;</p>
+</td>
+  <td style="width : 230.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the path to the mapping files required by the Hibernate function.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 131.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">[-q, -quiet]</p>
+</td>
+  <td style="width : 230.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Activates the Hibernate function between the Java code and the database; default is false.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>About Custom Obligations</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\CustomObligations.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using Custom Obligations\nAbout Custom Obligations");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Using_Custom_Obligations.htm\">Using Custom Obligations<\/a> &gt; About Custom Obligations<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_45063_About_Custom"></a>About Custom Obligations</h1>
+ <p class="BodyLevel1">As we have explained earlier, the practical result that ensues when a policy resolves to true is referred to as the policy’s <span style="font-style : italic; "><i>obligation</i></span>. Three kinds of obliga&#173;tions are available out of the box, for all enforcers: write the event to a log, dis&#173;play a notification to the end user, and send an e-mail to one or more specified targets. In addition, Control Center supports a fourth option, custom obliga&#173;tions. These refer to any obligations that are not available out of the box, but are specifically tailored to some custom function, and so require special devel&#173;opment or configuration before they can be used.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="CustomObligations00003.jpg" style="width : 360.000pt; height : 132.099pt; " id="image0" src="CustomObligations00003.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Obligation Types</p>
+ <h2>Obligation Types</h2>
+ <p class="BodyLevel1">As the figure above illustrates, custom obligations fall into two categories: those that run at the PEP, which are called by the Policy Controller, and those that run at the PDP, which are called by the Policy Adapter.</p>
+ <h3>Obligations Run at PEP</h3>
+ <p class="BodyLevel1">Run-at-PEP Obligations rely on functions within another application, typically the one that is being enforced, which the Policy Adapter (the PEP) invokes whenever a relevant policy evaluates to true. For example, you might require that in certain cases Microsoft Outlook encrypt all e-mail attachments of a cer&#173;tain class of files; but this is performed by invoking Outlook’s own internal encryption mechanism rather than some custom executable.</p>
+ <p class="BodyLevel1">(The predefined obligations available in all enforcers are of this type; they are the three that are always available to select in Policy Author’s definition pane: Log the Event, Display Notification, and Send E-Mail. They are actually run by the Policy Controller, rather than a third-party application.)</p>
+ <p class="BodyLevel1">You can create these to write policies that, for example, invoke functions of your custom applications. This type of obligation relies on an SDK that is avail&#173;able with the Entitlement Management product.</p>
+ <h3>Obligations Run at PDP</h3>
+ <p class="BodyLevel1">Run-at-PDP obligations are those that rely on some independently developed executable code, which the Policy Controller invokes whenever the policy evalu&#173;ates to true. For example, whenever a certain class of user attempts to access certain files or use them in a certain way, a deployed policy might trigger such an executable to encrypt the files, change their extension, or delete them alto&#173;gether. The custom executable—an .exe file or a script—must be installed on any enforcer host where the obligation may be used.</p>
+ <p class="BodyLevel1">The possibilities for the actions run-at-PDP obligations can perform are very broad, which makes them quite useful for automating data handling procedures; examples include prompting the end user to encrypt some resource before pro&#173;ceeding, notifying some administrator by pager, or offering the blocked end user to e-mail a network administrator, requesting access.</p>
+ <p class="BodyLevel1">Run-at-PDP obligations are triggered in the following sequence:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Any enforcer in the system enforces a policy that has a run-at-PDP obliga&#173;tion defined for it. It may be either an On Allow or an On Deny obligation.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Based on the obligation’s display name, included in the policy, the enforcer checks the configuration file to map the display name to the exe&#173;cutable’s install path. (The executable must be installed on the same host as the enforcer.)</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">The enforcer (specifically, the PDP within it) then passes a set of argu&#173;ments to the executable.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">The executable is invoked by the command argument and performs its special function, incorporating the arguments it was passed: sends a mes&#173;sage to the specified user, compresses the specified file, etc.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1">Accordingly, run-at-PDP obligations require the following:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The executable itself, which is written independently of Control Center&#160;or Policy Studio. It may be an .exe or a script, and must be installed on every host where enforcers are installed and the service provided by the obliga&#173;tion is required.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The obligation must be registered with the system, which requires editing the <span style="font-style : italic; "><i>configuration.xml</i></span> file to include a section defining each custom obli&#173;gation. This is where the obligation’s display name is mapped to the actual executable path and name, and where any arguments are defined. As always, the Control Center&#160;must be restarted before any configuration file changes will take effect.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>All registered obligations become available in Policy Author, to include in policies, in the form of a drop-down list in the Obligations section of the policy editor. When a policy analyst defining a policy selects an obligation, the editor displays all arguments that have been defined for that obliga&#173;tion. Each argument may have one hard-coded value or a drop-down list of possible values; and it may be a user-editable field or not, depending on how it is defined in the configuration file. Details are provided under <a href="Registering_Obligations.htm#XREF_86664_Configuration">Registering Obligations</a>.</p>
+
+ <p class="BodyLevel1">In addition, custom obligations can only be enforced on release versions of enforcers that support this feature.</p>
+ <h2><a name="XREF_90422_Writing_Custom"></a>Writing Run-at-PDP Obligations</h2>
+ <p class="BodyLevel1">You must design and code the custom obligations outside of Control Center. The executable will receive a command line call from the Obligation Handler, which is a logical component within the PDP. The executable you design must expect a call with the following format:</p>
+ <h5> &lt;command&gt; &lt;-argument1&gt; &lt;-argument2&gt; . . . &lt;-argumentN&gt;</h5>
+ <p class="BodyLevel1">Note the following points about the command line:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The command element will contain the executable name and path.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The argument elements are optional; a command may have none or many.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The argument elements are space-delimited.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Each argument may have both a name and a value, a name only, or a value only. If they have a name and a value, or contain any spaces, they must be enclosed in quotes.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The arguments can contain pre-defined text strings or variables that serve as tokens for information—user, day/time, application, action, etc.—about the specific user event that triggers the obligation. These are dis&#173;cussed in more detail below, under <a href="Registering_Obligations.htm#XREF_55480_Using_Variables">Using Variables</a>.</p>
+
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

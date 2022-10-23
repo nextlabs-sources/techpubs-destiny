@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Migrating Activity Log Data</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\MigrateActivityLogs.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Migrating Activity Logs\nMigrating Activity Log Data");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Migrating_Activity_Log_Data.htm\">Migrating Activity Logs<\/a> &gt; Migrating Activity Log Data<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_58668_Migrating_Activity"></a>Migrating Activity Log Data</h1>
+ <p class="BodyLevel1">In Control Center 7.5, a new reporting data model was designed to improve the querying of policy activity data. For example, Reporter users can filter activity data on all regular and dynamic custom attributes. Prior to 7.5, users could fil&#173;ter activity data on a limited set of attributes.</p>
+ <p class="BodyLevel1">This section describes the procedure to migrate existing activity log data to the new data model after upgrading Control Center from a release prior to 7.5.</p>
+ <p class="BodyLevel1">When upgrading Control Center, the tables containing activity data in the previ&#173;ous data model are retained and new tables corresponding to the new data model are created. The migration process moves data from the previous data model to the new data model, and fetches additional data, such as user attri&#173;butes, that was not previously stored in the old model. </p>
+ <p class="BodyLevel1">The following are the steps to migrate existing report activity log data and archive activity log data:</p>
+ <ol>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Backup configuration.xml.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Make the following changes in configuration.xml:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Under the DAC -&gt;ActivityJournalSettingConfiguration-&gt;SyncOperation node, change the value of TimeInterval to a large value (for example, 10000) so that Sync jobs do not trigger during the migration process.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Under DAC-&gt;ActivityJournalSettingConfiguration-&gt;IndexesRebuildOpera&#173;tion, set AutoRebuildIndexes to false.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Under DAC-&gt;ActivityJournalSettingConfiguration-&gt;ArchiveOperation, set AutoArchive to false.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Add the following property to Reporter-&gt;Properties if it is not present:</p>
+
+  <h5>&lt;Property&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;numberOfExtendedAttrs&lt;/Name&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Value&gt;99&lt;/Value&gt;<br />&lt;/Property&gt;</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Restart Control Center Server.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Log into Reporter as Administrator.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the following URL to migrate the reporter activity logs:</p>
+</li>
+  <h5><span class="GreyBold">https://&lt;host&gt;/reporter/migrationServlet<br />?action=MIGRATE_REPORT_LOGS</span></h5>
+  <p class="Title">If the data migration is completed successfully, a “Migration Successful” message appears in the browser window.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the following URL to migrate archive activity logs:</p>
+</li>
+  <h5><span class="GreyBold">https://&lt;host&gt;/reporter/migrationServlet<br />?action=MIGRATE_ARCHIVE_LOGS</span></h5>
+  <p class="Title">This can take a long time depending on the volume of data. If the data migration is completed successfully, a “Migration Successful” message appears in the browser window.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Undo the changes you made to configuration.xml in step 2.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Restart Control Center.</p>
+</li>
+ </ol>
+ <h2>Migrating Saved Reports</h2>
+ <p class="BodyLevel1">To migrate saved reports, run the following URL in Reporter:</p>
+ <h5><span class="GreyBold">https://&lt;host&gt;/reporter/migrationServlet<br />?action=MIGRATE_SAVED_REPORTS</span></h5>
+ <p class="BodyLevel1"><span style="font-family : Calibri; font-size  : 11.0pt; "><font size="3" style="font-size:11pt;">&nbsp;</font></span></p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

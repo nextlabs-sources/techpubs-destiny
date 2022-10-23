@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Importing Seed Data</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\SeedData.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Importing Seed Data\nImporting Seed Data");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Importing_Seed_Data.htm\">Importing Seed Data<\/a> &gt; Importing Seed Data<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1>Importing <a name="XREF_28610_Configuration"></a>Seed Data</h1>
+ <p class="BodyLevel1">Seed Data are policy objects—action and application components, for example— that are necessary to write policies in Policy Studio. Before creating policies in Policy Studio, you must import Seed Data to support the NextLabs products in your implementation. Different NextLabs products require different Seed Data.</p>
+ <p class="BodyLevel1">This section describes the following procedures:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_57516_Locating_Seed_Data">Locating Seed Data Files</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_76143_Configuring_User">Configuring User Permissions</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_73216_Running_the">Running the createSeedData Tool</a></p>
+
+ <p class="BodyLevel1">This chapter does not discuss how to configure custom obligations, which also must be configured before you create policies that require custom obligations. For more information about configuring obligations, consult the user guide for each Enforcer included in your implementation.</p>
+ <h2><a name="XREF_57516_Locating_Seed_Data"></a>Locating Seed Data Files</h2>
+ <p class="BodyLevel1">After installing Control Center, Seed Data is stored in the following location: </p>
+ <h5 style="margin-left : 36.000pt; text-indent : 0.000pt;">C:\Program Files\NextLabs\PolicyServer\tools\Seed_Data</h5>
+ <p class="BodyLevel1">The following table describes which Seed Data files should be configured for NextLabs products.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 486.00pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 162.000pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Seed Data File</p>
+</th>
+  <th style="width : 162.000pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Products</p>
+</th>
+  <th style="width : 162.000pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Explanation</p>
+</th>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 162.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Control_Center-DAC-WFS_2012-6.5.xml</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Control Center (DAC and Enterprise Edition)</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Required if you are planning on deploying DAC policies to Windows 2012 File Servers and/or Microsoft SharePoint</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 162.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Entitlement_Management-Windows_File_Server_2003/2008-6.5.xml</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Entitlement Manager for Windows File Servers</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Required if you are implementing the Entitlement Manager for Windows File Servers</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 162.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Entitlement_Management-SAP-6.5.xml</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Entitlement Manager for SAP</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Required if you are implementing the Entitlement Manager for SAP (including all Entitlement Packs)</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 162.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Entitlement_Management-SharePoint-6.5.xml</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Entitlement Manager for SharePoint</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Required if you are implementing the Entitlement Manager for SharePoint</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 162.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Entitlement_Management-Enovia-6.5.xml</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Entitlement Manager for Enovia</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Required if you are implementing the Entitlement Manager for Enovia</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 162.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Rights_Management-Rights_Management_Client-6.5.xml</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Rights Management</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Required if you are implementing Rights Management Client</p>
+</td>
+</tr>
+  <tr style=" height : 47.00pt;">
+  <td style="width : 162.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Data_Protection-Data_Protection_Desktop-6.5.xml</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Data Protection Desktop: all enforcers</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Required if you are implementing any of the following enforcers: Desktop Enforcer for Windows, Desktop Enforcer for Removable Devices, Desktop Enforcer for Networks</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 162.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Data_Protection-Data_Protection_Email-6.5.xml </p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Data Protection Email</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Required if you are implementing Desktop Enforcer for Microsoft Outlook</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 162.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Data_Protection-Data_Protection_Communication-6.5.xml</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Data Protection Communication: all enforcers</p>
+</td>
+  <td style="width : 162.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Required if you are implementing Desktop Enforcer for Live Meeting and Desktop Enforcer for Office Communicator</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h2><a name="XREF_76143_Configuring_User"></a>Configuring User Permissions</h2>
+ <p class="BodyLevel1">Only a specified group of users can import and use Seed Data.</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>To <span class="Emphasis">import</span>&#160;Seed Data and make it available to other Policy Studio users, the user must belong to the All Policy Server Users group, and the user’s <span class="Bold">Default Access Control Group</span>&#160;property must be set to All Policy Server Users.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>To <span class="Emphasis">use</span>&#160;Seed Data once it has been imported to Policy Studio, users must belong to the All Policy Server Users group. Users who are not part of this group see the Seed Data, but cannot use it.</p>
+
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>Do not use the Administrator user to import Seed Data. Doing so results in policies and components that can only be accessed and managed by Administrator.</p>
+ <p class="BodyLevel1">For information about users and groups, see <a href="../IntroAdmin/The_Users_and_Roles_Tab.htm#XREF_91397_Managing_Users">Managing Users</a>&#160;and <a href="../IntroAdmin/The_Users_and_Roles_Tab.htm#XREF_67356_Creating_User">Managing User Groups</a>.</p>
+ <h3>Assigning Users the Right to Use Seed Data</h3>
+ <p class="BodyLevel1">This procedure assumes you have already created users who are allowed to use Policy Studio. For information about creating users, see <a href="../IntroAdmin/The_Users_and_Roles_Tab.htm#XREF_89677_Adding_a_User">Adding a New User</a>.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In Administrator, select the <span class="Bold">Users and Roles</span>&#160;tab, then select <span class="Bold">Groups</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In Groups, select All Policy Server Users, if this group isn’t already dis&#173;played. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the <span class="Bold">Users</span>&#160;tab, as shown in the following figure, and select <span class="Bold">Add</span>&#160;to add users to the group.</p>
+</li>
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Add the user or users who will be importing Seed Data.</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Add the users who will require access to Seed Data to create poli&#173;cies.</p>
+
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="AllPolicyServerUsers_Group.jpg" style="width : 434.125pt; height : 149.625pt; " id="image0" src="AllPolicyServerUsers_Group.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Adding users to the All Policy Server Users group</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the <span class="Bold">Default Access Control</span>&#160;tab to define the default access control rights for the group. </p>
+</li>
+ </ol>
+ 
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Click <span class="Bold">Add</span>, and select All Policy Server Users.</p>
+
+ 
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Select the access control rights to apply to the All Policy Server Users group. The rights you specify apply, by default, to all the pol&#173;icy and policy components created by users in this group. For more information about default access control rights, see <a href="../IntroAdmin/The_Users_and_Roles_Tab.htm#XREF_59820_About_Default">About Default Access Control Groups</a>.</p>
+
+ <p class="Title">The following figure shows an example of the default permissions set for the All Policy Server Users group.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DefaultAccessControl.jpg" style="width : 425.199pt; height : 149.050pt; " id="image1" src="DefaultAccessControl.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Setting access control rights for the All Policy Server Users group</p>
+ <p class="BodyLevel1">The users added to the All Policy Server Users group now have access to the Seed Data in Policy Studio. The next step is to allow one of these users the ability to import Seed Data.</p>
+ <h3><a name="XREF_68954_Designating_a_User"></a>Designating a User to Import Seed Data</h3>
+ <p class="BodyLevel1">Once users have been assigned to the All Policy Server Users group, as described in the previous procedure, designate one or more users as the person who can import Seed Data that all users in the All Policy Server Users group can access. This person is typically assigned the System Administrator or Policy Administra&#173;tor role and manages the life cycle of policies and policy components.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In Administrator, under the <span class="Bold">Users and Roles</span>&#160;tab, select <span class="Bold">Users</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Users list, select the user that you want to designate as the person to import Seed Data.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the user definition, in <span class="Bold">Default Access Control Group</span>, select All Policy Server Users, as shown in the following figure.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SeedDataImporter.png" style="width : 489.749pt; height : 281.249pt; " id="image2" src="SeedDataImporter.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Selecting All Policy Server Users as this user’s default group</p>
+ <h2><a name="XREF_73216_Running_the"></a>Running the createSeedData Tool</h2>
+ <p class="BodyLevel1">If you meet the requirements for importing Seed Data, as described in the previ&#173;ous section, you can use the <span class="GreyBold">createSeedData.bat</span>&#160;tool to import Seed Data into Policy Studio. This tool is located at the following location:</p>
+ <p class="BodyLevel1"><span class="GreyBold">&lt;install dir&gt;\PolicyServer\tools\importexport</span>&#160;</p>
+ <p class="BodyLevel1">Run this command for each Seed Data file you need to configure in Policy Studio. Components will be inserted into Policy Studio in Approved Status. </p>
+ <p class="BodyLevel1">Follow these steps:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Close Policy Studio, if it is open.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open a command prompt and change directories to <span class="GreyBold">&lt;install dir&gt;\<br />PolicyServer\tools\importexport</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Enter the following command, supplying the appropriate arguments:</p>
+</li>
+ </ol>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>The command is case sensitive.</p>
+ <h5>createSeedData -s localhost -u &lt;user&gt; -w &lt;password&gt; -F &lt;filename&gt; -A -p &lt;port&gt;</h5>
+ <p class="BodyLevel1">Where:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="GreyBold">-s:</span>&#160;the host where the Policy Server is located. If this script is being run locally, enter <span class="GreyBold">localhost</span>.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="GreyBold">-u</span>: the name of the user permitted to import Seed Data, as described in <a href="#XREF_68954_Designating_a_User">Designating a User to Import Seed Data</a>. If the user name contains a space, enclose it in double quotation marks (&quot; &quot;).</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="GreyBold">-w</span>: the user password.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="GreyBold">-F</span>&#160;(in upper case): the path to the Seed Data file you are attempting to import. Note that seed data is one level up, so, the file path should be written as follows:</p>
+
+ <h5>../Seed_Data/Entitlement_Management-SAP-6.5.xml</h5>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="GreyBold">-A</span> (in upper case): this argument makes sure the file is inserted into Pol&#173;icy Studio in Approved status. If you do not supply this argument, the com&#173;ponents will be in Draft status.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="GreyBold">-p </span>(optional): the port of the Control Center host, which is 8443 unless it was explicitly changed. This argument is optional; if it is not present, the default value 8443 will be used.</p>
+
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>You can also run the command with <span class="GreyBold">-h </span>(as the only argument) to dis&#173;play definitions of all valid command line arguments.</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

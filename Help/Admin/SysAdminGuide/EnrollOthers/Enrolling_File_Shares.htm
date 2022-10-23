@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Enrolling File Shares</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\EnrollOthers.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Enrolling Other Entities\nEnrolling File Shares");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Enrolling_Other_Entities.htm\">Enrolling Other Entities<\/a> &gt; Enrolling File Shares<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_10562_Enrolling"></a>Enrolling File&nbsp;Shares</h1>
+ <p class="BodyLevel1">By enrolling information about your organization’s file shares, you can ensure that the use of differing file share paths to access the same document does not result in inconsistent policy enforcement. In a policy definition, a policy might identify a file by specifying a particular drive and path; however, in a real world organization, users might use various shared drive configurations to access that file. Control Center&#160;needs to be aware of all the various file shares that are in use in your organization, so that it can consistently apply the correct policies to any given document, no matter which file share is used to access the document. </p>
+ <p class="BodyLevel1">File shares typically are defined on file servers, but by definition they also include directories on any PC, that have been opened for sharing by other users. Note that if you are running policy enforcers on both Windows and Linux file servers, file shares have to be discovered on both platforms.</p>
+ <h2><a name="XREF_20517_About_GetDupDirs"></a>About Resource Path Discovery</h2>
+ <p class="BodyLevel1">The enrollment process involves discovering file shares defined on network hosts, and then enrolling them into the Information Network Directory. Because this requires active discovery on the live network, it requires separate proce&#173;dures for Windows and Linux.</p>
+ <h3><a name="XREF_91305_Enrolling_Windows"></a>Enrolling Windows Shares</h3>
+ <p class="BodyLevel1">To enroll file shares, you use a utility called <span style="font-weight : bold; "><b>Resource Path Discovery</b></span> (Resour&#173;cePathDiscovery.exe). When you give this utility a list of servers in your net&#173;work, it runs a discovery procedure and generates a complete list of file shares on those servers, showing the actual network and directory path for each share, with the duplicate shares (different shares that refer to the same actual direc&#173;tory) grouped together. This list is referred to as a <span style="font-style : italic; "><i>MachineList file</i></span>.</p>
+ <p class="BodyLevel1">It is important to note that this procedure requires some special permissions, since it relies on visibility into multiple machines in the network. For details, see <a href="#XREF_30596_Permission">Permission Requirements</a>.</p>
+ <p class="BodyLevel1">As new file shares are added to your system or existing ones are deleted, it is important to periodically run Resource Path Discovery to update your file share enrollment. This is why it’s a good idea to set this up in a script that can run on a schedule—every week, for example.</p>
+ <p class="BodyLevel1">By default, the Resource Path Discovery utility is installed in the &lt;installDirec&#173;tory&gt;\ControlCenter\tools folder. You should run it from that location.</p>
+ <p class="BodyLevel1">To enroll file shares for all file servers:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_87665_1_Create_a_text"></a>Create a text file containing a list of any hosts in your organization where you want to search for file shares. Again, this should definitely include all monitored file servers, but also any PCs where file shares may have been defined. This file, called the <span style="font-style : italic; "><i>MachineList file</i></span>, can contain three sections:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>[DOMAIN_MAP] is an optional section which is used in the case where DFS shares span multiple domains (for example, //sand.mycompany.com/dfs&#173;root/dfslink --&gt; c:/share on machinec.child.mycompany.com). In this example, CHILD is the domain name and child.mycompany.com is how the domain is referenced in DNS.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>[WORKSTATION_LIST] is the list of computers you want to search for file shares, and is the only required section. Each machine name must be on a separate line and specified by the full DNS name.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>[DFS_DOMAINS] is an optional section which lists the domains that contain domain-based dFS shares (for example, //mycompany.com/dfsroot . . . ).</p>
+
+  <p class="Title">The following figure shows a file that would be used to enroll two comput&#173;ers named Alta and Kirkwood, in a single domain. When creating your MachineList file, be sure to use the uppercase, square-bracket format for group headings, exactly as shown.</p>
+  <p class="BodyLevel1">&#160;</p>
+  <div align="center"><img alt="EnrollOthers00004.jpg" style="width : 361.512pt; height : 143.136pt; " id="image2" src="EnrollOthers00004.jpg" />
+  </div>
+  <p class="BodyLevel1"></p>
+  <p class="TitleBook">Sample Resource Path Discovery MachineList File</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On any machine in your network that can connect to all the hosts listed in the file, log in as administrator of the domain that contains the listed servers. You must be logged in with one of the privileges required by Resource Path Discovery (see <a href="#XREF_30596_Permission">&quot;Permission Requirements&quot;</a>, below).</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change to the directory &lt;<span class="FM_italics" style="font-style : italic; "><i>InstallDir</i></span>&gt;\tools. For example:</p>
+</li>
+  <h5><span class="FM_screencode">cd Program </span>Files\NextLabs\Control Center<span class="FM_screencode">\tools</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the Resource Path Discovery utility, using the following syntax:</p>
+</li>
+  <h5>ResourcePathDiscovery aliases.txt &lt;MachineListFile&gt;</h5>
+  <p class="Title">where <span class="GreyBold">aliases.txt </span>is the output file, and <span class="GreyBold">&lt;MachineListFile&gt;</span>&#160;is the name of the text file you created in Step <a href="#XREF_87665_1_Create_a_text">1</a>. </p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When Resource Path Discovery finishes, open the output file and check its contents to be sure the utility completed the file correctly. The file should contain a section for each host listed in the MachineList file, with all of its file shares listed below it. The first line of each section should end with 0, indicating that no errors occurred during discovery. In the example in The figure below, there are two hosts, Alta and Kirkwood.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="EnrollOthers00005.jpg" style="width : 468.216pt; height : 233.280pt; " id="image3" src="EnrollOthers00005.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Sample Resource Path Discovery Output File</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_50346_6_When_you_are"></a>When you are satisfied that the output file (<span class="FM_screencode" style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">aliases.txt</font></span>) has been cor&#173;rectly generated, put it into production by copying it to the aliased_shared directory on your Control Center host, like this:</p>
+</li>
+ </ol>
+ <h5 style="text-indent : -16.500pt;"><span class="FM_codeItalics" style="font-style : italic; "><i>&lt;InstallationDirectory&gt;</i></span><span class="FM_screencode">\server\aliased_shares\aliases.txt</span></h5>
+ <p class="Title">Note that you must restart Control Center at this point, so the Manage&#173;ment Server can reread this file. This is the case whenever you make any subsequent changes to the <span class="GreyBold">aliases.txt</span> file as well.</p>
+ <p class="Title">At this point, all Windows file shares have been discovered and enrolled, and will be handled properly by Control Center&#160;policies for your Windows file servers.</p>
+ <h4><a name="XREF_30596_Permission"></a>Permission Requirements</h4>
+ <p class="BodyLevel1">As we mentioned, the Resource Path Discovery utility has special permission requirements in order to examine multiple hosts in the Windows network. For every host listed in the MachineList file, the administrator running Resource Path Discovery must be a member of <span style="font-style : italic; "><i>one</i></span> of the following:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The local Power Users group;</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The local Print Operators group;</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The local Server Operators group (for domain controllers, the only type of host that has a Server Operators group);</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The local Administrators group;</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The Domain Administrators group;</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The Enterprise Administrators group.</p>
+
+ <p class="BodyLevel1">Again, any of these six conditions would give the user sufficient permission to search a host for file shares. Such permission is required for all machines where the Resource Path Discovery utility is going to search for file shares—that is, all the hosts listed in the MachineList file.</p>
+ <h3><a name="XREF_50958_Linux_File_Servers"></a>Linux File Servers</h3>
+ <p class="BodyLevel1">If you have any Linux servers in your environment, there are two remaining steps in the enrollment process, which you must perform after enrolling the Windows file shares:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On your Control Center&#160;host, change the Sharing properties of the \server\aliased_shared directory so it is open to file sharing from your Linux server.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">From the Linux server host, generate a second list of file shares, for the Linux server, using a utility called Samba Directory Mapping. To do this, type the following command on the Linux file server:</p>
+</li>
+  <h5># /usr/local/ce/bin/smbDirMapping &gt;~/aliases.txt</h5>
+  <p class="Title">This creates an output file on the Linux host, also called <span style="font-style : italic; "><i>aliases.txt</i></span>. Note that this procedure, unlike the Windows discovery, does not require any MachineList file.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_92113_9_Next_append_this"></a>Append this new file to your Windows aliases.txt file, using the following commands from the Linux host:</p>
+</li>
+ </ol>
+ <h5># mkdir ~/mnt/aliased_shares</h5>
+ <h5># mount -t cifs //&lt;PolicyServerHost&gt;/aliased<br /> &#160;/mnt/aliased_shares -o user=&lt;ControlCenterUser&gt;</h5>
+ <h5>#cat ~/aliases.txt &gt;&gt; /mnt/aliased_shares/aliases.txt</h5>
+ <p class="BodyLevel1">At this point, the file shares discovered on the Linux server are added to the enrolled Windows file shares, and will be enforced properly by your policies. Note that if you run enforcers on more than one Linux server, you must repeat this procedure for each.</p>
+ <h2>Microsoft Distributed File System</h2>
+ <p class="BodyLevel1">Microsoft Distributed File System, or dFS, aggregates Windows file share names into a single machine or domain name with links to various physical shares. In order to enforce policy on the various physical shares when it is accessed through a dFS share, the Control Center must maintain a map of the share paths.</p>
+ <p class="BodyLevel1">The list of share paths can be obtained by using the Resource Path Discovery utility, as described in the previous section. The following procedure is specific to using Resource Path Discovery with dFS shares.</p>
+ <p class="BodyLevel1">Resource Path Discovery syntax:</p>
+ <h5>ResourcePathDiscovery &lt;outputfile name&gt; &lt;config file name&gt;</h5>
+ <p class="BodyLevel1">The configuration file is a text file with the following sections:</p>
+ <h5>[DOMAIN_MAP]<br />CORP=myco.corp.com<br />TEST=test.corp.com</h5>
+ <h5>[WORKSTATION_LIST]<br />lindsey.myco.corp.com<br />jasmine.myco.corp.com<br />natlie.test.corp.com</h5>
+ <h5>[DFS_DOMAINS]<br />corp.com</h5>
+ <p class="BodyLevel1"><span class="GreyBold">[DOMAIN_MAP] </span>section lists the domains for a dFS share that spans multiple domains, e.g. \\myco.corp.com\dfsroot\dfslink is a dFS share in the CORP domain but it points to a physical share in another domain such as \\tahiti.test.corp.com\myshare in the TEST domain. The list maps the NetBIOS domain name to the DNS domain name, e.g. CORP=myco.corp.com.</p>
+ <p class="BodyLevel1"><span class="GreyBold">[WORKSTATION_LIST] i</span>s the list of stand-alone dFS machine names. There are two types of dFS shares: domain-based and stand-alone with the following UNC formats.</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Domain-based: \\myco.corp.com\dfsroot\dfslink</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Stand-alone: \\jasmine.myco.corp.com\dfsroot\dfslink</p>
+
+ <p class="BodyLevel1">This list contains only stand-alone dFS machines names, e.g. jas&#173;mine.myco.corp.com. If domain-based dFS is used, the following section is used instead.</p>
+ <p class="BodyLevel1"><span class="GreyBold">[DFS_DOMAINS]</span>&#160;section lists the domains that use domain base dFS shares, e.g. \\myco.corp.com\dfsroot\dfslink.</p>
+ <p class="BodyLevel1">The output file must be incorporated into the aliases.txt file as described above (see step <a href="#XREF_50346_6_When_you_are">6</a>&#160;in the section <a href="#XREF_91305_Enrolling_Windows">Enrolling Windows Shares</a>).</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

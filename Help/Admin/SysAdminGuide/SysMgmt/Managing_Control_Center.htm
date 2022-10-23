@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Managing Control Center</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\SysMgmt.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Routine Management\nManaging Control Center");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Routine_Management.htm\">Routine Management<\/a> &gt; Managing Control Center<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_51005_Managing_Control"></a>Managing Control Center</h1>
+ <p class="BodyLevel1">All the server and database components of Control Center&#160;are designed to start once and run continuously as a Windows service. Users should note that the name of this service does not reflect the individual server components. In fact, although you may have several or even all of the Control Center server compo&#173;nents installed on the same host, they all appear in the Windows Services man&#173;ager as a single service, called <span style="font-style : italic; "><i>Control Center Policy Server</i></span>. Similarly, no matter how you distribute components across several hosts, each host displays only one Control Center Policy Server service in the Windows Services list, representing one or more server components.</p>
+ <p class="BodyLevel1">However, the embedded databases—the Administrator database and the net&#173;work directory—do appear as separate services in the list, and may be restarted manually if necessary.</p>
+ <h2>Starting and Stopping</h2>
+ <p class="BodyLevel1">Whether running on a single host, on distributed hosts, or in a failover cluster, the Control Center Policy Server service must be manually started after the ini&#173;tial installation. By default, it is not set to restart automatically if it fails, but like any service, you can change that if you wish, by changing the Startup Type from Manual to Automatic. </p>
+ <p class="BodyLevel1">You can use the <span class="Bold">Status</span>&#160;tab in Administrator (see <a href="../IntroAdmin/The_Status_Tab.htm#XREF_59191_Basic_Functions">The Status Tab</a>) to monitor whether the individual components are running normally. If one fails and you need to restart it, you can do so by restarting the Policy Server service, regard&#173;less of whether that service represents more than one Control Center compo&#173;nent.</p>
+ <p class="BodyLevel1">Similarly, if you ever need to stop any server process, you must stop the service even though this stops all Control Center components running on that host.</p>
+ <h2>Changing Memory Settings</h2>
+ <p class="BodyLevel1">You might encounter out-of-memory errors during data-intensive operations, such as enrolling large amounts of data, generating a report with more than 50000 records, or synchronizing a large number of activity logs. If this occurs, change the JVM memory settings in the Windows Registry, using the following procedure:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open the Registry Editor. You can do this by clicking the Windows Start button, then in the search box, type <span class="GreyBold">regedit</span>, and press Enter.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Registry Editor, navigate to the following folder:</p>
+</li>
+  <h5 style="margin-left : 36.000pt; text-indent : 0.000pt;">HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Apache Software Foundation\Procrun 2.0\CompliantEnterpriseServer\Parame&#173;ters\Java</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open Options and look for the following settings. Increase the values as needed.</p>
+</li>
+ </ol>
+ <h5 style="margin-left : 36.000pt; text-indent : 0.000pt;">-Xms256M<br />-Xmx1024M<br />-XX:MaxPermSize=256M</h5>
+ <p class="Title">Depending on the load on Control Center, try one of the following settings: <br /><span class="GreyBold">-Xmx2048M </span>or <span class="GreyBold">-Xmx3072M </span>or <span class="GreyBold">-Xmx4096M</span>.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

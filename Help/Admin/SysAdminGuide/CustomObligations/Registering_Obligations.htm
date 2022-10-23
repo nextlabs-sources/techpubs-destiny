@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Registering Obligations</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\CustomObligations.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using Custom Obligations\nRegistering Obligations");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Using_Custom_Obligations.htm\">Using Custom Obligations<\/a> &gt; Registering Obligations<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_86664_Configuration"></a>Registering Obligations</h1>
+ <p class="BodyLevel1">For each custom obligation you want to use in any policy, you must add a subsec&#173;tion to the &lt;Obligations&gt; section of the configuration file, <span style="font-style : italic; "><i>configuration.xml</i></span>. Each such subsection defines a single obligation, and can contain the elements shown in the figure below. The first four elements are required for all obliga&#173;tions; the Arguments are optional. Descriptions of all elements are provided below. Note that the sequence of the elements is important, and must not be altered.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="CustomObligations00006.jpg" style="width : 455.256pt; height : 315.144pt; " id="image1" src="CustomObligations00006.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Configuring Custom Obligation</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>DisplayName</b></span>: The shorthand name for the obligation, which will display in the drop-down list in Policy Author’s policy editor, when the Custom Obligation checkbox is selected. This makes the obligation available to include in policies.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>RunAt</b></span>: Specifies where the obligation will be triggered; for run-at-PDP obligations, this must be “PDP,” as shown. (The alternative value, “PEP,” is required for run-at-PEP obligations.)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>RunBy</b></span>: specifies what kind of session the obligation requires; valid values are <span style="font-style : italic; "><i>User</i></span>&#160;or <span style="font-style : italic; "><i>System</i></span>. Obligations fulfilled in User mode will inherit all attri&#173;butes of the user's session, including environment variables, [my docu&#173;ment], [desktop] directories, as well as the user's access to resources (local and networked files, administration rights, display, etc.). Obliga&#173;tions fulfilled in System mode run in an unauthenticated session. </p>
+
+ <p class="Title">On a Windows platform, this means the System obligation has the same restrictions as any executable running as Local System User: no access to peripherals, including the display; no shell (including the cmd.exe and batch execution), and no access to certain file operations. In this mode, the obligation code runs in the background, without any user interaction.</p>
+ <p class="Title">This element is used only when RunAt=PDP.</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>ExecPath</b></span>: This is the full path and name of the executable. For example:</p>
+
+ <h5>&lt;ExecPath&gt;C:\encryption tools\encryptfile.vbs&lt;/ExecPath&gt;</h5>
+ <p class="BodyLevel1">The string defined here will be passed to the executable as the first element of the command line call, as we discussed above. If you are running in user mode (RunBy=User), then the command may rely on the current user’s %Path% vari&#173;able.</p>
+ <p class="BodyLevel1">When you are finished, restart the Policy Server and the ICENet Server so the new configuration can take effect. (Note that these may be on different hosts; if so, they are both labeled “Enterprise DLP Policy Server” in the Windows Ser&#173;vices list. If they are running on the same machine, restarting this service will cover both.)</p>
+ <h2>Using Arguments</h2>
+ <p class="BodyLevel1">If you want to define additional arguments that control how the obligation works, you must specify them as subsections within the &lt;Arguments&gt; section. These will then be available in Policy Author when the obligation is selected. How the arguments are defined in this file will control how they can be used in using the obligation in policies.</p>
+ <p class="BodyLevel1">Each argument you define can have a Name, which is the label that displays in next to the combo-box for this argument; and one or more Values, which pro&#173;vide the contents of the combo-box list. For example, in the figure above, the SendPageAltert obligation has two arguments. Argument A is named Number, and presents a combo-box with three pager numbers. Argument B is named “Redials,” and has three values defined: 1, 2, and 3. These values are available in Policy Author for the policy designer to select, as shown in the figure below.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="ObligRedials.jpg" style="width : 360.792pt; height : 150.264pt; " id="image2" src="ObligRedials.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Sample Custom Obligation in Policy Author</p>
+ <h3>Default Values</h3>
+ <p class="BodyLevel1">For each argument, one value may be designated as the default using the <span style="font-style : italic; "><i>default=</i></span>“<span style="font-style : italic; "><i>true”</i></span> flag:</p>
+ <h5>&lt;Value default=”true&quot;&gt;5557269017&lt;/Value&gt;</h5>
+ <p class="BodyLevel1">This means that it displays in this value’s field when the obligation is selected. In the example, this is why the value 5557269107 is displaying in the Number field in the policy editor.</p>
+ <p class="BodyLevel1">This feature is not required. If no default is specified, the first value listed in the file will display for each argument.</p>
+ <h3>User Editable Arguments</h3>
+ <p class="BodyLevel1">For each argument, you have the option to allow policy designers to supply their own values in Policy Author. That is, you can specify whether the user can only select one of the defined values, or can also type his own, different value in the field. By default, arguments are not user-editable; to open a field for typing other values, include the flag <span style="font-style : italic; "><i>usereditable=“true”</i></span>&#160;in the argument tag, as shown in the Number argument (labeled A) in our example: </p>
+ <h5>&lt;Argument usereditable=&quot;true&quot;&gt; &lt;Name&gt;Number&lt;/Na<span style="font-size  : 8.0pt; "><font size="1" style="font-size:8pt;">me&gt;</font></span></h5>
+ <p class="BodyLevel1">In this example, three pager numbers are provided, with 5557269107 the default; but the policy designer can also type in any other number if he wishes. By contrast, because the Redials argument (labeled B) does not have this flag, it only allows the policy designer to select from the defined values: 1, 2, or 3 redial attempts; no other value can be typed into the field.</p>
+ <h3>Argument Use Options</h3>
+ <p class="BodyLevel1">Each argument can have a Name and a selection of Values, a Name only, a Value only, or neither. The first alternative is the most standard case, for providing users a selection among values, and identifying what those values are. The other options are for use in more special cases:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Name with no Values:</b></span>&#160;Used when you want the command line to pass a string along to the executable, in effect hard-wiring it to be in effect whenever the obligation is triggered. It will display on the policy editor with no selection options, as an information aid to policy designers.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Value(s) with no Name: </b></span>Simple displays a set of selectable options with no label. In such cases, the list of values will display for the policy designer’s use, but will look like options related to the whole obligation itself, rather than to some specific aspect of it. As a rule, you would only use values this way when the order of the arguments is relevant.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Free-Form Field:</b></span> If you do not specify any name or any value for an argu&#173;ment but make it user-editable, the obligation will display an empty field where the Policy Analyst can supply any string he likes, and it will be passed in the command line. Note that any string with a blank space will be enclosed in quotes, so if you want to pass multiple free-form strings, each requires a separate field—i.e., a separate &lt;argument&gt; element in the obligation section. The example shown below shows how an obligation with two free-form fields would look, in the config file and in Policy Author.</p>
+
+ <p class="BodyLevel1">&#160;</p>
+ <div align="center"><img alt="ObligFreeForm.jpg" style="width : 455.256pt; height : 289.512pt; " id="image3" src="ObligFreeForm.jpg" />
+ </div>
+ <p class="BodyLevel1"></p>
+ <p class="TitleBook">Using Free-Form Arguments</p>
+ <h2><a name="XREF_55480_Using_Variables"></a>Using Variables</h2>
+ <p class="BodyLevel1">For the value of any argument, instead of a static string you can use one of the variables listed in the following table. These are tokens that, when the obliga&#173;tion is triggered, will be replaced by the actual data relevant to the triggering event. This data can then be used by the executable in fulfilling the obligation. </p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: alignright;margin-bottom: 24.00pt; width: 360.62pt;" cellspacing="0" align="right">
+  <caption align="right">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 83.575pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Variable</p>
+</th>
+  <th style="width : 277.050pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 83.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">$CETimestamp</p>
+</td>
+  <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Date and time at which the action was requested (time has a precision of .1 second)</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 83.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">$CEUser</p>
+</td>
+  <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Login name of the user requesting the action</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 83.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">$CEComputer</p>
+</td>
+  <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Full name of the host the user is logged onto</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 83.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">$CEApplication</p>
+</td>
+  <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The application, with path, which attempted the action. The path uses forward slashes.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 83.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">$CEAction</p>
+</td>
+  <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The action that triggered the policy with which this obligation is associated.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 83.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">$CEPolicy</p>
+</td>
+  <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name of the policy that was enforced</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 83.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">$CEIPAddress</p>
+</td>
+  <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The IP address of the host the user was logged on to</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 83.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">$CESource</p>
+</td>
+  <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The resource the action was applied to. In cases when source and destination is logically appropriate (Copy, Move, and Rename), this is the source; if that distinction is not appropriate (Delete, Open, Print, etc.) it is simply the resource acted upon.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 83.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">$CEDestination</p>
+</td>
+  <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The destination resource, If logically appropriate. Used only with Copy, Move, and Rename actions.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 83.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">$CERecipient</p>
+</td>
+  <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name of the user to whom a message was sent. Valid only in Communication policies.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h3>Example</h3>
+ <p class="BodyLevel1">For example, you may want an obligation that generates a text message notifi&#173;cation and sends it to an administrator whenever anyone tries to access highly confidential files during weekend hours. You can include specific information about the incident by including variables in the Message argument, as shown in the figure below. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="CustomObligations00007.jpg" style="width : 455.256pt; height : 345.744pt; " id="image4" src="CustomObligations00007.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Using Variables</p>
+ <p class="BodyLevel1">Depending on how a particular executable is designed, the custom obligation could retrieve values referenced in each variable. For example, our &#160;“send&#173;text.exe” in the figure above could retrieve the values for $CEPolicy, $CESource, $CEUser, and $CETimestamp, and then send a message to a security administrator describing the event:</p>
+ <h5>Notice! NoWeekendAccess policy has blocked Jane Jones from Copy on WidgetCo_Merger_Offer.doc at 08:30 Nov 17 2007.</h5>
+ <h2>Staging and Testing</h2>
+ <p class="BodyLevel1">To test the custom obligation, an administrator can deploy a key set of executa&#173;bles on a few of the desktops observed by Control Center, then deploy a test policy with the appropriate custom obligation to those hosts. The administrator can then verify that the intended command line can start the executables. In particular, verify that:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Correct binary was deployed, and is compatible with the platform;</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>If an absolute path is to be used, then the binary was deployed in the expected position; otherwise, it is in the path of the currently logged in user running the enforcer.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Any external dependencies are satisfied (required libraries and resources, if any, exist in the expected places).</p>
+
+ <p class="BodyLevel1">A policy analyst then creates policy using the Policy Author. For each decision branch, it adds appropriate obligations, including custom obligations, using agreed-upon command lines. The CE arguments need not be explicitly written in the interface; they will be added by the infrastructure to the set of arguments the Policy Analyst has already given. These policies are then deployed.</p>
+ <h2><a name="XREF_91536_Design"></a>Design Considerations</h2>
+ <p class="BodyLevel1">As the above description should make clear, you can design a custom obligation to do anything a standard executable file can do. Here are some suggestions enforcement behaviors that could be performed by custom obligations:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Zip Files:</b></span>&#160;Compress/Uncompress files automatically, or notify the end user that the requested files must be compressed before proceeding.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Encrypt Files:</b></span> Allows authorized users to send a file as an e-mail attach&#173;ment, but requires the attachment be encrypted before sending. Should the encryption fail, the mail should not be sent. The same kind of approach might also be taken to copying files to removable media, or to laptops.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>License Management:</b></span>&#160;Automatically check out or check in a license from a pool of floating application licenses.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Third-Party Integration:</b></span>&#160;Invoke a third-party application to automatically generate an entry, document, incident report, helpdesk request, export record, inventory item, etc.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Scrub Lost Laptop:</b></span>&#160;Delete all files from some location—for example, a laptop that has gone missing.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Tag Files</b></span>: Based on source location, content analysis, user action, or any other consideration, apply an identifying metadata tag to a file, such as “Confidential=Y”. This makes the file continuously subject to control poli&#173;cies wherever it circulates throughout the environment.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Uncertain Information Quarantine:</b></span>&#160;A policy established that certain information requires physical review before access can be granted. Upon creation, such information is tagged with a “For Review” tag, and a notifi&#173;cation e-mail is sent to an appropriate reviewer. If data is accessed before the review occurred, it gets moved into a quarantined state, which clears only after the review occurred.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>DRM Trigger:</b></span>&#160;Authorized users may take information off site using an unsecured medium, but triggers the addition of DRM to the data.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Call Pager:</b></span>&#160;Automatically sends pager message to the owner of sensitive files, whenever any unauthorized users attempt to open or use the files.</p>
+
+ <h3>Sequential Behaviors</h3>
+ <p class="BodyLevel1">Note that all executable obligations are enforced asynchronously. The enforcer does not expect to receive any response from the executable about the outcome of the event, and so does not wait for any result before continuing with other enforcement actions. This means that a single obligation cannot control the sequence of events down a branching logic tree, by acting on the basis of an earlier obligation. For example, you can’t design an On Deny obligation that can check Active Directory for the employment status of a user and then send a pager alert to a security officer if he is a contractor, or to the user’s superior if he is full-time.</p>
+ <p class="BodyLevel1">However, you can design obligations that work in a complex sequential ways as long as they involve the end user. For example, for a policy that blocks someone from opening a document on SharePoint site, you might design a custom obliga&#173;tion that pops up an HTML page to prompt the user with a few choices: click <span style="font-style : italic; "><i>here</i></span>&#160;to view the details of the policy that blocked access, click <span style="font-style : italic; "><i>here</i></span>&#160;to send an access request to the site’s owner, or click <span style="font-style : italic; "><i>here</i></span>&#160;to cancel and continue. The user’s response might then be either used by another executable, or covered by another policy which can include another custom obligation.</p>
+ <p class="BodyLevel1">Another example is encryption. A simple “For Copy, On Allow: Encrypt” obliga&#173;tion would not work because it is not synchronized with the copy action it is monitoring. But we can create a policy that prevents the action (copy) from happening and triggers an obligation that encrypts the file and retires a copy. Since the file is now encrypted, the second automated attempt will work, and the encrypted file will be written to the destination.</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

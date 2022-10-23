@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>The Policy Enforcer Configuration Tab</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\IntroAdmin.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using Administrator\nThe Policy Enforcer Configuration Tab");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Using_Administrator.htm\">Using Administrator<\/a> &gt; The Policy Enforcer Configuration Tab<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_96308_The_Enforcer"></a>The Policy Enforcer Configuration Tab</h1>
+ <p class="BodyLevel1">The controls on this tab allow you to define and manage policy enforcer profiles.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="EnfCfgTab.jpg" style="width : 369.750pt; height : 88.500pt; " id="image13" src="EnfCfgTab.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Policy Enforcer Configuration tab and sub-tabs</p>
+ <h2><a name="XREF_72473_About_Profiles"></a>About Enforcer Profiles</h2>
+ <p class="BodyLevel1">All policy enforcers are governed by a number of configuration settings that con&#173;trol such aspects as logging behavior, heartbeat rate, tamper-prevention pass&#173;word, and network configuration. These are assigned default values when you first install an enforcer, but they can be changed at any time.</p>
+ <p class="BodyLevel1">To simplify this, Administrator allows you to create named sets of configuration settings, which you can then assign to one or more enforcers in your network. These are referred to as <span style="font-style : italic; "><i>enforcer profiles</i></span>, and you can manage them using the Policy Enforcer Configuration tab. You can define profiles for each of the three types of enforcers; you do this by clicking on the corresponding link on the Pol&#173;icy Enforcer Configuration tab. The following figure shows the default profile for the desktop enforcer.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="WDEProfileTab_NoDocActivity.jpg" style="width : 499.440pt; height : 220.890pt; " id="image14" src="WDEProfileTab_NoDocActivity.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">The default profile for the desktop enforcer</p>
+ <p class="BodyLevel1">Note that on the File Server Enforcer page, profiles make no distinction between Windows- and Linux-based enforcers; you can assign the same profile to enforcers on either platform.</p>
+ <p class="BodyLevel1">For each enforcer type, one default profile containing all default settings is available after installation, and is automatically applied to any enforcer you install. If you wish to create more profiles and assign them to various enforcers, you can do so here. This is not mandatory, but it is strongly recommended that you at least change the administrative password, as a security precaution.</p>
+ <h2><a name="XREF_75751_Working_with"></a>Working with Profiles</h2>
+ <p class="BodyLevel1">Administrators can work with enforcer profiles in several ways, including defin&#173;ing them, changing which enforcers belong to them, modifying them, and delet&#173;ing them.</p>
+ <h3>Defining a New&nbsp;Profile</h3>
+ <p class="BodyLevel1">To define a new profile:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Specify which type of profile to create by selecting one of the three sub-tab links: Desktop Enforcer, File Server Enforcer, or Portal Enforcer.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the left-hand pane of the screen, click <span class="Bold">New</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Assign a descriptive name to the new profile.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Settings page in the right-hand pane, specify the settings for the new profile. Typically, the settings you will be most interested in—that is, the ones that are most useful in distinguishing one profile from another—are the ICENet Server and the administrative password. The following table provides descriptions of all the settings.</p>
+<table width="100%">
+ <tr>
+ <td>
+  <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.40pt;" cellspacing="0" align="center">
+   <caption align="center">
+   </caption>
+   <tr style=" height : 16.00pt;background : #1f8c4a;">
+   <th style="width : 76.574pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellHeading">Setting</p>
+</th>
+   <th style="width : 283.825pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellHeading">Description</p>
+</th>
+</tr>
+   <tr style=" height : 91.00pt;">
+   <td style="width : 76.574pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">ICENet Server </p>
+</td>
+   <td style="width : 283.825pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Specifies the ICENet Server that this profile is associated with. That is, this profile will be available to all the clients of the ICENet Server selected here.</p>
+   <p class="CellBody">Choose one of the following:</p>
+   <ul type="disc" style="">
+    <li style="">
+    <p class="CellBody">From the drop-down list, select the URL where the ICENet Server compo&#173;nent is installed; or, </p>
+</li>
+    <li style="">
+    <p class="CellBody">If you have set up load balancing or a failover cluster for the ICENet Server, type the URL of the load balancer or cluster in the OR field.</p>
+</li>
+   </ul>
+   <p class="CellBody">For a detailed discussion of ICENet configuration, see <a href="#XREF_63242_ICENet_Servers_and">ICENet Servers and Profiles</a>.</p>
+</td>
+</tr>
+   <tr style=" height : 74.00pt;">
+   <td style="width : 76.574pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">Heartbeat Frequency</p>
+</td>
+   <td style="width : 283.825pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Specifies the frequency, in the time units selected, of the heartbeats the policy enforcer sends to the server. A heartbeat is a signal that lets the server know the policy enforcer is running and provides an opportunity to download a policy deployment or new policy enforcer profile to the policy enforcer.</p>
+   <p class="CellBody">It is recommended that you enter the largest possible time increment here that still meets your business requirements. This value should be set to at least one minute or more.</p>
+</td>
+</tr>
+   <tr style=" height : 58.00pt;">
+   <td style="width : 76.574pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;"><a name="XREF_31330_4_In_Log_Upload"></a>Audit Log Upload Frequency</p>
+</td>
+   <td style="width : 283.825pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Specify the interval, in minutes, at which policy enforcers send their activity logs to the server. Default value = 30</p>
+   <p class="CellBody">Note that frequent log uploads might affect the speed of your network. It is recommended that you enter the largest possible time increment here that still meets your business requirements. This value should be set to at least one minute or greater.</p>
+</td>
+</tr>
+   <tr style=" height : 58.00pt;">
+   <td style="width : 76.574pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">Max Log Size</p>
+</td>
+   <td style="width : 283.825pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Specify the maximum allowed sized, in MB, of the current policy enforcement log is allowed to become. Default value = 2</p>
+   <p class="CellBody">If the log reaches the Max Log Size before the scheduled upload time, logs are uploaded immediately, unless the machine is not connected to the network. In that case, logging is suspended, while policy enforcement continues.</p>
+</td>
+</tr>
+   <tr style=" height : 23.00pt;">
+   <td style="width : 76.574pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">Enable Push</p>
+</td>
+   <td style="width : 283.825pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Check this box to enable Push Deployment of policy bundles to all enforcers using this profile. For details, see <a href="#XREF_32539_About_Push">About Push Deployment</a>, below.</p>
+</td>
+</tr>
+   <tr style=" height : 31.00pt;">
+   <td style="width : 76.574pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">Default Port</p>
+</td>
+   <td style="width : 283.825pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Specifies the default client-side port used for push bundle deployment, if enabled. Set to 2000 by default. If enabled, this port should not be blocked by firewalls on any enforcer hosts using this profile.</p>
+</td>
+</tr>
+   <tr style=" height : 66.00pt;">
+   <td style="width : 76.574pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">Administrative Password</p>
+</td>
+   <td style="width : 283.825pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Assign a password to tamper-protect policy enforcers installed under this profile. This password will be required to stop or uninstall any policy enforcer covered by this profile.</p>
+   <p class="CellBody">For both the Desktop Default Profile and the File Server Default Profile, and whenever you create a new profile, this password is initially set to “password”. You should replace this default before you actually apply any profile to enforcers.</p>
+</td>
+</tr>
+  </table>
+</td></tr>
+</table>
+  <p class="BodyLevel1"></p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Once you have changed all the settings you need, click <span class="Bold">Save</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the <span class="Bold">Hosts</span>&#160;tab, select all enforcers you want this profile to control. You can apply a profile to as many enforcers as you like.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When you have finished selecting hosts, click <span class="Bold">Save</span>.</p>
+</li>
+ </ol>
+ <h3><a name="XREF_32539_About_Push"></a>About Push Deployment</h3>
+ <p class="BodyLevel1">For any profile, you can enable the Push Deployment feature for all enforcers using that profile. When this is feature is enabled, policy analysts will be able to use the Deploy Immediately option (in Policy Author’s Deploy window) when deploying policies. With this feature, policies are sent without waiting for a heartbeat signal from the enforcers. In standard (non-Push) deployment, the Control Center&#160;waits until it receives a heartbeat signal from each enforcer, then checks if there are any policy bundles to send it, then sends them. Since policies are only deployed in response to a heartbeat, and the heartbeat inter&#173;val may be set in hours or even days for some profiles, this can lead to unac&#173;ceptably long (and unexpected) delays before new or updated policies go into effect. This feature is useful in test environments where you need to check the results of a policy right away.</p>
+ <p class="BodyLevel1">For any enforcers with this feature enabled, the default port, 2000, must not be blocked by any firewalls on the client side. If you are running firewalls, be sure to define this as a port exception so that Control Center can connect through it.</p>
+ <p class="BodyLevel1">Also, note that if you enable or disable this feature on an enforcer while it is running, the change will not take place until the enforcer sends its next heart&#173;beat message, or until it is manually stopped and restarted.</p>
+ <h3><a name="XREF_65785_Removing_a_Host"></a>Removing a Host from a Policy Enforcer Profile</h3>
+ <p class="BodyLevel1">Every policy enforcer host in the network can belong to only one profile at any time. If you decide to change the policy enforcer settings for a particular host, you do it by simply assigning the host to a different profile. In other words, the procedure for removing a host from a profile is the same as for assigning a host. Whenever you assign a host to a profile, it is automatically removed from any other profile to which it may have previously belonged.</p>
+ <h3><a name="XREF_54781_Modifying_a_Policy"></a>Modifying a Policy Enforcer Profile</h3>
+ <p class="BodyLevel1">As company conditions change over time, you might want to change a policy enforcer profile. For example:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>You may want to change the security password.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>If you expand your hardware infrastructure and install policy enforcers on additional machines, and you don’t want to use the default policy enforcer profiles which are assigned automatically, you will need to assign each of those new hosts to a policy enforcer profile.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>If you add a load balancer or configure a failover cluster for the ICENet server, you must change the ICENet Server setting to specify the URL of the load balancer or cluster.</p>
+
+ <p class="BodyLevel1">The modifications go into effect the next time the policy enforcer sends a heart&#173;beat to Control Center. </p>
+ <p class="BodyLevel1">To edit an existing profile:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the link for the type of policy enforcer profile you want to modify.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click one of the profiles in the list to display its details in the editing pane.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the <span class="Bold">Settings</span>&#160;or <span class="Bold">Hosts</span>&#160;tab, depending on what part of the profile you want to modify.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Make the desired changes.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When you are finished, click the <span class="Bold">Settings</span>&#160;tab and click <span class="Bold">Save</span>. </p>
+</li>
+ </ol>
+ <h3>Deleting a Policy Enforcer Profile</h3>
+ <p class="BodyLevel1">You can delete any profile that is currently defined. Bear in mind that deleting means just that—removing it from the Control Center&#160;system altogether. It should not be confused with “deleting” the profile from a specific host; for information on how to do that, see <a href="#XREF_65785_Removing_a_Host">Removing a Host from a Policy Enforcer Profile</a>, above.</p>
+ <p class="BodyLevel1">When you delete a policy enforcer profile, any hosts that were assigned to that profile are reassigned to the default profile. You cannot delete the default pro&#173;file.</p>
+ <p class="BodyLevel1">To delete a profile, select the profile in the left-hand pane, and click <span class="Bold">Delete</span>, as shown below.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="EnforcerProfileDelete.jpg" style="width : 426.925pt; height : 114.120pt; " id="image15" src="EnforcerProfileDelete.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Deleting an Enforcer Profile</p>
+ <h2><a name="XREF_63242_ICENet_Servers_and"></a>ICENet Servers and Profiles</h2>
+ <p class="BodyLevel1">The way profiles control ICENet servers and their connection with enforcers is a bit complex. The following provides a detailed description.</p>
+ <h3>Initial Registration</h3>
+ <p class="BodyLevel1">When you install any enforcer, the installation wizard prompts you for an ICENet Server to connect to. This does not necessarily represent the ICENet server the server always connects to, but rather the one it connects to the first time it starts up, in order to register itself with the Control Center. When an enforcer registers, it informs the Control Center&#160;of its location and status, and acquires the operating parameters specified by its assigned profile—in most cases, the default profile for its type.</p>
+ <p class="BodyLevel1">From that point on, the enforcer connects to the Control Center&#160;through the ICENet server specified in its assigned profile. This may be the same ICENet server that was specified during enforcer installation, but it may be different, and in the latter case, the ICENet server specified during installation is no lon&#173;ger used by that enforcer. The key point here is that just because you specified an ICENet server during installation, that does not mean the enforcer will neces&#173;sarily continue to connect through that ICENet server for anything but its initial registration.</p>
+ <h3>Profiles, ICENet Servers, and Hosts</h3>
+ <p class="BodyLevel1">It is important to understand the relationship between enforcer profiles, ICENet Servers, and enforcer hosts.</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Each enforcer host in the network—file servers, desktops or laptops—is a client of only one ICENet Server. You specify this when you install the enforcer. </p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Each profile can be associated with only one ICENet Server (or with one cluster of load-balanced servers). You can think of this as the profile’s parent ICENet Server. This is set as a property of the profile.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>This means that any profile is available only to those enforcers running on hosts that are served by the ICENet Server of which they are clients. Or, looking at it from the other direction, any enforcer can be assigned only those profiles that belong to its ICENet Server. </p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>However, each ICENet Server may have multiple profiles associated with it, just as it may have multiple enforcer hosts as clients.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>You can define a profile and assign it to one or more of the hosts belonging to its parent ICENet Server. You can reassign a different hosts to a profile.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>You can associate a different ICENet Server to an existing profile. When you do that, the profile is automatically made available for assigning to all the enforcer clients of that server. You can think of this as moving the profile from one ICENet Server to another. It has the effect of removing the profile from all enforcers served by the previous ICENet Server (it is replaced by the appropriate default profile), and making it available to assign to all enforcers served by the new ICENet Server.</p>
+
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="IntroAdmin00025.jpg" style="width : 486.000pt; height : 359.640pt; " id="image16" src="IntroAdmin00025.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook"><a name="XREF_43454_Profiles_ICENet"></a>Profiles, ICENet Servers, and Hosts</p>
+ <h3><a name="XREF_84520_Load_Balanced"></a>Load-Balanced or Clustered ICENet Servers</h3>
+ <p class="BodyLevel1">As far as profiles are concerned, each cluster of ICENet Servers behaves like a single one. You can associate a load balancer or cluster with a profile by typing its virtual IP address or virtual host name into the OR field. In this case, all hosts of all the ICENet servers in the cluster will have the profile available to them—that is, they can be added on the profile’s Hosts tab. </p>
+ <p class="BodyLevel1">For information about setting up load sharing, see <a href="../SysMgmt/Managing_Policy_Enforcers.htm#XREF_15169_Load_Balancing">Load Balancing</a>. For informa&#173;tion about setting up a failover cluster, see the Control Center <span class="Emphasis">Installation Guide</span>.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="ICENet_URL.jpg" style="width : 462.049pt; height : 72.777pt; " id="image17" src="ICENet_URL.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Load Balanced ICENet Servers</p>
+ <h3><a name="XREF_82467_Moving_Profiles"></a>Moving Profiles between ICENet Servers</h3>
+ <p class="BodyLevel1">As mentioned previously, you can in effect move a profile from one ICENet Server to another, by assigning a new server to the profile. This has the effect of removing the profile from all enforcers served by the previous ICENet Server, and making it available to be assigned to all enforcers served by the new ICENet Server. However, it is not actually assigned to any of these clients until you do so explicitly, by adding them to the list on the profile’s Hosts tab.</p>
+ <p class="BodyLevel1">Bear in mind that moving profiles in this way involves a delay, due to the reli&#173;ance on heartbeat messages. If you ever decide to move the profiles associated with one server over to another server, you should leave both servers running long enough to allow all client hosts to receive the instructions about the hando&#173;ver. Clients connected to the network receive the update with their next heart&#173;beat message;&#160;but any mobile clients that are not connected to the network do not get this update until they connect. If the old server is shut down before mobile clients reconnect, they will continue to enforce policies but will be cut off from the Control Center&#160;system: they will not be able to receive any new policy updates, or send their audit data back to the Activity Journal.</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

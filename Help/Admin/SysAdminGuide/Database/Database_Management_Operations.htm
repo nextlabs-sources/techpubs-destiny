@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Database Management Operations</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\Database.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Database Management\nDatabase Management Operations");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Database_Management.htm\">Database Management<\/a> &gt; Database Management Operations<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_44825_ActivityJournal"></a>Database Management Operations</h1>
+ <p class="BodyLevel1">As the Report Server gathers data on user activity and policy enforcement, it temporarily stores it in OLTP tables before writing it to the Activity Journal database, where it is available for generating reports. As it does this, it needs to synchronize the source and target tables to keep the data accurate. By default, this sync operation is performed automatically according to settings in the con&#173;figuation.xml file, but you may want to change these settings to suit your pur&#173;poses.</p>
+ <p class="BodyLevel1">Whenever this sync operation is performed, it fragments the table indexes of the Activity Journal, which are required for efficiently generating reports. For this reason, these tables need to be reindexed periodically. This operation is also performed automatically, and is controlled by settings in the configuration file.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Database00006.jpg" style="width : 486.876pt; height : 278.626pt; " id="image1" src="Database00006.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Activity Data Handling Procedures</p>
+ <p class="BodyLevel1">In addition to these operations, after a specified interval—90 days, by default—all Activity Journal data is automatically moved to archive tables, in order to improve efficiency for users generating activity reports. The archiving operation is also configurable. The archive tables are stored in the same database as the Activity Journal, but they should be manually backed up periodically and deleted (truncated) from the main database, in order to enhance performance. </p>
+ <p class="BodyLevel1">The first three of these operations—syncing, reindexing, archiving—are con&#173;trolled by a set of elements in the &lt;DAC&gt; &lt;ActivityJournalSettingConfiguration&gt; section of the <span style="font-style : italic; "><i>configuration.xml</i></span>&#160;file. The archive truncation procedure must be performed manually, using a supplied SQL script, and only after backing up.</p>
+ <h2>Configuring Sync Operations</h2>
+ <p class="BodyLevel1">By default, the table sync operation is set to occur every 15 minutes, counting from the completion of the previous sync operation. You can change this interval so that the system syncs less frequently, or you can set the system to sync only once a day at a specific time, rather than on an interval basis. Also by default, the duration of the sync operation is limited to two hours, but you have the option of increasing or decreasing this value. As a baseline for planning, on rec&#173;ommended hardware the operation can be expected to synchronize one million log entries in about ten minutes.</p>
+ <p class="BodyLevel1">Sync operation behavior is configured by three elements in the &lt;DAC&gt; &lt;Activity&#173;JournalSettingConfiguration&gt; &lt;SyncOperation&gt; section of the <span style="font-style : italic; "><i>configuration.xml</i></span>&#160;file, as shown in the example below.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Database00007.jpg" style="width : 487.656pt; height : 226.800pt; " id="image2" src="Database00007.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Configuring Table Synchronization</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>TimeInterval</b></span>: Specifies the time interval, in minutes, between sync operations. At the default 15, the system will synchronize 15 minutes after the server starts, then again 15 minutes after that sync operation finishes, and so on. Note that each sync operation may itself take more or less than 15 minutes; this interval represents the time between the completion of one and the beginning of the next. Valid values = any positive integer.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>TimeOfDay</b></span>: Lets you set the sync operation to occur once a day at a specific time, rather than on an interval basis. Note that this parameter is commented out by default; to use this option you must uncomment it, supply a time (or keep the default value, 23:30), and also comment out the TimeInterval parame&#173;ter. That is, the system can only work one way or the other, and one parameter or the other must be commented out. Valid values = colon-delimited time in 24-hr. format, either with seconds or without (e.g., 23:30 or 23:30:00 are both valid).</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>TimeoutInMinutes</b></span>: Specifies the maximum time, in minutes, that each sync operation can take. If this limit is reached, the sync operation terminates and any remaining data is synced during the next operation. Valid Values = any posi&#173;tive integer.</p>
+ <h2>Configuring Index Rebuilding</h2>
+ <p class="BodyLevel1">Reindexing behavior is configured by four elements in the &lt;DAC&gt; &lt;ActivityJour&#173;nalSettingConfiguration&gt; &lt;IndexesRebuildOperation&gt; section of the <span style="font-style : italic; "><i>configura&#173;tion.xml</i></span> file, as shown in the figure below.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>TimeOfDay</b></span>: Specifies the time of day the reindexing operation will begin, on the day or days specified in the DaysOfWeek section. Valid values = colon-delim&#173;ited time in 24-hr. format, either with seconds or without (i.e., either HH:MM or HH:MM:SS). If you set the TimeOfDay parameter for the sync operation, you should schedule the reindexing operation to occur after the sync operation com&#173;pletes. This ensures that indexes are rebuilt with the latest data.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>DaysOfWeek</b></span>: Specifies which days of the week the reindexing operation will occur, beginning at the time specified by the TimeOfDay element. You can spec&#173;ify more than one day of the week by adding a &lt;DayOfWeek&gt; element for each. Valid values = full name of day or three-letter abbreviation, must be in block caps (e.g., SUNDAY, SUN, TUESDAY, TUE).&#160;Values are locale-specific. The value or values that you specify must match the regional format of the machine where Control Center is installed.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>AutoRebuildIndexes</b></span>: Lets you disable or enable reindexing feature altogether. Feature is enabled when set to the default, True. Valid values = True, False.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>TimeoutInMinutes</b></span>: Specifies the maximum time, in minutes, that each reindex&#173;ing operation can take. If this limit is reached, the operation terminates at the completion of the index then in progress, and any remaining indexes will remain fragmented until the next operation. Valid values = any positive integer.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Database00008.jpg" style="width : 487.656pt; height : 293.688pt; " id="image3" src="Database00008.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Configuring Index Rebuilding</p>
+ <h2>Configuring Data Archiving</h2>
+ <p class="BodyLevel1">By default, the Report Server automatically runs a data archive operation once a day at 1:30 a.m., and moves all data older than 90 days from the Activity Jour&#173;nal tables to the Archive. Once sent to the Archive, the data is no longer avail&#173;able for displaying in Reporter. However, it can be unarchived if required for reporting purposes (see below). As a baseline for planning, on recommended hardware the operation can be expected to archive one million log entries in about fifteen minutes.</p>
+ <p class="BodyLevel1">Auto-archiving behavior is configured by the four elements in the &lt;DAC&gt; &lt;Activi&#173;tyJournalSettingConfiguration&gt; &lt;ArchiveOperation&gt; section of the <span style="font-style : italic; "><i>configura&#173;tion.xml</i></span> file, as shown below.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>TimeOfDay</b></span>: Specifies the time of day the auto-archiving operation will begin, every day. (The <span style="font-style : italic; "><i>frequency</i></span>&#160;of this operation is not configurable—just the time of day.) Valid values = colon-delimited time in 24-hr. format, either with seconds or without (i.e., either HH:MM or HH:MM:SS). If you set the TimeOfDay parameter for the sync operation, you should schedule the archive operation to occur after the sync operation. This ensures that the archive contains the latest data. If you also schedule the index rebuilding operation, scheduling the archive operation after the index rebuilding operation will reduce the load on the database.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>DaysOfDataToKeep</b></span>: Specifies the number of days data will be kept in the Activ&#173;ity Journal tables before being automatically archived. The default is 90; you can change this to any integer.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>AutoArchive</b></span>: Lets you disable or enable auto-archiving altogether. The feature is enabled when set to the default, True. Valid values = True, False.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>TimeoutInMinutes</b></span>: Specifies the maximum time, in minutes, that each auto-archiving operation can take. If this limit is reached, the operation terminates at the completion of the table then in progress, and the old data in any remain&#173;ing tables will be archived in the next day’s operation. Valid values = any posi&#173;tive integer.</p>
+ <div align="center"><img alt="Database00009.jpg" style="width : 487.656pt; height : 251.280pt; " id="image4" src="Database00009.jpg" />
+ </div>
+ <p class="BodyLevel1"></p>
+ <p class="TitleBook">Configuring Data Archiving</p>
+ <h3>Unarchiving Data</h3>
+ <p class="BodyLevel1">As we mentioned, when data is moved from the Activity Journal to the Archive, it is no longer available for generating reports using the Reporter queries—these reflect only whatever data is in the Activity Journal tables. However, archived data can be unarchived at any time, at which time it becomes available for reporting. This operation should be performed only by an experienced database administrator.</p>
+ <p class="BodyLevel1">You unarchive data based on a specified time range—for example if your Activity Journal only dates back to December 1, you can unarchive additional data from November 1 through November 31.</p>
+ <p class="BodyLevel1">To unarchive data, a database administrator can use the Unarchive SQL scripts specific to your database type (see the table below). These scripts are included in the Control Center&#160;install directory, under <span style="font-weight : bold; "><b>\tools\datasync\sql</b></span>. Note that you must edit these scripts manually, in order to specify the date range you want to unarchive.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 359.06pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 89.616pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">DB Type</p>
+</th>
+  <th style="width : 159.705pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Unarchive Scripts</p>
+</th>
+  <th style="width : 109.737pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Truncate Script</p>
+</th>
+</tr>
+  <tr style=" height : 26.00pt;">
+  <td style="width : 89.616pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">MS SQL Server</p>
+</td>
+  <td style="width : 159.705pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">unarchive-pa-mssql.sql</p>
+  <p class="FM_CellBodyCent">unarchive-ta-mssql.sq</p>
+</td>
+  <td style="width : 109.737pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">truncate-mssql.sql</p>
+  <p class="FM_CellBodyCent">&nbsp;</p>
+</td>
+</tr>
+  <tr style=" height : 26.00pt;">
+  <td style="width : 89.616pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">PostgreSQL</p>
+</td>
+  <td style="width : 159.705pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">unarchive-pa-postgres.sql</p>
+  <p class="FM_CellBodyCent">unarchive-ta-postgres.sq</p>
+</td>
+  <td style="width : 109.737pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">truncate-postgres.sql</p>
+  <p class="FM_CellBodyCent">&nbsp;</p>
+</td>
+</tr>
+  <tr style=" height : 26.00pt;">
+  <td style="width : 89.616pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Oracle</p>
+</td>
+  <td style="width : 159.705pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">unarchive-pa-oracle.sql</p>
+  <p class="FM_CellBodyCent">unarchive-ta-oracle.sq</p>
+</td>
+  <td style="width : 109.737pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">truncate-oracle.sql</p>
+  <p class="FM_CellBodyCent">&nbsp;</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <p class="BodyLevel1">Note that there are two scripts for each operation, marked by <span style="font-weight : bold; "><b>PA</b></span>&#160;and <span style="font-weight : bold; "><b>TA</b></span>. The PA script handles data related to policy activity, and the TA one handles tracking activity data—that is, data on end-user activity that is not necessarily related to any policy evaluation or enforcement. You can run either script by itself if you only need reports on one kind of activity or the other, or you can run them both to unarchive both types.</p>
+ <h2>Archive Truncation</h2>
+ <p class="BodyLevel1">The fourth database management function involves truncating the archive tables, to prevent them from growing too large. This can be done using the trun&#173;cate script appropriate for your database type. When this script runs, it perma&#173;nently drops all data from the archive tables. This means the process should only be performed after running a standard backup, so the archive data is pre&#173;served to another storage location. This backup can conform to your database administrator’s standard procedure. </p>
+ <p class="BodyLevel1">Once the archive tables have been backed up, you can run the truncate script. There is no requirement to edit this script before running it.</p>
+ <p class="BodyLevel1">The truncate scripts not only drop all data from the archive tables, but also delete unneeded rows from the OLTP tables. Because of the importance of both the backup and truncate operations, they should be performed only by an expe&#173;rienced database administrator. On recommended hardware, the truncate oper&#173;ation should take a very short time—less than one minute—to complete.</p>
+ <h2>Table Names</h2>
+ <p class="BodyLevel1">Although none of the operations discussed previously require specifying individ&#173;ual table names, it may be useful for administrators to know that the schemas for the three sets of tables—OLTP, Activity Journal, and Archive—are basically the same, but can be easily identified by table name. The OLTP tables are not prepended; Activity Journal tables have the string rpa_&#160;prepended to their names, except for report_obligation; and the Archive tables begin with the string apa_, except for archive_obligation.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

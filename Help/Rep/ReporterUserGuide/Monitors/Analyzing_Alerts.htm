@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Analyzing Alerts</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Reporter_77\FM\Monitors.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Working with Monitors and Alerts\nAnalyzing Alerts");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../ReporterUserGuideTOC.html", "", "&gt;", "Reporter&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Working_with_Monitors_and_Alerts.htm\">Working with Monitors and Alerts<\/a> &gt; Analyzing Alerts<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../ReporterUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_58550_Analyzing_Alerts"></a>Analyzing Alerts</h1>
+ <p class="BodyLevel1">In addition to displaying the complete list of alerts, Reporter provides the option of viewing and analyzing alerts in the following ways:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_62447_Alerts_by_Monitor">Alerts by Monitor Tag</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_99327_Alerts_by_Monitors">Alerts by Monitors</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_66604_Alerts_by_Time">Alerts by Time</a></p>
+
+ <p class="BodyLevel1">Alerts are grouped (by tag, monitor, or time), aggregated, and presented in charts. To view alerts in one of these formats, in the <span class="Bold">Alerts Overview</span>&#160;tab, select an option from the list on the left, as shown in the following figure.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="AlertsOverviewGrouping.png" style="width : 93.000pt; height : 102.600pt; " id="image13" src="AlertsOverviewGrouping.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <h2><a name="XREF_62447_Alerts_by_Monitor"></a>Alerts by Monitor Tag</h2>
+ <p class="BodyLevel1">When you select the option to view alerts by monitor tag, Reporter groups alerts by tag name, and presents the data in a treemap, as shown in the following fig&#173;ure. Each rectangle in a treemap represents a tag, and the rectangle sizes let you compare at a glance the number of alerts associated with each tag.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="AlertsByTag.png" style="width : 368.815pt; height : 177.488pt; " id="image14" src="AlertsByTag.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Alerts by Monitor Tag treemap</p>
+ <p class="BodyLevel1">To see the distribution of alerts by tag <span class="Emphasis">value</span> for a particular tag, click the rect&#173;angle representing the tag. The following figure shows the distribution of alerts, by tag value, for the ITAR Policies tag.&#160;</p>
+ <p class="BodyLevel1">To go back to the top-level treemap, click the Monitor Tags.ITAR Policies title bar. To display the list of alerts associated with a tag value, click the corre&#173;sponding rectangle.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Monitors00003.jpg" style="width : 489.060pt; height : 274.655pt; " id="image15" src="Monitors00003.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Clicking a tag to view the distribution of alerts by tag value</p>
+ <p class="BodyLevel1">By default, the treemap shows alerts for the current day. To change the time period, in <span class="Bold">Date mode</span>, select the value you want. For more information, see <a href="Viewing_Alerts.htm#XREF_73725_Filtering_by">Filtering by specific dates or times</a>&#160;and <a href="Viewing_Alerts.htm#XREF_26581_Filtering_by">Filtering by relative dates</a>.</p>
+ <h2><a name="XREF_99327_Alerts_by_Monitors"></a>Alerts by Monitors</h2>
+ <p class="BodyLevel1">When you select the option to view alerts by monitor, Reporter groups alerts by monitor name, and presents the data in a bar chart, as shown in the following figure. The labels in the x-axis show the monitor names. </p>
+ <p class="BodyLevel1">By default, the chart shows the number of alerts for each monitor, for the cur&#173;rent day. To change the time period, in <span class="Bold">Date mode</span>, select the value you want. For more information, see <a href="Viewing_Alerts.htm#XREF_73725_Filtering_by">Filtering by specific dates or times</a>&#160;and <a href="Viewing_Alerts.htm#XREF_26581_Filtering_by">Filtering by relative dates</a>.</p>
+ <p class="BodyLevel1">To display the list of alerts associated with a monitor, click the corresponding bar.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="AlertsByMonitor.png" style="width : 297.333pt; height : 365.067pt; " id="image16" src="AlertsByMonitor.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Alerts by Monitor chart</p>
+ <h2><a name="XREF_66604_Alerts_by_Time"></a>Alerts by Time</h2>
+ <p class="BodyLevel1">When you select the option to view alerts by time, Reporter groups alerts by the time period that you specify, and presents the data in a bar chart; if you don’t change the default settings, the time period is the current day. To change the time period, in <span class="Bold">Date mode</span>, select either Fixed Dates or Relative. For more infor&#173;mation, see <a href="Viewing_Alerts.htm#XREF_73725_Filtering_by">Filtering by specific dates or times</a>&#160;and <a href="Viewing_Alerts.htm#XREF_26581_Filtering_by">Filtering by relative dates</a>.</p>
+ <p class="BodyLevel1">The following figure shows two chart examples. The chart on the left shows the number of alerts for the current day (the default), and the chart on the right shows the number of alerts per day for the current week. In the second chart, <span class="Bold">Date mode</span>&#160;is set to <span class="Bold">Relative</span>, and <span class="Bold">Date Selection</span>&#160;is set to <span class="Bold">Current Week</span>.The labels in the x-axis show the dates. Click a bar in the chart to view the alerts for that day.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Monitors00004.jpg" style="width : 489.280pt; height : 335.349pt; " id="image17" src="Monitors00004.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Two charts, one displaying alerts for the current day, the second for the current week</p>
+ <p class="BodyLevel1">In the examples above, alerts are grouped by day. If <span class="Bold">Date Selection</span> is set to Cur&#173;rent Quarter or Last Quarter, alerts are grouped by month.</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

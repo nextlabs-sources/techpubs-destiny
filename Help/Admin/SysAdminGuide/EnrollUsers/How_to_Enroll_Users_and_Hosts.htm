@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>How to Enroll Users and Hosts</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\EnrollUsers.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Enrolling Users, Hosts, and Groups\nHow to Enroll Users and Hosts");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Enrolling_Users_Hosts_and_Groups.htm\">Enrolling Users, Hosts, and Groups<\/a> &gt; How to Enroll Users and Hosts<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_30984_Enrolling_User_and"></a>How to Enroll Users and Hosts</h1>
+ <p class="BodyLevel1">This section includes procedures related to configuration options and for per&#173;forming enrollments:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_52071_How_to_Configure_a">How to Configure a Secure LDAP Connection</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_86184_Enrolling_from_a">How to Enroll from a Directory (Single Domain) </a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_50908_Enrolling_from">How to Enroll from an LDIF File (Single Domain) </a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_11658_How_to_Enroll_a">How to Enroll a Domain Group</a></p>
+
+ <h2><a name="XREF_52071_How_to_Configure_a"></a>How to Configure a Secure LDAP Connection</h2>
+ <p class="BodyLevel1">As is discussed in <a href="About_Enrollment_Manager.htm#XREF_51840_How_Enrollment">How Enrollment Connections are Established</a>, after an enroll&#173;ment is defined, a manual or automatic (scheduled) sync establishes a connec&#173;tion between the Control Center and the enrollment domain. You can configure this connection to use standard SSL protocols for secure communication. The procedure consists of the following basic steps:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_17254_Configure_the">Configure the Certificate for the LDAP Server</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_52302_Configure_the">Configure All Connection Files for SSL Secure Mode</a></p>
+
+ <h3><a name="XREF_17254_Configure_the"></a>Configure the Certificate for the LDAP Server</h3>
+ <p class="BodyLevel1">Follow these steps to obtain and configure the certificate for the LDAP server. (These instructions assume you are using JAVA keytool.) </p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Obtain a certificate signed by the appropriate Certificate Authority (CA) for all LDAP server(s) for which you are configuring SSL Secure Mode. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Locate the certificate(s) on the Policy Server host in the following loca&#173;tion: <span class="GreyBold">&lt;install directory&gt;/server/certificates</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Insert a certificate into the main truststore for the Control Center <br />(<span class="GreyBold">dcc-truststore) </span>using the following command, where <span class="GreyBold">&lt;certficate_name.cer&gt;</span>&#160;is replaced with the name of the certificate being used for the LDAP server:</p>
+</li>
+  <h5>keytool -importcert -alias &lt;alias name&gt; -file &lt;certificate_name.cer&gt; -keystore dcc-truststore.jks</h5>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>You will be prompted to supply the SSL certificate password defined during Control Center installation.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Repeat step 3 for all other certificates for LDAP servers. </p>
+</li>
+ </ol>
+ <h3><a name="XREF_52302_Configure_the"></a>Configure All Connection Files for SSL Secure Mode</h3>
+ <p class="BodyLevel1">Next, configure the Connection file for the enrollment domain for SSL Secure Mode. Follow these steps: </p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open the connection file for the LDAP server, change the <span class="GreyBold">port</span>&#160;value from the default for LDAP (<span class="GreyBold">389</span>) to <span class="GreyBold">636</span>.</p>
+</li>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>This is the default port number for LDAPS. You can specify a different port number if required for your environment.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Ensure the line <span class="GreyBold">secure.transport.mode SSL</span>&#160;is <span class="Emphasis">not</span> commented out.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Save the file.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When you ready to perform the enrollment, perform one of the following, (depending on the kind of enrollment): </p>
+</li>
+ </ol>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>For a new single domain enrollment, reference the connection file in the command line.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>For a new Domain Group enrollment, reference the connection file for the subdomain within the configuration file.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>To update an existing enrollment (either single or Domain Group), run Enrollment Manager in <span class="GreyBold">update</span> mode.</p>
+
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="EnrollUsers00017.jpg" style="width : 484.770pt; height : 161.363pt; " id="image7" src="EnrollUsers00017.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Configuring a Connection File for LDAPS</p>
+ <h2><a name="XREF_86184_Enrolling_from_a"></a>How to Enroll from a Directory (Single Domain) </h2>
+ <p class="BodyLevel1">After you have prepared all required input files (see <a href="About_Enrollment_Input_Files.htm#XREF_38273_Optional_InputFiles">About Enrollment Input Files</a>), and you have made sure your environment meets all requirements (see <a href="About_Enrollment_Manager.htm#XREF_29712_Before_You_Enroll">Before You Enroll</a>), you are ready to perform enrollment</p>
+ <p class="BodyLevel1">Follow these steps:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Make sure you have the information you will need to supply the required arguments to the enrollment utilities. This includes:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The domain name containing the objects to be enrolled. This is also used as a unique name assigned to this enrollment.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The host name of the Control Center, and its port number (8443, by default). In many cases this is the same host where you are running com&#173;mand window, but you may be running the enrollment remotely.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The user name and password of an authorized Control Center administra&#173;tor.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The name of the connection and definition files you have prepared for this enrollment. (See <a href="About_Enrollment_Input_Files.htm#XREF_38273_Optional_InputFiles">About Enrollment Input Files</a>.)</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Optionally, the name of your filter file, if you are using one. (See <a href="About_Enrollment_Input_Files.htm#XREF_38273_Optional_InputFiles">About Enrollment Input Files</a>.)</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Control Center host, open a console window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change to the directory where the Enrollment Manager is installed—by default,</p>
+</li>
+  <h5>\Program Files\NextLabs\PolicyServer\tools\enrollment</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_19976_4_At_the_prompt"></a>At the prompt, run the Enrollment Manager using the following command, filling in the appropriate values for the arguments:</p>
+</li>
+  <h5>enrollmgr -enroll -t DIR -n &lt;domain_name&gt; -s &lt;server&gt; -p &lt;port&gt; -u &lt;username&gt; -w &lt;passwd&gt; -a &lt;dir_connection_file&gt; -d &lt;definitionfile&gt; [-f &lt;filterfile&gt;]</h5>
+  <p class="Title">For descriptions of all command line arguments, see <a><span class="FM_blue">Command Line Argu&#173;ments, Enrollment Manager</span></a>.</p>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>The connection parameters you specify in the command line here—domain, server, port, user and password—refer to the Control Center&#160;server, <span style="font-style : italic; "><i>not</i></span> the LDAP server. That information is provided by the con&#173;nection file.<br /><br />When this utility runs, it reads the connection file on the Control Center&#160;host, connects to the LDAP server and reads the entries in the LDAP directory, transforms them into the format Control Center requires, and performs the enrollment.</p>
+  <p class="Title">When this step is complete, a success message will display.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_35733_5_Optional_If_you"></a>(Optional) If you want to review your progress so far, you can see a list of enrollments you’ve created by running the command:</p>
+</li>
+  <h5>enrollMgr -list -s &lt;server&gt; -p &lt;port&gt; -u &lt;username&gt; <br />-w &lt;passwd&gt;</h5>
+  <p class="Title">For details on the <span class="GreyBold">-list </span>command, see <a href="How_to_Perform_Other_Management_Functions.htm#XREF_49130_Confirming">Checking Enrollments</a>.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">If you are enrolling data from more than one domain, repeat step <a href="#XREF_19976_4_At_the_prompt">4</a>&#160;for each domain, using the domain name of each for the <span class="GreyBold">-n</span> argument.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">After each enrollment, the<span class="GreyBold">&#160;-sync </span>process is still required to synchronize the data in the enrollment. This it because the enrollment itself only imports metadata and sets up the required data structures in the Informa&#173;tion Network Directory; the structures are populated only during synchro&#173;nization procedure. See <a href="How_to_Maintain_Enrollments.htm#XREF_23028_Synchronizing">Synchronizing Enrollments</a>.</p>
+</li>
+ </ol>
+ <h2>How to <a name="XREF_50908_Enrolling_from"></a>Enroll from an LDIF File (Single Domain) </h2>
+ <p class="BodyLevel1">After you have prepared all required input files (see <a href="About_Enrollment_Input_Files.htm#XREF_38273_Optional_InputFiles">About Enrollment Input Files</a>), and you have made sure your environment meets all requirements (see <a href="About_Enrollment_Manager.htm#XREF_29712_Before_You_Enroll">Before You Enroll</a>), you are ready to perform the enrollment.</p>
+ <p class="BodyLevel1">You use the same procedure for enrolling applications as for users, groups and hosts. The only difference is that you use a different template for the definition file, called <span style="font-style : italic; "><i>app.sample.default.def</i></span>.</p>
+ <p class="BodyLevel1">Perform the following steps:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Make sure you have the information you will need to supply the required arguments to the enrollment utilities. This includes:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The domain name, which is the unique name that will be assigned to this enrollment.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The host name of the Control Center, and its port number (8443, by default). In many cases this is the same host where you are running com&#173;mand window, but you may be running the enrollment remotely.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The user name of an authorized Control Center administrator.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The utility security password.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The name of the definition file you have prepared for this enrollment. (See <a href="About_Enrollment_Input_Files.htm#XREF_38273_Optional_InputFiles">About Enrollment Input Files</a>.)</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Control Center host, open a console window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change to the directory where the Enrollment Manager is installed—by default:</p>
+</li>
+  <h5><span class="FM_screencode">\Program F</span>iles\NextLabs\PolicyServer<span class="FM_screencode">\tools\enrollment</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">At the prompt, run the <span class="GreyBold">-enroll</span>&#160;command line as shown below, filling in the appropriate values for the arguments.</p>
+</li>
+  <h5>enrollmgr -enroll -t LDIF -n &lt;domain_name&gt; -s &lt;server&gt;  -p &lt;port&gt; -u &lt;username&gt; -w &lt;passwd&gt; -d &lt;definitionfile&gt;</h5>
+  <p class="Title">When this utility runs, it reads the LDIF file specified in the definition file, transforms its contents into the format Control Center requires, and per&#173;forms the enrollment. For descriptions of all command line arguments, see <a><span class="FM_blue">Command Line Arguments, Enrollment Manager</span></a>.</p>
+  <p class="Title">When this step is complete, a success message displays.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">(Optional) If you want to review your progress so far, you can see a list of enrollments you’ve created by running the command:</p>
+</li>
+  <h5>enrollmgr -list -s &lt;server&gt; -p &lt;port&gt; -u &lt;username&gt; -w &lt;passwd&gt;</h5>
+  <p class="Title">For details on the <span class="GreyBold">-list</span>&#160;command, see <a href="How_to_Perform_Other_Management_Functions.htm#XREF_49130_Confirming">Checking Enrollments</a>.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">After each enrollment, the <span class="GreyBold">-sync</span>&#160;process is still required to synchronize the data in the enrollment. This is because the enrollment itself only imports metadata and sets up the required data structures in the Informa&#173;tion Network Directory; the structures are populated only during synchro&#173;nization procedure. See <a href="How_to_Maintain_Enrollments.htm#XREF_23028_Synchronizing">Synchronizing Enrollments</a>.</p>
+</li>
+ </ol>
+ <h2><a name="XREF_11658_How_to_Enroll_a"></a>How to Enroll a Domain Group</h2>
+ <p class="BodyLevel1">As is discussed in the <span class="Emphasis">About...</span> sections, there are a few concepts and require&#173;ments unique to Domain Group enrollment. You should be familiar with this information before performing this procedure. A brief summary of these items is as follows:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>A Domain Group can include enrollment types DIR, PORTAL, and LDIF.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Rather than pointing to connection, definition, and filters files during the command line procedure, you list input files for each subdomain in the configuration file. See <a href="About_Enrollment_Input_Files.htm#XREF_19806_Configuration">Configuration Files (Domain Groups Only)</a>.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In the Configuration file, all subdomains are listed in numerical order, starting with 0; the order of the subdomains does not matter because data interdependencies across subdomains will be resolved after all subdo&#173;mains have been processed.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>For subdomains listed in the Configuration file, there should be no haps in the number sequence, from <span class="GreyBold">subdomain.0 </span>to <span class="GreyBold">subdomain.n</span>.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>You can use a global definition file for all subdomains listed in the config&#173;uration file; this would mean that the same information is being retrieved from each subdomain. Conversely, you can omit a global definition file and use a distinct definition file for each subdomain. A third option is you can include a global definition file, then overwrite it with definition files specified for individual subdomains.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>For DIR and PORTAL type enrollments, you should specify the sync time and interval in the configuration file, not the connection file(s). LDIF files that are included in a Domain Group will only be re-synced if the LDIF file has been updated since the last scheduled sync. Otherwise, the LDIF file will be skipped as Enrollment Manager processes sequential subdomains.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Bundle building for Domain Groups requires you to configure trusted domain relationships between subdomains. See <a href="../SysConfig/Configuration_Settings.htm#XREF_24792_Configuring">Configuring Trusted Domains</a>.</p>
+
+ <p class="BodyLevel1">Once you have assembled all the input files and have ensured your system meets requirements, you are ready to enroll the Domain Group. Follow these steps:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Make sure you have the information you will need to supply the required arguments to the enrollment utilities. This includes:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The domain name, which is the unique name that will be assigned to this enrollment.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The host name of the Control Center, and its port number (8443, by default). In many cases this is the same host where you are running com&#173;mand window, but you may be running the enrollment remotely.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The user name of an authorized Control Center administrator.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The utility security password.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The name of the configuration&#160;file you have prepared for this enrollment. (See <a href="About_Enrollment_Input_Files.htm#XREF_38273_Optional_InputFiles">About Enrollment Input Files</a>.)</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Control Center host, open a console window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change to the directory where the Enrollment Manager is installed—by default:</p>
+</li>
+  <h5><span class="FM_screencode">\Program F</span>iles\NextLabs\PolicyServer<span class="FM_screencode">\tools\enrollment</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the <span class="GreyBold">-enroll </span>command line as shown below, filling in the appropriate values for the arguments.</p>
+</li>
+  <h5>enrollmgr -enroll -s &lt;server&gt; -p &lt;port&gt; -n &lt;domain_name&gt; <br />-t DOMAINGGROUP -g &lt;domain_group configuration file&gt; -u &lt;username&gt; -w &lt;passwd&gt;</h5>
+  <p class="Title">When the utility runs, it begins with the first subdomain. If that domain is a DIR or PORTAL, Enrollment Manager reads the connection file, connects to the LDAP or SharePoint server, reads the target data to be enrolled, transforms the data into the format Control Center requires, and performs the enrollment. If the enrollment type is LDIF, Enrollment Manager reads the LDIF file specified in the definition file, transforms its contents into the format Control Center requires, and performs the enrollment.</p>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>If a subdomain is already enrolled, it is updated during the enrollment of the Domain Group. If it did not exist prior to the creation of the Domain Group, it will be enrolled. In this way, you can add a new sub&#173;domain to an existing Domain Group.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">After each enrollment, the <span class="GreyBold">-sync </span>process is still required to synchronize the data in the enrollment. This is because the enrollment itself only imports metadata and sets up the required data structures in the Informa&#173;tion Network Directory; the structures are populated only during synchro&#173;nization procedure. See <a href="How_to_Maintain_Enrollments.htm#XREF_23028_Synchronizing">Synchronizing Enrollments</a>. </p>
+</li>
+ </ol>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Report Anomalies</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Reporter_77\FM\Reports.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Working with Reports\nReport Anomalies");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../ReporterUserGuideTOC.html", "", "&gt;", "Reporter&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Working_with_Reports.htm\">Working with Reports<\/a> &gt; Report Anomalies<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../ReporterUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_69578_Report_Anomalies"></a>Report Anomalies</h1>
+ <p class="BodyLevel1">Reports can show unexpected results at times, which may seem to reflect incor&#173;rect behavior of policies, but in fact are a result of some of the ways Windows works internally, or of inherent statistical issues.</p>
+ <h2><a name="XREF_82345_Special_Cases"></a>Implied Actions</h2>
+ <p class="BodyLevel1">When Windows Explorer handles file operations, it sometimes performs several actions sequentially in a way that is not visible to the user. For example, when you run Copy on a file, Explorer first opens it, then reads the content, then writes a copy to the new location. Similarly, in order to print a file, Explorer must first open it, then send it to the print server. In fact, most of the actions you deal with in policies also involve Open in this way, as what might be called an <span style="font-style : italic; "><i>implied action</i></span>.</p>
+ <p class="BodyLevel1">Because Open is a very common implied action, you may see some reporting anomalies whenever you deploy several policies, one of which involves a Deny Open or Allow Only Open effect. For example, suppose you have a Deny Open policy deployed, then deploy a second policy with a Deny Print effect, test it for a while, and run a report on the test activity. The test behavior will seem cor&#173;rect—printing is blocked, as intended—but the report will not show any instances where Print actions were denied; instead it shows many cases of Open actions being blocked. This can seem like an error in the policy or in the report, but it actually reflects the fact that, because the actions implicitly triggered the Deny Open policy, they were blocked by that rather than by the Deny Print policy.</p>
+ <p class="BodyLevel1">Note that if you encounter this kind of seeming anomaly regarding actions in your reports, it is likely that some kind of implied action (involving Open, specif&#173;ically) is the cause.</p>
+ <h2>Preview Activity</h2>
+ <p class="BodyLevel1">When you use the Preview feature in Policy Author to preview document-type components, Policy Author internally performs a Read action on the underlying documents in order to display information about them in Preview pane. This may lead to unexpected reporting results if, for example, you have deployed policies that prohibit users from reading these document resources. Even though the policy is correctly blocking this activity by users, your report may show instances of Read actions—those performed in the course of Preview. This can be confusing at times, since there is no way Reporter can distinguish between actions per&#173;formed internally by Policy Author, and those actually performed by users.</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

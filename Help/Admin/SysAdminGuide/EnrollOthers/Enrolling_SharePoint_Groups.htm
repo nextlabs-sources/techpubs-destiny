@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Enrolling SharePoint Groups</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\EnrollOthers.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Enrolling Other Entities\nEnrolling SharePoint Groups");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Enrolling_Other_Entities.htm\">Enrolling Other Entities<\/a> &gt; Enrolling SharePoint Groups<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_96994_Enrolling"></a>Enrolling SharePoint Groups</h1>
+ <p class="BodyLevel1">The SharePoint Enforcer is available exclusively with the Entitlement Manage&#173;ment product. If you are not using that product, you can ignore this section.</p>
+ <p class="BodyLevel1">If you plan to deploy SharePoint-based policies in your system, you may want to enroll SharePoint groups. Technically speaking, this is required only if you will be enforcing policies based on groups defined in SharePoint. If you are relying on Active Directory groups instead, this procedure is not required. However, since it is hard to know in advance what your organization’s policy designers will want to implement, it is usually best to enroll SharePoint groups, so that the option of using them will be available.</p>
+ <h2><a name="XREF_44956_Setting_Access"></a>Setting Access Permissions</h2>
+ <p class="BodyLevel1">In order to enable the Control Center&#160;to connect to the SharePoint server, you need to create a service account and set it up with proper access level and secu&#173;rity settings.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_98306_1_On_the"></a>On the SharePoint server, create a new service account. In Windows 2003 server, you can use <span style="font-style : italic; "><i>lusrmgr.msc</i></span> to do this.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">As a security measure, configure this service account so that it cannot log in locally or through terminal services. In Windows 2003 server, for exam&#173;ple, you use <span style="font-style : italic; "><i>gpedit.msc</i></span>&#160;to do this: Computer Configuration &gt; Windows Settings &gt;&#160;Security Settings &gt; User Rights Assignment, then select <span style="font-style : italic; "><i>Deny log on Locally</i></span>&#160;and <span style="font-style : italic; "><i>Deny log on through Terminal Services</i></span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Allow this service account full read access of the SharePoint Application. This can be done using SharePoint Central Administation: Application Man&#173;agement &gt; Policy for Web Application. Click on &quot;Change Application&quot; and select the web application to be enrolled; then click on &quot;Add Users&quot; and select &quot;all zones.&quot;</p>
+</li>
+  <p class="Title">Note that just allowing full read access for the SharePoint Sites or Site Collections is not sufficient. It must be allowed at the Application level, which is a larger unit than Sites or Site Collections.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Configure SharePoint to use NTLM authentication. You do this in Central Administration &gt;&#160;Application Management &gt; Authentication Providers. Check the Integrated Windows Authentication, NTLM checkbox, and uncheck Basic Authentication. Do this for all zones, such as Default and Intranet.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When enrolling a SharePoint site, add the service account's username and password to the connection file. In the example shown in <a href="#XREF_92961_Sample_SharePoint">Sample SharePoint Connection File (sp.sample.default.conn)</a>, the service account user&#173;name is <span style="font-style : italic; "><i>SharePointCxn</i></span>.</p>
+</li>
+ </ol>
+ <h2>Enrolling</h2>
+ <p class="BodyLevel1">Enrolling SharePoint groups is similar to the procedure for enrolling users and groups, as described in the previous chapter. You use the Enrollment Manager to enroll the groups, based on a connection file and a definition file. For Share&#173;Point sites, however, you need not make any changes to customize the definition file—only the connection file.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="EnrollOthers00008.jpg" style="width : 488.292pt; height : 174.250pt; " id="image5" src="EnrollOthers00008.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Enrollment Connections, SharePoint Groups</p>
+ <p class="BodyLevel1">You need to set up this connection to the site in order to retrieve data on groups, which is the only SharePoint data that is actually enrolled into the Control Center’s data tables. Control Center&#160;also connects to the SharePoint server whenever a Policy Studio user browses the site while defining components; but site content is not actually enrolled the way Active Directory content is. </p>
+ <p class="BodyLevel1">If you need to enroll groups from more than one SharePoint site, you must desig&#173;nate each site in the SharePoint connection file.</p>
+ <p class="BodyLevel1">To enroll SharePoint groups:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open the sample SharePoint connection file <span style="font-style : italic; "><i>sp.sample.default.conn</i></span>, and edit the elements as shown in the figure below. Required elements are indicated by rectangles; optional ones, by ovals. (Descriptions of these elements are provided in <a><span class="FM_blue">Elements of SharePoint Connection Files</span></a>.) Save your changes when you have finished, and rename the file to prevent the file from being replaced the next time you upgrade Control Center. Be sure to specify the name properly with the <span style="font-weight : bold; "><b>-a</b></span>&#160;flag in the Enroll command line (Step 4).</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">You ordinarily do not need to make any changes to the content of the def&#173;inition file, <span style="font-style : italic; "><i>sp.sample.default.def</i></span>, but you do need to copy it somewhere where you can point to it in the Enroll command line (Step 4), and you should rename the file name to prevent the file from being replaced the next time you upgrade Control Center.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change to the directory &lt;<span class="FM_italics" style="font-style : italic; "><i>InstallDir</i></span>&gt;\tools. By default, this is:</p>
+</li>
+  <h5><span class="FM_screencode">\Program </span>Files\NextLabs\<span class="GreyBold">PolicyServer</span>\to<span class="FM_screencode">ols\enrollment</span></h5>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="EnrollOthers00009.jpg" style="width : 442.728pt; height : 200.592pt; " id="image6" src="EnrollOthers00009.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook"><a name="XREF_92961_Sample_SharePoint"></a>Sample SharePoint Connection File <br />(sp.sample.default.conn)</p>
+  <p class="BodyLevel1"></p>
+<table width="100%">
+ <tr>
+ <td>
+  <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 483.75pt;" cellspacing="0" align="center">
+   <caption align="center">
+   </caption>
+   <tr style=" height : 16.00pt;background : #1f8c4a;">
+   <th style="width : 105.450pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellHeading">Element</p>
+</th>
+   <th style="width : 378.301pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellHeading">Description</p>
+</th>
+</tr>
+   <tr style=" height : 31.00pt;">
+   <td style="width : 105.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">login</p>
+</td>
+   <td style="width : 378.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Specifies a user name with access privileges to connect to the SharePoint server—specifi cally, of the Windows service account that was specially created for this connection (see <a href="#XREF_44956_Setting_Access">Setting Access Permissions</a>).</p>
+</td>
+</tr>
+   <tr style=" height : 31.00pt;">
+   <td style="width : 105.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">domain</p>
+</td>
+   <td style="width : 378.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Specifies the fully qualified domain name (FQDN) on which the SharePoint server is located. If the SharePoint server uses SSL encryption, the FQDN value must match the Common Name (CN) value of the SharePoint certificate. For information about SharePoint certificates, see <a href="#XREF_79131_SharePoint">SharePoint Certificates</a>.</p>
+</td>
+</tr>
+   <tr style=" height : 77.00pt;">
+   <td style="width : 105.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">password</p>
+</td>
+   <td style="width : 378.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Specifies a valid password for this user, for connecting to the SharePoint server.</p>
+   <p class="CellBody">This parameter is optional. Because it is an unencrypted string, you may prefer not to expose it in the connection file this way. If the parameter is not present in the file (i.e., if you leave it commented out), the user will be prompted for the connection at the time when he performs the enrollment. If the parameter is present, it will simply be read, with no such prompt. This latter may be preferable for the sake of convenience, during testing or in other restricted-use context when security is not a concern.</p>
+   <p class="CellBody">If you want to define an unencrypted password here, be sure to remove the # character at the beginning of the line.</p>
+</td>
+</tr>
+   <tr style=" height : 39.00pt;">
+   <td style="width : 105.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">portals</p>
+</td>
+   <td style="width : 378.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Each line here represents one site on the SharePoint site collection, which you want to enroll. It must contain the full URL delimited by backslash characters, as shown in the dummy values in the template file. The host name in the URL must match the Common Name (CN) of the SharePoint certificate. If you are adding multiple portal sites, you can separate them with \n\</p>
+</td>
+</tr>
+   <tr style=" height : 113.00pt;">
+   <td style="width : 105.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">ScheduledSyncTime</p>
+</td>
+   <td style="width : 378.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Optional parameter, allows you to set a specific time when the enrollment will be automatically synchronized with its source. After this date and time, the enrollment will autosynchronize at the interval specified by the ScheduledSyncInterval parameter. </p>
+   <p class="CellBody">The date and time value is locale-specific, and you must use Java's MEDIUM style for the date, and the SHORT style for the time. For example:</p>
+   <ul type="disc" style="">
+    <li style="">
+    <p class="CellBody">For English (US): Sep 18, 2013 6:00PM</p>
+</li>
+    <li style="">
+    <p class="CellBody">For English (UK):18-Sep-2013 18:00</p>
+</li>
+    <li style="">
+    <p class="CellBody">For the German (Germany):18.09.2013 18:00</p>
+</li>
+   </ul>
+   <p class="CellBody">At enroll-time, the date must be a future date.</p>
+   <p class="CellBody">This value is only active if the Scheduled Sync Interval is set to some positive value. If you leave ScheduledSyncInterval at the default, 0, the synchronization feature is disabled. </p>
+</td>
+</tr>
+   <tr style=" height : 77.00pt;">
+   <td style="width : 105.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">ScheduledSyncInterval</p>
+</td>
+   <td style="width : 378.301pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Optional parameter. When left at the default, 0, disables the automatic synchronization feature. When changed to any positive value, specifies a regular re-synchronization schedule, expressed in minutes following the time specified by the ScheduledSyncTime.</p>
+   <p class="CellBody">This setting has no influence until after the ScheduledSyncTime passes. That is, in the example above Control Center&#160;would wait until 1 a.m. on May 2 to synchronize the enrollment to its source, and then would re-sync it every 6 hours (360 minutes) thereafter.</p>
+   <p class="CellBody">Manual synchronization is possible only if this value is set to zero. If you have changed it to enable automatic synchronization, you must change it back to zero to run a manual sync.</p>
+</td>
+</tr>
+  </table>
+</td></tr>
+</table>
+  <p class="BodyLevel1"></p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the Enrollment Manager’s Enroll command with the Type = PORTAL along with the other standard arguments, as in the following example:</p>
+</li>
+  <h5>enrollmgr.bat -enroll -t PORTAL -n BlueJungle2 -s &lt;Mos&#173;kau&gt; -p 8443 -u Administrator -w <span class="FM_screencode">MY876password</span><span class="FM_codeItalics" style="font-style : italic; "><i>&#160;</i></span>-a sp.default.conn -d sp.default.def</h5>
+  <p class="Title">This line must specify a unique enrollment name, the name and port of the Control Center&#160;host, a Control Center&#160;user and password, and the names and paths of the connection and definition files. (For descriptions of all Enrollment Manager command line arguments, see <a><span class="FM_blue">Command Line Arguments, Enrollment Manager</span></a>.)</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the Enroll Manager’s Sync command, as shown in the following exam&#173;ple. Note that neither connection nor definition file is required for this command; the enrollment name is sufficient.</p>
+</li>
+ </ol>
+ <h5>enrollmgr.bat -sync -n BlueJungle2 -s &lt;host&gt; -p 8443 -u &lt;Admin&gt; -w <span class="FM_screencode">&lt;</span><span class="FM_codeItalics" style="font-style : italic; "><i>securityPwd&gt;</i></span></h5>
+ <p class="BodyLevel1">At this point the SharePoint groups will be available for use in defining compo&#173;nents in Policy Studio. You can use the Lookup button to display all portal con&#173;tent in a tree structure, so you can browse it directly as you define portal components.</p>
+ <h2>Synchronizing SharePoint Enrollments</h2>
+ <p class="BodyLevel1">As shown in <a href="#XREF_92961_Sample_SharePoint">Sample SharePoint Connection File (sp.sample.default.conn)</a>, the SharePoint connection file contains two parameters, <span style="font-style : italic; "><i>ScheduledSyncTime</i></span>&#160;and <span style="font-style : italic; "><i>ScheduledSyncInterval</i></span>, that control the auto-synchronization feature. These work the same way here as for LDAP synchronization. However, it is important to understand that synchronization refers not to the whole content of a Share&#173;Point site, but only to the group definitions of the site. This is because, as we mentioned, groups are the only data that is actually enrolled into Control Center; all content of the site’s tree structure is displayed as currently defined whenever you use the Lookup button to browse it in Policy Studio, and so there is no need to synchronize it.</p>
+ <h2><a name="XREF_79131_SharePoint"></a>SharePoint Certificates</h2>
+ <p class="BodyLevel1">As we have seen, Control Center&#160;needs to connect to the monitored SharePoint servers in your network from time to time. If a SharePoint server is set up to use SSL encryption for such connections, Control Center’s enrollment mechanism can support that as long as the SharePoint certificate has been imported into its truststore. To do this, perform the following procedure:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Locate the certificate on the server where SharePoint is running. It must be a valid X509 certificate.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Place a copy of the certificate in a convenient directory on the Control Center host.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Control Center&#160;host, open a command window and go to the &lt;<span style="font-style : italic; "><i>INSTALL_DIR</i></span>&gt;\ Control Center\server\certificates directory.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the Import command of the Keytool utility, using the following syntax: </p>
+</li>
+  <h5>\..\java\bin\keytool -import [-v] [-alias &lt;alias&gt;]</h5>
+  <h5> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[-file &lt;cert_file&gt;] [-keypass &lt;keypass&gt;]</h5>
+  <h5> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[-keystore &lt;keystore&gt;] [-storepass &lt;storepass&gt;]</h5>
+  <h5> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[-storetype &lt;storetype&gt;] [-providerName &lt;name&gt;]</h5>
+  <h5> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[-providerClass &lt;provider_class_name&gt; [-pro&#173;viderArg &lt;arg&gt;]]...</h5>
+  <p class="BodyLevel1">The functions of all arguments are described in the table below. Here is an example of an actual command line:</p>
+  <h5>\..\java\bin\keytool -import -alias jedsharepoint -file &quot;c:\Documents and Settings\Administrator\Desk&#173;top\certs\pf-https-web.cer&quot; -keystore dcc-truststore.jks -keypass 123begemot! -storepass 123begemot! -storetype jks</h5>
+<table width="100%">
+ <tr>
+ <td>
+  <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.62pt;" cellspacing="0" align="center">
+   <caption align="center">
+   </caption>
+   <tr style=" height : 16.00pt;background : #1f8c4a;">
+   <th style="width : 101.700pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellHeading">Argument</p>
+</th>
+   <th style="width : 258.925pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellHeading">Function</p>
+</th>
+</tr>
+   <tr style=" height : 15.00pt;">
+   <td style="width : 101.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">[-v]</p>
+</td>
+   <td style="width : 258.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Optional flag; when present, utility runs in verbose mode</p>
+</td>
+</tr>
+   <tr style=" height : 15.00pt;">
+   <td style="width : 101.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">[-alias &lt;alias&gt;]</p>
+</td>
+   <td style="width : 258.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Required parameter; specifies an alias of your choice</p>
+</td>
+</tr>
+   <tr style=" height : 23.00pt;">
+   <td style="width : 101.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">[-file &lt;cert_file&gt;]</p>
+</td>
+   <td style="width : 258.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Required parameter; specifies the full path and name of the certificate file you copied from the SharePoint server (Step 2)</p>
+</td>
+</tr>
+   <tr style=" height : 31.00pt;">
+   <td style="width : 101.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">[-keypass &lt;keypass&gt;]</p>
+</td>
+   <td style="width : 258.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Required parameter; specifies the password for the key you are importing into the keystore. This is the Control Center&#160;SSL Password assigned during installation </p>
+</td>
+</tr>
+   <tr style=" height : 24.00pt;">
+   <td style="width : 101.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">[-keystore &lt;keystore&gt;] </p>
+</td>
+   <td style="width : 258.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Required parameter; specifies the name of the keystore file. By default, this is <span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">dcc-truststore.jks</font></span>. </p>
+</td>
+</tr>
+   <tr style=" height : 31.00pt;">
+   <td style="width : 101.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">[-storepass &lt;storepass&gt;]</p>
+</td>
+   <td style="width : 258.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Required parameter; specifies the password required by the keystore file. This is the same as the keypass argument—the Control Center&#160;SSL Password assigned during installation.</p>
+</td>
+</tr>
+   <tr style=" height : 23.00pt;">
+   <td style="width : 101.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">[-storetype &lt;storetype&gt;]</p>
+</td>
+   <td style="width : 258.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Required parameter; specifies the keystore type, which should be jks, as in the example above.</p>
+</td>
+</tr>
+   <tr style=" height : 15.00pt;">
+   <td style="width : 101.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">[-providerName &lt;name&gt;]</p>
+</td>
+   <td style="width : 258.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Optional parameter; should not be used in standard installation.</p>
+</td>
+</tr>
+   <tr style=" height : 31.00pt;">
+   <td style="width : 101.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">[-providerClass &lt;provider_class_name&gt; <br />[-providerArg &lt;arg&gt;] ]</p>
+</td>
+   <td style="width : 258.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Optional parameters; should not be used in standard installation.</p>
+</td>
+</tr>
+  </table>
+</td></tr>
+</table>
+  <h5></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When prompted to “Trust this certificate”, type “y” and press Enter.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Before this change will take effect, you must restart the Policy Server ser&#173;vice using the standard Windows Services Manager, under Control Panel, Administrative Tools.</p>
+</li>
+ </ol>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

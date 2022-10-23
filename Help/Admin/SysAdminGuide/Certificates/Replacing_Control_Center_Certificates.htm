@@ -1,0 +1,589 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Replacing Control Center Certificates</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\Certificates.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Security Certificates\nReplacing Control Center Certificates");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"SSL_Certificates.htm\">Security Certificates<\/a> &gt; Replacing Control Center Certificates<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_70329_Replacing_Control"></a>Replacing Control Center Certificates </h1>
+ <p class="BodyLevel1">You can replace Control Center certificates in the following ways:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Generate a new keystore and certificate</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Import an existing keystore and certificate</p>
+
+ <p class="BodyLevel1">As described earlier, all Control Center components require certificates to authenticate communication between the components. You can replace any of these certificates. Each certificate is associated with a unique alias. When run&#173;ning a keytool command that requires the -alias parameter, specify the correct alias associated with the certificate you are generating or importing. The fol&#173;lowing table lists the Control Center components and their certificate aliases.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter; width: 338.86pt;" cellspacing="0" align="center">
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 198.688pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Component</p>
+</th>
+  <th style="width : 140.173pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Certificate Alias</p>
+</th>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 198.688pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Web Applications (Administrator and Reporter)</p>
+</td>
+  <td style="width : 140.173pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Web</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 198.688pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Web services components (internal server components)</p>
+</td>
+  <td style="width : 140.173pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">dcc</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 198.688pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Policy Controller, first connection</p>
+</td>
+  <td style="width : 140.173pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Temp_Agent</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 198.688pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Policy Controller, regular connections</p>
+</td>
+  <td style="width : 140.173pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Agent</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 198.688pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Policy Studio</p>
+</td>
+  <td style="width : 140.173pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">PolicyAuthor</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 198.688pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Enrollment Manager, Property Manager</p>
+</td>
+  <td style="width : 140.173pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Enrollment</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <p class="BodyLevel1">When replacing certificates, the procedures must be performed on the Control Center host where the Policy Server is installed. </p>
+ <p class="BodyLevel1">If you replace the certificate for the Policy Controller or Policy Studio compo&#173;nent in Control Center, you must also update the certificate on all devices where Policy Controller or Policy Studio are running. These additional configura&#173;tion steps are described in <a href="Replacing_Policy_Controller_Certificates.htm#XREF_46145_Replacing_Policy">Replacing Policy Controller Certificates</a>&#160;and <a href="Replacing_Policy_Studio_Certificates.htm#XREF_50799_3_4_6_Policy">Replacing Policy Studio Certificates</a>, respectively.</p>
+ <h2><a name="XREF_94149_Generating_a_New"></a>Generating a New Certificate</h2>
+ <p class="BodyLevel1">The general procedure for replacing NextLabs certificates with new certificates is as follows:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Generate a new keystore.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Generate a new certificate from the keystore and have signed by an external authority.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Import the certificates into the pertinent truststore files.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Overwrite old truststore and keystore files in all relevant locations.</p>
+</li>
+ </ol>
+ <h3>Web Applications</h3>
+ <p class="BodyLevel1">Web Applications refer to the Administrator and Reporter browser-based web applications, which, by default, use port 443 to communicate with the server. These components store the default certificates in two files:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>web-keystore.jks</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>web-truststore.jks</p>
+
+ <p class="BodyLevel1">The procedures for configuring new Web Component certificates are as follows: </p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_45574_1_Generate_the"></a>Generate the keystore. In our Java Keytool example, this is done using the following command:</p>
+</li>
+  <h5>keytool -genkeypair -dname &quot;cn=&lt;commonName&gt;, OU=&lt;organi&#173;zationUnit&gt;, 0=&lt;localityName&gt;, S=&lt;stateName&gt;, C=&lt;Country&#173;Name&gt;&quot; -alias Web -keypass &lt;mypasswd&gt; -storepass &lt;mypasswd&gt; -keyalg RSA -keystore &lt;myweb.jks&gt;</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Generate a certificate request that can be supplied to a third-party CA. For example,</p>
+</li>
+  <h5>keytool -certreq -alias Web -keypass &lt;mypasswd&gt; <br />-storepass &lt;mypasswd&gt; -keystore &lt;myweb.jks&gt; -file &lt;myweb.csr&gt;</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Log into the CA and submit a certificate request. The procedure for doing this differs depending on your CA, but generally includes the following steps:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>You should submit an Advanced request for a User certificate that allows you to supply a base-64-encoded CMC or PKCS #10 file. </p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Copy and paste the certificate request from the newly generated certifi&#173;cate request file (<span class="GreyBold">myweb.csr </span>above)<span class="GreyBold">. </span>To ensure the entire request is included, copy everything from <span class="GreyBold">BEGIN NEW CERTIFICATE REQUEST</span>&#160;to <span class="GreyBold">END NEW CERTIFICATE REQUEST</span>, as in the example shown below.</p>
+
+  <h5>-----BEGIN NEW CERTIFICATE REQUEST-----</h5>
+  <h5>MIICgzCCAkECAQAwfzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRIwEAYDVQQHEwlTYW4gTWF0ZW8xEzARBgNVBAoTCkJsdWVKdW5nbGUxHDAaBgNVBAsTE0NvbXBsaWFudEVudGVycHJpc2UxHDAa</h5>
+  <h5>...</h5>
+  <h5>7ZpvSDn94tEBPgayBaAAMAsGByqGSM44BAMFAAMvADAsAhRv5iI3rNWbd5mGZ9DlRzcQi07E0QIUaM9W8V6UuYbIzBrR5v9XTu9cV94=</h5>
+  <h5>-----END NEW CERTIFICATE REQUEST-----</h5>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Select a certificate template where the subject line matches the subject in the .csr file. (The subject line should not be changed.)</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>When prompted, download the issued certificate. The new certificate will be named <span class="GreyBold">certnew.cer</span>. You can change the certificate name (in our example, <span class="GreyBold">myweb.cer)</span>.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Copy the new certificate into the following location on the Policy Server host: </p>
+</li>
+  <h5><span class="GreyBold">&lt;install dir&gt;\PolicyServer\server\certificates</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_39315_5_Import_the"></a>Create a new web truststore and import the new signed certificate into it. For example,</p>
+</li>
+  <h5>keytool -import -alias Web -keypass &lt;mypasswd&gt; -storepass &lt;mypasswd&gt; -keystore &lt;myweb-truststore.jks&gt; -file &lt;myweb.cer&gt;</h5>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>When you supply the <span class="GreyBold">-keystore</span>&#160;<span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&lt;myweb-trust.jks&gt; </font></span>option in the command above, you are actually generating the new truststore file.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Copy the new truststore into the following location on the Policy Server host: </p>
+</li>
+  <h5><span class="GreyBold">&lt;install dir&gt;\PolicyServer\server\certificates</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Using the <span class="GreyBold">mkpassword.bat</span>&#160;utility, supplied at <span class="GreyBold">&lt;installdir&gt;\Policy&#173;Server\tools\crypt</span>, encrypt the passwords for the keystore and trust&#173;store files (<span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">myweb.jks </font></span>generated in step <a href="#XREF_45574_1_Generate_the">1</a>&#160;and <span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">myweb-trust.jks </font></span>generated in step <a href="#XREF_39315_5_Import_the">5</a>). This command must be run for each password, where <span class="GreyBold">&lt;mypasswd&gt;</span>&#160;refers to the password you designated in steps <a href="#XREF_45574_1_Generate_the">1</a>&#160;and <a href="#XREF_39315_5_Import_the">5</a>&#160;above:</p>
+</li>
+  <h5>mkpassword.bat -w &lt;mypasswd&gt;</h5>
+  <p class="Title">The process will return something similar to &#160;<span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&quot;7542615506752a4200613b55295d16771d730b7e&quot;</font></span>&#160;(used in the example below). </p>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>This step is necessary because the Control Center uses the passwords to open the files and use their contents, and the passwords should not be accessible in plain text. </p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Modify the configuration file for the Tomcat web application server, <span style="font-style : italic; "><i>server.xml, </i></span>to point to the new keystore and truststore files, and to include the new passwords. By default, this file is placed on the Manage&#173;ment Server host, at</p>
+</li>
+ </ol>
+ <h5>&lt;install dir&gt;\PolicyServer\server\configuration</h5>
+ <p class="Title">Open this file, locate the <span class="GreyBold">&lt;CE-Apps&gt;</span>&#160;section, and supply values for the attributes indicated in below. Be sure to place all values inside double quotes:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>keystoreFile</b></span>: Name of the new keystore file <span class="GreyBold">&lt;myweb</span><span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">.jks&gt;</font></span></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>keystorePass</b></span>: Password of the new keystore file, after encrypting with the makepassword.bat utility</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>truststoreFile</b></span>: Name of the new truststore file <span class="GreyBold">&lt;myweb-trust.jks&gt;</span></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>truststorePass</b></span>: Password of the new truststore file, after encrypting with the makepassword.bat utility</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>keystoreType</b></span>: Do not change this value from JKS</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>truststoreType</b></span>: Do not change this value from JKS</p>
+
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Certificates00003.jpg" style="width : 487.512pt; height : 276.120pt; " id="image1" src="Certificates00003.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook" style="text-indent : -14.400pt;">Configuring the Web Connection Port (443)</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>If you are using Internet Explore version 6, after replacing the certificate for Control Center Web applications, you must also ensure TLS 1.0 is enabled on hosts accessing Reporter and Administrator<span style="font-family : Calibri; font-size  : 11.0pt; "><font size="3" style="font-size:11pt;"> (</font></span>through<span class="Bold">&#160;Internet Options &gt;&#160;Advanced &gt; Use TLS 1.0</span><span style="font-family : Calibri; font-size  : 11.0pt; "><font size="3" style="font-size:11pt;">).</font></span></p>
+
+ <h3><a name="XREF_40553_Internal_Server"></a>Web Services Components</h3>
+ <p class="BodyLevel1">Encrypting web services communication among the Control Center internal server components requires two files: </p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>&lt;dcc-keystore.jks&gt;</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>&lt;dcc-truststore.jks&gt;</p>
+
+ <p class="BodyLevel1">Control Center stores the required DCC certificate in its DCC truststore. In addi&#173;tion, the DCC truststore must contain the certificates for communication with other Control Center components. This means anytime you create a new DCC truststore, you must insert certificates for each of the following:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>DCC</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Agent</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Temp-Agent</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>PolicyAuthor</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Enrollment</p>
+
+ <p class="BodyLevel1">Follow these steps to configure a new Internal Server (DCC) certificate: </p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Generate the keystore. In our Java Keytool example, this is done using the following command:</p>
+</li>
+  <h5>keytool -genkeypair -dname &quot;cn=&lt;commonName&gt;, OU=&lt;organi&#173;zationUnit&gt;, 0=&lt;localityName&gt;, S=&lt;stateName&gt;, C=&lt;Coun&#173;tryName&gt;&quot; -alias DCC -keypass &lt;password&gt; -storepass &lt;password&gt; -keyalg DSA -keystore &lt;mydcc.jks&gt;</h5>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>The presence of both a -keypass and a -storepass is a Java keystore requirement. The two passwords limit access to the keystore: the <br />-storepass allows the viewing of the keystore, and the -keypass allows keys to be used for signing. For more information, refer to the docu&#173;mentation for the Java keytool. </p>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>The <span class="GreyBold">-dname</span>&#160;value must be unique for all keystores that are inserted into the DCC truststore.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Generate a certificate request that can be supplied to a third-party CA. For example,</p>
+</li>
+  <h5>keytool -certreq -alias DCC -keypass &lt;password&gt; -store&#173;pass &lt;password&gt; -keystore &lt;myDCC.jks&gt; -file &lt;myDCC.csr&gt;</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Log into the CA and submit a certificate request. The procedure for doing this differs depending on your CA, but generally includes the following steps:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>You should submit an Advanced request for a User certificate that allows you to supply a base-64-encoded CMC or PKCS #10 file. </p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Copy and paste the certificate request from the newly generated certifi&#173;cate request file (<span class="GreyBold">myweb.csr </span>above)<span class="GreyBold">. </span>To ensure the entire request is included, copy everything from <span class="GreyBold">BEGIN NEW CERTIFICATE REQUEST</span>&#160;to <span class="GreyBold">END NEW CERTIFICATE REQUEST</span>, as in the example shown below.</p>
+
+  <h5>-----BEGIN NEW CERTIFICATE REQUEST-----</h5>
+  <h5>MIICgzCCAkECAQAwfzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRIwEAYDVQQHEwlTYW4gTWF0ZW8xEzARBgNVBAoTCkJsdWVKdW5nbGUxHDAaBgNVBAsTE0NvbXBsaWFudEVudGVycHJpc2UxHDAa</h5>
+  <h5>...</h5>
+  <h5>7ZpvSDn94tEBPgayBaAAMAsGByqGSM44BAMFAAMvADAsAhRv5iI3rNWbd5mGZ9DlRzcQi07E0QIUaM9W8V6UuYbIzBrR5v9XTu9cV94=</h5>
+  <h5>-----END NEW CERTIFICATE REQUEST-----</h5>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Select a certificate template where the subject line matches the subject in the .csr file. (The subject line should not be changed.)</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>When prompted, download the issued certificate. The new certificate will be named <span class="GreyBold">certnew.cer</span>. You can change the certificate name (in our example, <span class="GreyBold">myDCC.cer)</span>.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Copy the new certificate into the following location on the Policy Server host: </p>
+</li>
+  <h5><span class="GreyBold">&lt;install dir&gt;\PolicyServer\server\certificates</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create a new DCC truststore and import the signed certificate into it. For example,</p>
+</li>
+  <h5>keytool -import -alias DCC -keypass &lt;password&gt; -storepass &lt;password&gt; -keystore &lt;myDCC-truststore.jks&gt; -file &lt;myDCC.cer&gt;</h5>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>The option <span class="GreyBold">-keystore</span>&#160;<span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&lt;myDCC-truststore.jks&gt; </font></span>actually generates the new DCC truststore file. In order to insert other certificates into the new truststore, you will refer to the name you give the new DCC truststore <span class="GreyBold">&lt;myDCC-truststore.jks&gt;</span>.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create a new Agent truststore and insert the DCC certificate into it. The name of the Agent truststore file must be <span class="GreyBold">Agent-truststore.jks</span>. For example, </p>
+</li>
+  <h5>keytool -import -alias DCC -keypass &lt;password&gt; -storepass &lt;password&gt; -keystore Agent-truststore.jks -file &lt;myDCC.cer&gt;</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Using the <span class="GreyBold">mkpassword.bat</span>&#160;utility, supplied at <span class="GreyBold">&lt;installdir&gt;/Policy&#173;Server/tools/crypt</span>, encrypt the passwords for the keystore and trust&#173;store files (<span class="GreyBold">&lt;</span><span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">myDCC-keystore.jks&gt; </font></span>generated in step <a href="#XREF_45574_1_Generate_the">1</a> and &lt;<span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">myDCC-truststore.jks&gt; </font></span>generated in step <a href="#XREF_39315_5_Import_the">5</a>). This command must be run for each password, where <span class="GreyBold">&lt;mypasswd&gt;</span>&#160;refers to the password you designated when in step <a href="#XREF_45574_1_Generate_the">1</a>&#160;and step <a href="#XREF_39315_5_Import_the">5</a> above:</p>
+</li>
+  <h5>mkpassword.bat -w &lt;mypasswd&gt;</h5>
+  <p class="Title">The process will return something similar to &#160;<span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&quot;7542615506752a4200613b55295d16771d730b7e&quot;</font></span>&#160;(used in the example below). </p>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>This step is necessary because the Control Center uses the passwords to open the files and use their contents, but the passwords should not be accessible in plain text. &#160;&#160;</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Modify the configuration file for the Tomcat web application server, <span style="font-style : italic; "><i>server.xml, </i></span>to point to the new keystore and truststore files, and to include the new passwords. By default, this file is placed on the Manage&#173;ment Server host, at</p>
+</li>
+ </ol>
+ <h5>&lt;INSTALLDIR&gt;\server\configuration</h5>
+ <p class="Title">Open this file, locate the <span class="GreyBold">&lt;Engine name=CE-core&gt; </span>section, and supply values for the attributes indicated in below, taking care to place all values inside double quotes:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>keystoreFile</b></span>: Name of the new keystore file <span class="GreyBold">&lt;</span><span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">myDCC-keystore.jks&gt;</font></span></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>keystorePass</b></span>: Password of the new keystore file, after encrypting with the makepassword.bat utility</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>truststoreFile</b></span>: Name of the new truststore file <span class="GreyBold">&lt;my</span><span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">DCC-truststore.jks&gt;</font></span></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>truststorePass</b></span>: Password of the new truststore file, after encrypting with the makepassword.bat utility</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>keystoreType</b></span>: Do not change this value from JKS</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>truststoreType</b></span>: Do not change this value from JKS</p>
+
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Certificates00006.jpg" style="width : 487.512pt; height : 260.064pt; " id="image2" src="Certificates00006.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook" style="text-indent : -14.400pt;">Configuring the Internal Connection Port (8443)</p>
+ <h3><a name="XREF_46690_Policy_Controller"></a>Policy Controller</h3>
+ <p class="BodyLevel1">The Policy Controller requires two certificates: the Temp_Agent certificate and the Agent certificate. During installation, a desktop or server Policy Controller registers with the server using the Temp_Agent certificate. After this initial reg&#173;istration, the new Agent-keystore.jks and Agent-truststore.jks are automatically downloaded to the Policy Controller. The Agent certificate is then used from that point on, instead of Temp_Agent. </p>
+ <p class="BodyLevel1">The procedures for configuring these two certificates are different. Both files must be imported into the new truststore you created for the DCC. But, in order for the new Agent certificates to be downloaded to the client after registration, you must delete the old Agent keystore and truststore files.</p>
+ <h4>Configuring the Temp_Agent Certificate</h4>
+ <p class="BodyLevel1">In order to support the automatic registration of a new Policy Controller, the embedded temporary certificates must be trusted. To do this, import the default Temp_Agent certificate into the new DCC truststore. Follow these steps: </p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Obtain the Temp_Agent.cer file from NextLabs support.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Import the signed certificate into the new DCC truststore<span style="color   : #ff0000; "><font color="red" >&#160;</font></span>(see <a href="#XREF_40553_Internal_Server">Web Services Components</a>). For example, </p>
+</li>
+ </ol>
+ <h5>keytool -import -alias Temp_Agent -storepass &lt;DCCpass&#173;word&gt; -keystore &lt;mydcc-truststore.jks&gt; -file &lt;temp_agent.cer&gt;</h5>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>When you supply the <span class="GreyBold">-keystore</span>&#160;<span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&lt;mydcc-truststore.jks&gt; </font></span>option above, you are referencing the new DCC truststore file.</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>The <span class="GreyBold">-storepass</span>&#160;password must be the same one you created for the DCC keystore.</p>
+ <h4>Configuring the Agent certificate</h4>
+ <p class="BodyLevel1">Follow these steps to configure a new Agent certificate. Note that the names of the keystore and truststore files must be <span class="GreyBold">agent-keystore.jks</span> and<span class="GreyBold"> agent-truststore.jks</span>.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Generate the keystore. In our Keytool example, this is done using the fol&#173;lowing command:</p>
+</li>
+  <h5>keytool -genkeypair -dname &quot;cn=&lt;commonName&gt;, OU=&lt;organi&#173;zationUnit&gt;, 0=&lt;localityName&gt;, S=&lt;stateName&gt;, C=&lt;Country&#173;Name&gt;&quot; &#160;-alias Agent -keypass &lt;password&gt; -storepass &lt;DCCkeypass&gt; -keyalg DSA -keystore agent-keystore.jks</h5>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>The <span class="GreyBold">-dname</span>&#160;value must be unique for all keystores that are inserted into the DCC truststore.</p>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>The <span class="GreyBold">-storepass</span>&#160;password must be the same one you created for the DCC keystore.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Generate a certificate request that can be supplied to a third-party CA. For example,</p>
+</li>
+  <h5>keytool -certreq -alias Agent -keypass &lt;password&gt; <br />-storepass &lt;DCCkeypass&gt; -keystore agent-keystore.jks -file Agent.csr</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Log into the CA and submit a certificate request. The procedure for doing this will differ depending on your CA, but will generally include the fol&#173;lowing steps:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>You should submit an Advanced request for a User certificate that allows you to supply a base-64-encoded CMC or PKCS #10 file. </p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Copy and paste the certificate request from the newly generated certifi&#173;cate request file (<span class="GreyBold">Agent.csr </span>above)<span class="GreyBold">. </span>To ensure the entire request is included, copy everything from <span class="GreyBold">BEGIN NEW CERTIFICATE REQUEST</span>&#160;to <span class="GreyBold">END NEW CERTIFICATE REQUEST</span>, as in the example shown below.</p>
+
+  <h5>-----BEGIN NEW CERTIFICATE REQUEST-----</h5>
+  <h5>MIICgzCCAkECAQAwfzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRIwEAYDVQQHEwlTYW4gTWF0ZW8xEzARBgNVBAoTCkJsdWVKdW5nbGUxHDAaBgNVBAsTE0NvbXBsaWFudEVudGVycHJpc2UxHDAa</h5>
+  <h5>...</h5>
+  <h5>7ZpvSDn94tEBPgayBaAAMAsGByqGSM44BAMFAAMvADAsAhRv5iI3rNWbd5mGZ9DlRzcQi07E0QIUaM9W8V6UuYbIzBrR5v9XTu9cV94=</h5>
+  <h5>-----END NEW CERTIFICATE REQUEST-----</h5>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Select a certificate template where the subject line matches the subject in the .csr file. (The subject line should not be changed.)</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>When prompted, download the issued certificate. The new certificate will be named <span class="GreyBold">certnew.cer</span>. You can change the certificate name (in our example, <span class="GreyBold">Agent.cer)</span>.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Copy the new certificate into the following location on the Policy Server host: </p>
+</li>
+  <h5><span class="GreyBold">&lt;install dir&gt;PolicyServer\server\certificates</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Import the signed certificate into the DCC truststore (see <a href="#XREF_40553_Internal_Server">Web Services Components</a>). For example,</p>
+</li>
+  <h5>keytool -import -alias Agent -storepass &lt;DCCkeypass&gt; -keystore &lt;mydcc-truststore.jks&gt; -file &lt;Agent.cer&gt;</h5>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>When you supply the <span class="GreyBold">-keystore</span>&#160;<span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&lt;mydcc-truststore.jks&gt; </font></span>option in the command above, you are referencing the new DCC truststore file.</p>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>The -<span class="GreyBold">storepass</span> must be the same ones you created for the DCC key&#173;store.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Import the signed certificate into the new Agent truststore (see <a href="#XREF_40553_Internal_Server">Web Services Components</a>). The name of the Agent truststore file must be <span class="GreyBold">Agent-truststore.jks</span>. For example,</p>
+</li>
+ </ol>
+ <h5>keytool -import -alias Agent -storepass &lt;DCCkeypass&gt; -keystore agent-truststore.jks -file &lt;Agent.cer&gt;</h5>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>When you supply the <span class="GreyBold">-keystore</span>&#160;<span class="GreyBold">a</span><span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">gent-truststore.jks</font></span>&#160;option in the command above, you are referencing the new Agent truststore file.</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>The <span class="GreyBold">-storepass</span> must be the same one you created for the DCC key&#173;store.</p>
+ <h3><a name="XREF_50222_Policy_Studio"></a><a name="XREF_54133_Enrollment_Manager"></a>Enrollment Manager and Property Manager</h3>
+ <p class="BodyLevel1">By default, the certificate for the Enrollment Manager is stored in <span class="GreyBold">enrollment-keystore.jks</span>. Use the following procedure to configure a new certificate.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Generate the keystore. It must be named <span class="GreyBold">enrollment-keystore.jks</span>. The default -keypass and -storepass value is <span class="GreyBold">password</span>, but should be changed (see <a href="Changing_Default_Passwords.htm#XREF_89918_Changing_Default">Changing Default Passwords</a>).&#160;In our Java Keytool example, this is done using the following command:</p>
+</li>
+  <h5>keytool -genkeypair -dname &quot;cn=&lt;commonName&gt;, OU=&lt;organi&#173;zationUnit&gt;, 0=&lt;localityName&gt;, S=&lt;stateName&gt;, C=&lt;Country&#173;Name&gt;&quot; -alias <span class="GreyBold">Enrollment</span>&#160;-keypass password -storepass password -keyalg DSA -keystore <span class="GreyBold">enrollment-keystore.jks</span></h5>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>The <span class="GreyBold">-dname</span>&#160;value must be unique for all keystores that are inserted into the DCC truststore.</p>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>The -keypass and -storepass values are <span class="GreyBold">password</span>&#160;unless this default is changed. To change the default password for the certificates for this server component, see <a href="Changing_Default_Passwords.htm#XREF_89918_Changing_Default">Changing Default Passwords</a>.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Generate a certificate request that can be supplied to a third-party CA. &#160;For example,</p>
+</li>
+  <h5>keytool -certreq -alias Enrollment -keypass password <br />-storepass password -keystore <span class="GreyBold">enrollment-keystore.jks</span>&#160;<br />-file &lt;myEnrollment.csr&gt;</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Log into the CA and submit a certificate request. The procedure for doing this will differ depending on your CA, but will generally include the fol&#173;lowing steps:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>You should submit an Advanced request for a User certificate that allows you to supply a base-64-encoded CMC or PKCS #10 file. </p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Copy and paste the certificate request from the newly generated certifi&#173;cate request file (<span class="GreyBold">myEnrollment.csr </span>above)<span class="GreyBold">. </span>To ensure the entire request is included, copy everything from <span class="GreyBold">BEGIN NEW CERTIFICATE REQUEST</span>&#160;to <span class="GreyBold">END NEW CERTIFICATE REQUEST</span>, as in the example shown below.</p>
+
+  <h5>-----BEGIN NEW CERTIFICATE REQUEST-----</h5>
+  <h5>MIICgzCCAkECAQAwfzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRIwEAYDVQQHEwlTYW4gTWF0ZW8xEzARBgNVBAoTCkJsdWVKdW5nbGUxHDAaBgNVBAsTE0NvbXBsaWFudEVudGVycHJpc2UxHDAa</h5>
+  <h5>...</h5>
+  <h5>7ZpvSDn94tEBPgayBaAAMAsGByqGSM44BAMFAAMvADAsAhRv5iI3rNWbd5mGZ9DlRzcQi07E0QIUaM9W8V6UuYbIzBrR5v9XTu9cV94=</h5>
+  <h5>-----END NEW CERTIFICATE REQUEST-----</h5>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Select a certificate template where the subject line matches the subject in the .csr file. (The subject line should not be changed.)</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>When prompted, download the issued certificate. The new certificate will be named <span class="GreyBold">certnew.cer</span>. You can change the certificate name (in our example, <span class="GreyBold">myEnrollment.cer)</span>.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Copy the new certificate into the following locations on the Policy Server host: </p>
+</li>
+  <h5><span class="GreyBold">&lt;install dir&gt;\PolicyServer\server\certificates</span></h5>
+  <h5><span class="GreyBold">&lt;install dir&gt;\PolicyServer\tools\enrollment\security</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Import the signed certificate into the DCC truststore. For example,</p>
+</li>
+  <h5>keytool -import -alias Enrollment -storepass &lt;DCCkeypass&gt; -file &lt;myEnrollment.cer&gt; -keystore &lt;myDCC-trust&#173;store.jks&gt;</h5>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>When you supply the <span class="GreyBold">-keystore</span>&#160;<span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&lt;myDCC-truststore.jks&gt; </font></span>option in the command above, you are referencing the new DCC truststore file.</p>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>The <span class="GreyBold">-storepass</span>&#160;password should be the same one you defined for the &#160;DCC keystore.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Replace the enrollment-keystore.jks in <span class="GreyBold">&lt;installDir&gt;\Policy&#173;Server\tools\enrollment\security</span>&#160;with the new one (located in <span class="GreyBold">&lt;installDir&gt;\PolicyServer\server\certificates</span>.)</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Restart the Control Center Policy Server service.</p>
+</li>
+ </ol>
+ <h3>Policy Studio</h3>
+ <p class="BodyLevel1">By default, the certificates Policy Studio requires to connect to the server are stored in the file <span class="GreyBold">policyAuthor-keystore.jks</span>. Use the following procedure to configure the new Policy Studio certificate. Note that the name of the file must be <span class="GreyBold">policyAuthor-keystore.jks</span>.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Generate the keystore. The <span class="GreyBold">-keypass</span>&#160;and <span class="GreyBold">-storepass &lt;password&gt;</span>&#160;is the password that was specified for Policy Studio when installing Control Cen&#173;ter. In our keytool example, this is done using the following command:</p>
+</li>
+  <h5>keytool -genkeypair -dname &quot;cn=&lt;commonName&gt;, OU=&lt;organi&#173;zationUnit&gt;, 0=&lt;localityName&gt;, S=&lt;stateName&gt;, C=&lt;Coun&#173;tryName&gt;&quot; -alias PolicyAuthor -keypass &lt;password&gt; -storepass &lt;password&gt;&#160;-keyalg DSA -keystore <span class="GreyBold">policyAuthor-keystore.jks</span></h5>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>The -<span class="GreyBold">dname</span>&#160;value must be unique for all keystores that are inserted into the DCC truststore.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Generate a certificate request that can be supplied to a third-party CA. For example,</p>
+</li>
+  <h5>keytool -certreq -alias PolicyAuthor -keypass &lt;password&gt;&#160;-storepass &lt;password&gt;&#160;-keystore <span class="GreyBold">policyAuthor-keystore.jks</span>&#160;-file &lt;myPolicyAuthor.csr&gt;</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Log into the CA and submit a certificate request. The procedure for doing this differs depending on your CA, but generally includes the following steps:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>You should submit an Advanced request for a User certificate that allows you to supply a base-64-encoded CMC or PKCS #10 file. </p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Copy and paste the certificate request from the newly generated certifi&#173;cate request file (<span class="GreyBold">myPolicyAuthor.csr </span>above)<span class="GreyBold">. </span>To ensure the entire request is included, copy everything from <span class="GreyBold">BEGIN NEW CERTIFICATE REQUEST</span>&#160;to <span class="GreyBold">END NEW CERTIFICATE REQUEST</span>, as in the example shown below.</p>
+
+  <h5>-----BEGIN NEW CERTIFICATE REQUEST-----</h5>
+  <h5>MIICgzCCAkECAQAwfzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRIwEAYDVQQHEwlTYW4gTWF0ZW8xEzARBgNVBAoTCkJsdWVKdW5nbGUxHDAaBgNVBAsTE0NvbXBsaWFudEVudGVycHJpc2UxHDAa</h5>
+  <h5>...</h5>
+  <h5>7ZpvSDn94tEBPgayBaAAMAsGByqGSM44BAMFAAMvADAsAhRv5iI3rNWbd5mGZ9DlRzcQi07E0QIUaM9W8V6UuYbIzBrR5v9XTu9cV94=</h5>
+  <h5>-----END NEW CERTIFICATE REQUEST-----</h5>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Select a certificate template where the subject line matches the subject in the .csr file. (The subject line should not be changed.)</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>When prompted, download the issued certificate. The new certificate will be named <span class="GreyBold">certnew.cer</span>. You can change the certificate (in our example, <span class="GreyBold">myPolicyAuthor.cer)</span>.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Copy the new certificate into the following location on the Policy Server host:</p>
+</li>
+  <h5><span class="GreyBold">&lt;install dir&gt;\PolicyServer\server\certificates</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Import the signed certificate into the DCC truststore. For example,</p>
+</li>
+  <h5>keytool -import -alias PolicyAuthor -storepass &lt;DCCkey&#173;pass&gt; -file &lt;myPolicyAuthor.cer&gt; -keystore &lt;myDCC-trust&#173;store.jks&gt;</h5>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>When you supply the <span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">-keystore &lt;myDCC-truststore.jks&gt;</font></span>&#160;option in the command above, you are referencing the new DCC truststore file.</p>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>The <span class="GreyBold">-storepass</span>&#160;password should be the same one you defined for the DCC keystore.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Copy the <span class="GreyBold">PolicyAuthor-keystore.jks</span>&#160;file to where it can be accessed by Policy Server tools. Note that you must open the <span class="GreyBold">client-pf.jar</span>&#160;file with 7-zip and overwrite the original file, named <span class="GreyBold">policyAuthor-key&#173;store.jks</span>: <span class="GreyBold">&lt;installdir&gt;\PolicyServer\tools\common\lib\client-pf.jar\security\policyAuthor-keystore.jks</span></p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Restart the Control Center Policy Server service.</p>
+</li>
+ </ol>
+ <h2>Importing an Existing Certificate</h2>
+ <p class="BodyLevel1">The previous section, <a href="#XREF_94149_Generating_a_New">Generating a New Certificate</a>, described the procedures for replacing certificates for each Control Center component by generating new keystores and new certificates. This section describes the procedure for replac&#173;ing a certificate by importing an existing certificate. Use this procedure if your organization requires that you use your own certificates.</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>The example keytool commands in the following procedure demon&#173;strate replacing the DCC certificates in the default DCC keystore (dcc-keystore.jsk) and truststore (dcc-truststore.jks). If you are replacing the certificate for a different component, you would specify different values for the certificate’s alias and keystore. </p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Make backups of the NextLabs keystore and truststore that contain the certificate you want to replace. For example, to replace the DCC certifi&#173;cate, back up dcc-keystore.jks and dcc-truststore.jks. These files are in the following location on the host where Policy Server is installed:</p>
+</li>
+  <h5>&lt;Install Directory&gt;\PolicyServer\server\certificates</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Copy the keystore and truststore to another folder, and run the keytool utility from this folder.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Delete the current certificate from the keystore. The following is an example of the keytool command to run:</p>
+</li>
+  <h5>keytool -delete -alias dcc -keystore dcc-keystore.jks <br />-storepass &lt;<span style="font-style : italic; "><i>password</i></span>&gt;</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Delete the current certificate from the truststore. The following is an example of the command to run:</p>
+</li>
+  <h5>keytool -delete -alias dcc -keystore dcc-truststore.jks <br />-storepass &lt;<span style="font-style : italic; "><i>password</i></span>&gt;</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Import the keystore that contains the certificate you want to use into the NextLabs keystore. The following is an example of the command to run:</p>
+</li>
+  <h5>keytool -importkeystore -srckeystore &lt;<span style="font-style : italic; "><i>source keystore</i></span>&gt; <br />-destkeystore dcc-keystore.jks -srcstorepass &lt;<span style="font-style : italic; "><i>source key&#173;store password</i></span>&gt; -deststorepass &lt;<span style="font-style : italic; "><i>NextLabs keystore pass&#173;word</i></span>&gt; -srcalias &lt;<span style="font-style : italic; "><i>alias of certificate to use</i></span>&gt; <br />-destalias dcc</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change the certificate’s password. Note that the password you specify for -new must be the same password you specify for -storepass.</p>
+</li>
+  <h5>keytool -keypasswd -alias dcc -new &lt;<span style="font-style : italic; "><i>password</i></span>&gt; -keystore dcc-keystore.jks -storepass &lt;<span style="font-style : italic; "><i>password</i></span>&gt; -keypass &lt;<span style="font-style : italic; "><i>current password</i></span>&gt; </h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Import the certificate from your truststore by importing the truststore into the NextLabs truststore.</p>
+</li>
+  <h5>keytool -importkeystore -srckeystore &lt;<span style="font-style : italic; "><i>source truststore</i></span>&gt; -destkeystore dcc-truststore.jks -srcstorepass &lt;<span style="font-style : italic; "><i>source&#173;truststore password</i></span>&gt; -deststorepass &lt;<span style="font-style : italic; "><i>NextLabs truststore password</i></span>&gt; -srcalias &lt;<span style="font-style : italic; "><i>alias of certificate to use</i></span>&gt; <br />-destalias dcc</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Copy the updated keystore (dcc-keystore.jks) and truststore (dcc-trust&#173;store.jks) to the following location on the host where Policy Server is installed:</p>
+</li>
+ </ol>
+ <h5>&lt;Install Directory&gt;\PolicyServer\server\certificates</h5>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

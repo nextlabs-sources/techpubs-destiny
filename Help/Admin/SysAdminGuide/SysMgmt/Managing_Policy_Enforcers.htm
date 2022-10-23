@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Managing Policy Enforcers</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\SysMgmt.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Routine Management\nManaging Policy Enforcers");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Routine_Management.htm\">Routine Management<\/a> &gt; Managing Policy Enforcers<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_26885_Managing_Policy"></a>Managing Policy Enforcers</h1>
+ <p class="BodyLevel1">There are a number of procedures that a system administrator may need to per&#173;form from time to time, regarding the policy enforcers in the system. These include:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_56571_Adding_Additional">Adding Additional Enforcers</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_15169_Load_Balancing">Load Balancing</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_23755_Stopping_Policy">Stopping Policy Enforcers</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_96736_Restarting_Policy">Restarting Policy Enforcers</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_84356_Uninstalling">Uninstalling Policy Enforcers</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_58641_Reconfiguring">Reconfiguring Enforcers</a></p>
+
+ <h2><a name="XREF_56571_Adding_Additional"></a>Adding Additional Enforcers</h2>
+ <p class="BodyLevel1">If you need to install additional enforcers, you can do so at any time using man&#173;aged installation methods, such as a login script or Windows Group Policy Object (GPO). Control Center provides an .msi installation file that can be used with these installation methods. The rest of this section provides general instructions for performing a managed installation using GPO. For details about GPO, refer to Microsoft documentation.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Use Microsoft Group Policy Object (GPO) to set the domain controller and register each target machine on which you want to install policy enforcer software.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create an .MSI transform file (.MST file) to set the value of the required installation parameter ICENET_SERVER_LOCATION to the host where the ICENet Server is installed. Use the format <span class="GreyBold">machineName:port</span>. If you use the default port number 8443, you can omit it from the value and simply set the machineName.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Use any desired transformation tool to create the file, and consult the documentation for that tool for details on how to set up the file.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Configure GPO to run the appropriate .msi and .mst files whenever each machine is booted up: </p>
+</li>
+ </ol>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Desktop or laptop PCs</b></span>: WindowsDesktopEnforcer-setup.msi </p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>File servers</b></span>: WindowsFileServerEnforcer-setup.msi</p>
+
+ <p class="Title">The domain server automatically sends the binary to the target computer and runs the installer. </p>
+ <h2><a name="XREF_15169_Load_Balancing"></a>Load Balancing</h2>
+ <p class="BodyLevel1">The ICENet Server controls all communication between the Control Center&#160;and all the enforcers running in your network. It also handles a good deal of the inter-server data transfer within Control Center. For this reason, it represents the most likely performance bottleneck in the system. To improve performance, you may decide to install several ICENet Servers on distributed hosts. If you do this, you must use a load balancer to divide the workload among all ICENet Serv&#173;ers.</p>
+ <p class="BodyLevel1">You can either set up load balancing when you first install Control Center soft&#173;ware, or set it up later. Install the load balancer between the desktops or file servers on which policy enforcers are installed and the machines on which the ICENet Servers are installed. Note that you can set up load balancing among many ICENet Servers regardless of whether they are running on separate hosts, or many on the same host.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SysMgmt00009.jpg" style="width : 429.048pt; height : 221.472pt; " id="image2" src="SysMgmt00009.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Load Balancing ICENet Servers</p>
+ <h3>At Initial Installation</h3>
+ <p class="BodyLevel1">To set up load balancing during your initial installation:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Before you install the Control Center, install a load balancer on a separate server host, Server A.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the Control Center&#160;installation wizard. When the wizard prompts you for the location of the ICENet Server, give the virtual IP address or virtual host name of the load balancer, rather than the actual location of the ICENet Server.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Install ICENet Server components as required on additional machines—lets’s say, hosts B, C, and D.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Configure the load balancer on host A to balance requests among machines B, C, and D.</p>
+</li>
+ </ol>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>Any enforcers you want to use the load balanced ICENet servers, should be configured with the virtual IP address or virtual host name of the load balancer, rather than the actual IP addresses of the ICENet Servers. (For details, see <a href="../IntroAdmin/The_Policy_Enforcer_Configuration_Tab.htm#XREF_84520_Load_Balanced">Load-Balanced or Clustered ICENet Servers</a>.)</p>
+ <h3>After Initial Installation</h3>
+ <p class="BodyLevel1">To set up load balancing at any point after your initial installation:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Install the ICENet Server components on several server hosts.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Set up the load balancer so that it refers to the ICENet Servers. Configure the load balancer to use stateless (“non-sticky”) load balancing.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Use Administrator to modify all your currently defined policy enforcer profiles, changing the ICENet Server location from its actual location to the load balancer’s virtual IP address or virtual host name. Note that because Administrator cannot autodiscover the load balancer, it does not appear in the list in the ICENet Servers combo-box. You must type it man&#173;ually in the OR field, as shown in the following figure.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="ICENet_URL.jpg" style="width : 397.499pt; height : 80.124pt; " id="image3" src="ICENet_URL.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Specifying the load balancer location</p>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>If you make a mistake when specifying the load balancer location, pol&#173;icy enforcers will not be able to find the load balancer, and cannot communicate with the Control Center. This causes serious problems in your Control Center system.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Monitor the policy enforcers to ensure that they all receive the new pro&#173;file.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1">Each policy enforcer does not start using load balancing until it receives the new policy enforcer profile, and the new profile will not likely be communicated to all the policy enforcers immediately. Some of the deployed policy enforcers will continue to use the old ICENet Server location until they receive the updated policy enforcer profile.</p>
+ <p class="BodyLevel1">When all policy enforcers have received the new profile, remove the old ICENet Server host if you are no longer using it. Of course, you have the option of leav&#173;ing the old ICENet Server in operation and make it part of the server pool behind the load balancer.</p>
+ <h2><a name="XREF_23755_Stopping_Policy"></a>Stopping Policy Enforcers</h2>
+ <p class="BodyLevel1">There are occasions when you might want to stop the execution of the policy enforcer on a particular machine without uninstalling it.</p>
+ <h3>Desktop Enforcers</h3>
+ <p class="BodyLevel1">To stop any kind of desktop enforcer, you can locally run a special executable called <span class="Bold">Stop Policy Controller</span>. You launch this from the <span class="Bold">Start</span>&#160;&gt; <span class="Bold">All Programs</span>&#160;&gt; <span class="Bold">NextLabs</span> menu on the host where the enforcer is running, as shown in the fol&#173;lowing figure.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="StopEnforcer.jpg" style="width : 361.512pt; height : 69.336pt; " id="image4" src="StopEnforcer.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Stopping Desktop Enforcers </p>
+ <p class="BodyLevel1">To run this executable, you need to provide the administrative password, set as part of whichever policy enforcer profile applies to the host where this enforcer is running. Before you stop the enforcer, you must know which profile is being used on the machine so you can have the appropriate password ready.</p>
+ <h3>File Server Enforcers</h3>
+ <p class="BodyLevel1">The executable that stops a Windows File Server Enforcer is launched from <span class="Bold">Enterprise Data Protection</span>&#160;group in the Windows <span class="Bold">Start</span>&#160;&gt; <span class="Bold">All Programs</span>&#160;menu, as shown in the following figure. As with desktop enforcers, it prompts you for the password of the profile assigned to the enforcer you are trying to shut down. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="StopFileSrvEnf.jpg" style="width : 252.000pt; height : 141.851pt; " id="image5" src="StopFileSrvEnf.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Stopping File Server Enforcers</p>
+ <p class="BodyLevel1">To stop a Linux File Server Enforcer: </p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Log into the local host and type the following command:</p>
+</li>
+  <h5>cefse_stop</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Provide the superuser administrator’s password when prompted.</p>
+</li>
+ </ol>
+ <h3>SharePoint Enforcers</h3>
+ <p class="BodyLevel1">The procedure for stopping SharePoint Enforcers is the same as for Windows File Server Enforcers.</p>
+ <h3>Confirming Status</h3>
+ <p class="BodyLevel1">Once you run this executable, it should display a notification window stating that the process was successfully terminated. If you wish, you can positively verify that the policy enforcer software has stopped.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>All Enforcers, remotely:</b></span>&#160;Use Administrator to view the list of deployed policy enforcers. The policy enforcer you stopped still appears in the list, but should no longer be sending heartbeats. For details, see <a href="../IntroAdmin/The_Status_Tab.htm#XREF_96769_Viewing_Status_by">Policy Enforcer Status</a>.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Desktop Enforcers, locally:</b></span>&#160;The CE icon continues to display in the Windows system tray, even after the enforcer is stopped. Right-click the icon, and select <span class="Bold">About Desktop Enforcer</span>; the About screen should have a line that displays <span style="font-style : italic; "><i>Enforcer Status: Not Running</i></span>.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Windows File Server and SharePoint Enforcers, locally</b></span>: Open the <span class="Bold">Services</span>&#160;window using <span class="Bold">Control Panel</span>&#160;&gt; <span class="Bold">System and Security </span>&gt;<span class="Bold"> Administrative Tools</span>, and check the status of the service in the list on the Extended tab. </p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Linux File Server Enforcers, locally</b></span>: To check the current status of a Linux File Server Enforcer, log in locally and type the command:</p>
+ <h5>cefse_status</h5>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>There are only two possible statuses: Stopped or Running. The enforcer should be running at all times, unless it has been manually stopped by an authorized administrator.</p>
+ <h2><a name="XREF_96736_Restarting_Policy"></a>Restarting Policy Enforcers</h2>
+ <p class="BodyLevel1">To restart a Windows enforcer of any type, open the <span class="Bold">Services</span>&#160;window using <span class="Bold">Control Panel</span>&#160;&gt; <span class="Bold">System and Security </span>&gt;<span class="Bold"> Administrative Tools</span>, and restart the corresponding service. As with any Windows service, you must have local admin&#173;istrator privileges to do this. You can also restart the enforcers by rebooting the host machine.</p>
+ <p class="BodyLevel1">To restart a Linux File Server Enforcer, log into the local host and use the follow&#173;ing command:</p>
+ <h5>service cefse start</h5>
+ <h2>Service Account Permissions</h2>
+ <p class="BodyLevel1">All enforcers run as Windows services, and are assigned a default user account at installation. This account must have read, execute and create permission for the folder where the enforcer is installed. For example, by default, the Win&#173;dows Desktop Enforcer is installed in <span class="GreyBold">Program Files\NextLabs\Desktop Enforcer</span>, and is assigned the Local System user account, as shown in the fol&#173;lowing figure.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="WDEService.png" style="width : 466.399pt; height : 102.875pt; " id="image6" src="WDEService.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Enforcer Service User Account</p>
+ <p class="BodyLevel1">You must take care not to change the permission levels of the install directory, wherever it may be, or of the services user accounts, in such a way that the account does not have read, execute and create permission for the installation folder. If you do this, the account cannot access the service, and it does not restart automatically if it ever stops. For example, if you change the Local Sys&#173;tem user permission to extend only to Program Files without any child directo&#173;ries, the WDE service cannot restart.</p>
+ <h2><a name="XREF_84356_Uninstalling"></a>Uninstalling Policy Enforcers</h2>
+ <p class="BodyLevel1">Before you can uninstall any enforcer, you must stop it, as described above (<a href="#XREF_23755_Stopping_Policy">Stopping Policy Enforcers</a>).</p>
+ <p class="BodyLevel1">If the policy enforcers were installed using Group Policy Object (GPO), you can remove them using the same method, in reverse. In the list of machines that are signed up for automatic managed installation, remove the names of the machines where you want to uninstall the software. The next time any of those machines is rebooted, the user sees a message indicating that policy enforcer software is being uninstalled, and the machine will auto-reboot. Then the user is allowed to log in.</p>
+ <p class="BodyLevel1">If you only want to remove the policy enforcer from a single machine, you can do so using the Add/Remove Programs functionality of the Windows Control Panel. When you request to remove the policy enforcer, you are prompted for the policy enforcer administration password. This password is set as part of the policy enforcer profile. Before you can uninstall, you must know which profile is being used on the machine so you can have the appropriate password ready. If the policy enforcer was installed via GPO, be sure to also delete the machine name from the GPO installation list, or the software will automatically be rein&#173;stalled the next time the machine is rebooted.</p>
+ <p class="BodyLevel1">To verify that the policy enforcer software has been uninstalled, use the Admin&#173;istrator tool to view the list of deployed policy enforcers. The policy enforcer you uninstalled still appears in the list, but should no longer send heartbeats.</p>
+ <h2><a name="XREF_58641_Reconfiguring"></a>Reconfiguring Enforcers</h2>
+ <p class="BodyLevel1">For whatever reason—for example, moving a PC from one domain to another—you may need to move a desktop or file server enforcer from one Control Center&#160;to another. To do this, you need to reconfigure the enforcer so that it connects to a different ICENet Server. To manually redirect an enforcer, use the following procedure.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Stop the enforcer you want to reconfigure.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the enforcer host, delete the following four files from the install direc&#173;tory, as shown in the figure below:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>bundle.bin</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>\config\registration.info</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>\config\security\agent-truststore.jks</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>\config\security\agent-keystore.jks</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open the configuration file \config\commprofile.xml, and find the&nbsp;<span style="font-style : italic; "><i>DABSLocation</i></span> element.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Replace the host name within this element with the name of the new ICENet host you want to connect to. For example, change </p>
+</li>
+  <p style="margin-left : 50.400pt; margin-right : 3.600pt; text-indent : 0.000pt; margin-top  : 4.000pt; margin-bottom : 4.000pt; font-family : Courier New; font-size  : 9.0pt;"><span class="GreyBold" style="font-family : Courier New; font-style : normal; font-weight : normal; font-size  : 9.0pt; color   : #000000; text-decoration : none; letter-spacing : 0.00em; "><font size="1" color="black" style="font-size:9.000000pt;">&lt;DABSLocation value=&quot;https://Grande:8443/dabs&quot;/&gt;</font></span></p>
+  <p style="text-indent : 73.650pt; margin-top  : 5.000pt; margin-bottom : 5.000pt;">to </p>
+  <p style="text-indent : 50.400pt; margin-top  : 4.000pt; margin-bottom : 4.000pt; font-family : Courier New; font-size  : 9.0pt;"><span class="GreyBold" style="font-family : Courier New; font-style : normal; font-weight : normal; font-size  : 9.0pt; color   : #000000; text-decoration : none; letter-spacing : 0.00em; "><font size="1" color="black" style="font-size:9.000000pt;">&lt;DABSLocation value=&quot;https://Guernsey:8443/dabs&quot;/&gt;</font></span></p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Restart the enforcer service.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="MoveICENet.jpg" style="width : 478.512pt; height : 195.217pt; " id="image7" src="MoveICENet.jpg" />
+ </div>
+ <p class="BodyLevel1"><a name="XREF_55386_Policy_Enforce"></a>&nbsp;</p>
+ <p class="TitleBook">Configuring an Enforcer to a new ICENet Server</p>
+ <h2>Policy Enforcer Profiles</h2>
+ <p class="BodyLevel1">An important aspect of managing policy enforcers is defining and assigning enforcer profiles. This is discussed in detail elsewhere in this manual; see <a href="../IntroAdmin/The_Policy_Enforcer_Configuration_Tab.htm#XREF_75751_Working_with">Working with Profiles</a>.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

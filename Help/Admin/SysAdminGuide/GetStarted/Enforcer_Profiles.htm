@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Enforcer Profiles</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\GetStarted.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Configuration Overview\nEnforcer Profiles");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Configuration_Overview.htm\">Configuration Overview<\/a> &gt; Enforcer Profiles<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_76977_Enforcer_Profiles"></a>Enforcer Profiles</h1>
+ <p class="BodyLevel1">If your system has a relatively large number of Policy Enforcers, or if you antici&#173;pate adding more, you may benefit by defining multiple <span style="font-style : italic; "><i>enforcer profiles</i></span>. Pro&#173;files are simply named sets of property definitions that, once defined and saved, can be applied to any policy enforcer in the system. This simplifies configuration process, and allows you to ensure that several enforcers are configured exactly the same way.</p>
+ <h3><a name="XREF_31534_Default_Profiles"></a>Default Profiles and Passwords</h3>
+ <p class="BodyLevel1">If you don’t explicitly define any enforcer profiles, all enforcers in your system are automatically assigned the settings of the default profile that is automati&#173;cally created in Administrator. Although you do not technically need to change any settings, as a security precaution we recommend that you change the default password for this default profile. (It is <span class="GreyBold">password</span>). This is the password you need to stop or uninstall any enforcer.</p>
+ <p class="BodyLevel1">In addition, if you have more than one ICENet Server in your system, one of them will be assigned to each enforcer by default. It is strongly recommended that you examine the default profile, to confirm that the assigned ICENet Server is the one you want to use.</p>
+ <p class="BodyLevel1">You define enforcer profiles on the <span class="Bold">Policy Enforcer Configuration</span> tab in Admin&#173;istrator. For details, see <a href="../IntroAdmin/The_Policy_Enforcer_Configuration_Tab.htm#XREF_96308_The_Enforcer">The Policy Enforcer Configuration Tab</a>.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="EnfCfgTab.jpg" style="width : 204.768pt; height : 48.233pt; " id="image1" src="EnfCfgTab.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

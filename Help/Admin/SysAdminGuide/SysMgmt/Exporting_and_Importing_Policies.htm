@@ -1,0 +1,492 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Exporting and Importing Policies</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\SysMgmt.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Routine Management\nExporting and Importing Policies");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Routine_Management.htm\">Routine Management<\/a> &gt; Exporting and Importing Policies<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_85625_Importing_and"></a>Exporting and Importing Policies</h1>
+ <p class="BodyLevel1">Components and policies require time and effort to design and construct. How&#173;ever, there may be cases where you want to distribute the components and pol&#173;icies defined in one implementation of Control Center and deploy them in another. For example, you might have a separate test environment where you have fine-tuned your policies, and you now need to transfer them to your pro&#173;duction environment.</p>
+ <p class="BodyLevel1">To avoid having to manually redefine all the components and policies in the sec&#173;ond system, Control Center provides an import/export feature. This feature is available both in the Policy Manager user interface in Policy Studio, and through a command-line import/export utility. It allows you to export any policies in one implementation, along with their folder structure, so you can import them else&#173;where. Whenever you export policies, all the components they require are auto&#173;matically included. All objects are exported to an XML file, which you can then import into the policy repository of another Control Center system.</p>
+ <p class="BodyLevel1">Specifically, the feature allows you to:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Export all policies from a given Control Center</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Export selected policies by folder, recursively</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Export selected individual policies</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Perform a shallow import, which strips policies of any leaf wirings that tie them to the physical system</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Display a list of policies and components, without exporting</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Import the contents of XML files generated by exporting</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>View the contents of such XML files, without importing</p>
+
+ <p class="BodyLevel1">Again, you can use this feature either directly in Policy Studio, or through the pair of utilities. The following sections describe the utilities. For information about exporting and importing policies using Policy Manager, see <span class="Emphasis">Policy Studio User’s Guide</span>.</p>
+ <h2>Exporting</h2>
+ <p class="BodyLevel1">To export an existing set of policies and/or components:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Log in to the host of the Control Center&#160;from which you want to export policies, or to a computer that can connect to it, and open a command line window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Make sure the Export utility (export.bat) is present on the host where you will be working. By default, during installation it is placed on the Control Center host at the following location:</p>
+</li>
+  <h5>C:\Program Files\NextLabs\PolicyServer\tools\importex&#173;port.</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Navigate to the location of the utility, and type the export command with the three required connection arguments and whichever of the optional arguments you want to use, using the format below. The optional argu&#173;ments allow you to specify what content you want to export, and what to do in case of a name conflict with the export file.</p>
+</li>
+  <p class="BodyLevel1">The table below provides details on all available arguments. The arguments are case-sensitive. </p>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="SysMgmt00003.jpg" style="width : 475.488pt; height : 49.464pt; " id="image0" src="SysMgmt00003.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When the export finishes, it displays one of the following return codes:</p>
+</li>
+ </ol>
+ <h5>0: Export successful</h5>
+ <h5>-1: Unknown host</h5>
+ <h5>-2: Connection refused. Check the credentials and try again.</h5>
+ <h5>-3: Target not found, export aborted.</h5>
+ <h5>-4: Cannot create export file. Check for disk full, or inadequate permissions. Export aborted.</h5>
+ <p class="BodyLevel1">If the export was successful, the exported objects are available in an XML file with the name you specified, which can be imported into another Control Center.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 359.95pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th colspan="2" style="width : 94.774pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Argument</p>
+</th>
+  <th style="width : 265.175pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 14.975pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="4">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Connection</p>
+</td>
+  <td style="width : 79.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p>-s &lt;server&gt;</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name or URL of the server where the Control Center&#160;is running, from which you want to export the policies. This argument is required.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 79.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p>-p &lt;port&gt;</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The port number of the Control Center&#160;host. If not specified, the default 8443 is used. Note that this must be a lowercase “p”.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 79.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-u &lt;user&gt;</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">User name of a Control Center user with administrator privileges. This argument is required.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 79.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-w &lt;password&gt; </p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The Control Center utility password. This argument is required; if it is not initially supplied, the utility will prompt the user for it before continuing.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 14.975pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : middle;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="4">
+  <p style="text-align  : center;  font-weight : bold; font-size  : 8.0pt;">Controls</p>
+</td>
+  <td style="width : 79.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p>-h</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Help: displays the syntax of this command, as a reminder to the user. Supersedes any other arguments.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 79.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-l</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Displays a list of all folders, policies, and components specified by the target. Details are not displayed.</p>
+</td>
+</tr>
+  <tr style=" height : 42.00pt;">
+  <td style="width : 79.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-f</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Force save feature. If a file with the same name as the export file already exists, the earlier version will be not be overwritten, but renamed with a date/time stamp appended to its name. </p>
+  <p class="CellBody">Cannot be used together with the -x argument.</p>
+</td>
+</tr>
+  <tr style=" height : 34.00pt;">
+  <td style="width : 79.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-x</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">If a file with the same name as the export file already exists, the export operation will be cancelled. </p>
+  <p class="CellBody">Cannot be used together with the -f argument.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 14.975pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : middle;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="5">
+  <p style="text-align  : center;  font-weight : bold; font-size  : 8.0pt;">Export Target Specifications</p>
+</td>
+  <td style="width : 79.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p>-a</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Export file will include all folders, policies and their dependent components in the Policy Master database. Supersedes any other target specification.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 79.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-d &lt;dirName&gt;</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Include specified directory, exporting all policies and their dependent components, but not including any subdirectories. May be used more than once, and in conjunction with any other target specifier.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 79.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-r &lt;dirName&gt;</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Include specified directory, including all its subdirectories, exporting all policies and their dependent components. May be used more than once, and in conjunction with any other target specifier.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 79.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-P &lt;path/policy&gt;</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Include the policy specified by path/policy, including all of its dependent components. The path is the folder hierarchy of this policy. May be used more than once, and in conjunction with any other target specifier. Note that this must be a capital “P”.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 79.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-F &lt;filename&gt;</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name you want to assign to the export file. The value specified here will be appended with an .xml extension. This argument is required for all commands except List (<span style="font-weight : bold; "><b>-l</b></span>), and must be the last string in the line (space-delimited). Note that this must be a capital “F”.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h3>Conflict Handling</h3>
+ <p class="BodyLevel1">You have two choices for how the export utility behaves if it encounters an existing file with the same name as specified by the -F parameter.</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Create the new export file and rename the existing one by appending a date/time stamp (<span style="font-weight : bold; "><b>-f</b></span>)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Cancel the entire export operation (<span style="font-weight : bold; "><b>-x</b></span>)</p>
+
+ <p class="BodyLevel1">If neither option is specified in the command line, the utility explicitly prompts you with a standard “Overwrite Y/N?” message whenever it encounters a con&#173;flict.</p>
+ <h3>Displaying a List</h3>
+ <p class="BodyLevel1">If you only want to generate a list of policies and/or components, you can use the <span style="font-weight : bold; "><b>-l</b></span>&#160;argument, which returns a list of all folders, policies and components specified by the export target specification elements, but without the details—just the names.</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>You must specify the target policies or folders you want to list.</p>
+ <h2>Importing</h2>
+ <p class="BodyLevel1">Once you have generated an XML file through the export procedure, you can import it to another Control Center, where the policies and components are then available for use in Policy Studio.</p>
+ <p class="BodyLevel1">You use a separate import utility called import.bat, which is also placed in the <span class="GreyBold">Program Files\NextLabs\PolicyServer\tools\importexport</span> directory dur&#173;ing Control Center installation.</p>
+ <p class="BodyLevel1">To use this utility:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Make sure no Policy Studio users anywhere in the system are currently working on any of the policies you want to import (see <a href="#XREF_20012_Open_Policies">Open Policies</a>).</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Log in to the host of the Control Center&#160;from which you want to export policies, or to a computer that can connect to it, and open a command line window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Make sure the Import utility (import.bat) is present on the host where you are working. During installation it is placed, by default, in the Control Center&#160;host in <span class="GreyBold">Program Files\NextLabs\PolicyServer\tools\import&#173;export</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Navigate to the location of the utility, and type the import command line, specifying the required connection arguments, controls, and name of the source file you want to import. Use the following format:</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="SysMgmt00006.jpg" style="width : 483.264pt; height : 53.856pt; " id="image1" src="SysMgmt00006.jpg" />
+  </div>
+  <p class="BodyLevel1">&#160;</p>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span><span style="font-style : italic; font-weight : bold; "><i><b>On Duplicate Objects</b></i></span>: Although they are technically optional, we strongly recommend that you specify one of the conflict-handling con&#173;trols (-o, -r, -d, or -x), in order to specify how the utility should behave if the import file contains objects that are already defined in the tar&#173;get system. There are nearly always duplicated objects between one system and another—if nothing else, the seed data that is typically imported for use in policies is often duplicated in all systems.</p>
+  <p class="Title">The conflict-handling controls are mutually exclusive—you can only spec&#173;ify one of the four. If you do not include any of them in your command line, the import proceeds, but all duplicate objects are imported into the new object library.</p>
+  <p class="Title">For definitions of these controls, see the table below.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When the import finishes, it displays one of the following return codes:</p>
+</li>
+ </ol>
+ <h5>0: Import successful</h5>
+ <h5>-1: Unknown host</h5>
+ <h5>-2: Connection refused. Check the credentials and try again.</h5>
+ <h5>-3: Cannot open export file. File does not exist, or user has inadequate permissions. Import aborted.</h5>
+ <h5>-4: Import canceled by user.</h5>
+ <h5>-5: Import canceled by server.</h5>
+ <p class="BodyLevel1">If the import was successful, at this point the objects you imported are avail&#173;able for use in Policy Studio, and are displayed in the policy tree and component panels.</p>
+ <p class="BodyLevel1">The following table describes all arguments available for the import utility. Note that all arguments are case-sensitive.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 361.45pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th colspan="2" style="width : 88.774pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Argument</p>
+</th>
+  <th style="width : 272.675pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 14.975pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="4">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Connection</p>
+</td>
+  <td style="width : 73.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p>-s &lt;server&gt;</p>
+</td>
+  <td style="width : 272.675pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name or URL of the server where the Control Center&#160;is running, to which you want to import the policies. This argument is required.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 73.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p>-p &lt;port&gt;</p>
+</td>
+  <td style="width : 272.675pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The port of the Control Center&#160;host. If not specified, the default 8443 is used.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 73.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-u &lt;user&gt;</p>
+</td>
+  <td style="width : 272.675pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">User name of a Control Center user with administrator privileges. This argument is required.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 73.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-w &lt;password&gt; </p>
+</td>
+  <td style="width : 272.675pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The Control Center utility password. This argument is required; if it is not initially supplied, the utility prompts the user for it before continuing.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 14.975pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : middle;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="8">
+  <p style="text-align  : center;  font-weight : bold; font-size  : 8.0pt;">Controls</p>
+</td>
+  <td style="width : 73.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p>-h</p>
+</td>
+  <td style="width : 272.675pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Help: displays the syntax of this command, as a reminder to the user. Supersedes any other arguments.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 73.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-l</p>
+</td>
+  <td style="width : 272.675pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Displays a list of all folders, policies and components in the specified export file. Details are not displayed. This is for display only; no policies are imported.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 73.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-i</p>
+</td>
+  <td style="width : 272.675pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Perform a shallow import (see below).</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 73.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-o</p>
+</td>
+  <td style="width : 272.675pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Resolve all data conflicts by overwriting the existing data on the server with the imported data from the file. Cannot be used together with the <br />-u, -d or -x flags.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 73.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-r</p>
+</td>
+  <td style="width : 272.675pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Resolve all data conflicts by adding the imported objects to the server, with auto-generated new names (a date/timestamp is appended). Cannot be used together with the -o, -d or -x flags.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 73.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-d</p>
+</td>
+  <td style="width : 272.675pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Resolve all data conflicts by keeping the existing policies and components on the server, and ignoring the imported data. Cannot be used together with the -o, -u or -x flags.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 73.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-x</p>
+</td>
+  <td style="width : 272.675pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">In the event of data conflict, cancel the import operation. Cannot be used together with the -o, -u, or -d flags.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 73.799pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">-F &lt;filename&gt;</p>
+</td>
+  <td style="width : 272.675pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name of the file you want to import. This argument is required, and must be the last string in the line. Note that this must be a capital “F”.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h3>About Shallow Import</h3>
+ <p class="BodyLevel1">The shallow import flag, -i, commands the utility to perform a special kind of import: for any components or policies that are defined with reference to spe&#173;cific user or group names or to network hosts or paths, those references will be removed before importing. Only aspects of the definitions that do not tie the definitions to the physical environment—such as LDIF metadata and file or user properties—are included in the import. The original policy tree folder structure, and nested component structures (components whose definitions contain other components) are also preserved.</p>
+ <h3>Conflict Handling</h3>
+ <p class="BodyLevel1">You have four choices for how the import utility behaves if it encounters a name conflict between imported components and policies, and those already defined on the target system.</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Overwrite existing data (-o)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Import new data, adding a date/timestamp to each name (-r)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Keep existing data and ignore imported data (-d)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Cancel the entire import operation (-x)</p>
+
+ <p class="BodyLevel1">Because these behaviors are mutually exclusive, you can specify only one of the four flags for each import operation. If you do not specify any of them, the -r behavior executes by default.</p>
+ <h3>Viewing the Contents of an Export File</h3>
+ <p class="BodyLevel1">As with the Export command, the -l flag allows you to review the contents of the file before you actually run an import procedure.</p>
+ <h3>Permissions for Imported Policies</h3>
+ <p class="BodyLevel1">Policies and components that are imported are assigned the permissions defined for the Default Access Group (DAC) associated with the importing user. Users who are members of the group associated with the importing user also have access to the imported policies and components. If the DAC group for the importing user does not have adequate permissions to access policies, other users in that group also do not have adequate permissions.</p>
+ <h3><a name="XREF_20012_Open_Policies"></a>Open Policies</h3>
+ <p class="BodyLevel1">If any policy analyst is using Policy Studio and has a policy or component open at the time a newer version is imported from a file, that object is <span style="font-style : italic; "><i>not</i></span>&#160;updated. This should be avoided, since it produces an inconsistent policy set. System administrators can avoid this in the following ways:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Perform the update at a time when you are certain no one is using any instance of Policy Studio.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Request that all policy analysts shut down their Policy Studio while any policies are being updated by importing.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Publish the list of policies and components planned for updating by import, and ask all policy analysts to refrain from editing any object in that list until the update is complete.</p>
+
+ <h3>Policy Studio Restart</h3>
+ <p class="BodyLevel1">Note that if the target Policy Studio—the one installed on the system where you are importing policies—is running, you must restart it before the imported poli&#173;cies and components are available in the policy tree and component panels. </p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

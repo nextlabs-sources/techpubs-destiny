@@ -1,0 +1,34 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<tocdata>
+<item name="Welcome to 7.7" url="ReporterUserGuide/Welcome/Welcome_to_7_7.htm" />
+<book name="Introducing Reporter" >
+  <item name="Introducing Reporter" url="ReporterUserGuide/Intro/Introducing_Reporter.htm" />
+  <item name="About Reporter" url="ReporterUserGuide/Intro/About_Reporter.htm" />
+  <item name="Opening Reporter" url="ReporterUserGuide/Intro/Opening_Reporter.htm" />
+  <item name="About the User Interface" url="ReporterUserGuide/Intro/About_the_User_Interface.htm" />
+</book>
+<book name="Using Dashboard" >
+  <item name="Using the Dashboard" url="ReporterUserGuide/Dashboard/Using_the_Dashboard.htm" />
+  <item name="Introducing the Dashboard" url="ReporterUserGuide/Dashboard/Introducing_the_Dashboard.htm" />
+  <item name="About the Dashboard Data" url="ReporterUserGuide/Dashboard/About_the_Dashboard_Data.htm" />
+</book>
+<book name="Working with Reports" >
+  <item name="Working with Reports" url="ReporterUserGuide/Reports/Working_with_Reports.htm" />
+  <item name="Reporting Functionality and Permissions" url="ReporterUserGuide/Reports/Reporting_Functionality_and_Permissions.htm" />
+  <item name="Creating a Report" url="ReporterUserGuide/Reports/Creating_a_Report.htm" />
+  <item name="Running a Report" url="ReporterUserGuide/Reports/Running_a_Report.htm" />
+  <item name="Viewing the report output" url="ReporterUserGuide/Reports/Viewing_the_report_output.htm" />
+  <item name="Saving a Report" url="ReporterUserGuide/Reports/Saving_a_Report.htm" />
+  <item name="Sample Reports" url="ReporterUserGuide/Reports/Sample_Reports.htm" />
+  <item name="Report Anomalies" url="ReporterUserGuide/Reports/Report_Anomalies.htm" />
+</book>
+<book name="Working with Monitors and Alerts" >
+  <item name="Working with Monitors and Alerts" url="ReporterUserGuide/Monitors/Working_with_Monitors_and_Alerts.htm" />
+  <item name="Monitoring Functionality and Permissions" url="ReporterUserGuide/Monitors/Monitoring_Functionality_and_Permissions.htm" />
+  <item name="Creating a Monitor" url="ReporterUserGuide/Monitors/Creating_a_Monitor.htm" />
+  <item name="Deactivating and Deleting Monitors" url="ReporterUserGuide/Monitors/Deactivating_and_Deleting_Monitors.htm" />
+  <item name="Viewing Alerts" url="ReporterUserGuide/Monitors/Viewing_Alerts.htm" />
+  <item name="Analyzing Alerts" url="ReporterUserGuide/Monitors/Analyzing_Alerts.htm" />
+</book>
+
+</tocdata>

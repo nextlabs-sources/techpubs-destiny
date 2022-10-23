@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>About Configuration Files</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\SysConfig.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Configuration Tools\nAbout Configuration Files");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Configuration_Tools.htm\">Configuration Tools<\/a> &gt; About Configuration Files<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_13926_About"></a>About Configuration Files</h1>
+ <p class="BodyLevel1">You perform all configuration by editing various Control Center configuration files directly, and saving your changes.</p>
+ <p class="BodyLevel1">The platform uses XML files that contain configuration settings you can view or modify in order to tune your system’s performance, scale the system by adding or removing modules, or address various administration tasks and issues. The primary configuration files are:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>configuration.xml</b></span>: The main configuration file for Control Center. This file contains settings for Control Center operation, such as heartbeat fre&#173;quency and other settings that are required for the various Control Center&#160;software components to communicate.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>server.xml</b></span>: The configuration file for the Tomcat application server, which is part of the Control Center&#160;platform. You only need to edit this file if you install additional instances of the Tomcat server.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>ddac_config.xml</b></span>: The configuration file for the DAC Bridge Server. You only need to change this file if your implementation includes DAC policies to be deployed to Active Directory.</p>
+
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>For more information on DAC policies, consult the <span class="Emphasis">Policy Studio User’s Guide</span>.</p>
+ <p class="BodyLevel1">These files begin with a set of initial configuration settings. In order to modify those initial settings, or to access settings that are not included in the installa&#173;tion wizards, you can edit the configuration files directly. Each feature is associ&#173;ated with a section in the file, and focuses on the functions of each information element (marked by its XML tag) in that section. An element may or may not have one or more Properties sections within it, which control aspects of the cor&#173;responding feature’s operation. The figure below shows an example of one of these sections.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SysConfig00001.jpg" style="width : 487.656pt; height : 330.552pt; " id="image0" src="SysConfig00001.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Sample Section from the <span style="font-style : normal; ">Configuration.xml</span> File</p>
+ <p class="BodyLevel1">To change any aspect of your configuration:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open the file with a text editor. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Find the setting you are interested in by searching for its tag.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change the value between the open and close tags.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Close the file, saving your changes.</p>
+</li>
+ </ol>
+ <h2>The Control Center Configuration&nbsp;File</h2>
+ <p class="BodyLevel1">The main Control Center configuration file, configuration.xml, is placed on the host machine when you first install the Control Center. It controls the behavior of all Control Center&#160;components throughout your system, even if they are installed on different hosts. During installation, the file is placed in</p>
+ <h5>&lt;InstallDir&gt;\server\configuration\configuration.xml</h5>
+ <p class="BodyLevel1">You can use this file to change the configuration of the following:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>User repository</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Authentication</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Control Center components</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Data access</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Information Network Directory</p>
+
+ <h2><a name="XREF_50749_The_Tomcat"></a>The Tomcat Application Server Configuration&nbsp;File</h2>
+ <p class="BodyLevel1">Control Center uses the Tomcat open-source application server to provide a platform for the Control Center server components. If you install Control Center&#160;components in a distributed architecture rather than on a single host, Tomcat is installed on each of the host machines.</p>
+ <p class="BodyLevel1">Every installation of Tomcat has its own configuration file, called <span style="font-style : italic; "><i>server.xml</i></span><span style="font-weight : bold; "><b>.</b></span>&#160;This file informs a given instance of Tomcat about which applications it will be serving on that machine. During installation, the file is placed in </p>
+ <h5>&lt;InstallDir&gt;\server\configuration\server.xml</h5>
+ <p class="BodyLevel1">The Control Center implementation of the Tomcat configuration file contains many standard Tomcat settings, which you can modify to tune your system. For example, you can change the default number of threads and various time-outs. More specifically to Control Center, the file contains &lt;Service&gt; sections that pro&#173;vide settings for two services, <span style="font-style : italic; "><i>DCC-Core</i></span>&#160;and <span style="font-style : italic; "><i>DCC-Apps</i></span>. You must not delete either of these sections, but you can modify some of their properties. For more details, see <a href="Tomcat_Settings.htm#XREF_57469_Tomcat_Settings">Tomcat Settings</a>.</p>
+ <h2>The DAC Configuration File</h2>
+ <p class="BodyLevel1">NextLabs Dynamic Access Control (DAC) policies allow you to integrate NextLabs policy enforcement with Windows Server 2012 DAC rules. This integration is enabled by the NextLabs DAC Bridge Server, which is installed automatically with NextLabs Control Center. </p>
+ <p class="BodyLevel1">Before you can deploy DAC policies, you must configure DAC Bridge Server set&#173;tings in the DAC Configuration file (<span class="GreyBold">ddac_config.xml</span>). This file stores connec&#173;tion information that allows the DAC Bridge Server to locate and connect with the target AD Server(s). This file also defines attribute-to-claim and attribute-to-property mapping, which the DAC Bridge Server uses to convert NextLabs pol&#173;icies to Microsoft CARs.</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>Because this configuration is related to policies, all procedures for the DAC Bridge Server (including the ddac_config.xml file) are discussed in the <span class="Emphasis">Policy Studio User’s Guide</span>.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

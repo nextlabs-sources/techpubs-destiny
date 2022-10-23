@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Running a Report</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Reporter_77\FM\Reports.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Working with Reports\nRunning a Report");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../ReporterUserGuideTOC.html", "", "&gt;", "Reporter&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Working_with_Reports.htm\">Working with Reports<\/a> &gt; Running a Report<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../ReporterUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_62148_Running_a_Report"></a>Running a Report</h1>
+ <p class="BodyLevel1">You can run any report selected from <span class="Bold">Saved Reports</span>, or a new report you define in <span class="Bold">Report Details</span>. Simply click the <span class="Bold">Run</span>&#160;button at the bottom of <span class="Bold">Report Details</span>.</p>
+ <p class="BodyLevel1">When you run a report, Reporter compares the information currently in the Activity Journal to the report criteria, selects the matching information (if any), calculates the totals, and displays the results in the format you selected.</p>
+ <p class="BodyLevel1">If you selected a chart as the output format, the chart appears at the bottom of the <span class="Bold">Report Details</span>&#160;pane. Scroll down to view the chart. If the output format is a table, it might appear in a separate tab in the browser window, depending on the browser you are using. The following figure shows an example of policy activity data displayed in a table.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="TableOutput.png" style="width : 452.159pt; height : 328.800pt; " id="image6" src="TableOutput.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Report results in table format</p>
+ <p class="BodyLevel1">If the report does not find any data that matches the specified criteria, a mes&#173;sage, such as the following is displayed.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="NoData.png" style="width : 452.640pt; height : 103.208pt; " id="image7" src="NoData.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">No data message</p>
+ <p class="BodyLevel1">Return to the report query to check the specified criteria, and modify the query as needed. Check the time period. As discussed in <a href="Creating_a_Report.htm#XREF_65163_Activity_Journal">Activity Journal Considerations</a>, if the specified time period is too far in the past, the data is likely to have been archived. Remember, too—the greater the number of filters, the nar&#173;rower the scope of data returned. If there are conditions specified in multiple fields, such as <span class="Bold">User Criteria</span>, <span class="Bold">Policy Criteria</span>, and <span class="Bold">Resource Criteria</span>, all the condi&#173;tions must be true for the data to match.</p>
+ <p class="BodyLevel1">Conversely, if the report returns more data than you expect, check the filters in the query. For example, verify that the filters have been added to the query. The following figure shows an example of a resource filter that has been defined (values are entered in the <span class="Bold">Resource Criteria</span>&#160;fields), but that has not been added to the query. You must click the <span class="Bold">+</span>&#160;button to add a filter. When a filter has been added, it appears below the field, as indicated by the policy filter that appears below <span class="Bold">Policy Criteria</span>.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="CriteriaNotAdded.jpg" style="width : 363.900pt; height : 130.849pt; " id="image8" src="CriteriaNotAdded.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Filter examples, one added and one not</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

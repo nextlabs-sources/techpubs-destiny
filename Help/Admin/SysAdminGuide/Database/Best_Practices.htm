@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Best Practices</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\Database.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Database Management\nBest Practices");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Database_Management.htm\">Database Management<\/a> &gt; Best Practices<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_29216_Best_Practices"></a>Best Practices</h1>
+ <p class="BodyLevel1">The following section provides some guidance on how to use the configuration tools described above, to maximize the performance of your Activity Journal database, and of report generation.</p>
+ <h2>Determining&#160;Logging Volume</h2>
+ <p class="BodyLevel1">In order to judge whether you need to reset any of the configuration parameters that control database management, you need to have some idea of how much log data your system is accumulating over time. The simpest way to do this is through Administrator, whose main System Status tab displays (in the lower left corner) the System Statistics related to the Activity Journal. These represent events written to the system logs, and so the number gives you the actual num&#173;ber of log events—that is, database rows—generated in the last 24-hour period.</p>
+ <p class="BodyLevel1">For more on these statistics, see <a><span class="FM_blue">Status Overview Statistics</span></a>.</p>
+ <h2>Setting Sync Times</h2>
+ <p class="BodyLevel1">There is an inherent trade-off between operational efficiency and the freshness of reporting data. This is so because the sync operation fragments Activity Jour&#173;nal data indexes, and the more fragmented they are, the longer the reindexing takes. In short, the more frequently you sync, the more up-to-date the data, but the slower your reports will run. </p>
+ <p class="BodyLevel1">The default behavior of syncing frequently throughout the day ensures that all reports will include the most recent data, but the frequent sync operations to place a processing load on the reporter server. Especially if you are generating large amounts of activity data, you will benefit from resetting the sync interval to several hours, or even to twice or even just once a day, either by using the TimeOfDay parameter, or by setting the TimeInterval parameter to 12 or 24 hours. This will greatly enhance efficiency, but will mean that the most recent report data will be from the previous day. How you set these parameters depends largely on how important it is that your reports to show up-to-the-hour data. As a rule, you should back the sync operation time interval off to the lon&#173;gest you can, given your reporting requirements.</p>
+ <h2>Optimizing Report Generation</h2>
+ <p class="BodyLevel1">Large accumulations of data in your Activity Journal will directly effect how fast you can generate any reports. Accordingly, the best rule of thumb for generating reports quickly, is to keep your Activity Journal tables as small as possible. Of course, this is limited by the length of time you need to report on. If you need to report only the previous week’s data, that allows you to maintain less data in the Activity Journal than if you need reports on the previous month’s or quar&#173;ter’s data. Similarly, if you need to run monthly reports but only do that once a quarter, you can archive most of your data on a much but only unarchive it as immediately needed to run the quarterly report.</p>
+ <h2>Managing Database Size</h2>
+ <p class="BodyLevel1">Even though the mechanisms described in this chapter automatically move data from one set of tables to another, eventually your database overall will continue to grow until it becomes unmanageably large if you do not control it.</p>
+ <p class="BodyLevel1">In every Control Center installation, the database must be backed up periodi&#173;cally so that the archive tables can be truncated to make room for constantly accumulating activity data. How often you do this depends on the size of your implementation and the amount of activity, both policy-related and not. For most enterprises, a daily backup is more frequent than necessary, while once a month would be too seldom. Something like once a week would be reasonable, more or less depending on your actual data accumulation.</p>
+ <p class="BodyLevel1">The proper approach is to keep an eye on the size of your Control Center data&#173;base, run a backup and truncate operation, and note how much that reduced the overall data volume. </p>
+ <h2>Weekly Backup Procedure</h2>
+ <p class="BodyLevel1">The backup step of the process described above generally involves making cop&#173;ies of the archive tables, so they are available in case you ever need to restore them to another database so you can run reports on them. Each time you do this, the backup includes the archive tables from the previous backup plus all new data since then. This means that each time you back up the (archive) data&#173;base, you add the latest data for all tables. Assuming you make a backup once a week (a generally recommended interval), this backup data can quickly become unmanageably large.</p>
+ <p class="BodyLevel1">A better approach is to use the following steps at the time of the weekly data&#173;base backup:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Export the data from the archive tables to a set of files. These files can be marked with a timestamp as the file name, allowing you to restore the archive data from specific dates if you need to. This operation can be a script that is run during the weekly database maintenance window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Backup the database in the standard way.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the Truncate script to remove un-needed data from OLTP tables and clear out the archive tables.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Shrink the database.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Rebuild all indexes.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1">By following this procedure, you ensure that your database remains at a reason&#173;able size, while also backing up the archived data to files that can be stored on a different media if needed, where it is available for restore operations as needed.</p>
+ <h2>Exporting Individual Tables</h2>
+ <p class="BodyLevel1">If you wish to export data from individual tables to files, you need specialized database tools that are specific to the database you are using. For example, MS SQL server provides the BCP tool for this purpose.</p>
+ <p class="BodyLevel1">Note that you can also use these specialized tools to export the content of archived data on a table-by-table basis. For example, the commands shown would export the content of the archive tables for an MS SQL database called “Alpo.” This operation refers to the contents of a Windows batch file that could be run as a part of Step&nbsp;1, above.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Call BCP “alpo.dbo.archive_policy_activity_log” out c:\Temp\<br />apalog.bcp -n -T</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Call BCP “alpo.dbo.archive_policy_custom_attr” out c:\Temp\<br />apacustlog.bcp -n -T</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Call BCP “alpo dbo.archive_obligation_log” out c:\Temp\apaoblog.bcp -n -T</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Call BCP “alpo.dbo.archive_tracking_activity_log” out c:\Temp\<br />atalog.bcp -n -T</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Call BCP “alpo.dbo.archive_tracking_custom_attr” out c:\Temp\<br />atacustattrlog.bcp -n -T</p>
+</li>
+ </ol>
+ <p class="BodyLevel1">As we mentioned above, the file names should be appended with timestamps so that files from the previous exports are not overwritten. In addition, the direc&#173;tory where all these files should be backed up periodically.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

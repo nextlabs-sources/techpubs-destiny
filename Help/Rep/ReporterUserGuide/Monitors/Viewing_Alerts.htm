@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Viewing Alerts</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Reporter_77\FM\Monitors.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Working with Monitors and Alerts\nViewing Alerts");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../ReporterUserGuideTOC.html", "", "&gt;", "Reporter&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Working_with_Monitors_and_Alerts.htm\">Working with Monitors and Alerts<\/a> &gt; Viewing Alerts<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../ReporterUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_69691_Viewing_Alerts"></a>Viewing Alerts</h1>
+ <p class="BodyLevel1">The <span class="Bold">Alerts Overview</span>&#160;tab provides a summary list of alerts in a table. By default, the table displays all alerts raised by all monitors in the current day. The alerts are sorted by the time they were raised, starting with the latest. The following figure shows an example of Alerts Overview displaying three alerts.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="AlertsOverview.png" style="width : 488.266pt; height : 217.199pt; " id="image10" src="AlertsOverview.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Alerts Overview displaying three alerts</p>
+ <p class="BodyLevel1">By default, ten alerts are shown on each page. You can increase the number of alerts to display per page by selecting a number in <span class="Bold">Show 10 entries. </span>Use the nav&#173;igation links on the bottom right to browse through all the alerts.</p>
+ <h2>Sorting Alerts</h2>
+ <p class="BodyLevel1">By default, alerts in the Alerts Overview table are sorted by date and time val&#173;ues in the Raised At column. You can select a different column—Level, Monitor Name, or Alert Message—on which to sort by clicking the column name in the table header, shown in the following figure. By also clicking the column header, you can change the sorting order of a column from descending to ascending order, and vice versa.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="AlertsTableHeader.png" style="width : 411.466pt; height : 43.741pt; " id="image11" src="AlertsTableHeader.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Table header</p>
+ <h2>Filtering Alerts</h2>
+ <p class="BodyLevel1">You can filter the list of alerts to view only the ones of interest. You can filter by dates (specific or relative), monitor name, tag name, or tag value, as the fol&#173;lowing figure shows.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="AlertsFilter.png" style="width : 484.392pt; height : 47.466pt; " id="image12" src="AlertsFilter.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Alert Filters</p>
+ <h3><a name="XREF_73725_Filtering_by"></a>Filtering by specific dates or times</h3>
+ <p class="BodyLevel1">A specific time period can be any span of time. For example, you can define a filter that selects data for a specific week or day. You can narrow the data to a range of hours, or even minutes, in a specific day. To display alerts triggered in a specific time period, perform the following steps. </p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In <span class="Bold">Date</span>&#160;<span class="Bold">mode</span>, select Fixed Dates.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In <span class="Bold">From</span>&#160;and <span class="Bold">To</span>, specify the start date/time and end date/time, respec&#173;tively, of the time period in which the alerts you want to view, occurred. Click in the field to choose a date and/or time from the calendar. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="Bold">Go</span>.</p>
+</li>
+ </ol>
+ <h3><a name="XREF_26581_Filtering_by"></a>Filtering by relative dates</h3>
+ <p class="BodyLevel1">Relative dates are the dates that are relative to the current date. For example, you may want to view alerts that were triggered yesterday or this week. To dis&#173;play alerts by relative dates:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In <span class="Bold">Date</span>&#160;mode, use the default option <span class="Bold">Relative</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In <span class="Bold">Date Selection</span>, select a time period from the drop-down list. For descriptions of each value, see <a><span class="FM_blue">Duration Values</span></a>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="Bold">Go</span>.</p>
+</li>
+ </ol>
+ <h3>Filtering by Monitor</h3>
+ <p class="BodyLevel1">You have the option of viewing alerts triggered by all monitors (the default) or by a specific monitor. In <span class="Bold">Monitor</span>, select All, or one of the monitors in the drop-down list.</p>
+ <h3>Filtering by Tag Name and Tag Value</h3>
+ <p class="BodyLevel1">As described in <a href="Creating_a_Monitor.htm#XREF_27548_Creating_a_Monitor">Creating a Monitor</a>, you can create one or more tags for each monitor. Each tag is a name-value pair. You can filter alerts by either name or value, or both.</p>
+ <h2>Displaying Alert Details<span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span></h2>
+ <p class="BodyLevel1">You can view all the policy enforcement events associated with the alert. To dis&#173;play this information, select <span class="Bold">Details</span> in the Action column.</p>
+ <h2>Deleting and Dismissing Alerts</h2>
+ <p class="BodyLevel1">The system retains all alerts until you delete them. If there are alerts you no longer need to see or include in analyses, you should delete them. For each alert to delete, select <span class="Bold">Delete</span> in the Action column.</p>
+ <p class="BodyLevel1">If you want to keep an alert in the system for statistical reasons, but want to exclude it from the table in Alerts Overview, select <span class="Bold">Dismiss</span> in the Action col&#173;umn. To re-display alerts that you have dismissed, select <span class="Bold">Show Dismissed</span>&#160;above the table.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

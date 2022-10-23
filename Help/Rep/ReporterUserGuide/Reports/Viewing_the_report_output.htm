@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Viewing the report output</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Reporter_77\FM\Reports.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Working with Reports\nViewing the report output");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../ReporterUserGuideTOC.html", "", "&gt;", "Reporter&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Working_with_Reports.htm\">Working with Reports<\/a> &gt; Viewing the report output<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../ReporterUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_49423_Viewing_the_report"></a>Viewing the report output<span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span></h1>
+ <p class="BodyLevel1">When viewing the report output, you can drill down for additional information. A table shows all the policy enforcement events that meet the criteria specified in the report query. You can click the date value in any row to get details for an event. The details appear in a Log Details Report on a separate page, as shown in the following figure.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Reports00015.jpg" style="width : 496.740pt; height : 358.785pt; " id="image9" src="Reports00015.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Selecting a row to get event details</p>
+ <p class="BodyLevel1">Unlike a table, a chart does not show each policy enforcement event. Rather, a chart aggregates policy enforcement events by the grouping option you specify. For example, a chart can group events by user. In this case, each slice of a pie chart or bar in a bar chart represents a user and the total number of events trig&#173;gered by the user. You can click a chart slice or bar to see all the events trig&#173;gered by a particular user.</p>
+ <p class="BodyLevel1">The following figure shows the list of events that appear when a bar in a bar chart is clicked. The number, 5.00, on top of the bar indicates the number of events for a particular user, and, correspondingly, the table lists the five events. As described previously, you can drill down for additional details about each event by clicking a date value in a row in the table.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Reports00018.jpg" style="width : 488.676pt; height : 268.200pt; " id="image10" src="Reports00018.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Clicking a bar in a chart to get a list of events</p>
+ <h2>Non-Latin Characters</h2>
+ <p class="BodyLevel1">If you are using MS SQL and your database includes columns with content in lan&#173;guages that use character sets other than standard Latin, reports based on them may not display properly—for example, they may show question marks rather than the proper characters.</p>
+ <p class="BodyLevel1">If you encounter this problem in reports, you can solve it by having your data&#173;base administrator change the collation value for the columns in question, to match the language of the content of that column. Note that only non case-spe&#173;cific collations should be used, whatever the character set. Once you do this, the reports should generate properly.</p>
+ <p class="BodyLevel1">Again, this should be done on a column-by-column basis, and applies only to MS SQL databases.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

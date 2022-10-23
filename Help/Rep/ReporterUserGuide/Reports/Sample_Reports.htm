@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Sample Reports</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Reporter_77\FM\Reports.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Working with Reports\nSample Reports");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../ReporterUserGuideTOC.html", "", "&gt;", "Reporter&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Working_with_Reports.htm\">Working with Reports<\/a> &gt; Sample Reports<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../ReporterUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_62752_Sample_Reports"></a>Sample Reports</h1>
+ <p class="BodyLevel1">This section presents examples of different report formats, all representing a small set of event data returned by the same report query. The query requests all events by all users on all resources for one week (August 3, 2014 to August 9, 2014). By comparing the examples, you can get a better understanding of the way the different formats can be used to highlight different aspects of the same data.</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_36489_DetailsReports">Table</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_57732_GroupBy_Policy">Group By Policy Chart</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_83687_GroupByUser_Reports">Group By User Chart</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_68794_GroupBy_Resource">Group By Resource Chart</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_98048_GroupByTime_Report">Group By Time Chart</a></p>
+
+ <h2><a name="XREF_36489_DetailsReports"></a>Table</h2>
+ <p class="BodyLevel1">The following figure shows a small set of policy activity data displayed in a table.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SmplDetailsReport.jpg" style="width : 480.654pt; height : 87.926pt; " id="image12" src="SmplDetailsReport.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Data presented in a table</p>
+ <p class="BodyLevel1">This report reflects the following:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Four policy enforcement events were logged—that is why there are four rows in the table.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>As the Date column shows, all four events occurred on the same day, August 7, 2014.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Each event was triggered by a different user, as shown by the four differ&#173;ent values in the User column.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Each event represents a different policy, as shown by the four different values in the Policy column.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Only three resources were involved. The first two rows show enforcement of two different policies by two different users, but both were connected to the same RTF document. This means that document is covered by (at least) two policies concurrently—not an unusual situation.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The enforcements were triggered by three different user actions, as shown by the values in the Action column. The third and last instances were caused by different users doing the same thing—trying to change a document’s attributes.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In all four cases, the enforcement decision was Allow, as shown in the last column.</p>
+
+ <p class="BodyLevel1">Keep these details in mind as you analyze the data in the following charts.</p>
+ <h2><a name="XREF_57732_GroupBy_Policy"></a>Group&nbsp;By Policy Chart</h2>
+ <p class="BodyLevel1">As discussed, four policies are reflected in the table above. When the report is re-run with <span class="Bold">Bar Chart</span>&#160;selected in the <span class="Bold">Report Type </span>field, and <span class="Bold">Group By Policy</span>&#160;selected in the <span class="Bold">Show</span>&#160;field, Reporter generates a bar chart with four bars, one per policy. Each bar is the same height, indicating one enforcement event per policy.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SmplResultsByPolicy.jpg" style="width : 467.564pt; height : 398.727pt; " id="image13" src="SmplResultsByPolicy.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Group By Policy chart</p>
+ <p class="BodyLevel1">Grouping events by policy is useful for identifying policies that are being trig&#173;gered with unexpected frequency, which may be an indication that they are improperly designed and cover users, resources or actions that they should not. It can also be an indication of concentrated efforts at unauthorized data access. To examine the latter possibility, it is often helpful to switch to the <span class="Bold">Group by User</span>&#160;option, to focus on who is performing the activity. </p>
+ <h2><a name="XREF_83687_GroupByUser_Reports"></a>Group&nbsp;By&nbsp;User Chart</h2>
+ <p class="BodyLevel1">When the same data is grouped by user, and the bar chart is selected, the fol&#173;lowing chart is generated. As noted previously, the four policies were each trig&#173;gered by a different user, and so the graph shows four bars—each representing one user. Each is labeled with a user name. In this example, the bars are the same height, since each of the four users triggered a policy once.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SmplResultsByUser.jpg" style="width : 475.417pt; height : 409.963pt; " id="image14" src="SmplResultsByUser.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Group By User chart</p>
+ <p class="BodyLevel1">Typically, in a live environment, there will be little difference among users’ rates of triggering policies. In cases where a big difference does arise—when one user shows a significantly disproportionate rate of triggering policies (especially Deny policies)—then the situation will likely merit closer investigation. The fol&#173;lowing figure shows an example of how such a case might look in a chart where data is grouped by user. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="ResultsByUser.jpg" style="width : 485.064pt; height : 292.098pt; " id="image15" src="ResultsByUser.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Group By User chart—red flag</p>
+ <h2><a name="XREF_68794_GroupBy_Resource"></a>Group&nbsp;By Resource Chart</h2>
+ <p class="BodyLevel1">When the same data is grouped by resource, and the pie chart is selected, the chart below is generated.The <span class="Bold">Group by Resource</span>&#160;option shows the extent of specified events—in this case, policies being triggered—per each individual resource covered by the report. In our case, of the four events, two involved the same RTF file (shown in blue) and the other two, one file each (red and orange). This means three resources total, as shown in the pie chart.</p>
+ <p class="BodyLevel1">Because policies often cover large numbers of individual documents or other resources, grouping by resource is only helpful when the number of events has already been narrowed down to a smaller set by various report filters, such as policies or users. A pie charts is ideal here, because in the context of resource use, the <span style="font-style : italic; "><i>relative</i></span>&#160;access activity regarding some single file or other resource as compared to all others, is generally of more interest than any <span style="font-style : italic; "><i>absolute</i></span>&#160;number of instances of access.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SmplResultsByResource.jpg" style="width : 475.417pt; height : 420.435pt; " id="image16" src="SmplResultsByResource.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Group By Resource chart</p>
+ <h2><a name="XREF_98048_GroupByTime_Report"></a>Group&nbsp;By&nbsp;Time Chart</h2>
+ <p class="BodyLevel1">The <span class="Bold">Group by Month</span>&#160;and <span class="Bold">Group by Day</span>&#160;options group all events by month and day, respectively. In our example, since all four events occurred on the same day, the chart shows only one bar, labeled 07 Aug 2014. The height of the bar indicates that four incidents occurred on that date. Because all the events occurred on the same day for a reporting period of one week, the chart appears the same whether the <span class="Bold">Group by Month</span>&#160;or <span class="Bold">Group by Day</span>&#160;option was selected. It makes sense to select the <span class="Bold">Group by Month</span>&#160;option only if the report period you specify spans more than one month.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SmplResultsByTime.jpg" style="width : 474.108pt; height : 434.182pt; " id="image17" src="SmplResultsByTime.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Group By Day chart</p>
+ <p class="BodyLevel1">In a live environment, this format is particularly useful in identifying time-related enforcement spikes, which are similar to the user-related red flags. Spikes in policy enforcement at specific times, such as weekends or the end of a quarter (especially with regard to Deny policies) can indicate intentional efforts at unauthorized access to sensitive resources or to financial documents pre&#173;pared at the end of each quarter.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

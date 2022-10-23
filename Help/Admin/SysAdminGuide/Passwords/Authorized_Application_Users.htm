@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Authorized Application Users</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\Passwords.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Passwords and Users\nAuthorized Application Users");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Passwords_and_Users.htm\">Passwords and Users<\/a> &gt; Authorized Application Users<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_39727_Authorized"></a>Authorized Application Users</h1>
+ <p class="BodyLevel1">These refer to user/password pairs that allow users to access and use the three Control Center applications: Policy Studio, Reporter, and Administrator.</p>
+ <p class="BodyLevel1">One or more separate user/password pairs can be defined for each application, by defining new users and assigning different roles to them. In turn, depending on how roles are defined, each user may have full or limited editing permissions within Policy Author. Each user can also be granted full permissions to Reporter or permission to run and view reports only. For Administrator, users either have full permissions or no access at all.</p>
+ <h3>Initial Default</h3>
+ <p class="BodyLevel1">There is one hard-coded super user, <span style="font-style : italic; "><i>Administrator</i></span>, whose password is set during the initial installation of Control Center, in response to a prompt on the Super User Password screen of the install wizard. This user has full permissions for all three applications. Anyone logging in as this user can create and manage addi&#173;tional authorized application users, and can also change the password for this super user; but this user name itself cannot be deleted or changed.</p>
+ <p class="BodyLevel1">Note that the super user password also serves as the default for all enrollment utilities, as described on <a href="Utility_Security_Password.htm#XREF_30531_Utility_Security">Utility Security Password</a>. If the super user logs into Reporter or Administrator and changes the super user password, that change also applies to the security password for all utilities.</p>
+ <h3>How to Change</h3>
+ <p class="BodyLevel1">The super user <span style="font-style : italic; "><i>Administrator</i></span>&#160;cannot be deleted or renamed. However, you can change its password by logging into either Administrator or Reporter as this super user, then manually clicking the <span style="font-weight : bold; "><b>Change Password</b></span>&#160;link at the upper right of the screen. As we mentioned, this change will also pertain to the security password for using all utilities.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="MainLinks.jpg" style="width : 232.488pt; height : 73.512pt; " id="image0" src="MainLinks.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="BodyLevel1">Anyone logged in with the super user permission can create additional applica&#173;tion users in Administrator, and also change the passwords of existing users. Any application user so defined, can also change his own password, also by logging in to Administrator or Reporter and clicking the Change My Password link. Autho&#173;rized users can also change passwords on the Users and Roles tab (see the figure below), which is also where you can create new users and groups, delete users and groups, assign different roles to existing users, and redefine the permissions associated with a role.</p>
+ <h3>Comments</h3>
+ <p class="BodyLevel1">The default user <span style="font-style : italic; "><i>Administrator</i></span>&#160;is not displayed in the Users list on this tab, even though that is where you create and manage additional users of the same type. It cannot be deleted.</p>
+ <p class="BodyLevel1">All passwords, whether defined during the install wizard or manually in the Administrator, are never visible anywhere, and cannot be looked up by anyone. This means you must keep track of passwords somewhere outside of Control Center, or change them if they are lost.</p>
+ <h3>References</h3>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Changing the Administrator password: see <a href="../SysConfig/Configuration_Settings.htm#XREF_68085_Encrypting">Encrypting Passwords</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Creating and editing authorized application users: see <a href="../IntroAdmin/The_Users_and_Roles_Tab.htm#XREF_89677_Adding_a_User">Adding a New User</a></p>
+
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="NewUser2.png" style="width : 473.244pt; height : 306.600pt; " id="image1" src="NewUser2.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Users and Roles tab in Administrator</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

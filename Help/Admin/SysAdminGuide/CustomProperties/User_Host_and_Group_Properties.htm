@@ -1,0 +1,507 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>User, Host, and Group Properties</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\CustomProperties.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Defining Custom Properties\nUser Host and Group Properties");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Defining_Custom_Properties.htm\">Defining Custom Properties<\/a> &gt; User Host and Group Properties<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_99301_Enrolling"></a>User, Host, and&nbsp;Group Properties</h1>
+ <p class="BodyLevel1">Each of the three LDAP entity types Users, Hosts and Groups has a default set of properties (technically, LDAP attributes), which display in Policy Author in the Property Name combo-box list. These are stored in internal tables in the Infor&#173;mation Network Directory. Each property has both a logical name, which is the actual column name in the database table, and a display name, which is the label that shows in the combo-box list. (Host properties are displayed in the combo-box list for Computer components.)</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="PropertiesComponent.jpg" style="width : 183.888pt; height : 58.896pt; " id="image0" src="PropertiesComponent.jpg" />
+ </div>
+ <p class="BodyLevel1">&#160;</p>
+ <p class="BodyLevel1">The following table describes the default properties available for defining Com&#173;puter components. Values for all default properties are case-insensitive, so you do not need to worry about capitalization as you type them into Policy Author. </p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 361.36pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 64.860pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Property</p>
+</th>
+  <th style="width : 296.501pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 64.860pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">DNS Host</p>
+</td>
+  <td style="width : 296.501pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Name of this computer, which the DNS uses for resolving IP addresses in order to find this computer in the network.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 64.860pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Machine Name</p>
+</td>
+  <td style="width : 296.501pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The permanent name assigned to this computer.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 64.860pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Network Address</p>
+</td>
+  <td style="width : 296.501pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The network name assigned to the PC, which will be resolved by a DNS. You may also use the direct numeric IP representation.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 64.860pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Operating System</p>
+</td>
+  <td style="width : 296.501pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Operating system of this computer.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 64.860pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Site</p>
+</td>
+  <td style="width : 296.501pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name of the site where the desktop is located. Sites are defined as one or more ranges of IP addresses.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1">&#160;</p>
+ <p class="BodyLevel1">The following table describes the default properties available for defining User components. &#160;</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.11pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 74.235pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Property</p>
+</th>
+  <th style="width : 285.876pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Account Name</p>
+</td>
+  <td style="width : 285.876pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Account with which this user is associated.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Company</p>
+</td>
+  <td style="width : 285.876pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Company with which this user is associated.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Country Name</p>
+</td>
+  <td style="width : 285.876pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Country of this user.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Department Name</p>
+</td>
+  <td style="width : 285.876pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Department with which this user is associated.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">First Name</p>
+</td>
+  <td style="width : 285.876pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">This user’s first name.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Full Name</p>
+</td>
+  <td style="width : 285.876pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">This user’s whole name.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">ISO Country Code</p>
+</td>
+  <td style="width : 285.876pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The ISO code of this user’s country.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Last Name</p>
+</td>
+  <td style="width : 285.876pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">This user’s last name.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Numeric Country Code</p>
+</td>
+  <td style="width : 285.876pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Numeric code of this user’s country.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Title</p>
+</td>
+  <td style="width : 285.876pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Title assigned to this user: Mr., Mrs., Ms., Dr., etc.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">User Principal Name</p>
+</td>
+  <td style="width : 285.876pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">This user’s LDAP principal name—a unique identifier for a user in Active Directory, typically in the form of an e-mail address; for example, jdoe@yourcompany.com.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h2>About Property Manager</h2>
+ <p class="BodyLevel1">If you want to define additional, custom properties for either User or Computer components, or for user or host groups, Control Center&#160;provides a utility called Property Manager (propertymgr.bat). The Property Manager, like the Enrollment Manager, is automatically installed on the Control Center host, at</p>
+ <h5>Program Files\NextLabs\PolicyServer\tools\enrollment</h5>
+ <p class="BodyLevel1">The following table describes the three functions of this tool.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.12pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 50.075pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Command</p>
+</th>
+  <th style="width : 92.575pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Use</p>
+</th>
+  <th style="width : 176.049pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Full Command String</p>
+</th>
+  <th style="width : 41.424pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">See:</p>
+</th>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 50.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-add</p>
+</td>
+  <td style="width : 92.575pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Add a custom property to users, hosts or groups </p>
+</td>
+  <td style="width : 176.049pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">propertymgr -add -s &lt;server&gt; -p &lt;port&gt; <br />-u &lt;ceuser&gt; -w &lt;cepwd&gt; -t &lt;type&gt; <br />-l &lt;logicalname&gt; -i &lt;displayname&gt; <br />-e &lt;entitytype&gt;   </p>
+</td>
+  <td style="width : 41.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><a href="#XREF_77358_Adding_Columns">Adding Properties</a></p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 50.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-delete</p>
+</td>
+  <td style="width : 92.575pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Delete a property from users, hosts or applications </p>
+</td>
+  <td style="width : 176.049pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">propertymgr -delete -s &lt;server&gt; -p &lt;port&gt;<br />-u &lt;ceuser&gt; -w &lt;cepwd&gt; -l &lt;logicalname&gt; <br />-e &lt;entitytype&gt;</p>
+</td>
+  <td style="width : 41.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><a href="#XREF_73751_Deleting_Columns">Deleting Properties</a></p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 50.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-list</p>
+</td>
+  <td style="width : 92.575pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">List all current properties of users, hosts and applications</p>
+</td>
+  <td style="width : 176.049pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">propertymgr -list -s &lt;server&gt; -p &lt;port&gt; <br />-u &lt;ceuser&gt; -w &lt;cepwd&gt;</p>
+</td>
+  <td style="width : 41.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><a href="#XREF_51443_Listing_Columns">Listing Properties</a></p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 50.075pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-h</p>
+</td>
+  <td style="width : 92.575pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Displays a help screen showing definitions of all valid command line arguments</p>
+</td>
+  <td style="width : 176.049pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">propertymgr -h</p>
+</td>
+  <td style="width : 41.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">&nbsp;</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1">&#160;</p>
+ <p class="BodyLevel1">The following table provides explanations of all arguments.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.50pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 79.575pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Argument</p>
+</th>
+  <th style="width : 280.925pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 79.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-s &lt;server&gt;</p>
+</td>
+  <td style="width : 280.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name or URL of the host where your Control Center is running.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 79.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-p &lt;port&gt;</p>
+</td>
+  <td style="width : 280.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The port of the Control Center host—8443, by default.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 79.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-u &lt;user&gt;</p>
+</td>
+  <td style="width : 280.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">User name of a Control Center user with administrator privileges.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 79.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-w &lt;passwd&gt; </p>
+</td>
+  <td style="width : 280.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The Control Center&#160;utility password. (For details, see <a href="../Passwords/Utility_Security_Password.htm#XREF_30531_Utility_Security">Utility Security Password</a>.)</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 79.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-l &lt;logicalname&gt;</p>
+</td>
+  <td style="width : 280.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The logical name of the property you are adding or deleting. This is the actual column name in the internal data tables; it must be unique, and may not include spaces or special characters.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 79.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-i &lt;displayname&gt;</p>
+</td>
+  <td style="width : 280.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The display name you want to assign to the property you are adding. This is the string that displays in Policy Author, in the list in the Properties combo-box. It is case-sensitive, and may contain spaces.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 79.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-t &lt;datatype&gt; </p>
+</td>
+  <td style="width : 280.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the data type of the property you want to add; valid values are <span style="font-style : italic; "><i>STRING</i></span>, <span style="font-style : italic; "><i>CS-STRING</i></span>, <span style="font-style : italic; "><i>NUMBER</i></span>&#160;or <span style="font-style : italic; "><i>DATE</i></span>. Used only with the <span style="font-style : italic; "><i>Add Property</i></span>&#160;command. Note that these values are case-sensitive; they must be in block caps as shown.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 79.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-e &lt;entitytype&gt;</p>
+</td>
+  <td style="width : 280.925pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the type of entity to which you want to add a property; valid values are <span style="font-style : italic; "><i>USER</i></span>, <span style="font-style : italic; "><i>HOST</i></span>, or <span style="font-style : italic; "><i>APPLICATION</i></span>. Used only with <span style="font-style : italic; "><i>Add Property</i></span>&#160;command. Note that these values are case-sensitive; they must be in block caps as shown.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h3><a name="XREF_77358_Adding_Columns"></a>Adding Properties</h3>
+ <p class="BodyLevel1">You can use the <span class="GreyBold">-add</span>&#160;command to add a new property to users, hosts, and appli&#173;cations. (Naturally, this procedure applies only to Control Center; any properties you add should also be supported by your LDAP back end.) Adding a custom property requires two steps: first define the custom property, using the Property Manager CLI; and then map that property to an LDAP attribute in your Active Directory.</p>
+ <p class="BodyLevel1">When you define your custom attribute, you must specify the entity type (that is, whether it is a new property of users, hosts, or applications) and the data type (string, cs-string, number or date), and also supply both a logical name and a display name. For custom properties, both property names and values are case-insensitive. </p>
+ <p class="BodyLevel1">To add a custom property,</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the host where the Management Server component of the Control Center is installed, open a console window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change to the directory <span class="GreyBold">&lt;InstallDir&gt;\tools\enrollment</span>. By default, this is:</p>
+</li>
+  <h5><span class="FM_screencode">\Program Fil</span>es\NextLabs\PolicyServer<span class="FM_screencode">\tools\enrollment</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">At the prompt, run the <span class="GreyBold">Add</span><span style="font-style : italic; "><i>&#160;</i></span>command as follows, filling in the appropriate values for the arguments:</p>
+</li>
+  <h5>propertymgr -add -s &lt;server&gt; -p &lt;port&gt; -u &lt;ceuser&gt; -w &lt;cepwd&gt; -l &lt;logicalname&gt; -i &lt;displayname&gt; -t &lt;datatype&gt; -e &lt;entitytype&gt;</h5>
+  <p class="Title">Once this property has been added, you see a confirmation message.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In order to add this new property to the appropriate table in the Informa&#173;tion Network Directory (the Control Center&#160;system dictionary), you have to edit the default definition file to include the new property as a new line in the Attribute Mappings section, as shown below. Each line in this section serves both to create a new property in the dictionary, and to map that property to an LDAP attribute that is defined in your Active Directory. The left column defines the dictionary property; the right one maps it to an AD attribute.</p>
+</li>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>The value you define in the left column must correspond to the prop&#173;erty you added with the Property Manager’s Add command, in the pre&#173;vious step.</p>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="CustomProperties00003.jpg" style="width : 481.968pt; height : 268.272pt; " id="image1" src="CustomProperties00003.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Editing Attribute Mappings (ad.default.def)</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Next, run the Enrollment Manager’s standard <span class="GreyBold">-update</span>&#160;command, as described on <a href="../EnrollUsers/How_to_Maintain_Enrollments.htm#XREF_44506_Updating_Directory">Updating Directory Enrollments (Single Domain)</a>. This step updates the table structure, but does not import the actual data values to for the new property.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">To import the data values, run the Enrollment Manager’s standard <span class="GreyBold">-sync</span>&#160;command, as described on <a href="../EnrollUsers/How_to_Maintain_Enrollments.htm#XREF_23028_Synchronizing">Synchronizing Enrollments</a>. When this finishes running, the new property is available for constructing components in Pol&#173;icy Author. You can confirm this by opening Policy Author and opening the Properties combo-box list for a user or host component, or a group. If you wish, you can use the <span class="GreyBold">List Properties</span> command to check your addition.</p>
+</li>
+ </ol>
+ <h3><a name="XREF_73751_Deleting_Columns"></a>Deleting Properties</h3>
+ <p class="BodyLevel1">You can use the <span class="GreyBold">propertymgr -delete</span>&#160;command to delete a property from any type of entity. You must specify the logical name of the property, and the entity type. To use this feature,</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the host where the Management Server component of the Control Center is installed, open a console window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change to the <span class="GreyBold">\enrollment</span>&#160;directory. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">At the prompt, run the <span class="GreyBold">Delete</span> command as follows, filling in the appro&#173;priate values for the arguments:</p>
+</li>
+ </ol>
+ <h5>propertymgr -delete -s &lt;server&gt; -p &lt;port&gt; -u &lt;ceuser&gt; -w &lt;cepwd&gt; -l &lt;logicalname&gt; -e &lt;entitytype&gt;</h5>
+ <p class="BodyLevel1">Once the properties have been deleted, you will see a confirmation message. If you wish, you can use the <span class="GreyBold">-list</span><span style="font-style : italic; "><i>&#160;</i></span>command or Policy Studio to check the dele&#173;tion, as described below.</p>
+ <h3><a name="XREF_51443_Listing_Columns"></a>Listing Properties</h3>
+ <p class="BodyLevel1">You can use the <span class="GreyBold">propertymgr -list</span>&#160;command to display a list of all properties currently defined for all three entity types. To use this feature,</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the host where the Management Server component of the Control Center is installed, open a console window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change to the directory <span class="GreyBold">&lt;InstallDir&gt;\tools\enrollment</span>. By default, this is:</p>
+</li>
+  <h5><span class="FM_screencode">Program </span>Files\NextLabs\PolicyServer\too<span class="FM_screencode">ls\enrollment</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">At the prompt, run the <span class="GreyBold">List Properties</span>&#160;command as follows, filling in the appropriate values for the arguments:</p>
+</li>
+ </ol>
+ <h5>propertymgr -list -s &lt;server&gt; -p &lt;port&gt; -u &lt;ceuser&gt; -w &lt;cepwd&gt;</h5>
+ <p class="BodyLevel1">All properties will display in a single list, sorted by entity type. Each line shows the data type, logical name, display name, and data type. The display format is:</p>
+ <h5>&lt;TYPE&gt;.&lt;logicalName&gt; - &lt;displayName&gt;: &lt;dataType&gt;</h5>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

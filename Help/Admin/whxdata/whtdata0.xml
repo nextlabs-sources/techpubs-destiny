@@ -1,0 +1,98 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<tocdata>
+<item name="Welcome to 7.7" url="SysAdminGuide/Welcome/Welcome_to_7_7.htm" />
+<book name="Importing Seed Data" >
+  <item name="Importing Seed Data" url="SysAdminGuide/SeedData/Importing_Seed_Data.htm" />
+</book>
+<book name="Enrolling Users, Hosts, and Groups" >
+  <item name="Enrolling Users Hosts and Groups" url="SysAdminGuide/EnrollUsers/Enrolling_Users_Hosts_and_Groups.htm" />
+  <item name="About Enrollment" url="SysAdminGuide/EnrollUsers/About_Enrollment.htm" />
+  <item name="About Enrollment Manager" url="SysAdminGuide/EnrollUsers/About_Enrollment_Manager.htm" />
+  <item name="About Enrollment Input Files" url="SysAdminGuide/EnrollUsers/About_Enrollment_Input_Files.htm" />
+  <item name="How to Enroll Users and Hosts" url="SysAdminGuide/EnrollUsers/How_to_Enroll_Users_and_Hosts.htm" />
+  <item name="How to Maintain Enrollments" url="SysAdminGuide/EnrollUsers/How_to_Maintain_Enrollments.htm" />
+  <item name="How to Perform Other Management Functions" url="SysAdminGuide/EnrollUsers/How_to_Perform_Other_Management_Functions.htm" />
+</book>
+<book name="Enrolling Other Entities" >
+  <item name="Enrolling Other Entities" url="SysAdminGuide/EnrollOthers/Enrolling_Other_Entities.htm" />
+  <item name="Enrolling Applications" url="SysAdminGuide/EnrollOthers/Enrolling_Applications.htm" />
+  <item name="Enrolling File Shares" url="SysAdminGuide/EnrollOthers/Enrolling_File_Shares.htm" />
+  <item name="Enrolling Location Sites" url="SysAdminGuide/EnrollOthers/Enrolling_Location_Sites.htm" />
+  <item name="Enrolling SharePoint Groups" url="SysAdminGuide/EnrollOthers/Enrolling_SharePoint_Groups.htm" />
+  <item name="Setting the Enrollment Utility Password" url="SysAdminGuide/EnrollOthers/Setting_the_Enrollment_Utility_Password.htm" />
+</book>
+<book name="Configuration Overview" >
+  <item name="Configuration Overview" url="SysAdminGuide/GetStarted/Configuration_Overview.htm" />
+  <item name="Using Control Center" url="SysAdminGuide/GetStarted/Using_Control_Center.htm" />
+  <item name="Authorized Users" url="SysAdminGuide/GetStarted/Authorized_Users.htm" />
+  <item name="Location Sites" url="SysAdminGuide/GetStarted/Location_Sites.htm" />
+  <item name="Enforcer Profiles" url="SysAdminGuide/GetStarted/Enforcer_Profiles.htm" />
+  <item name="Components and Policies" url="SysAdminGuide/GetStarted/Components_and_Policies.htm" />
+</book>
+<book name="Using Administrator" >
+  <item name="Using Administrator" url="SysAdminGuide/IntroAdmin/Using_Administrator.htm" />
+  <item name="Introducing Administrator" url="SysAdminGuide/IntroAdmin/Introducing_Administrator.htm" />
+  <item name="The Status Tab" url="SysAdminGuide/IntroAdmin/The_Status_Tab.htm" />
+  <item name="The Users and Roles Tab" url="SysAdminGuide/IntroAdmin/The_Users_and_Roles_Tab.htm" />
+  <item name="The Policy Enforcer Configuration Tab" url="SysAdminGuide/IntroAdmin/The_Policy_Enforcer_Configuration_Tab.htm" />
+</book>
+<book name="Routine Management" >
+  <item name="Routine Management" url="SysAdminGuide/SysMgmt/Routine_Management.htm" />
+  <item name="Managing Control Center" url="SysAdminGuide/SysMgmt/Managing_Control_Center.htm" />
+  <item name="Exporting and Importing Policies" url="SysAdminGuide/SysMgmt/Exporting_and_Importing_Policies.htm" />
+  <item name="Managing Policy Enforcers" url="SysAdminGuide/SysMgmt/Managing_Policy_Enforcers.htm" />
+  <item name="Database Administration" url="SysAdminGuide/SysMgmt/Database_Administration.htm" />
+</book>
+<book name="Configuration Tools" >
+  <item name="Configuration Tools" url="SysAdminGuide/SysConfig/Configuration_Tools.htm" />
+  <item name="About Configuration Files" url="SysAdminGuide/SysConfig/About_Configuration_Files.htm" />
+  <item name="Configuration Settings" url="SysAdminGuide/SysConfig/Configuration_Settings.htm" />
+  <item name="Tomcat Settings" url="SysAdminGuide/SysConfig/Tomcat_Settings.htm" />
+  <item name="Policy Controller Configuration" url="SysAdminGuide/SysConfig/Policy_Controller_Configuration.htm" />
+</book>
+<book name="Database Management" >
+  <item name="Database Management" url="SysAdminGuide/Database/Database_Management.htm" />
+  <item name="Configuring Data Access" url="SysAdminGuide/Database/Configuring_Data_Access.htm" />
+  <item name="Database Management Operations" url="SysAdminGuide/Database/Database_Management_Operations.htm" />
+  <item name="Best Practices" url="SysAdminGuide/Database/Best_Practices.htm" />
+  <item name="Other Database Tools" url="SysAdminGuide/Database/Other_Database_Tools.htm" />
+</book>
+<book name="Defining Custom Properties" >
+  <item name="Defining Custom Properties" url="SysAdminGuide/CustomProperties/Defining_Custom_Properties.htm" />
+  <item name="User Host and Group Properties" url="SysAdminGuide/CustomProperties/User_Host_and_Group_Properties.htm" />
+  <item name="Document Properties" url="SysAdminGuide/CustomProperties/Document_Properties.htm" />
+  <item name="Portal Content Properties" url="SysAdminGuide/CustomProperties/Portal_Content_Properties.htm" />
+</book>
+<book name="Using Custom Obligations" >
+  <item name="Using Custom Obligations" url="SysAdminGuide/CustomObligations/Using_Custom_Obligations.htm" />
+  <item name="About Custom Obligations" url="SysAdminGuide/CustomObligations/About_Custom_Obligations.htm" />
+  <item name="Registering Obligations" url="SysAdminGuide/CustomObligations/Registering_Obligations.htm" />
+</book>
+<book name="How Do I...?" >
+  <item name="How Do I" url="SysAdminGuide/HowDoI/How_Do_I.htm" />
+</book>
+<book name="Passwords and Users" >
+  <item name="Passwords and Users" url="SysAdminGuide/Passwords/Passwords_and_Users.htm" />
+  <item name="Authorized Application Users" url="SysAdminGuide/Passwords/Authorized_Application_Users.htm" />
+  <item name="Enforcer Profile Security Passwords" url="SysAdminGuide/Passwords/Enforcer_Profile_Security_Passwords.htm" />
+  <item name="Utility Security Password" url="SysAdminGuide/Passwords/Utility_Security_Password.htm" />
+  <item name="Active Directory Access Password" url="SysAdminGuide/Passwords/Active_Directory_Access_Password.htm" />
+  <item name="Database Password" url="SysAdminGuide/Passwords/Database_Password.htm" />
+</book>
+<book name="Security Certificates" >
+  <item name="SSL Certificates" url="SysAdminGuide/Certificates/SSL_Certificates.htm" />
+  <item name="Overview of Communication Process" url="SysAdminGuide/Certificates/Overview_of_Communication_Process.htm" />
+  <item name="Using Java Keytool to Manage Certificates" url="SysAdminGuide/Certificates/Using_Java_Keytool_to_Manage_Certificates.htm" />
+  <item name="Changing Default Passwords" url="SysAdminGuide/Certificates/Changing_Default_Passwords.htm" />
+  <item name="Replacing Control Center Certificates" url="SysAdminGuide/Certificates/Replacing_Control_Center_Certificates.htm" />
+  <item name="Replacing Policy Controller Certificates" url="SysAdminGuide/Certificates/Replacing_Policy_Controller_Certificates.htm" />
+  <item name="Replacing Policy Studio Certificates" url="SysAdminGuide/Certificates/Replacing_Policy_Studio_Certificates.htm" />
+</book>
+<book name="Migrating Activity Logs" >
+  <item name="Migrating Activity Log Data" url="SysAdminGuide/MigrateActivityLogs/Migrating_Activity_Log_Data.htm" />
+</book>
+<book name="Glossary" >
+  <item name="Glossary" url="SysAdminGuide/MasterGlossary/Glossary.htm" />
+</book>
+
+</tocdata>

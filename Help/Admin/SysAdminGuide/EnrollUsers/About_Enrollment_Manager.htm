@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>About Enrollment Manager</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\EnrollUsers.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Enrolling Users, Hosts, and Groups\nAbout Enrollment Manager");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Enrolling_Users_Hosts_and_Groups.htm\">Enrolling Users, Hosts, and Groups<\/a> &gt; About Enrollment Manager<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_98092_The_Enrollment"></a>About Enrollment Manager</h1>
+ <p class="BodyLevel1">You use the Enrollment Manager utility to enroll entities into the Network Infor&#173;mation Directory, either directly from an LDAP directory or from an LDIF file. These entities include users and user groups, hosts and host groups, applica&#173;tions, and SharePoint groups.<span style="color   : #ff0000; "><font color="red" >&#160;</font></span>The Enrollment Manager provides a number of enrollment management functions, described later in this chapter. It is not used in enrolling location sites or file shares; they have their own special utilities, for Windows and Linux.</p>
+ <p style="margin-left : 27.000pt; text-indent : 0.000pt;"><span style="font-style : italic; "><i>Note:</i></span>&#160;Enrollment Manager can only be used by persons who are defined as authorized users and assigned a System Administrator role. You define authorized users in Administrator, on the Users and Roles tabs; for details, see <a href="../IntroAdmin/The_Users_and_Roles_Tab.htm#XREF_81111_About_Roles">About Roles</a>.</p>
+ <h2><a name="XREF_51840_How_Enrollment"></a>How Enrollment Connections are Established</h2>
+ <p class="BodyLevel1">The Enrollment Manager utility can be installed on any host in the network, as long as it can connect to the server where Control Center&#160;is running. Similarly, the AD or other LDAP server can be anywhere in the network, remote from the Control Center. This means there are two connections required: the Enrollment Manager’s connection to the Control Center&#160;Server, and the Control Center&#160;Server’s connection to the LDAP server or other enrollment domain.</p>
+ <p class="BodyLevel1">The section describes the connection processes for single domain enrollment and a domain group enrollment. This section also introduces you to the various input files (connection, definition, filter, and configuration) which are used to configure these connections. More detailed information about the files used for enrollment is in the section <a href="About_Enrollment_Input_Files.htm#XREF_38273_Optional_InputFiles">About Enrollment Input Files</a>. </p>
+ <h3>Connection during an Enrollment</h3>
+ <p class="BodyLevel1">The connection process is as follows:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The connection between Enrollment Manager and the Control Center&#160;Server is defined at the command line, when you run the -enroll or -sync command. The -s (server) and -p (port) options (see <a><span class="FM_blue">Command Line Argu&#173;ments, Enrollment Manager</span></a>) point the Enrollment Manager to the Control Center&#160;Server. </p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>For single domain enrollments, the command line provides the location of the connection file (the -a option), definition file (-d), and filter file (-f). The connection file establishes the connection between the Control Cen&#173;ter and the LDAP server. The definition and filter files specify what infor&#173;mation should be retrieved from the enrollment domain.&#160;For domain group enrollments, you use the -g command to provide the location of the configuration file, which references all connection, definition, and filter files.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The Control Center&#160;then uses the connection information to establish its connection to the LDAP server. The connection is defined in the first four lines of the connection file—server, port, login, and password. (See <a href="About_Enrollment_Input_Files.htm#XREF_93922_Directory">Connection Files </a>&#160;and <a href="About_Enrollment_Input_Files.htm#XREF_50952_Definition_File">Definition Files </a>.)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In the case of a Domain Group enrollment, when the enrollment <br />(<span class="GreyBold">-enroll</span>) of the first subdomain is complete, the Control Center locates the next subdomain listed in the configuration file, and continues enroll&#173;ing until it completes the last subdomain.</p>
+
+ <p class="BodyLevel1">The connection sequence for a single domain enrollment is represented in the following figure.</p>
+ <p class="BodyLevel1">&#160;</p>
+ <div align="center"><img alt="EnrollUsers00005.jpg" style="width : 488.292pt; height : 144.518pt; " id="image1" src="EnrollUsers00005.jpg" />
+ </div>
+ <p class="BodyLevel1"></p>
+ <p class="TitleBook">Connections to Retrieve AD Users, Groups, and Hosts (Single Domain)</p>
+ <h3>About Secure LDAP Connection</h3>
+ <p class="BodyLevel1">You can configure LDAP connection(s) to use standard SSL protocols to establish secure communication between the Control Center and the LDAP Server. Config&#173;uration steps include obtaining the LDAP server’s certificate and locating it on the Control Center host, inserting the certificate into the Control Center’s trust&#173;store, and configuring settings in the connection file(s). (Obviously, in the cases of Domain Group enrollment, these steps would need to be performed for each subdomain). These steps are discussed in detail in <a href="How_to_Enroll_Users_and_Hosts.htm#XREF_52071_How_to_Configure_a">How to Configure a Secure LDAP Connection</a>.</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>In the current release, LDAP and LDAPS are supported.</p>
+ <h3>About Connections and AD Load Balancing</h3>
+ <p class="BodyLevel1">Note that if you are running your Active Directory on more than one host with a load balancing device sharing the AD authentication traffic, you must run your enrollment <span style="font-style : italic; "><i>directly</i></span>&#160;to one or the other hosts, <span style="font-style : italic; "><i>not</i></span>&#160;to the load sharing device. Specifically, this means the hostname and port specified in the connection file must refer to one of the AD hosts directly, not the load balancing appliance.</p>
+ <h2><a name="XREF_29712_Before_You_Enroll"></a>Before You Enroll</h2>
+ <p class="BodyLevel1">Before you enroll LDAP data, you must run the Control Center installation wiz&#173;ard, and then start Control Center. Specifically, the Management Server compo&#173;nent must be installed and running before you begin your enrollment.</p>
+ <h3>LDAP Directory Requirements</h3>
+ <p class="BodyLevel1">Before you start, be sure any data to be enrolled from you LDAP directory meets the following requirements:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>All entries must have an <span style="font-style : italic; "><i>objectClass</i></span> attribute.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>All entries must belong to the corresponding object class, as shown below:</p>
+
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter; width: 238.86pt;" cellspacing="0" align="center">
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 98.687pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Entry</p>
+</th>
+  <th style="width : 140.173pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">objectClass</p>
+</th>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 98.687pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">User</p>
+</td>
+  <td style="width : 140.173pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">person</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 98.687pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Host</p>
+</td>
+  <td style="width : 140.173pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">computer</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 98.687pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Structural group</p>
+</td>
+  <td style="width : 140.173pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">organization or organizationalUnit</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 98.687pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Enumerated group</p>
+</td>
+  <td style="width : 140.173pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">group</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>All entries must have an <span style="font-style : italic; "><i>objectGUID</i></span>&#160;attribute, which holds the static identifier of that entry in the source directory.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>All user and host entries (also called “terminal” entries) must have an <span style="font-style : italic; "><i>objectSid</i></span>&#160;attribute. This attribute holds the system reference information for that entry—that is, the token or identifier that is used to identify the entity within the Windows system. This attribute is assigned to each user and host by the LDAP directory. If this attribute is not present, the entry will be ignored and a warning will be logged.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>User entries must have a <span style="font-style : italic; "><i>userPrincipalName</i></span>&#160;attribute that serves as a unique, user-friendly name for this entry within the directory.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Host entries must have a <span style="font-style : italic; "><i>dnsHostName</i></span>&#160;attribute that serves as a unique, user-friendly name for this entry within the directory.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>If you will be combining a Linux file server with a Windows AD system, you must configure your Samba server so that all users and groups map prop&#173;erly between the Windows and Linux systems.</p>
+
+ <h3>Requirements for Domain Group Enrollment</h3>
+ <p class="BodyLevel1">An additional requirement applies for Domain Group enrollment. Trust relation&#173;ships between subdomains of a Domain Group must be manually configured to ensure that policy bundles are created with all subdomain information. This pro&#173;cedure is discussed in <a href="../SysConfig/Configuration_Settings.htm#XREF_24792_Configuring">Configuring Trusted Domains</a>.</p>
+ <h2><a name="XREF_22681_Using_the"></a>Using the Enrollment Manager</h2>
+ <p class="BodyLevel1">The Enrollment Manager is automatically installed on the Control Center host, in</p>
+ <h5>\Program Files\NextLabs\PolicyServer\tools\enrollment</h5>
+ <p class="BodyLevel1">If you divided your Control Center components among several hosts in a distrib&#173;uted installation, the Control Center host refers to the server where the Man&#173;agement Server is installed. However, the Enrollment Manager may be installed anywhere in the network, as long as it can connect to the Control Center host.</p>
+ <p class="BodyLevel1">To use the Enrollment Manager, open a command line window, navigate to this location, and use the command <span class="GreyBold">enrollMgr</span> plus the specific command and argu&#173;ments for the function you want. All commands are described in <a><span class="FM_blue">CLI Commands, Enrollment Manager</span></a>, below; descriptions of all command line arguments are provided in <a><span class="FM_blue">Command Line Arguments, Enrollment Manager</span></a>. </p>
+ <p class="BodyLevel1">The <span class="GreyBold">-enroll </span>and <span class="GreyBold">-update</span>&#160;commands require a reference to a definition file and/or a connection file.&#160;Definition files provide information on how informa&#173;tion elements in your source directory or file will map to the data structures inside Control Center’s data tables; for details, see <a href="About_Enrollment_Input_Files.htm#XREF_50952_Definition_File">Definition Files </a>. Connection files provide information necessary to connect to the LDAP directory data source; for details, see <a href="About_Enrollment_Input_Files.htm#XREF_93922_Directory">Connection Files </a>. For the Domain Group option, Configu&#173;ration files list all subdomains in a Domain Group as well as the location of rele&#173;vant connection, definition, and filter files. When you use the <span class="GreyBold">-enroll</span>&#160;and <span class="GreyBold">-update</span>&#160;commands, you only reference the configuration file. For details, see <a href="About_Enrollment_Input_Files.htm#XREF_19806_Configuration">Configuration Files (Domain Groups Only)</a>.</p>
+ <p class="BodyLevel1">The following table provides an overview of all available functions; more detailed information on enrolling each type of entity is provided in the following sections of this chapter.</p>
+ <p class="BodyLevel1">Note that the commands themselves are <span style="font-style : italic; "><i>not</i></span>&#160;case-sensitive. Of the command argument values, Type, User, and Password are case-sensitive.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 486.25pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 54.325pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Command</p>
+</th>
+  <th style="width : 94.825pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Purpose</p>
+</th>
+  <th style="width : 280.050pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Full Command String</p>
+</th>
+  <th style="width : 57.049pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Refer to:</p>
+</th>
+</tr>
+  <tr style=" height : 47.00pt;">
+  <td style="width : 54.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-enroll</p>
+</td>
+  <td style="width : 94.825pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Enroll entities from an LDAP directory server or a source file</p>
+</td>
+  <td style="width : 280.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">enrollmgr -enroll -t &lt;type&gt; -n &lt;domain_name&gt; -s &lt;server&gt; -p &lt;port&gt; <br />-u &lt;username&gt; -w &lt;passwd&gt; -a &lt;ad_connection_file&gt; -d &lt;definitionfile&gt; <br />[-f &lt;filterfile&gt;] </p>
+  <p class="CellBody">Note that not all arguments are required for all enrollment types.</p>
+</td>
+  <td style="width : 57.049pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><a href="How_to_Enroll_Users_and_Hosts.htm#XREF_86184_Enrolling_from_a">How to Enroll from a Directory (Single Domain) </a></p>
+</td>
+</tr>
+  <tr style=" height : 47.00pt;">
+  <td style="width : 54.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-update</p>
+</td>
+  <td style="width : 94.825pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Update an existing enrollment from an LDAP directory or a source file</p>
+</td>
+  <td style="width : 280.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">enrollmgr -update -t &lt;type&gt; -n &lt;domain_name&gt; -s &lt;server&gt; -p &lt;port&gt; -u &lt;username&gt; -w &lt;passwd&gt; -a &lt;ad_connection_file&gt; -d &lt;definitionfile&gt; <br />[-f &lt;filterfile&gt;]</p>
+  <p class="CellBody">Note that not all arguments are required for all enrollment types.</p>
+</td>
+  <td style="width : 57.049pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><a href="How_to_Maintain_Enrollments.htm#XREF_44506_Updating_Directory">Updating Directory Enrollments (Single Domain)</a></p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 54.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-sync</p>
+</td>
+  <td style="width : 94.825pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Synchronize an enrollment</p>
+</td>
+  <td style="width : 280.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">enrollmgr -sync -n &lt;domain_name&gt; -s &lt;server&gt; -p &lt;port&gt; -u &lt;username&gt;<br /> -w &lt;passwd&gt;</p>
+</td>
+  <td style="width : 57.049pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><a href="How_to_Maintain_Enrollments.htm#XREF_23028_Synchronizing">Synchronizing Enrollments</a></p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 54.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-delete</p>
+</td>
+  <td style="width : 94.825pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Delete an enrollment</p>
+</td>
+  <td style="width : 280.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">enrollmgr -delete -n &lt;domain_name&gt; -s &lt;server&gt; -p &lt;port&gt; -u &lt;username&gt; <br />-w &lt;passwd&gt;</p>
+</td>
+  <td style="width : 57.049pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><a href="How_to_Perform_Other_Management_Functions.htm#XREF_42040_Deleting_an">Deleting Single Domain Enrollments </a></p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 54.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-list</p>
+</td>
+  <td style="width : 94.825pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">List enrollments</p>
+</td>
+  <td style="width : 280.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">enrollmgr-list -s &lt;server&gt; -p &lt;port&gt; -u &lt;username&gt; -w &lt;passwd&gt;</p>
+</td>
+  <td style="width : 57.049pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><a href="How_to_Perform_Other_Management_Functions.htm#XREF_49130_Confirming">Checking Enrollments</a></p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 54.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-h</p>
+</td>
+  <td style="width : 94.825pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Displays a help screen showing definitions of all valid command line arguments</p>
+</td>
+  <td style="width : 280.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">enrollmgr -h</p>
+</td>
+  <td style="width : 57.049pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">&nbsp;</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <p class="BodyLevel1">The following table provides an overview of different arguments that can be supplied to establish connections and to reference the location of input files (connection, definition, filter, and configuration files). </p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 487.38pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 101.325pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Argument</p>
+</th>
+  <th style="width : 386.050pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+</tr>
+  <tr style=" height : 78.00pt;">
+  <td style="width : 101.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-t</p>
+</td>
+  <td style="width : 386.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Used with the -<span style="font-weight : bold; "><b>enroll</b></span> and -<span style="font-weight : bold; "><b>update</b></span> commands to specify the type of enrollment. Valid values are:</p>
+  <ul type="disc" style="">
+   <li style="">
+   <p class="CellBody">DIR: enrolling from an LDAP server</p>
+</li>
+   <li style="">
+   <p class="CellBody">PORTAL: enrolling SharePoint group definitions</p>
+</li>
+   <li style="">
+   <p class="CellBody">LDIF: enrolling from an LDIF file</p>
+</li>
+   <li style="">
+   <p class="CellBody">DOMAINGROUP: enrolling multiple subdomains in a single enrollment (which can include DIR, PORTAL, and LDIF type enrollments)</p>
+</li>
+  </ul>
+  <p class="CellBody">Note that these values are case sensitive, and must be typed in block caps as shown.</p>
+</td>
+</tr>
+  <tr style=" height : 93.00pt;">
+  <td style="width : 101.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-n &lt;domain_name&gt; or &lt;enrollment_name&gt;</p>
+</td>
+  <td style="width : 386.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name of the enrollment. Each enrollment needs a unique name, so you can identify it in various management functions, such as confirming, synchronizing, and updating. For User and Host enrollments, this value must be the name of the domain from which you are enrolling. Accordingly, you cannot perform more than one enrollment from a single domain; rather, you can perform an enrollment, then later update it (using the same name) to incorporate any changes.</p>
+  <p class="CellBody">For SharePoint or Application enrollments, you can use any name you like here—it does not need to be the domain name. This allows you to perform multiple enrollments from the same SharePoint server, as long as you give them unique names.</p>
+  <p class="CellBody">A Domain Group also receives its own domain name, as does each subdomain in the Domain Group (subdomain enrollment names are defined in the Configuration file).</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 101.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-g &lt;domaingroup file&gt;</p>
+</td>
+  <td style="width : 386.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The location of the Domain Group configuration file. For more information on defining the Configuration file, see <a href="About_Enrollment_Input_Files.htm#XREF_19806_Configuration">Configuration Files (Domain Groups Only)</a></p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 101.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-s &lt;server&gt;</p>
+</td>
+  <td style="width : 386.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name or URL of the host where your Control Center&#160;is running. If you have a distributed Control Center installation where Enrollment Manager is installed on another host, this server should be the host where the Enrollment Manager is installed. If this argument is not present, the default value localhost will be used.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 101.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-p &lt;port&gt;</p>
+</td>
+  <td style="width : 386.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The port of the Control Center&#160;host, which is 8443 unless it was explicitly changed. This argument is optional; if it is not present, the default value 8443 will be used.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 101.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-u &lt;username&gt;</p>
+</td>
+  <td style="width : 386.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">User name of an Control Center user with administrator privileges. We recommend that, rather than an actual live user, you create a dummy username and password, dedicated only to enrollment functions. This prevents the problems that can arise when a live user changes a username or password.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 101.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-w &lt;passwd&gt; </p>
+</td>
+  <td style="width : 386.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Password for the Control Center administrative user specified by -u. (This should be a dummy user dedicated for enrollment functions only, as described above.)</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 101.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-a &lt;connection_file&gt;</p>
+</td>
+  <td style="width : 386.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name of the directory connection file, which is required for enrolling or updating with an LDAP server and for enrolling portal sites. You can create a connection file by copying one of several provided template or default files, depending on which kind of entity you are enrolling; for a detailed explanation, see <a href="About_Enrollment_Input_Files.htm#XREF_93922_Directory">Connection Files </a>.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 101.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-d &lt;definitionfile&gt;</p>
+</td>
+  <td style="width : 386.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name of the definition file, which is required for all enrollments and updates.You can create a definition file by copying one of several provided template or default files, depending on which kind of entity you are enrolling; for a detailed explanation, see <a href="About_Enrollment_Input_Files.htm#XREF_50952_Definition_File">Definition Files </a>.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 101.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-f &lt;filterfile&gt;</p>
+</td>
+  <td style="width : 386.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name of the LDAP filter file, if you are using one. Optional in all cases; see <a href="About_Enrollment_Input_Files.htm#XREF_23666_Filter_Files">Filter Files</a>.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 101.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">-v </p>
+</td>
+  <td style="width : 386.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Verbose option; may be used with any command. When present, if an error condition occurs the command line window will display a more detailed description of the circumstances of the error. If not present, only a short summary of any errors will display.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

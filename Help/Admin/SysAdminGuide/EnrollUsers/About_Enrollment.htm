@@ -1,0 +1,374 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>About Enrollment</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\EnrollUsers.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Enrolling Users, Hosts, and Groups\nAbout Enrollment");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Enrolling_Users_Hosts_and_Groups.htm\">Enrolling Users, Hosts, and Groups<\/a> &gt; About Enrollment<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1>About <a name="XREF_74644_Heading_One"></a>Enrollment </h1>
+ <p class="BodyLevel1"><a name="XREF_46241_What_Is_Enrollment"></a>In Control Center, <span class="FM_italics" style="font-style : italic; "><i>enrollment</i></span>&#160;refers to the process of importing information about your environment into the Control Center system so it is available for use by Control Center components. This can include LDAP directory entities, Share&#173;Point groups, and other kinds of information. When you perform an enrollment, information about the entities in your system is copied and stored in the Infor&#173;mation Network Directory, one of Control Center’s internal databases.</p>
+ <p class="BodyLevel1">After enrollment is complete, the enrolled data is available for use in Policy Author. For example, you can write policies that restrict the document usage permissions of certain users (or whatever type of enrolled information).</p>
+ <p class="BodyLevel1">Enrollment occurs as two basic steps: enrolling and syncing. Enrolling refers to mapping data types to the Control Center in preparation for that data actually being populated. Syncing refers to actually retrieving data values and populat&#173;ing the Information Network Directory.</p>
+ <h2>About the Information Network Directory</h2>
+ <p class="BodyLevel1">The Information Network Directory (IND) is the database schema where Control Center stores its information about the entities in your organization—users, computers, groups, applications, and so on. This data is organized according to a structured information resource model, which provides consistent definition and organization to make it possible to define policy components. The Informa&#173;tion Network Directory is installed on the same database host as the Activity Journal, in PostgreSQL, Oracle, or SQL Server.</p>
+ <p class="BodyLevel1">When you enroll information, you establish a connection with an <span class="Emphasis">enrollment domain</span>. In this context, the term “domain” refers to a source where enrollment information resides, not a network domain. In other words, you can have multi&#173;ple enrollment domains to enroll from different sources within a single Active Directory in a single network domain. You can enroll entities from any number of enrollment domains. </p>
+ <p class="BodyLevel1">You should perform your initial enrollments right after you install Control Cen&#173;ter. As your organization’s infrastructure changes over time, you can manually update the information whenever you need to, and you can also configure the Enrollment Manager to automatically synchronize the information resource model at regular intervals.</p>
+ <h2><a name="XREF_76303_What_types_of"></a>What Can Be Enrolled</h2>
+ <p class="BodyLevel1">The Control Center enrollment utilities import information about the underlying information network, including the entities listed below. Note that most are mandatory, and will have to be imported in all installations. Only location sites and SharePoint groups are optional, meaning they may or may not need to be enrolled, depending on your requirements. For a table summarizing all enrolled entities, see <a><span class="FM_blue">Summary, Enrolling Control Center Entities</span></a>.</p>
+ <h3>Required Entities</h3>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Users and User Groups: </b></span>To be able to create user components in Policy Studio, you use the Enrollment Manager utility to enroll users and user groups. With the Enrollment Manager, you have the choice of enrolling entities directly from an LDAP server (such as Microsoft Active Directory (AD)), groups from SharePoint, or information from any correctly formatted LDIF (Lightweight Directory Inter&#173;change Format) file. You can enroll from more than one enrollment domain into the same Control Center.&#160;For users, hosts, and groups, you can also create Domain Groups to enroll information that spans multiple enrollment domains. </p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b><span style="font-weight : bold; "><b>Hosts and Host Groups:</b></span>&#160;To be able to create computer components, you must enroll hosts and host groups, also using Enrollment Manager. You can enroll them either from an LDAP server directory or from an LDIF file, and you can enroll from more than one AD domain. Hosts and Hosts Groups can also be enrolled through a Domain Group. </b></span></p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Applications:</b></span>&#160;In order to be able to create Application Components, you must enroll any applications you will want to monitor. This topic will be covered in <a href="../EnrollOthers/Enrolling_Other_Entities.htm#XREF_84038_Enrolling_Other">Enrolling Other Entities</a>.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>File Shares:</b></span> You must enroll file share information to facilitate mapping to spe&#173;cific resource paths. File shares are enrolled by querying the servers in your organization. To do this, you must manually run a utility called Resource Path Discovery. This topic will be covered in <a href="../EnrollOthers/Enrolling_Other_Entities.htm#XREF_84038_Enrolling_Other">Enrolling Other Entities</a>.</p>
+ <h3>Optional Entities</h3>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>SharePoint Groups</b></span>: You will need to enroll SharePoint groups only if you have installed one or more SharePoint Enforcers, and plan to design policies to moni&#173;tor and control those servers. (Note that SharePoint Enforcers are available only with the Entitlement Management product.) You enroll SharePoint groups with the Enrollment Manager. Details about SharePoint enrollment are covered in <a href="../EnrollOthers/Enrolling_Other_Entities.htm#XREF_84038_Enrolling_Other">Enrolling Other Entities</a>.<span style="color   : #ff0000; "><font color="red" >&#160;</font></span>SharePoint Groups can also be included in a Domain Group enrollment.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Location Sites:</b></span> Location sites are physical or logical locations (such as Head&#173;quarters, Boston Office, VPN), expressed as one or more ranges of IP addresses, that you can enroll and use to define location-based computer components. Site information is gathered from a text file you create manually, specifying the computers included in each site. You enroll location sites with a utility called Import Locations; this topic will be covered in the following chapter.</p>
+ <h2>Windows and&nbsp;Linux</h2>
+ <p class="BodyLevel1">You enroll entities into your Control Center system the same way regardless of whether you will be installing enforcers on Windows file servers, Linux file serv&#173;ers, or a mixture of both. (Note that file server enforcers are available with the Entitlement Management product only.) That is, there is no such thing as “Win&#173;dows enrollment” or “Linux enrollment.” Rather, you just have to be sure your Samba server is configured so it can map the LDAP users in your Active Directory on the Windows side, to the users defined on the Linux side. Ordinarily this has to be done in any case, so the two systems can work together. As long as this is configured properly, Control Center will manage all enrolled entities internally, and policies will be enforced properly on both Linux and Windows servers.</p>
+ <p class="BodyLevel1">The one exception to this is discovering and enrolling file shares, which requires that you run separate utilities on the Windows and Linux environments. For details, see <a href="../EnrollOthers/Enrolling_File_Shares.htm#XREF_20517_About_GetDupDirs">About Resource Path Discovery</a>.</p>
+ <h2><a name="XREF_18084_About_Domain_Group"></a>About Domain Group Enrollment</h2>
+ <p class="BodyLevel1">A Domain Group contains multiple User, Host, and Group sources (referred to as “subdomains”), that can be managed together in a single enrollment process. The Domain Group option is required for enrollments where entities are located across multiple sources and there are interdependencies between the entities.</p>
+ <p class="BodyLevel1">Consider the following example: users are stored in two different sources (one set of users in Active Directory and one set managed in an LDIF file). Both sets of users are referenced in Groups managed within SharePoint. To design policies around the SharePoint Groups, you would need to enroll all three sources into Control Center and retain information about Group membership across the two user domains (AD and LDIF). To do this, you would use the Domain Group enroll&#173;ment option. You would list all pertinent enrollment sources as “subdomains” in the Domain Source file, and enroll and manage them as part of one process. For details on enrolling Domain Groups, see <a href="How_to_Enroll_Users_and_Hosts.htm#XREF_11658_How_to_Enroll_a">How to Enroll a Domain Group</a>.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="domaingroups.jpg" style="width : 378.000pt; height : 196.250pt; " id="image0" src="domaingroups.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Users and Groups Managed Across Multiple Sources</p>
+ <h2>Enrollment Failures</h2>
+ <p class="BodyLevel1">Control Center considers each instance of enrolling a specified set of LDAP data as a distinct metadata entity called an <span style="font-style : italic; "><i>enrollment</i></span>. Information about enroll&#173;ments is saved internally, independent of the actual data that was imported, and you can refer later to enrollments as you manage the system.</p>
+ <p class="BodyLevel1">It is possible that an enrollment may fail for various reasons—a connectivity problem, improper syntax in a connection file or definition file, a typo in the command line parameters, and so on. Even if an enrollment attempt fails, it is still recorded as an enrollment, and is present in the management data reposi&#173;tory. In such cases, once you discover and correct the problem that caused the failure, you must use the <span style="font-style : italic; "><i>-delete</i></span> command to manually delete the failed enroll&#173;ment before you re-attempt it. For details on deleting enrollments, see <a href="How_to_Perform_Other_Management_Functions.htm#XREF_42040_Deleting_an">Deleting Single Domain Enrollments </a>&#160;or <a href="How_to_Perform_Other_Management_Functions.htm#XREF_99346_Deleting_from">Deleting Domain Group Enrollments</a>.</p>
+ <p class="BodyLevel1">For Domain Group enrollment, if a subdomain fails, all subsequent subdomains listed in the group will still be processed (synced or enrolled).</p>
+ <p class="BodyLevel1">All events connected to enrollments are stored in a special log file; see <a href="../SysConfig/Policy_Controller_Configuration.htm#XREF_71590_Event_Log_Settings">Event Log Settings</a>.</p>
+ <h2>Overview of Different Enrollment Procedures</h2>
+ <p class="BodyLevel1">Depending on the type of enrollment you are performing, you will need to use the Enrollment utility with different arguments and use different Auxiliary files. The following table provides an overview of the procedures for different enroll&#173;ment methods, with links to where you can get more detailed information. &#160;</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 486.00pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 25.00pt;background : #1f8c4a;">
+  <th style="width : 69.429pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Entity Type</p>
+</th>
+  <th style="width : 69.429pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Enrollment Method</p>
+</th>
+  <th style="width : 69.429pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Required?</p>
+</th>
+  <th style="width : 69.429pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Connection File</p>
+</th>
+  <th style="width : 69.429pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Definition File</p>
+</th>
+  <th style="width : 69.429pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Configuration File</p>
+</th>
+  <th style="width : 69.429pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">See:</p>
+</th>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 69.429pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Users &amp; <br />User Groups</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p class="CellBody">Enrollment Manager utility Type = DIR (from AD or other LDAP directory), or LDIF (from LDIF file)</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p class="FM_CellBodyCent">Yes</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">DIR: ad.sample.<br />default.conn</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">ad.sample .default.def </p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody" style="text-align  : center;">N/A</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p class="CellBody"><a href="How_to_Enroll_Users_and_Hosts.htm#XREF_30984_Enrolling_User_and">How to Enroll Users and Hosts</a></p>
+</td>
+</tr>
+  <tr style=" height : 40.00pt;">
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">LDIF: None</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">ldif.sample. default.def</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">&nbsp;</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 69.429pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="4">
+  <p class="CellBody" style="font-weight : bold;">Domain Group</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="4">
+  <p class="CellBody">Enrollment Manager utility Type = DOMAINGROUP (can include enrollment types: DIR, &#160;PORTAL, or LDIF)</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="4">
+  <p class="FM_CellBodyCent">No</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">DIR: ad.sample.<br />default.<br />conn</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">ad.sample.<br />default.def </p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="4">
+  <p class="CellBody">domainGroup.<br />sample.default.<br />cfg</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="4">
+  <p class="CellBody"><a href="How_to_Enroll_Users_and_Hosts.htm#XREF_11658_How_to_Enroll_a">How to Enroll a Domain Group</a></p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">LDIF: None</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">ldif.sample. default.def</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p class="CellBody">Portal: sp.<br />sample.default.<br />conn</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p class="CellBody">sp.sample. default.def</p>
+</td>
+</tr>
+  <tr style=" height : 0.00pt;"></tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 69.429pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Hosts &amp; <br />Host Groups</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p class="CellBody">Enrollment Manager utility, Type = DIR or LDIF</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p class="FM_CellBodyCent">Yes</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">DIR: ad.sample.<br />default .conn</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">ad.sample. default.def </p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p class="CellBody" style="text-align  : center;">N/A</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p class="CellBody"><a href="How_to_Enroll_Users_and_Hosts.htm#XREF_30984_Enrolling_User_and">How to Enroll Users and Hosts</a></p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">LDIF: None</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">ldif.sample.<br />default.def</p>
+</td>
+</tr>
+  <tr style=" height : 66.00pt;">
+  <td style="width : 69.429pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Applications</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Application Discovery utility to generate an LDIF file; then</p>
+  <p class="CellBody">Enrollment Manager utility<span style="font-weight : bold; "><b>,</b></span>&#160;Type = LDIF</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">Yes</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">None</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">app.sample. default.def</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">N/A</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><a href="../EnrollOthers/Enrolling_Applications.htm#XREF_97404_Enrolling">Enrolling Applications</a> &amp;</p>
+  <p class="CellBody"><a href="How_to_Enroll_Users_and_Hosts.htm#XREF_30984_Enrolling_User_and">How to Enroll Users and Hosts</a></p>
+</td>
+</tr>
+  <tr style=" height : 58.00pt;">
+  <td style="width : 69.429pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">File Shares</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-size  : 8.0pt;">Windows: Resource Path Discovery utility </p>
+  <p class="BodyLevel1" style="font-size  : 8.0pt;">Linux: Samba Directory mapping utility </p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">Yes</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">None</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">None</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">N/A</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><a href="../EnrollOthers/Enrolling_File_Shares.htm#XREF_20517_About_GetDupDirs">About Resource Path Discovery</a> &amp;</p>
+  <p class="CellBody"><a href="../EnrollOthers/Enrolling_File_Shares.htm#XREF_50958_Linux_File_Servers">Linux File Servers</a></p>
+</td>
+</tr>
+  <tr style=" height : 58.00pt;">
+  <td style="width : 69.429pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Location Sites</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-size  : 8.0pt;">Manually create a plain-text Locations file, then </p>
+  <p class="BodyLevel1" style="font-size  : 8.0pt;">Import Locations utility</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">No</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">None</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">None</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">N/A</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><a href="../EnrollOthers/Enrolling_File_Shares.htm#XREF_10562_Enrolling">Enrolling File Shares</a></p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 69.429pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Share Point Groups</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-size  : 8.0pt;">Enrollment Manager utility, Type = PORTAL</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">Only if using Entitlement Manager for SharePoint</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">sp.sample .default.conn</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">sp.sample. default.def</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">N/A</p>
+</td>
+  <td style="width : 69.429pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><a href="../EnrollOthers/Enrolling_SharePoint_Groups.htm#XREF_96994_Enrolling">Enrolling SharePoint Groups</a></p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

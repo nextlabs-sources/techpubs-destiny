@@ -1,0 +1,534 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>The Users and Roles Tab</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\IntroAdmin.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using Administrator\nThe Users and Roles Tab");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Using_Administrator.htm\">Using Administrator<\/a> &gt; The Users and Roles Tab<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_71092_The_Users_and"></a>The Users and Roles Tab</h1>
+ <p class="BodyLevel1">The controls available on this tab allow you to define and manage users, user groups, and roles for the Control Center&#160;tools—Policy Studio, Administrator, and Reporter.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="UsrGrpTab.jpg" style="width : 320.250pt; height : 84.374pt; " id="image4" src="UsrGrpTab.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Users And Roles tab and sub-tabs</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>The term <span style="font-style : italic; "><i>users</i></span>&#160;in this context is distinct from the two default user accounts that are available when you initially install Control Center: one for logging in to the platform’s software tools, and one for logging in to the Information Network Directory’s underlying data server. These accounts are not managed with the Administrator tool, and, therefore, are not covered in this section.</p>
+ <h2><a name="XREF_38610_About_Users"></a>About Users</h2>
+ <p class="BodyLevel1">In the Administrator tool, the term <span class="FM_italics" style="font-style : italic; "><i>user</i></span>&#160;refers to people who need to use the Control Center&#160;tools—Policy Studio, Administrator, and Reporter. For example, users include policy designers, Control Center&#160;administrators, and executives or auditors running reports. Each user has a login name and password, which is used to verify the identity of the person attempting to use a Control Center tool.</p>
+ <p class="BodyLevel1">These users can be defined in or imported into Control Center, which stores them in the Information Network Directory. The stored user information can come from the following sources:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Imported into Control Center&#160;from an organization’s Active Directory. You can use this technique to grant existing Windows users access to Control Center applications.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Manually added as a new user.</p>
+
+ <p class="BodyLevel1">Both types of user can be set up as Control Center&#160;users through the <span class="Bold">Users and Roles</span> tab in Administrator.</p>
+ <p class="BodyLevel1">For information about how users are authenticated, and how to authenticate them locally (within Control Center) or using a live connection to the organiza&#173;tion’s information network, see <a href="../SysConfig/Configuration_Settings.htm#XREF_92300_Configuring">Configuring Authentication</a>.</p>
+ <h2>About Groups</h2>
+ <p class="BodyLevel1">A <span class="FM_italics" style="font-style : italic; "><i>group</i></span>&#160;is a set of users who have similar responsibilities and require similar rights to Control Center objects, such as policies, policy components,&#160;and reports.&#160;Rather than setting these rights for each user individually, you can set rights for the group and then assign users to the appropriate group.</p>
+ <p class="BodyLevel1">Similar to users, groups can be manually defined in Administrator or imported from an organization’s Active Directory. For example, if you already have an LDAP group called System Administrators, you can leverage this group as a source of Control Center&#160;users. The benefit of linking Control Center&#160;groups to existing Windows groups is that if the group membership changes in Windows, Control Center&#160;automatically picks up the changes. You can continue to manage the group on the Windows side. If you create a new group in Administrator, it is created strictly within Control Center&#160;and does not have any relation to the LDAP groups imported from Active Directory.</p>
+ <h2><a name="XREF_81111_About_Roles"></a>About Roles</h2>
+ <p class="BodyLevel1">In Control Center, a <span class="FM_italics" style="font-style : italic; "><i>role </i></span>refers to a set of permissions that determine which tasks individual users assigned to that role can do with Control Center. Permis&#173;sions within each role include which Control Center&#160;applications can be used and what permission is granted for creating policies and components in Policy Studio.</p>
+ <p class="BodyLevel1">Control Center&#160;provides the following pre-defined roles: System Administrator, Policy Administrator, Policy Analyst, Reporter Administrator, and Business Ana&#173;lyst. The roles are typically used as follows: </p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>System Administrator</b></span>: System administrators or other IT professionals who need to use Administrator to monitor the Control Center&#160;system and manage users and policy enforcer profiles. These users might also need to use Policy Studio and Reporter, and have permissions to create policies and reports.&#160;In addition, they are the only users who would have any need to use the Enrollment Manager utility.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Policy Administrator</b></span>: These users typically have responsibility for manag&#173;ing policies and policy components, so they would need access to Policy Studio, with permissions to create and deploy those objects. Typically, these users also require access to Reporter to monitor and audit the effec&#173;tiveness of deployed policies.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Policy Analyst</b></span>: Users with access to Policy Studio in order to construct policies and submit them for deployment. These users might also need to use Reporter to see how their policies are working out in practice.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Report Administrator</b></span>: Users who will use Reporter to create reports on policy enforcement, and make the reports available to other users. A Report Administrator can also create policy monitors and alerts to obtain notifications of critical policy enforcement activities when specified crite&#173;ria or thresholds are met.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Business Analyst</b></span>: Managers, executives, or other security personnel who will audit how policies are operating in an enterprise.&#160;Typically, these users only need to use Reporter to view reports on policy enforcement activities and trends.</p>
+
+ <p class="BodyLevel1">These typical responsibilities are reflected in the default permissions assigned to the roles.&#160;You can leave these default settings as they are, or you can modify them to suit your needs. The exception to this is Enrollment Manager permis&#173;sion, which is available only to System Administrators. You cannot delete roles or create additional ones; you can only redefine the roles,&#160;as needed. The fol&#173;lowing table summarizes the default permissions assigned to each role.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.28pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 34.00pt;background : #1f8c4a;">
+  <th style="width : 63.450pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Role</p>
+</th>
+  <th style="width : 56.989pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Can Use Enrollment Manager</p>
+</th>
+  <th style="width : 68.239pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Can Use Reporter</p>
+</th>
+  <th style="width : 51.739pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Can Use Adminis-trator</p>
+</th>
+  <th style="width : 51.739pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Can Use Policy Studio</p>
+</th>
+  <th style="width : 68.123pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Policy Studio Creation Privileges</p>
+</th>
+</tr>
+  <tr style=" height : 34.00pt;">
+  <td style="width : 63.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody" style="font-weight : bold;">System Administrator</p>
+</td>
+  <td style="width : 56.989pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">Yes</p>
+</td>
+  <td style="width : 68.239pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Yes; all functionality</p>
+</td>
+  <td style="width : 51.739pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">Yes</p>
+</td>
+  <td style="width : 51.739pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">Yes</p>
+</td>
+  <td style="width : 68.123pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">All policies,</p>
+  <p class="CellBody">All component types</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 63.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody" style="font-weight : bold;">Policy Administrator</p>
+</td>
+  <td style="width : 56.989pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">No</p>
+</td>
+  <td style="width : 68.239pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Yes; can view shared reports, monitors and alerts</p>
+</td>
+  <td style="width : 51.739pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">No</p>
+</td>
+  <td style="width : 51.739pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">Yes</p>
+</td>
+  <td style="width : 68.123pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">All policies,</p>
+  <p class="CellBody">All component types</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 63.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody" style="font-weight : bold;">Policy Analyst </p>
+</td>
+  <td style="width : 56.989pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">No</p>
+</td>
+  <td style="width : 68.239pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Yes; can view shared reports, monitors and alerts</p>
+</td>
+  <td style="width : 51.739pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">No</p>
+</td>
+  <td style="width : 51.739pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">Yes</p>
+</td>
+  <td style="width : 68.123pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">All policies, </p>
+  <p class="CellBody">No component types</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 63.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody" style="font-weight : bold;">Report Administrator</p>
+</td>
+  <td style="width : 56.989pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">No</p>
+</td>
+  <td style="width : 68.239pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Yes; all functionality</p>
+</td>
+  <td style="width : 51.739pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">No</p>
+</td>
+  <td style="width : 51.739pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">No</p>
+</td>
+  <td style="width : 68.123pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">None</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 63.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody" style="font-weight : bold;">Business Analyst</p>
+</td>
+  <td style="width : 56.989pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">No</p>
+</td>
+  <td style="width : 68.239pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Yes; can view shared reports, monitors and alerts</p>
+</td>
+  <td style="width : 51.739pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">No</p>
+</td>
+  <td style="width : 51.739pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyCent">No</p>
+</td>
+  <td style="width : 68.123pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">None</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <p class="BodyLevel1">By default, users assigned the roles that permit creating policies or policy com&#173;ponents have full control over the policy objects they create, that is, users can edit, delete, submit, and deploy their own policy objects, as well as, grant other users access to their policy objects. You can, however, change a user’s permissions to her policy objects. You do so in the Users tab, as described in the next section.</p>
+ <h2><a name="XREF_91397_Managing_Users"></a>Managing Users</h2>
+ <p class="BodyLevel1">Managing users involves two basic procedures: adding and defining new users, and deleting existing ones.</p>
+ <h3><a name="XREF_89677_Adding_a_User"></a>Adding a New User</h3>
+ <p class="BodyLevel1">You can use Administrator to create new Control Center user accounts&#160;from two sources:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Users enrolled from your organization’s Active Directory and authenti&#173;cated using integrated Windows authentication.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>New users added manually to Control Center. These accounts are in addi&#173;tion to those imported from your organization’s Active Directory and are kept in a separate, local domain. This is useful when, for example, you want to provide a unique login name and password that can be used to log in to Policy Studio (or another Control Center&#160;tool). Such accounts are always authenticated locally, even if Control Center&#160;as a whole has been configured for remote authentication (see <a href="../SysConfig/Configuration_Settings.htm#XREF_92300_Configuring">Configuring Authentication</a>).</p>
+
+ <p class="BodyLevel1">To set up a new Control Center user account:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the <span class="Bold">Users and Roles</span>&#160;tab, then click <span class="Bold">Users</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click one of the following buttons:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>New</b></span>&#160;to create a new user within Control Center</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Add Windows User</b></span>&#160;to set up an account for a user enrolled from your Active Directory</p>
+
+  <p class="Title">A user editing area appears in the right pane.</p>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="NewUser.jpg" style="width : 473.639pt; height : 335.025pt; " id="image5" src="NewUser.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook"><a name="XREF_20905_The_Users_Screen"></a>The Users screen</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the editor pane, specify the properties of the user account. Some of the following fields are not available if you clicked <span class="Bold">Add Windows User</span>, because in that case, user authentication is set up outside of Control Center.</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span style="font-weight : bold; "><b>User ID</b></span>, type the user account name that the user types in the Login dialog box when starting Administrator, Reporter, or Policy Studio.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span style="font-weight : bold; "><b>First Name</b></span>&#160;and <span style="font-weight : bold; "><b>Last Name</b></span>, type the user’s real name.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In <span style="font-weight : bold; "><b>Password</b></span>&#160;and <span class="Bold">Confirm Password</span>, type the user’s login password. The password must contain 7-12 characters, at least one number, at least one letter, and at least one non-alphanumeric character other than under&#173;score.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Under <span class="Bold">Permissions and Rights</span>, in <span class="Bold">Assigned Roles</span>, check one or more boxes to specify what role or roles to assign to the user. Each role deter&#173;mines the actions the user is allowed to take when using Control Center&#160;applications. For more information about roles, see <a href="#XREF_81111_About_Roles">About Roles</a>&#160;and <a href="#XREF_91365_Managing_Roles">Managing Roles</a>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In <span class="Bold">Default Access Control Group</span>, select one of the following options from the drop-down list:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Select a default access control (DAC) group to assign to this user. The drop-down list displays all the groups to which this user belongs. The list is empty if this user does not belong to any groups defined in the Groups screen. When you assign a DAC group to a user, you are essentially apply&#173;ing the access permissions (for example, Read, Write, Delete, Submit, Deploy policy objects) that are specified for the selected group. In addi&#173;tion, any policy object—folders, components, and policies—that this user creates is automatically available to all users in the selected group.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Use the default option, None Selected, if you don’t want to apply any group-specified access permissions to this user. The user will have full access to all the policy objects she creates, and, by default, any policy object that this user creates can be accessed by this user only. The user, however, can grant other users access to her policy objects later by chang&#173;ing the objects’ access properties in Policy Studio.</p>
+
+  <p class="Title">If you want to allow this user to import seed data and make it accessible to all users, select All Policy Server Users from the list. You must, how&#173;ever, first add this user to the All Policy Server Users group, as described in <a href="#XREF_67356_Creating_User">Managing User Groups</a>. For information about seed data, see <a href="../SeedData/Importing_Seed_Data.htm#XREF_28610_Configuration">Importing Seed Data</a>.</p>
+  <p class="Title">For more information about how DAC groups work, see <a href="#XREF_59820_About_Default">About Default Access Control Groups</a>.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="Bold">Save</span>. Once the new user is saved, a confirmation message appears.</p>
+</li>
+ </ol>
+ <h3>Deleting a User</h3>
+ <p class="BodyLevel1">You might need to delete a user if that person leaves your organization or is reassigned to another project and is no longer working with Control Center. When you delete a user, it only affects his or her ability to use Control Center&#160;applications; the user is not deleted from your organization.</p>
+ <p class="BodyLevel1">To delete an existing user, select it from the Users list in the Users screen, and click the <span class="Bold">Delete</span> button.</p>
+ <h2><a name="XREF_67356_Creating_User"></a>Managing User&nbsp;Groups</h2>
+ <p class="BodyLevel1">Managing user groups involves these operations: creating new groups, importing existing groups from your enterprise, and modifying existing groups in Adminis&#173;trator.</p>
+ <p class="BodyLevel1">Administrator provides a predefined group: All Policy Server Users. As the group’s name suggests, you can use this group to assign basic permissions that you want all users to have when working with policies and policy components. You must assign users to this group to grant them permission to use seed data (pre-defined policy components) that is imported into Policy Studio. This is a typical administrative task.</p>
+ <h3><a name="XREF_25277_To_create_a_new"></a>Creating a New Group&#160;</h3>
+ <p class="BodyLevel1">To create a new group:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the <span class="Bold">Users and Groups</span>&#160;tab, then click <span class="Bold">Groups</span>. The Groups screen appears. By default, the general properties of the first group in the Groups list is displayed, as shown in the following figure.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="GroupsGeneral.jpg" style="width : 487.296pt; height : 215.459pt; " id="image6" src="GroupsGeneral.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">The Groups screen, General tab</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click one of the following buttons:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>New</b></span>&#160;to create a new group within Control Center.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Add Windows Group</b></span>&#160;to set up an account for a group enrolled from your Active Directory.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the General screen in the editing pane, type a name and description for this group, and click <span class="Bold">Save</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the editing pane, click the <span class="Bold">Users</span>&#160;tab, then click <span class="Bold">Add</span>.</p>
+</li>
+  <p class="Title">An index of available users appears.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In this index, click the hyperlinked letters to find the name you want, then click the name. The name appears in the Users to Add list on the left side of the window.</p>
+</li>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>You can only add users to groups if the users have already been defined in the Users screen. If no names are available for adding to a group, you must first define them as users.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When you have added all the users you want, click the <span class="Bold">Add</span>&#160;button on the left.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="UserPicker.jpg" style="width : 471.456pt; height : 147.537pt; " id="image7" src="UserPicker.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Adding users to a group</p>
+  <p class="Title">The Users page of the group displays all the users you added.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">(Optional) If you wish, you can assign default access control permissions that apply to the policies and policy components created by users in this group. You can assign different default access control permissions to this group as a whole, to any individual members of the group, or to any other users. To do so, click the <span class="Bold">Default Access Control</span> tab.</p>
+</li>
+ </ol>
+ <h3><a name="XREF_59820_About_Default"></a>About Default Access Control Groups</h3>
+ <p class="BodyLevel1">Once you create a group, you can assign the permissions you want other people to have on components and policies created by any user in that group. Assigning default access control (or DAC) at the group level makes it easy for different teams within your organization to work together, or to keep their work separate, as needed. This feature lets you selectively grant access to other users. You can grant different permissions to user groups and to individual users.</p>
+ <p class="BodyLevel1">You define permissions for access groups in the <span class="Bold">Default Access Control</span>&#160;tab of the Groups screen, as shown in the following figure. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="GroupsRights.jpg" style="width : 486.648pt; height : 308.745pt; " id="image8" src="GroupsRights.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">The Groups screen, Default Access Control tab</p>
+ <p class="BodyLevel1">You have the option to allow other users or groups to do any of the following to components and policies created by users in this group:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Set Access</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Read</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Write</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Delete</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Submit</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Deploy</p>
+
+ <p class="BodyLevel1">Although these permissions are set at the group level, they only have meaning insofar as they apply to all the members of that group. After all, groups don’t define components or policies, individual users do. Membership in a group is ultimately determined by the <span class="Bold">Default Access Control Group</span>&#160;field in the Users screen (see <a href="#XREF_20905_The_Users_Screen">The Users screen</a>), which you use to associate each user with a DAC group.</p>
+ <p class="BodyLevel1">There are two reasons this explicit association in the Users screen is required even though a user may already be assigned to a standard user group in the Groups screen. First, a user may belong to more than one user group with differ&#173;ent DAC permissions defined for them, and <span class="Bold">Default Access Control Group</span> field allows you to designate which permissions apply to this user.&#160;Each user can belong to only one DAC group&#160;(even though he may belong to several user groups).</p>
+ <p class="BodyLevel1">Second, you have the option of not assigning a user to any DAC group by simply leaving the&#160;<span class="Bold">Default Access Control Group</span> field blank. This allows an override mechanism—even if a user belongs to a user group and that group has DAC per&#173;missions defined for it, that user’s components and policies are not subject to those permissions. In other words, the user still has full permissions to his own components and policies. In addition, only the user (and the Control Center administrator) can access those components and policies.</p>
+ <p class="BodyLevel1">As mentioned previously, DAC permissions can be granted to groups or individu&#173;als. The groups given permission may include the group itself—in which case all members of that group are given the specified permission to any objects others in the group create—but this is not necessary. In the example shown above, the Product Managers group permissions list includes the Product Managers group itself. The example defines the following situation: </p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Whenever any user in the Product Managers group creates a component or a policy, other users in that group have permission to read, write, delete, and submit it.&#160;Note that for the component or policy to be automatically shared with users in the group, the owner of the component or policy must also have her <span class="Bold">Default Access Control Group</span>&#160;property set to Product Managers. </p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The user Andy Han has permission to read the components or policies cre&#173;ated by any user in the Product Manager group, even though he is not a member of that group.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Users in the Policy Admins group can deploy components and policies cre&#173;ated by users in the Product Manager group. </p>
+
+ <p class="BodyLevel1">This example illustrates how to segregate the responsibilities of creating and deploying policies and policy components. Product Managers are permitted to create policies, but not deploy them. A policy administrator is authorized to deploy those policies and components, but cannot read or delete them. You might want to do this if there are multiple users or groups creating policies, and you need a policy administrator to manage which policies are deployed, and when. Segregating areas of responsibility also reduces the opportunity for unau&#173;thorized or unintentional changes to policies.</p>
+ <p class="BodyLevel1">One last point: the reason these are called <span style="font-style : italic; "><i>default</i></span>&#160;access controls is that they automatically apply when a component or policy is created, but they can be overridden—if the user has Set Access permission—by defining a custom set of permissions for the component or policy in Policy Studio, using the <span class="Bold">Access Con&#173;trol</span>&#160;tab of the object’s Properties window. The following figure shows an exam&#173;ple of the access control properties of a policy, as displayed in Policy Studio.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="AccessControlProperties.jpg" style="width : 359.970pt; height : 312.615pt; " id="image9" src="AccessControlProperties.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Access Control properties of a policy</p>
+ <p class="BodyLevel1">To assign default access controls to the policies and components created by users of a group:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Groups screen, click the <span class="Bold">Default Access Control</span>&#160;tab. Click <span class="Bold">Add</span>. An index of users and groups appears.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the hyperlinked letters to find the name of a user or group to which you want to grant access, then click the name. The name appears in the Principals to Add list at the left side of the window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When all the desired names are in the list, click <span class="Bold">Add</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Check one or more boxes next to each principal to indicate what you want that user (or users in that group) to be able to do with objects created by users in the group you are editing.</p>
+</li>
+ </ol>
+ <h3>Linking to an Existing Windows Group</h3>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Groups screen, click <span class="Bold">Add Windows Group</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Specify the group(s) you want to link to. An alphabetized index of hyper&#173;links appears, showing groups that exist in your Windows domain.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the hyperlinked letters to find the name you want, then click the name. The name appears in the list at the left side of the window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When all the desired names are in the list, click <span class="Bold">Add</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the <span class="Bold">General</span>&#160;tab, give a name and description for the group. The source of the group is displayed in <span class="Bold">External Link</span>.</p>
+</li>
+ </ol>
+ <h3><a name="XREF_51397_To_modify_a_group"></a>Modifying a Group</h3>
+ <p class="BodyLevel1">If the link icon <img alt="lock.bmp" style="width : 28.601pt; height : 22.493pt; margin-bottom : 6.000pt; margin-right : 6.000pt; " id="image10" src="lock.bmp" align="left" />appears, you cannot modify the membership of a group; it is linked to a group in your Windows domain and is managed there, not from within Control Center.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the <span class="Bold">Groups</span>&#160;tab. If this group is imported from your Windows domain, its source is displayed in <span class="Bold">External Link</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Make the desired modifications.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="Bold">Save</span>.</p>
+</li>
+ </ol>
+ <h3>Deleting a Group</h3>
+ <p class="BodyLevel1">To delete a group, select it in the list of groups, and click the <span class="Bold">Delete</span> button.</p>
+ <h2><a name="XREF_91365_Managing_Roles"></a>Managing Roles</h2>
+ <p class="BodyLevel1">As described earlier, a <span style="font-style : italic; "><i>role</i></span>&#160;is simply a named set of permissions for working with the Control Center&#160;applications. You can define roles independently and then assign to users as appropriate. You can use roles as intensively as you wish to suit your needs. However, there are certain circumstances when you should modify them:</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Initial Implementation.</b></span>&#160;When Control Center is first installed, the role defini&#173;tions are not assigned to any users. Before any system administrators in your organization can start using the Policy Studio, Reporter, and Administrator tools, you must set up the Control Center&#160;roles and assign each role to at least one user. To&#160;gain initial access to the Administrator tool in order to set up and assign roles, use the built-in Administrator account.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Shifting Responsibilities.</b></span>&#160;Change the roles to set up the division of labor that reflects the changing conditions at your organization. The permissions granted in each role represent the tasks that can be done by users assigned to that role. In any given organization, at one point in time, the different tasks that can be accomplished with the Control Center&#160;tools (Policy Studio, Administrator, and Reporter) might be carried out by different people, while in another organiza&#173;tion or at a different time, all of these tasks might be carried out by one person.</p>
+ <p class="BodyLevel1">When you modify a role, your changes are not automatically saved as you go. If you are interrupted while working on a role, or if you want to work on another task and return to modifying the role later, click <span class="Bold">Save</span> before you stop work.</p>
+ <p class="BodyLevel1">To modify a role:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the <span class="Bold">Users and Roles</span>&#160;tab, then click the <span class="Bold">Roles</span> link.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_45420_3_Click_the_name"></a>Click the name of the role you want to modify, to display the current set&#173;tings for that role.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_98391_4_In_Applications"></a>In <span class="Bold">Applications</span>, select the Control Center&#160;tools that you want users in this role to be able to run. For example, for the Business Analyst role, you would typically select Reporter Analysis only.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_24121_5_In_Policy"></a>In <span class="Bold">Policy Edit</span>, select the types of policy objects that users in this role can create.&#160;You can make selections in this section only if you selected Policy Author in step <a href="#XREF_98391_4_In_Applications">3</a>. If you select Policy Author, but don’t check any objects in this step, then users in this role can view, but not create policies or pol&#173;icy components.</p>
+</li>
+  <p class="Title">As described earlier, by default, users that are permitted to create poli&#173;cies or policy components have full control over the objects they create. They cannot access objects created by other users. To change any of these permissions or access rights, you set a user’s Default Access Control in the Users and Groups tabs.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="Bold">Save</span>.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="roles.png" style="width : 433.387pt; height : 339.400pt; " id="image11" src="roles.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">The Roles screen</p>
+ <h2>Assigning Roles to Users</h2>
+ <p class="BodyLevel1">Once you have defined users, groups, and, optionally, redefined roles, you need to give each user appropriate access to the Control Center&#160;tools (Policy Studio, Administrator, and Reporter). You do this by assigning one or more roles to each user. To do this: </p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the <span class="Bold">Users and Roles</span>&#160;tab, then click the <span class="Bold">Users</span> link.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_24407_4_Click_the_name"></a>In the Users list, click the name of the user to whom you want to assign one or more roles. (The first time you use Administrator, this list is empty.)</p>
+</li>
+  <p class="Title">If you do not see the user you want, create the user, as described in <a href="#XREF_89677_Adding_a_User">Adding a New User</a>.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_56244_5_Check_one_or"></a>In <span class="Bold">Permissions and Rights</span>, in <span class="Bold">Assigned Roles</span>, check one or more boxes next to the roles you want this user to have.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="Bold">Save</span>.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Users.jpg" style="width : 484.073pt; height : 351.270pt; " id="image12" src="Users.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Assigning roles to a user</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

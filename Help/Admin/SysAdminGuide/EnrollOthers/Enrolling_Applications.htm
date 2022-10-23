@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Enrolling Applications</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\EnrollOthers.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Enrolling Other Entities\nEnrolling Applications");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Enrolling_Other_Entities.htm\">Enrolling Other Entities<\/a> &gt; Enrolling Applications<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_97404_Enrolling"></a>Enrolling Applications</h1>
+ <p class="BodyLevel1">Applications, unlike users, cannot be automatically enrolled from your LDAP directory. In order to be able to define application-type components, you must manually enroll your applications into the Control Center&#160;Information Network Directory. Once you have enrolled an application, it becomes available in the lookup list of applications displayed in Policy Author, and you can use it to define application components. </p>
+ <p class="BodyLevel1">To enroll applications into your information network directory, you use a special utility called <span style="font-weight : bold; "><b>App Discovery</b></span>. This utility provides a UI where you can select the applications you want to enroll, then generates an LDIF file containing all the required fields for the specified applications. You then enroll this file into your Control Center Information Network Directory using Enrollment Manager’s stan&#173;dard <span style="font-style : italic; "><i>-enroll -t LDIF</i></span>&#160;and <span style="font-style : italic; "><i>-sync</i></span> commands.</p>
+ <p class="BodyLevel1">Normally you will perform this action on a PC or laptop where all the standard applications you want to monitor are installed. One convenient option is to use a standard PC image that system administrators use for setting up standard desktops in your organization.</p>
+ <p class="BodyLevel1">To enroll applications:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Copy the AppDiscovery folder from the Support directory on the installa&#173;tion CD to any host location where you want to search for applications to enroll.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_73114_1_At_the_command"></a>At the command prompt, run the following command:</p>
+</li>
+  <h5><span class="FM_codeItalics">&lt;LocationCopiedTo&gt;\appDiscovery&gt;appdiscovery.cmd</span></h5>
+  <p class="Title">This will launch the Application Discovery window, as shown in <a href="#XREF_12349_Enrolling">Enrolling Applications</a>, displaying a Windows browser.</p>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="AppDiscovery.jpg" style="width : 186.696pt; height : 291.696pt; " id="image0" src="AppDiscovery.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook"><a name="XREF_12349_Enrolling"></a>Enrolling Applications</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In this window, navigate to the Program Files directory (or wherever else application EXE files are installed), and check the box next to all the applications you want to enroll.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the File menu, use the <span style="font-style : italic; "><i>GenerateLDIF</i></span>&#160;command to generate an output LDIF file. You assign a name and path to the file at this time.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Close the AppDiscovery window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Copy your generated LDIF file onto the host where Control Center is run&#173;ning, in the same directory as the Enrollment Manager.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Use Enrollment Manager’s <span style="font-style : italic; "><i>-enroll -t LDIF</i></span>&#160;and <span style="font-style : italic; "><i>-sync</i></span>&#160;commands to enroll the LDIF file. For a detailed explanation of how you use these commands, see <a href="../EnrollUsers/How_to_Enroll_Users_and_Hosts.htm#XREF_50908_Enrolling_from">How to Enroll from an LDIF File (Single Domain) </a>. Note that for this process you will need to prepare a definition file, specifying the name of the LDIF file you are enrolling (see <a href="#XREF_52248_The_Definition_File">&quot;The Definition File&quot;</a>, below).</p>
+</li>
+ </ol>
+ <p class="Title">The Enrollment Manager is installed on the Control Center&#160;host machine, in the <span style="font-style : italic; "><i>Control Center\tools\enrollment\ </i></span>directory. You can run it there, or copy it to some other location to run it; just be sure you copy your LDIF file to the same directory before you run the utility.</p>
+ <h2><a name="XREF_52248_The_Definition_File"></a>The Definition File</h2>
+ <p class="BodyLevel1">As we just mentioned, the <span style="font-style : italic; "><i>-enroll -t LDIF</i></span>&#160;command requires a definition file. The figure below shows the default LDIF definition file <span style="font-style : italic; "><i>app.sample.default.def</i></span>, which you should use as the template for your definition file when enrolling or updating applications from an LDIF file. It differs slightly from the one you use for users, hosts and groups. (The actual file, when you open it, will display addi&#173;tional comments and instructions for editing.)</p>
+ <p class="BodyLevel1">In this file you will definitely need to edit only the <span style="font-style : italic; "><i>ldif.sample.filename</i></span> ele&#173;ment, since the syntax mapping will be consistent with the AppDiscovery util&#173;ity’s LDIF output. When you save this file, you must rename it to remove the <span style="font-style : italic; "><i>.sample</i></span>&#160;string, as with all definition and connection files. (For more details on definition files generally, see <a href="../EnrollUsers/About_Enrollment_Input_Files.htm#XREF_50952_Definition_File">Definition Files </a>.)</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="EnrollOthers00003.jpg" style="width : 486.864pt; height : 385.128pt; " id="image1" src="EnrollOthers00003.jpg" />
+ </div>
+ <p class="BodyLevel1">&#160;</p>
+ <p class="TitleBook"><a name="XREF_84944_LDIF_Definition"></a>LDIF Definition File Template for Applications (app.sample.default.def)</p>
+ <h2>Multiple Application Versions</h2>
+ <p class="BodyLevel1">It is important to understand that Control Center&#160;considers different versions of an application as entirely independent of one another. If you have more than one version of an application running in your environment and you want to write policies against them, you must import each version separately, just as though they were different applications. </p>
+ <p class="BodyLevel1">When you enroll an application, Control Center&#160;automatically assigns a default name to it based on the executable file name. Since this name does not take account of application version, it will be the same regardless of the version. This means that if you need to enroll more than one version of an application, you need to manually change the default name of the first one in the LDIF file, the perform your <span style="font-style : italic; "><i>-enroll -t LDIF</i></span>, then generate an LDIF file for the other version of the application and enroll it. If you do not make this name change, the second application will overwrite the first, and you will not have both versions to work with.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

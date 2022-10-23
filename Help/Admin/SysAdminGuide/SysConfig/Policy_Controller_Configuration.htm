@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Policy Controller Configuration</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\SysConfig.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Configuration Tools\nPolicy Controller Configuration");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Configuration_Tools.htm\">Configuration Tools<\/a> &gt; Policy Controller Configuration<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_33736_Policy_Controller"></a>Policy Controller Configuration</h1>
+ <p class="BodyLevel1">The areas of the Policy Controller that administrators may need to configure are </p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_71590_Event_Log_Settings">Event Log Settings</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_84946_Memory_Settings">Memory Settings</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_55363_Thread_Pool_Size">Thread Pool Size Settings</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_76037_Resetting_the">Resetting the ICENet Server </a></p>
+
+ <h2><a name="XREF_71590_Event_Log_Settings"></a>Event Log Settings</h2>
+ <p class="BodyLevel1">Control Center&#160;has an extensive event logging mechanism that can capture all events relevant to policy enforcement. Logging is performed on the enforcer side, not at the Control Center. Each log is associated with one installation of a policy enforcer, and all events are captured in a log file. By default, these files are maintained on each enforcer host, at the following location:</p>
+ <h5>\NextLabs\Policy Controller\agentLog </h5>
+ <p class="BodyLevel1">Logs are maintained on each local enforcer host, but are sent back to the Control Center periodically so their event content can be added to the Activity Jour&#173;nal database.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="PCDirectory.jpg" style="width : 108.360pt; height : 185.904pt; " id="image3" src="PCDirectory.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="BodyLevel1">Since you use Reporter to generate reports on system events and the perfor&#173;mance of enforcers, you usually do not need to use these files directly. One exception might be during troubleshooting, in which case you should follow instructions from NextLabs technical support representatives.</p>
+ <h3><a name="XREF_53785_Compliance_Agent"></a>Enforcer Logging</h3>
+ <p class="BodyLevel1">If you do not change any log settings for enforcers, the default behavior is as fol&#173;lows:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Level of verbosity = Severe</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>max size of file = 500K</p>
+
+ <p class="BodyLevel1">If you wish to change any of this behavior at any time, you can edit the file <span class="GreyBold">log&#173;ging.properties</span>, in the <span class="GreyBold">config</span>&#160;directory of the Policy Controller’s install directory. The available levels, in order of increasing verbosity, are:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Severe</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Warning</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Info</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Fine</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Finest</p>
+
+ <p class="BodyLevel1">For details on changing these settings, refer to the “Enforcer Administration” chapter of the user’s guide for the enforcer you are configuring. Note that whenever any enforcer is running, it will prevent you from opening any of the local configuration files. To edit the files, you must first stop the enforcer (see <a href="../SysMgmt/Managing_Policy_Enforcers.htm#XREF_23755_Stopping_Policy">Stopping Policy Enforcers</a>).</p>
+ <h3>The Enrollment Log</h3>
+ <p class="BodyLevel1">Control Center&#160;maintains a separate log for events connected to enrolling data into the system dictionary. It is called <span style="font-style : italic; "><i>Enrollment.N.log,</i></span>&#160;where N is an integer from 0-9. It is stored in the same location as the event log.</p>
+ <h2><a name="XREF_84946_Memory_Settings"></a>Memory Settings</h2>
+ <p class="BodyLevel1">If your system includes custom plug-ins for Policy Controllers, you might need to increase the JVM memory. If you get Out-of-Memory errors, this indicates that you need to increase the memory. For Policy Controller for Java, set the JVM memory options at the Tomcat or JBoss level. For Endpoint and Server Policy Controllers, which run on Windows systems, you set the memory option in the Windows Registry, using the following procedure:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Stop the Policy Controller. From the Start menu, select Stop Policy Con&#173;troller.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open the Registry Editor. You can do this by clicking the Windows Start button, then in the search box, type <span class="GreyBold">regedit</span>, and press Enter.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Registry Editor, navigate to the following folder:</p>
+</li>
+  <h5>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Compli&#173;anceEnforcerService\Parameters</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open AppParameters and look for the following setting. Increase the value as needed.</p>
+</li>
+ </ol>
+ <h5>-Xmx1024m</h5>
+ <h2><a name="XREF_55363_Thread_Pool_Size"></a>Thread Pool Size Settings</h2>
+ <p class="BodyLevel1">You can tune the performance of the Policy Controller by optimizing the number of threads. If your performance testing indicates that the number of threads should be changed, use one of the procedures in this section to set the number of threads.</p>
+ <h3>Changing the Number of Threads for Policy Controller for Java</h3>
+ <p class="BodyLevel1">You can perform this task either through the Windows Registry or the command line. </p>
+ <p class="BodyLevel1">To set the number of threads through the Windows Registry, do the following:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Stop the Apache Tomcat 8.0 service. To do so, select Start &gt; Control Panel &gt;&#160;Administrative Tools &gt; Services. Locate the Tomcat service and select Stop.</p>
+</li>
+ </ol>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open the Registry Editor. You can do this by clicking the Windows Start button, then in the search box, type <span class="GreyBold">regedit</span>, and press Enter.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Registry Editor, navigate to the following folder:</p>
+</li>
+  <h5>HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Apache Software Foundation\Procrun 2.0\Tomcat8\Parameters\Java</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Right-click Options and select Modify. Insert the following command, or modify the command if it already exists:</p>
+</li>
+ </ol>
+ <h5>-Dnextlabs.evaluation.threadpoolsize=&lt;<span style="font-style : italic; "><i>number of threads</i></span>&gt;</h5>
+ <p class="Title"><span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&lt;</font></span><span style="font-family : Courier New; font-style : italic; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;"><i>number of threads</i></font></span><span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&gt;</font></span> is the number of threads to configure.</p>
+ <p class="BodyLevel1">To set the number of threads through the command line, do the following:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Stop the Apache Tomcat 8.0 service. Select Start &gt;&#160;Control Panel &gt; Admin&#173;istrative Tools &gt; Services. Locate the Tomcat service and select Stop.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_51966_2_Right_click"></a>Right-click Apache Tomcat 8.0 and click properties. In the General tab, take note of the service name.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open a Command prompt, and navigate to Tomcat’s installation directory.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the following command:</p>
+</li>
+  <h5>tomcat8w //ES//&lt;<span style="font-style : italic; "><i>service name</i></span>&gt; </h5>
+  <p class="Title"><span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&lt;</font></span><span style="font-family : Courier New; font-style : italic; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;"><i>service name</i></font></span><span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&gt;</font></span>&#160;is the name of the Tomcat service you noted in <a href="#XREF_51966_2_Right_click">step&nbsp;2</a>.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Apache Tomcat 8.0 &lt;<span class="GreyBold" style="font-style : italic; "><i>service name</i></span>&gt; Properties window, select the Java tab.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In Java Options, insert the following command, or modify the command if it already exists:</p>
+</li>
+  <h5>-Dnextlabs.evaluation.threadpoolsize=&lt;<span style="font-style : italic; "><i>number of threads</i></span>&gt;</h5>
+  <p class="Title"><span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&lt;</font></span><span style="font-family : Courier New; font-style : italic; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;"><i>number of threads</i></font></span><span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&gt;</font></span> is the number of threads to configure.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click OK.</p>
+</li>
+ </ol>
+ <h3>Changing the Number of Threads for Server Policy Controllers</h3>
+ <p class="BodyLevel1">You perform this task through the Windows Registry, using the following proce&#173;dure:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Stop the Policy Controller. From the Start menu, select Stop Policy Con&#173;troller.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open the Registry Editor. You can do this by clicking the Windows Start button, then in the search box, type <span class="GreyBold">regedit</span>, and press Enter.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Registry Editor, navigate to the following folder:</p>
+</li>
+  <h5>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Compli&#173;anceEnforcerService\Parameters</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open AppParameters, and insert the following command, or modify the command if it already exists:</p>
+</li>
+ </ol>
+ <h5>-Dnextlabs.evaluation.threadpoolsize=&lt;<span style="font-style : italic; "><i>number of threads</i></span>&gt;</h5>
+ <p class="Title"><span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&lt;</font></span><span style="font-family : Courier New; font-style : italic; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;"><i>number of threads</i></font></span><span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&gt;</font></span> is the number of threads to configure.</p>
+ <h2><a name="XREF_76037_Resetting_the"></a>Resetting the ICENet Server </h2>
+ <p class="BodyLevel1">In the event that the location of the ICENet server is misconfigured or requires reconfiguration, follow these procedures:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Stop the Policy Controller on the host where the reconfiguration is required. This requires the Administrator password.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Navigate to <span class="GreyBold">\NextLabs\Policy Controller\ and </span>delete <span class="GreyBold">bundle.bin</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Locate the Policy Controller configuration folder at: <span class="GreyBold">\NextLabs\Policy Controller\config</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Locate and delete the file <span class="GreyBold">registration.info</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Locate and open the subfolder <span class="GreyBold">\security</span>. Delete the following files:</p>
+</li>
+  
+<p class="BodyLevel2" style="margin-bottom : 1.000pt; font-family : Courier New; font-size  : 9.0pt;"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="GreyBold" style="font-family : Courier New; font-style : normal; font-weight : normal; font-size  : 9.0pt; color   : #000000; text-decoration : none; letter-spacing : 0.00em; "><font size="1" color="black" style="font-size:9.000000pt;">agent-keystore.jks</font></span></p>
+
+  
+<p class="BodyLevel2" style="margin-bottom : 1.000pt; font-family : Courier New; font-size  : 9.0pt;"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="GreyBold" style="font-family : Courier New; font-style : normal; font-weight : normal; font-size  : 9.0pt; color   : #000000; text-decoration : none; letter-spacing : 0.00em; "><font size="1" color="black" style="font-size:9.000000pt;">agent-secret-keystore.jceks</font></span></p>
+
+  
+<p class="BodyLevel2" style="margin-bottom : 1.000pt; font-family : Courier New; font-size  : 9.0pt;"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="GreyBold" style="font-family : Courier New; font-style : normal; font-weight : normal; font-size  : 9.0pt; color   : #000000; text-decoration : none; letter-spacing : 0.00em; "><font size="1" color="black" style="font-size:9.000000pt;">agent-truststore.jks</font></span></p>
+
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>Be sure not to delete <span class="GreyBold">\config\security\temp_agent-keystore.jks. </span>Doing so will cause errors for system startup.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Back in the <span class="GreyBold">\config</span>&#160;folder, locate and edit <span class="GreyBold">commprofile.xml, </span>updating the location of the DABS location. Be sure to supply the value of <span class="GreyBold">“full path:port/dabs”</span>.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="updateicenet.jpg" style="width : 494.249pt; height : 194.892pt; " id="image4" src="updateicenet.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Updating the Location of the IceNet Server</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Close and save the <span class="GreyBold">commprofile.xml</span> file.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Restart the Policy Controller.</p>
+</li>
+ </ol>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

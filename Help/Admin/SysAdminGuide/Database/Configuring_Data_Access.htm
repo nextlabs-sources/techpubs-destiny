@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Configuring Data Access</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\Database.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Database Management\nConfiguring Data Access");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Database_Management.htm\">Database Management<\/a> &gt; Configuring Data Access<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_80468_Configuring"></a>Configuring Data&nbsp;Access</h1>
+ <p class="BodyLevel1">The configuration.xml file also contains settings for connecting to the four data stores required by Control Center. Depending on your configuration, all four may either use the internal database, or connect to an externally hosted Oracle, PostgreSQL, or SQL Server database. Each of these connections is controlled by a group of parameters, in one of the four &lt;repository&gt; sections of the file.</p>
+ <p class="BodyLevel1">The four databases include:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Management Database</b></span>: The Management Database contains runtime information such as which components are running, how many policy enforcers have registered with the server, etc. The connection to this database is defined in the <span style="font-weight : bold; "><b>management.repository </b></span>section of the file, as shown in the figure below).</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Policy Master</b></span>: The Policy Master contains policy component definitions and policy definitions created by users of the Policy Studio application. The connection to this database is defined in the <span style="font-weight : bold; "><b>policyframework.repos&#173;itory</b></span> section of the file.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Activity Journal</b></span>: The Activity Journal contains user events, policy enforcement data, and notifications, which are used by the Reporter application. This will always be the same location as the Information Net&#173;work Directory. The connection to this database is defined in the <span style="font-weight : bold; "><b>activ&#173;ity.repository</b></span> section of the file.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Information Network Directory</b></span>&#160;The Information Network Directory stores information about directory entities—users, hosts, groups, and so on—that have been enrolled into the Control Center&#160;system. This will always be the same location as the Activity Journal. The connection to this database is defined in the <span style="font-weight : bold; "><b>dictionary.repository</b></span> section of the file.</p>
+
+ <h3>About Connection Pools</h3>
+ <p class="BodyLevel1">The four repository sections contain just a few settings—basically just the &lt;name&gt;, and a pointer to a <span style="font-style : italic; "><i>connection pool </i></span>section, where the actual connec&#173;tion information for that repository is stored. Accordingly, there are four &lt;Con&#173;nectionPool&gt; sections, one associated with each of the repositories. The following figure illustrates this relationship.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Database00003.jpg" style="width : 486.216pt; height : 332.496pt; " id="image0" src="Database00003.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook"><a name="XREF_63532_Repository_Sections"></a>Configuring Data Access: &lt;Repositories&gt; and &lt;ConnectionPools&gt;</p>
+ <p class="BodyLevel1">Each &lt;ConnectionPool&gt; section contains six elements, whose functions are explained in the following table.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.62pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 95.450pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Element</p>
+</th>
+  <th style="width : 265.175pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 95.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Name</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Name of the connection pool. This name should match the ConnectionPoolName setting in one of the &lt;Repository&gt; sections.</p>
+</td>
+</tr>
+  <tr style=" height : 58.00pt;">
+  <td style="width : 95.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Username</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">User name for a database account that can access the database specified in the Name property. This property is initially set during installation, when you fill in the database connection screen of the Control Center installation wizard.</p>
+  <p class="CellBody">If you want to change this setting, for example, to change to a user with fewer privileges, you can do so.</p>
+</td>
+</tr>
+  <tr style=" height : 47.00pt;">
+  <td style="width : 95.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Password</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Password that goes with the user account specified in Username. You can change this password later; for example, if the user changes his password or if you change the user on this data source to a different one. The value must be encrypted. For information about how to change the value, see <a href="../SysConfig/Configuration_Settings.htm#XREF_68085_Encrypting">Encrypting Passwords</a>. </p>
+</td>
+</tr>
+  <tr style=" height : 55.00pt;">
+  <td style="width : 95.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">ConnectString</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Provides database connection information (host and port) in either PostgreSQL, Oracle, or SQL Server format, depending on how the Control Center&#160;was installed. The host and port are initially set during installation, but you can change the machine and port in the connect string at any time after installation—for example, if you move the database server to a different machine.</p>
+</td>
+</tr>
+  <tr style=" height : 48.00pt;">
+  <td style="width : 95.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">DriverClassName</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Name of the database driver used by this connection. Valid values are:</p>
+  <p class="CellBody">PostgreSQL: <span style="font-style : italic; "><i>org.postgresql.Driver</i></span></p>
+  <p class="CellBody">Oracle: <span style="font-style : italic; "><i>oracle.jdbc.driver.OracleDriver</i></span></p>
+  <p class="CellBody">SQL Server: </p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 95.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">MaxPoolSize</p>
+</td>
+  <td style="width : 265.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Sets a maximum number of connections that are simultaneously available for accessing this data source from a given Control Center&#160;instance. For more detail on using this setting, see below.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h3>Adjusting Connection Pool Size</h3>
+ <p class="BodyLevel1">The last element, &lt;MaxPoolSize&gt;, specifies the maximum number of simultane&#173;ous data connections available for each of the four databases. By default, the values for this setting are not the same for each of the four connection pools. They are:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>management.connection.pool (for the Management DB): <span style="font-weight : bold; "><b>8</b></span> connections;</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>policyframework.connection.pool (for the Policy Master): <span style="font-weight : bold; "><b>8</b></span> connections;</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>activity.connection.pool (for the Activity Journal): <span style="font-weight : bold; "><b>20</b></span> connections;</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>dictionary.connection.pool (for the Information Network Directory): <span style="font-weight : bold; "><b>14</b></span>&#160;connections.</p>
+
+ <p class="BodyLevel1">Note that the sum of these connections is 50, which is half the maximum sup&#173;ported by Control Center’s internal PostgreSQL database. This is based on the common installation architecture of one physical host for the ICENet Server, and one for all other Control Center&#160;components: two server hosts x 50 connections apiece, matches the database’s own default limit.</p>
+ <p class="BodyLevel1">The way these 50 are divided among the four pools is based on the relative amounts of database activity you can anticipate for each repository, during nor&#173;mal use. If you need to adjust these settings you can do so by editing these con&#173;nection pool definitions, but remember that you can only reallocate them from one pool to another. That is, if you increase the max for one pool, you should decrease it for another, so that the total doesn’t exceed 50 (in the case of the internal PostgreSQL database; this may be different for external databases).</p>
+ <h4>Minimum Pool Size</h4>
+ <p class="BodyLevel1">Note that there is a minimum as well as a maximum for each connection pool, but it is not configurable. It is set to 10% of the maximum, rounded up to the next whole number. For example, if a max size is 18, the minimum is 2; if a max size is 24, the minimum is 3.</p>
+ <h4>When to Adjust</h4>
+ <p class="BodyLevel1">You will need to reallocate connections whenever the operational requirements for one of the repositories start exceeding the number of connections allocated. When this happens, database operations for that repository will begin timing out, producing the following error message in your system log:</p>
+ <h5><span style="text-decoration : underline; "><u>java.sql.SQLException</u></span>: An attempt by a client to checkout a Connection has timed out.</h5>
+ <h3>The Database Connection Bottleneck</h3>
+ <p class="BodyLevel1">Bear in mind, these maximum connection values apply per each server instance, rather than to the Control Center as a whole. If you install multiple ICENet Serv&#173;ers, each will have the same default number of connections to access each given repository. Therefore, the sum total of maximum available connections to a given data source is (N * MaxPoolSize), where ‘N’ is the number of ICENet Serv&#173;ers you are running. (This does not mean that all these connections will be used; some ICENet Servers might not use all the provided data sources.) The total con&#173;nections will be 50 * (the number of servers you deploy).</p>
+ <p class="BodyLevel1">However, the databases themselves support only a finite, maximum number of connections. Control Center’s internal PostgreSQL database supports 100 con&#173;nections; if you are using an external PostgreSQL or Oracle database, it may sup&#173;port a different number. This means that if you deploy multiple ICENet Servers, it is possible that the number of their combined connection pools will exceed the actual capabilities on the database side. In such cases, you will see an error message like the following in your log:</p>
+ <h5><span style="text-decoration : underline; "><u>org.postgresql.util.PSQLException</u></span>: Backend start-up failed: FATAL: sorry, too many clients already.</h5>
+ <p class="BodyLevel1">If you are using an external database, you should know what its connection max&#173;imum is, and make sure that you do not exceed it by the aggregate connection pools of all ICENet servers in the system. You can do this either by increasing it on the database side, or reducing your configuration.xml connection pool sizes to something below the default levels.</p>
+ <h3>Changing Database Connect Strings</h3>
+ <p class="BodyLevel1">If you change the database name portion of the connect string, be extremely careful. This part of the connect string must match the name of the database itself.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

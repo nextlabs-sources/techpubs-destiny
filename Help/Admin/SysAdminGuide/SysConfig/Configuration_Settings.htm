@@ -1,0 +1,862 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Configuration Settings</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\SysConfig.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Configuration Tools\nConfiguration Settings");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Configuration_Tools.htm\">Configuration Tools<\/a> &gt; Configuration Settings<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_90803_Configuration"></a>Configuration Settings</h1>
+ <p class="BodyLevel1">The main Control Center configuration file, configuration.xml, is copied to the host server when you first install the Control Center. It controls the behavior of all Control Center&#160;components throughout your system, even if they are installed on different hosts. During installation, the file is placed in</p>
+ <h5>&lt;InstallDir&gt;\server\configuration\configuration.xml</h5>
+ <p class="BodyLevel1">You can use this file to change the settings that control various functions of the system. These include the configurations of the following:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The User Repository, the logical database where information on users and user groups is stored</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>User authentication (<a href="#XREF_92300_Configuring">Configuring Authentication</a>), external domain authentication (<a href="#XREF_64069_Configuring_the">Configuring the External Domain Authentication</a>), and trusted domain configuration (<a href="#XREF_24792_Configuring">Configuring Trusted Domains</a>)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Individual Control Center software components (<a href="#XREF_38524_Configuring">Configuring Control Center Components</a>)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Connections between Control Center and its four data stores (<a href="../Database/Configuring_Data_Access.htm#XREF_80468_Configuring">Configuring Data Access</a>)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The performance of the ICENet log queue manager (<a href="#XREF_82028_Configuring_the">Configuring the ICENet Log Queue</a>)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Definitions of all custom obligations (<a href="#XREF_36910_Registering_Custom">Registering Custom Obligations</a>)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Special actions that are specific to individual enforcers</p>
+
+ <h2><a name="XREF_64142_Configuring_the"></a>Configuring the User Repository</h2>
+ <p class="BodyLevel1">The settings that capture information about the internal directory server hosting Control Center&#160;user information are organized in the &lt;UserRepositoryConfigura&#173;tion&gt; section. The following table describes the elements in this section.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.00pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 82.950pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Element</p>
+</th>
+  <th style="width : 277.050pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">server.name</p>
+</td>
+  <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Name of the machine hosting the User Repository server. This will be the same as the machine hosting the DMS (Management Server).</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">server.port</p>
+</td>
+  <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Port for the User Repository server. Set by the installer.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">useSSL</p>
+</td>
+  <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies whether the server being accessed is SSL enabled.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">login.dn</p>
+</td>
+  <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The distinguished name or user principal name (for example, jdoe@bluejungle.com) of the account that will be used to gain access to the user repository. This property is initially set through the Control Center&#160;installation wizard.</p>
+</td>
+</tr>
+  <tr style=" height : 47.00pt;">
+  <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">login.password</p>
+</td>
+  <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Password for the user in login.dn. This property is the same as the Administrator password, which is specified during Control Center&#160;installation. The value must be encrypted. For information about how to change the value at any time after your initial installation, see <a href="#XREF_68085_Encrypting">Encrypting Passwords</a>.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h2><a name="XREF_92300_Configuring"></a>Configuring Authentication</h2>
+ <p class="BodyLevel1">Authentication is the process of verifying that a person who is trying to log in to Policy Studio, Administrator, or Reporter is authorized to do so. Control Center&#160;integrates with the existing security infrastructure, eliminating the need to manage user account information in multiple systems.</p>
+ <h3>Choosing Local or Remote Authentication</h3>
+ <p class="BodyLevel1">Control Center supports the following types of authentication:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Local</b></span>&#160;authentication: Users are authenticated directly against Control Center’s local Information Network Directory.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Remote</b></span>&#160;authentication: Users are authenticated against a Kerberos server in the organization’s network.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Hybrid</b></span>&#160;authentication: Users are first authenticated against the manually created users within Control Center. If no such user is found or if the cre&#173;dentials do not match, the credentials are verified remotely (as in Remote authentication) if an imported user is found with the same login name.</p>
+
+ <p class="BodyLevel1">The type of authentication used is controlled by the &lt;AuthenticationMode&gt; ele&#173;ment, which looks like this:</p>
+ <h5>&lt;ApplicationUserConfiguration&gt;</h5>
+ <h5> &#160;&#160;&lt;AuthenticationMode&gt;Hybrid&lt;/AuthenticationMode&gt;</h5>
+ <h5> &#160;&#160;...</h5>
+ <h5>&lt;/ApplicationUserConfiguration&gt;</h5>
+ <p class="BodyLevel1">This is initially set during installation. It is set to <span style="font-style : italic; "><i>Local</i></span>&#160;if the user skips the Application User Authentication screen during installation, and to <span style="font-style : italic; "><i>Hybrid</i></span>&#160;if the user provides the requested information in that screen. If you want to change it manually any time after installation, you can do so by changing this value. </p>
+ <h3><a name="XREF_64069_Configuring_the"></a>Configuring the External Domain Authentication</h3>
+ <p class="BodyLevel1">Another section, &lt;ExternalDomainConfiguration&gt;, contains several properties that are used to configure information about the external domain for user and group information retrieval, and for remote authentication of users logging into Reporter and Administrator. During Control Center&#160;installation, this section is commented out if the Application User Authentication screen of the installation wizard is skipped.</p>
+ <p class="BodyLevel1">In this section, the name of the security domain, authentication server, and con&#173;nectivity information are configured, as discussed in the following table.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 358.88pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 121.700pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Element</p>
+</th>
+  <th style="width : 237.175pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 121.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">&lt;DomainName&gt;</p>
+</td>
+  <td style="width : 237.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name of the security domain against which the user will be authenticated. The login name which the user attempts to use must exist within this domain. You can specify only one domain.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 121.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">&lt;AuthenticatorConfiguration&gt;</p>
+</td>
+  <td style="width : 237.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Contains two properties relevant to domain authentication.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 121.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">java.security.krb5.kdc</p>
+</td>
+  <td style="width : 237.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Kerberos Domain Controller. The name of the primary domain controller for the domain specified in the java.security.krb5.realm property. The primary domain controller contains credentials for all web application users.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 121.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">java.security.krb5.realm</p>
+</td>
+  <td style="width : 237.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The domain name. Should be the same as specified in the &lt;DomainName&gt; subsection described earlier, except that it must be in all capital letters.</p>
+</td>
+</tr>
+  <tr style=" height : 47.00pt;">
+  <td style="width : 121.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">&lt;UserAccessConfiguration&gt;</p>
+</td>
+  <td style="width : 237.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">This element has four properties that control connectivity to the Active Directory server hosting the user and group information. These settings allow Control Center&#160;to display and enroll external users and groups from your organization's domain into Control Center.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 121.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">server.name/server.port</p>
+</td>
+  <td style="width : 237.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Name and port of the Active Directory server hosting the information.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 121.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">useSSL</p>
+</td>
+  <td style="width : 237.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Whether to use SSL when connecting to the Active Directory server.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 121.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">root.dn</p>
+</td>
+  <td style="width : 237.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The distinguished name of the root node from which to start retrieval of user/group data entries.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 121.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">login.dn</p>
+</td>
+  <td style="width : 237.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">&#160;The principal name of a user with read privileges on the external domain.</p>
+</td>
+</tr>
+  <tr style=" height : 50.00pt;">
+  <td style="width : 121.700pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">login.password</p>
+</td>
+  <td style="width : 237.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The encrypted password for the user entered in <span class="GreyBold" style="font-size  : 7.0pt; "><font size="1" style="font-size:7pt;">login.dn</font></span>.</p>
+  <p class="CellBody">You can encrypt the password using the mkpassword.bat program found at <span class="GreyBold" style="font-size  : 7.0pt; "><font size="1" style="font-size:7pt;">C:Program Files\NextLabs\PolicyServer\tools\crypt</font></span>. See <a href="#XREF_68085_Encrypting">Encrypting Passwords</a> for instructions.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h3><a name="XREF_24792_Configuring"></a>Configuring Trusted Domains</h3>
+ <p class="BodyLevel1">During normal operation, Control Center keeps track of users and hosts accord&#173;ing to the domain where they are enrolled, for the purposes of preparing policy bundles. It needs this information so that it can include in policy bundles only the information that is relevant to a particular policy enforcement point.</p>
+ <p class="BodyLevel1">For example, policy bundles deployed to file servers in the test.widgetco.com domain need to contain users and hosts only from that domain. Ordinarily, the information about users and hosts from one domain, widgetco.com, is irrelevant to file servers in another, test.widgetco.com, because the operating system denies logon to users from widgetco.co—making it impossible to perform any further actions on file servers of the test.widgetco.com domain.</p>
+ <p class="BodyLevel1">However, there is one important exception. When there is a trust relation between the widgetco.com and test.widgetco.com domains, file servers from test.widgetco.com must know about hosts and users of the widgetco.com, and vice versa. Control Center will distribute policy bundles correctly across domains in such cases, but only if you inform Control Center about any such trust relationships. To do this, you use a configuration setting, <br />&lt;MutuallyTrusted&gt;, found in the DABS section of the configuration file. </p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>This configuration step is required for Domain Group enrollment.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SysConfig00002.jpg" style="width : 486.864pt; height : 241.704pt; " id="image1" src="SysConfig00002.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Sample Trusted Domains Configuration</p>
+ <p class="BodyLevel1">Each element in this section can contain two or more domains, and represents a trust relationship between or among them. Note the following syntactical points about this section:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Domains with mutual trust relations are specified as comma-separated lists within the &lt;MutuallyTusted&gt; tags.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Each of these lists is logically separate: a domain with more than one trusted relationship may be included in multiple lists, without joining the lists. For example, the sample configuration above creates trust relation&#173;ships between widgetco.com and partners.cyberdyne.com and between widgetco.com and publishing.widgetco.com, but it does not create a trust relationship between partners.cyberdyne.com and publishing.wid&#173;getco.com.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Empty lists or lists with only one domain will be ignored, but are allowed.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Blank spaces around commas are ignored; however, blank spaces around dot separators will produce an error.</p>
+
+ <h2><a name="XREF_38524_Configuring"></a>Configuring Control Center&#160;Components</h2>
+ <p class="BodyLevel1">A set of sections in configuration.xml control the various components of the Control Center. All instances of each software component share the configura&#173;tion settings of a single section in the configuration file. For example, if you have a distributed system where several ICENet Servers share the traffic from the policy enforcers in your organization, all the ICENet components use the same configuration. The following table lists these sections and the elements and properties in each, and summarizes their functions.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 488.01pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 25.00pt;background : #1f8c4a;">
+  <th style="width : 62.325pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Section</p>
+</th>
+  <th style="width : 99.549pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Purpose</p>
+</th>
+  <th style="width : 88.132pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Element or Property</p>
+</th>
+  <th style="width : 238.008pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Function</p>
+</th>
+</tr>
+  <tr style=" height : 34.00pt;">
+  <td style="width : 62.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">&lt;DMS&gt;</p>
+</td>
+  <td style="width : 99.549pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Governs the operation of the Management Server</p>
+</td>
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">&lt;HeartbeatRate&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the frequency, in seconds, of the Management Server’s own heartbeat signal. This value should not be changed.</p>
+  <p class="CellBody">Minimum = 15; default = 60</p>
+</td>
+</tr>
+  <tr style=" height : 79.00pt;">
+  <td style="width : 62.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">&lt;DCSF&gt;</p>
+</td>
+  <td style="width : 99.549pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Governs the operation of the core server framework, which relays information across machines between components, relays license key enforcement, and performs other tasks.</p>
+</td>
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">&lt;HeartbeatRate&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the frequency, in seconds, of the heartbeat signal sent to the Management Server.</p>
+  <p class="CellBody">Minimum = 15; default = 60</p>
+</td>
+</tr>
+  <tr style=" height : 34.00pt;">
+  <td style="width : 62.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p style="font-weight : bold; font-size  : 8.0pt;">&lt;DABS&gt;</p>
+</td>
+  <td style="width : 99.549pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p class="CellBody">Governs the operation of the ICENet Server, which manages communication between the Control Center&#160;and all policy enforcers.</p>
+</td>
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">&lt;HeartbeatRate&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the frequency, in seconds, of the heartbeat signal the ICENet Server sends to the Management Server.</p>
+  <p class="CellBody">Minimum = 15; default = 60</p>
+</td>
+</tr>
+  <tr style=" height : 55.00pt;">
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">&lt;TrustedDomains Configuration&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Allows you to specify trust relationships among domains in your network. For any trusted domains listed here, policy bundles applying to a file server in one domain will include user and host information for the other domain. This allows Control Center to enforce policies across domains (this happens only in the case of trusted domains). </p>
+</td>
+</tr>
+  <tr style=" height : 34.00pt;">
+  <td style="width : 62.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="3">
+  <p style="font-weight : bold; font-size  : 8.0pt;">&lt;DPS&gt;</p>
+</td>
+  <td style="width : 99.549pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="3">
+  <p class="CellBody">Governs the operation of the Policy Management Server, which is the back-end server for Policy Studio.</p>
+</td>
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">&lt;HeartbeatRate&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the frequency, in seconds, of the heartbeat signal the Policy Management Server sends to the Management Server.</p>
+  <p class="CellBody">Minimum = 15; default = 60</p>
+</td>
+</tr>
+  <tr style=" height : 42.00pt;">
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">&lt;DeploymentTime&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the default deployment time for policy enforcers. Value is case-insensitive. (For examples, see <a><span class="FM_blue">Examples, Deployment Time Settings</span></a>.) Required syntax:</p>
+  <p class="CellBody"> &#160;&#160;&#160;&#160;&#160;&#160;[(ordinal|last)] [day of week] HH24:MM</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">&lt;CustomAttributes&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">For storing definitions of custom attributes for components. This section is not present until it is explicitly added, to define custom properties. </p>
+</td>
+</tr>
+  <tr style=" height : 34.00pt;">
+  <td style="width : 62.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="3">
+  <p style="font-weight : bold; font-size  : 8.0pt;">&lt;DAC&gt; </p>
+</td>
+  <td style="width : 99.549pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="3">
+  <p class="CellBody">Governs the operation of the Intelligence Server, which is the back-end server for Reporter.</p>
+</td>
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">&lt;HeartbeatRate&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the frequency, in seconds, of the heartbeat signal the Intelligence Server sends to the Management Server.</p>
+  <p class="CellBody">Minimum = 15; default = 60</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">&lt;ActivityJournal<br />SettingConfiguration&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Configures the database management operations related to the Activity Journal, which stores data on policy enforcement activity. For more information, see <a href="../Database/Database_Management_Operations.htm#XREF_44825_ActivityJournal">Database Management Operations</a>.</p>
+</td>
+</tr>
+  <tr style=" height : 42.00pt;">
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">&lt;numberofExtendedAttrs&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the number of extra columns for dynamic attributes in the main reporting table. If the number of attributes exceeds the specified value, attributes are stored in a child table.</p>
+  <p class="CellBody">default = 99</p>
+</td>
+</tr>
+  <tr style=" height : 34.00pt;">
+  <td style="width : 62.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">&lt;Management Console&gt;</p>
+</td>
+  <td style="width : 99.549pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Governs the operation of Administrator.</p>
+</td>
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">&lt;HeartbeatRate&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the frequency, in seconds, of the heartbeat signal Administrator sends to the Management Server.</p>
+  <p class="CellBody">Minimum = 15; default = 60</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 62.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="6">
+  <p style="font-weight : bold; font-size  : 8.0pt;">&lt;Message Handlers&gt;</p>
+</td>
+  <td style="width : 99.549pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="6">
+  <p class="CellBody">Contains settings that control the ICENet Server’s connection to your mail server, for <br />e-mail notification purposes.</p>
+</td>
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">&lt;Server&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the name of the network host where the mail sever is running.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">&lt;Port&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The port where the ICENet will connect to the mail server.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">&lt;Username&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The username required for this connection. If your SMTP server does not require authentication, this may be left blank.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">&lt;Password&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The password required for this connection. If your SMTP server does not require authentication, this may be left blank.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">&lt;Default_From&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the content of the From field of e-mail notifications sent by this server, used in cases when no sender is specified in the policy. This value is supplied during Control Center&#160;installation.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyRt">&lt;Default_To&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the content of the To field of e-mail notifications sent by this server, used in cases when no recipient is specified in the policy. This value is supplied during Control Center installation.</p>
+</td>
+</tr>
+  <tr style=" height : 34.00pt;">
+  <td style="width : 62.325pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="3">
+  <p style="font-weight : bold; font-size  : 8.0pt;">&lt;Reporter&gt;</p>
+</td>
+  <td style="width : 99.549pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="3">
+  <p class="CellBody">Governs the operation of the Reporter.</p>
+</td>
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">&lt;HeartbeatRate&gt;</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the frequency, in seconds, of the heartbeat signal Reporter sends to the Management Server.</p>
+  <p class="CellBody">Minimum = 15; default = 60</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">use.past.data.for.monitoring</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies whether or not monitors evaluate policy activity data that is logged prior to the creation of the monitors. Type a value of true or false. For more information about policy monitors, see the <span class="Emphasis">Reporter User’s Guide</span>.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 88.132pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">monitorExecutionInterval</p>
+</td>
+  <td style="width : 238.008pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the frequency, in minutes, at which a background job evaluates all active monitors. By default, the job evaluates active monitors every 2 minutes. For more information about policy monitors, see the <span class="Emphasis">Reporter User’s Guide</span>.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <p class="BodyLevel1">The following table provides examples of values for the DeploymentTime prop&#173;erty described in the previous table.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.00pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 25.00pt;background : #1f8c4a;">
+  <th style="width : 99.200pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Deployment Time Example</p>
+</th>
+  <th style="width : 260.800pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Explanation</p>
+</th>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 99.200pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">00:00<span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span></p>
+</td>
+  <td style="width : 260.800pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Next midnight (default value of &lt;DeploymentTime&gt;)</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 99.200pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">wednesday 1:20</p>
+</td>
+  <td style="width : 260.800pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">1:20 AM every Wednesday</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 99.200pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">first monday 1:15</p>
+</td>
+  <td style="width : 260.800pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">1:15 AM on the first Monday of each month</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 99.200pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Last Saturday 22:30</p>
+</td>
+  <td style="width : 260.800pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">10:30 PM on the last Saturday of each month</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 99.200pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">3rd FRIDAY 0:10</p>
+</td>
+  <td style="width : 260.800pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">10 minutes past midnight on the third Friday of each month</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 99.200pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">fourth SATURDAY 12:30</p>
+</td>
+  <td style="width : 260.800pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">12:30 PM on the fourth Saturday of each month</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 99.200pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">fifth Monday 23:59</p>
+</td>
+  <td style="width : 260.800pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">11:59 PM on the fifth Monday of each month</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <p class="BodyLevel1">If the required day of the current month has already passed, the corresponding day of the next month is taken. If the next month does not have the specified day (for example, the next February to have five Sundays will be February of 2032) the following month is checked.</p>
+ <h2><a name="XREF_35158_The_From_Address"></a>Message Handler Settings</h2>
+ <p class="BodyLevel1">During the Control Center&#160;installation, the install wizard prompts you for several parameters connected with the e-mail notification feature. These are stored in the &lt;MessageHandlers&gt; section of the configuration file. They include:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The server name and port of your network mail server</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>A username and password with which the ICENet Server can connect to the mail server</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Default From and To addresses. These are used in e-mail notification mes&#173;sages whenever that obligation is included in a policy, but no sender or recipient is specified in the definition of the policy.</p>
+
+ <p class="BodyLevel1">The figure below shows the MessageHandlers section. If you need to change any of these settings, you can manually edit the configuration file at any time.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SysConfig00003.jpg" style="width : 487.152pt; height : 442.944pt; " id="image2" src="SysConfig00003.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">E-mail Message Handler Configuration</p>
+ <h2><a name="XREF_68085_Encrypting"></a>Encrypting Passwords</h2>
+ <p class="BodyLevel1">Whenever you generate a new password for the configuration file, you should encrypt it using the following procedure:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open a console window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change directories to &lt;InstallDir&gt;/tools.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the following command, where &lt;password&gt; is the new password you want to place in the configuration file: </p>
+</li>
+  <h5>mkpassword.bat -w &lt;password&gt;</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">An encrypted version of the password appears on the screen. The encrypted value is random; if you run the command again for the same password, a different encrypted version will be generated.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Copy the encrypted password from the screen and paste it into <span style="font-style : italic; "><i>configura&#173;tion.xml</i></span> at the desired location.</p>
+</li>
+ </ol>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>You can use the command <span style="font-style : italic; "><i>mkpassword.bat -h</i></span>&#160;to display a help screen with instructions for using this utility.</p>
+ <h2><a name="XREF_80468_Configuring"></a>Configuring Data&nbsp;Access</h2>
+ <p class="BodyLevel1">The <span style="font-style : italic; "><i>configuration.xml</i></span>&#160;file also contains settings for connecting to the four data stores required by Control Center:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Management Database</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Policy Master</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Activity Journal</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Information Network Directory</p>
+
+ <p class="BodyLevel1">Depending on your configuration, all four may either use the internal database, or connect to an externally hosted Oracle, PostgreSQL, or SQL Server database. Each of these connections is controlled by a group of parameters, in one of the four &lt;repository&gt; sections of the file. </p>
+ <p class="BodyLevel1">Details on setting these parameters are provided in <a><span class="FM_blue">Database Management</span></a>.</p>
+ <h2><a name="XREF_82028_Configuring_the"></a>Configuring the ICENet Log Queue</h2>
+ <p class="BodyLevel1">As enforcers send activity data to the ICENet Server, it buffers that data in a queue and periodically writes logs to the Activity Journal. If your system’s enforcement activity is so heavy that activity data is being uploaded from enforcers to the ICENet Server faster than that server can writes logs to the Activity Journal database over an extended period, then the binary log data can start to accumulate in the file system queue. (This queue is located at <span class="GreyBold">&lt;INSTALLDIR&gt;\server\logqueue</span>.)</p>
+ <p class="BodyLevel1">The most immediate impact in such cases is a risk of running out of disk space, which can drastically reduce the performance of the ICENet Server host. Some secondary impacts can include the loss of activity log data uploaded from enforcers, and failure to log system events in the server logs.</p>
+ <p class="BodyLevel1">The DABS section of the configuration file contains two configuration options, described below, that can help cope with such situations. They are located in a section called &lt;FileSystemLogConfiguration&gt;.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 359.57pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 110.241pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Element</p>
+</th>
+  <th style="width : 249.330pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 110.241pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">ThreadPoolMaximumSize</p>
+</td>
+  <td style="width : 249.330pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the maximum number of threads available for the ICENet Server to writing logs into persistence—in effect, clearing data from the queue. Default value: 8</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 110.241pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">QueueManagerUploadSize</p>
+</td>
+  <td style="width : 249.330pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the maximum size of logs the ICENet Server will write for each log entry it sends to the database. The larger this number, the more data can be cleared from the queue per each database write. Default value: 1MB</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <p class="BodyLevel1">Under normal conditions, these default values should provide adequate perfor&#173;mance. If you experience noticeable slowdowns in one or more ICENet Servers, you can increase these values one at a time. You should tune the system by increasing the Thread Pool Size moderately (say, to 12) and checking the perfor&#173;mance results, then increasing the log upload size to 2M, and rechecking.</p>
+ <h2><a name="XREF_36910_Registering_Custom"></a>Registering Custom Obligations</h2>
+ <p class="BodyLevel1">Custom obligations are those that are not automatically provided in the Policy Author interface, but require some special configuration, referred to as <span style="font-style : italic; "><i>regis&#173;tration</i></span>. Registering an obligation involves adding an &lt;Obligation&gt; subsection defining it, within the &lt;Obligations&gt; section of the config file.</p>
+ <p class="BodyLevel1">There are two kinds of custom obligations, executed and delegated. Both must be registered in the configuration file. The following table provides descriptions of the elements required for registration; a sample of this section provided on <a href="../CustomObligations/Registering_Obligations.htm#XREF_86664_Configuration">Registering Obligations</a>. For more information on executed obligations, see <a href="../CustomObligations/Using_Custom_Obligations.htm#XREF_31750_Using_Custom">Using Custom Obligations</a>.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 486.44pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 111.704pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Section</p>
+</th>
+  <th style="width : 88.108pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Element</p>
+</th>
+  <th style="width : 286.629pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Function</p>
+</th>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 111.704pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">&lt;Obligations&gt;</p>
+</td>
+  <td style="width : 88.108pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-weight : bold; font-size  : 8.0pt;">&nbsp;</p>
+</td>
+  <td style="width : 286.629pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Section of the XML file that contains all registered custom obligations. That is, registering an obligation means adding an &lt;Obligation&gt; sub-section within this section. </p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 111.704pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="5">
+  <p style="font-weight : bold; font-size  : 8.0pt;"> &#160;&#160;&#160;&lt;Obligation&gt;</p>
+</td>
+  <td style="width : 88.108pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-weight : bold; font-size  : 8.0pt;">&nbsp;</p>
+</td>
+  <td style="width : 286.629pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Registers one custom obligation, which will behave as defined by the elements in this section. The Obligations section may have any number of Obligation sections within it.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 88.108pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">DisplayName</p>
+</td>
+  <td style="width : 286.629pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">This is the label name for the obligation, which will display in the drop-down list in the Name field in Policy Author.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 88.108pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">RunAt</p>
+</td>
+  <td style="width : 286.629pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">This specifies where the obligation will run, which also served to distinguish between executed and delegated types. Valid values: PDP (for executed obligations), PEP (for delegated obligations)</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 88.108pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">RunBy</p>
+</td>
+  <td style="width : 286.629pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Used by executed obligations only; specifies what kind of session the obligation requires. Valid values: User (an authenticated user session), or System (an unauthenticated session). Used only when RunAt=PDP.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 88.108pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">ExecPath</p>
+</td>
+  <td style="width : 286.629pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Used by executed obligations only; specifies the path where the executable code has been installed on the enforcer host.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 111.704pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;"> &#160;&#160;&#160;&#160;&#160;&#160;&lt;Arguments&gt;</p>
+</td>
+  <td style="width : 88.108pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-weight : bold; font-size  : 8.0pt;">&nbsp;</p>
+</td>
+  <td style="width : 286.629pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Defines all arguments required for this obligation. Each argument is defined within one &lt;Argument&gt; sub-section.</p>
+</td>
+</tr>
+  <tr style=" height : 66.00pt;">
+  <td style="width : 111.704pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="3">
+  <p style="font-weight : bold; font-size  : 8.0pt;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Argument&gt; </p>
+</td>
+  <td style="width : 88.108pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-weight : bold; font-size  : 8.0pt;">&nbsp;</p>
+</td>
+  <td style="width : 286.629pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Sub-section within &lt;Arguments&gt; that defines one argument for the parent obligation. Definition consists of a name and all valid values. Each value must be specified by a Value element.</p>
+  <p class="CellBody">Each argument may be designated “usereditable=yes”. When this flag is present, the argument field will be open for users to provide any value, in addition to those predefined here. If this flag is not included, the field will not be editable, and users can only select one of the defined values.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 88.108pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Name</p>
+</td>
+  <td style="width : 286.629pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the name of this argument that will be passed in the K-V pair in the command line. This is also the label that will appear in the policy editor to identify this argument.</p>
+</td>
+</tr>
+  <tr style=" height : 42.00pt;">
+  <td style="width : 88.108pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Value</p>
+</td>
+  <td style="width : 286.629pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies a valid value for this argument. To mark a value as the default—the value that will display when the user selects this argument in an obligation definition panel in Policy Author—include the following syntax:</p>
+  <p class="CellBody">&lt;Value default=”true”&gt;value&lt;/value&gt;</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

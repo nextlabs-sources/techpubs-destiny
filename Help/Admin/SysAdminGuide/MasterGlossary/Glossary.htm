@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Glossary</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\MasterGlossary.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Glossary\nGlossary");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Glossary.htm\">Glossary<\/a> &gt; Glossary<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_35581_Glossary"></a>Glossary</h1>
+ <p class="BodyLevel1">This section provides definitions of the specialized terminology and concepts used throughout the Control Center documentation set.</p>
+ <h3><a name="XREF_34103_Compliant"></a>Active Control Policy Language (ACPL)</h3>
+ <p class="BodyLevel1">The language Control Center&#160;uses internally to represent, store, and manage components and policies. Referred to as <span style="font-style : italic; "><i>ACPL</i></span> (&quot;<span style="font-style : italic; "><i>ACK-pull</i></span>&quot;) for short. The syntax&#160;ACPL uses is partially exposed in the Policy Author user interface; beyond this, it is not something policy designers or constructors need be concerned about.</p>
+ <h3><a name="XREF_68279_Action_Component"></a>Action Components</h3>
+ <p class="BodyLevel1">One of the six types of components you can build in <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>. (The other five types, collectively, are referred to as <a href="#XREF_37487_Object_Component"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Object Components</font></span></a>.) You define an action component by checking one or more of the available <a href="#XREF_52611_Basic_Action"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Basic Action</font></span></a>s within it. Once defined, action components are available as the logical verbs in ACPL, the language in which policies are expressed.</p>
+ <h3><a name="XREF_85982_Activity_Journal"></a>Activity Journal</h3>
+ <p class="BodyLevel1">One of the four data stores used by Control Center. The Activity Journal stores information sent by all enforcers about how subjects access and use informa&#173;tion, and also on policy enforcement. When you use <a href="#XREF_88904_Reporter"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Reporter</font></span></a>&#160;to generate reports, you are querying data from the Activity Journal. </p>
+ <p class="BodyLevel1">The Activity Journal can be maintained either on the internal database supplied with Control Center, or on an external Oracle,PostgreSQL, or MSSQL database.</p>
+ <h3><a name="XREF_65088_Administrator"></a>Administrator</h3>
+ <p class="BodyLevel1">One of the three user applications in Control Center. Allows you to configure various aspects of the system’s operation, and monitor current operation.</p>
+ <h3>Application Component</h3>
+ <p class="BodyLevel1">One of the five types of <a href="#XREF_37487_Object_Component"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Object Components</font></span></a>&#160;you can build in <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>. Application components represent individual applications or categories of appli&#173;cations in the physical network.</p>
+ <h3>Auditor</h3>
+ <p class="BodyLevel1">A logical component of Policy Enforcer software, responsible for capturing docu&#173;ment access and use by policy subjects, as well as all policy enforcement events, and writing them to the <a href="#XREF_85982_Activity_Journal"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Activity Journal</font></span></a> database.</p>
+ <h3><a name="XREF_52611_Basic_Action"></a>Basic Action</h3>
+ <p class="BodyLevel1">One of the set of irreducible actions, such as <span style="font-style : italic; "><i>open</i></span>, <span style="font-style : italic; "><i>delete, copy</i></span>&#160;<span style="font-style : italic; "><i>content</i></span>, or <span style="font-style : italic; "><i>e-mail</i></span>, that are available for combining into <a href="#XREF_68279_Action_Component"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Action Components</font></span></a>s in <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>. Each action component can consist of one or more basic actions.</p>
+ <h3><a name="XREF_20243_Bundle"></a>Bundle</h3>
+ <p class="BodyLevel1">See <a href="#XREF_18902_Policy_Bundle"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Bundle</font></span></a>.</p>
+ <h3><a name="XREF_90946_Business_Analyst"></a>Business Analyst</h3>
+ <p class="BodyLevel1">One of the predefined roles available in <a href="#XREF_65088_Administrator"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Administrator</font></span></a>. (See <a href="#XREF_98449_Roles"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Roles</font></span></a>.)</p>
+ <h3>Cancel</h3>
+ <p class="BodyLevel1">One of the actions you can take to change the deployment status of policies and components. You can cancel an object if it has been submitted and scheduled for deployment, but not if it has already been deployed. Deployed objects must be <a href="#XREF_11148_Deactivate"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Deactivate</font></span></a><span style="font-style : italic; color   : #0000ff; "><font color="blue" ><i>d</i></font></span>&#160;before they can be cancelled. </p>
+ <h3><a name="XREF_83872_Components"></a>Component</h3>
+ <p class="BodyLevel1">Components are the building blocks of policies; they represent classes or cate&#173;gories of entities in the physical network environment. There are six types of components, represented by panels and tabs in the <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>&#160;component bin: Users, Applications, Computers, Actions, Documents, and Portal Content.</p>
+ <h3>Component Bin</h3>
+ <p class="BodyLevel1">The pane in the lower left area of the <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>&#160;window, which displays all currently defined <a href="#XREF_83872_Components"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Component</font></span></a>s. Users create new policies by dragging compo&#173;nents from the bin up into the main editing pane. </p>
+ <h3>Computer Component</h3>
+ <p class="BodyLevel1">One of the five basic types of <a href="#XREF_83872_Components"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Component</font></span></a>&#160;you can define in <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a> to rep&#173;resent classes of entities in the physical environment—in this case, computers. </p>
+ <h3><a name="XREF_67609_Connection_File"></a>Connection File</h3>
+ <p class="BodyLevel1">A plain-text file that is used in connection with the Enrollment Manager utility to provide the information Control Center needs to connect to the LDAP direc&#173;tory you are using as an enrollment source. The name and path of this file are specified as a command line argument in several enrollment-related commands, and is then stored in Control Center’s internal tables for use in updating and synchronizing. A template for this file is provided during installation; users can change values in the file as necessary.</p>
+ <h3><a name="XREF_23618_Control_Center"></a>Control Center</h3>
+ <p class="BodyLevel1">The enterprise-wide platform where policies are constructed, stored, and man&#173;aged, and where audit data is gathered and managed. Comprises three major pieces—the <a href="#XREF_89709_Management_Server"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Management Server</font></span></a>,the <a href="#XREF_32130_Report_Server"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Report Server</font></span></a>, and <a href="#XREF_85322_ICENet_Server"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >ICENet Server</font></span></a>—plus sev&#173;eral system data stores, which are generally stored in a dedicated, external database. On top of this platform, you can install different products, including Entitlement Management and Enterprise Data Protection, which provide the enforcer software and specialized applications for solving clearly defined busi&#173;ness problems.</p>
+ <h3><a name="XREF_11148_Deactivate"></a>Deactivate</h3>
+ <p class="BodyLevel1">One of the actions you can take to change the deployment status of objects (policies and components). If you want to delete an object that has already been deployed, you must first deactivate it. Once it is no longer in an active state, you can either leave it deactivated, to be able to reactivate it later; or delete it permanently, if you know you will not want to use it again.</p>
+ <h3>Definition File</h3>
+ <p class="BodyLevel1">A plain-text file that is used in connection with the Enrollment Manager utility to provide the information Control Center needs to map the data you are enroll&#173;ing from LDAP directories or LDIF files, to the format Control Center&#160;uses in its Information Network Directory tables. This file is specified as a command line argument for both enrolling and updating/synchronizing procedures. Like the <a href="#XREF_67609_Connection_File"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Connection File</font></span></a>, it is provided as a template that users can edit and save for their use.</p>
+ <h3>Delete</h3>
+ <p class="BodyLevel1">See <a href="#XREF_11148_Deactivate"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Deactivate</font></span></a>.</p>
+ <h3>Deployed</h3>
+ <p class="BodyLevel1">One of the possible states of a <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>&#160;object (a component or policy). When an object is deployed, it is distributed to all relevant enforcers in the sys&#173;tem, where it comes into effect governing the way <a href="#XREF_58254_Subject"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Subject</font></span></a>s access and/or use information <a href="#XREF_74183_Resource"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Resource</font></span></a>s.</p>
+ <h3><a name="XREF_94442_Compliance_Agent"></a>Desktop Enforcer</h3>
+ <p class="BodyLevel1">One of two types of <a href="#XREF_86617_Policy_Enforcer"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Enforcer</font></span></a>s; application that runs on Windows desktop or laptop PCs to monitor and enforces how any subject using that PC accesses and uses document resources.</p>
+ <h3><a name="XREF_86147_Details_Pane"></a>Details Pane</h3>
+ <p class="BodyLevel1">In <a href="#XREF_11575_Policy_Manager"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Manager</font></span></a>, the lower right-hand pane, which displays the definitional details of whatever policy or component is selected in the <a href="#XREF_66700_Object_Grid"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Object Grid</font></span></a>.</p>
+ <h3>Document Component</h3>
+ <p class="BodyLevel1">One of the five basic types of <a href="#XREF_83872_Components"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Component</font></span></a>&#160;you can define in <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a> to rep&#173;resent classes of entities in the physical environment—in this case, documents. Document components may be defined based on a number of properties such as extension, name (using wildcard characters), and date created or last changed; but most common is probably directory path where they are located.</p>
+ <h3>Editor</h3>
+ <p class="BodyLevel1">The main pane on the right side of the Policy Author interface. This is where you define newly created components and policies, or change the definition of existing ones.</p>
+ <h3>Effect</h3>
+ <p class="BodyLevel1">Every policy starts with an effect, which is the result that will ensue when the policy is enforced. There are three possible effects: Deny, Allow Only, and Moni&#173;tor. The last is used for policies that do not restrict anyone’s use, but are intended for pure auditing or notification purposes, or for triggering obligations.</p>
+ <h3>Enforcer</h3>
+ <p class="BodyLevel1">See <a href="#XREF_86617_Policy_Enforcer"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Enforcer</font></span></a>.</p>
+ <h3>Enforcer Status</h3>
+ <p class="BodyLevel1"><a href="#XREF_86617_Policy_Enforcer"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Enforcer</font></span></a>s can be in either of two states: running, or not running. You can check this with the local controls for <a href="#XREF_94442_Compliance_Agent"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Desktop Enforcer</font></span></a>s, and for all enforcers by checking the latest heartbeat displayed on the Enforcers Status tab in <a href="#XREF_65088_Administrator"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Adminis&#173;trator</font></span></a>. When an enforcer is running, this tab displays a policy status as well—that is, whether the most recently submitted version of all policies have been deployed to that enforcer, or not. You can also view summaries of policy status per enforcer by using the Deployment Status command from the Window menu, in <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>.</p>
+ <h3>Enrollment</h3>
+ <p class="BodyLevel1">The process by which an organization’s existing information network of users, hosts, and other entities are imported from LDAP directories or LDIF files, into Control Center.</p>
+ <h3>Enrollment Manager</h3>
+ <p class="BodyLevel1">A system utility that provides a unified tool for enrolling data from LDAP direc&#173;tories or LDIF files, updating and synchronizing enrollments of users, groups, and hosts.</p>
+ <h3><a name="XREF_72716_Compliance_Enforcer"></a>File Server Enforcer</h3>
+ <p class="BodyLevel1">One of several types of pre-built <a href="#XREF_86617_Policy_Enforcer"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Enforcer</font></span></a>s; a collection of software pro&#173;cesses that run on Windows file servers to monitor and control the way all users access the files stored on that server.</p>
+ <h3>Filter File</h3>
+ <p class="BodyLevel1">A plain-text file where users can define any set of LDAP filters. This file can be specified as a command line argument in enrollment procedures, so the enroll&#173;ment will only be performed on entities meeting the filter criteria.</p>
+ <h3>Folder</h3>
+ <p class="BodyLevel1">You can define folders in <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a> for organizing your policies as you con&#173;struct them. Folders can be assigned levels of access permission for various actions; these are configurable on the Access Control tab under Properties. </p>
+ <h3>ICENet</h3>
+ <p class="BodyLevel1">Protocol used to communicate between <a href="#XREF_86617_Policy_Enforcer"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Enforcer</font></span></a>s and the <a href="#XREF_23618_Control_Center"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Control Cen&#173;ter</font></span></a>. All such communication passes through the <a href="#XREF_85322_ICENet_Server"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >ICENet Server</font></span></a>&#160;on the The set of software servers and other modules that constitute the heart of the Control Center&#160;platform. The main components of the Control Center&#160;are the Policy Management Server and Policy Master data store, the Management Server and Information Network Directory, the Intelligence Server and Activity Journal, one or more ICENet Servers, and the Reporter and Administrator servers.</p>
+ <p class="BodyLevel1">&#160;side; each enforcer is equipped with an <a href="#XREF_59794_ICENet_Client"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >ICENet Client</font></span></a>.</p>
+ <h3><a name="XREF_59794_ICENet_Client"></a>ICENet Client</h3>
+ <p class="BodyLevel1">The component of the <a href="#XREF_86617_Policy_Enforcer"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Enforcer</font></span></a>&#160;software architecture that handles remote communication with the <a href="#XREF_85322_ICENet_Server"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >ICENet Server</font></span></a>.</p>
+ <h3><a name="XREF_85322_ICENet_Server"></a>ICENet Server</h3>
+ <p class="BodyLevel1">The <a href="#XREF_23618_Control_Center"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Control Center</font></span></a>&#160;component that manages communication between all policy enforcers and the The set of software servers and other modules that constitute the heart of the Control Center&#160;platform. The main components of the Control Center are the Policy Management Server and Policy Master data store, the Man&#173;agement Server and Information Network Directory, the Intelligence Server and Activity Journal, one or more ICENet Servers, and the Reporter and Administra&#173;tor servers. In a production environment, this server is customarily installed on a different hardware host than the rest of the Control Center components.</p>
+ <h3>Information Network</h3>
+ <p class="BodyLevel1">The collective term that refers to all of an organization’s information resource servers, desktops, network configuration, applications, and organizational struc&#173;ture.</p>
+ <h3><a name="XREF_96629_Information"></a>Information Network Directory (IND)</h3>
+ <p class="BodyLevel1">The internal model Control Center uses to represent the organization’s informa&#173;tion network. It can be thought of as a repository that maps to the data that is enrolled from your LDAP directory or LDIF files, about physical entities in the network including users, computers, groups, and applications. Physically, the IND is stored in the same database as the Activity Journal—either Control Center’s embedded database, or an external or PostgreSQL, Oracle, or SQL Server DB.</p>
+ <h3>MachineList File</h3>
+ <p class="BodyLevel1">A manually created file listing all PCs and servers in a given domain, which you must compose in order to enroll file shares using the Resource Path Discovery utility.</p>
+ <h3>Management Database</h3>
+ <p class="BodyLevel1">One of the three databases employed by the <a href="#XREF_23618_Control_Center"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Control Center</font></span></a> to store the infor&#173;mation Control Center&#160;needs as it operates. Management Database stores the data about authorized users and the operation of <a href="#XREF_65088_Administrator"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Administrator</font></span></a>.</p>
+ <h3><a name="XREF_89709_Management_Server"></a>Management Server</h3>
+ <p class="BodyLevel1">The <a href="#XREF_23618_Control_Center"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Control Center</font></span></a> component that centralizes management of all system com&#173;ponents.</p>
+ <h3>Manager</h3>
+ <p class="BodyLevel1">A software component of <a href="#XREF_86617_Policy_Enforcer"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Enforcer</font></span></a>s that manages their configuration and self-monitors the enforcer to prevent tampering.</p>
+ <h3>Modeling</h3>
+ <p class="BodyLevel1">The process of defining policy components to represent classes of entities in the physical environment.</p>
+ <h3>Modify</h3>
+ <p class="BodyLevel1">Whenever you want to change the state of any component or policy that has been submitted or deployed, you must click the Modify button in <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>. This puts the object into Draft state, meaning you must resubmit when you are finished modifying it.</p>
+ <h3>My Reports</h3>
+ <p class="BodyLevel1">One of two tabs on the main screen of the <a href="#XREF_88904_Reporter"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Reporter</font></span></a> application. This tab dis&#173;plays details about all reports created and owned by the user currently logged into the application. The other tab, <a href="#XREF_84392_Shared_Reports"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Shared Reports</font></span></a>, shows all report created and owned by all other authorized users, to which the currently logged in user has read access only.</p>
+ <h3><a name="XREF_37487_Object_Component"></a>Object Components</h3>
+ <p class="BodyLevel1">There are two general categories of components: <span style="font-style : italic; "><i>action</i></span>&#160;and <span style="font-style : italic; "><i>object</i></span>. <a href="#XREF_68279_Action_Component"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Action Components</font></span></a>&#160;serve as the verbs in policies: read, copy, print, cut &amp; paste, attach to e-mail, and so on. Object components provide the subjects and objects in policies, and fall into five categories: Users, Applications, Computers, Docu&#173;ments, and Portal Content. It is helpful to group these five together conceptu&#173;ally because you define and use them in a similar way, which is very different from how you build and use <a href="#XREF_68279_Action_Component"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Action Components</font></span></a>.</p>
+ <h3><a name="XREF_66700_Object_Grid"></a>Object Grid</h3>
+ <p class="BodyLevel1">In <a href="#XREF_11575_Policy_Manager"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Manager</font></span></a>, the upper right-hand pane, which displays the policies and their child components belonging to any folder selected in the <a href="#XREF_86790_Policy_Tree"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Tree</font></span></a>. When you select any policy in this grid, the details of its definition are displayed in the <a href="#XREF_86147_Details_Pane"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Details Pane</font></span></a>.</p>
+ <h3><a name="XREF_15085_Obligation"></a>Obligation</h3>
+ <p class="BodyLevel1">These are the actions that Control Center&#160;is to take whenever a policy is enforced. There are three types: make log entry (in the <a href="#XREF_85982_Activity_Journal"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Activity Journal</font></span></a>), dis&#173;play a notification to the subject, and send an e-mail notification to a specified recipient. For any policy, you can include one or more of these three. Log entries are required for all On Deny enforcements.</p>
+ <h3>Policy</h3>
+ <p class="BodyLevel1">A rule you define in <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a> to control information use in your organiza&#173;tion. Policies consist of <a href="#XREF_83872_Components"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Component</font></span></a>s strung together with logical operators, along with other variables such as <a href="#XREF_15085_Obligation"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Obligation</font></span></a>s and time-based contexts.</p>
+ <h3><a name="XREF_71700_Policy_Adapter"></a>Policy Adapter</h3>
+ <p class="BodyLevel1">Each enforcer consists of two logical components, a Policy Adapter and <a href="#XREF_26914_Policy_Controller"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Controller</font></span></a>. The policy adapter provides the interface to whatever specific appli&#173;cation or system you want to enforce. Each of the available pre-built enforcers includes a different policy adaptor, specific to the Windows Desktop, SharePoint Server, Linux system, MS SharePoint, and so on. If you need a new enforcer for some other system—your proprietary CRM application, for example—policy adapter is the custom piece you need to create, using the Policy Adapter SDK.</p>
+ <h3><a name="XREF_14403_Policy"></a>Policy Administrator</h3>
+ <p class="BodyLevel1">One of the roles available in <a href="#XREF_65088_Administrator"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Administrator</font></span></a>. (See <a href="#XREF_98449_Roles"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Roles</font></span></a>.)</p>
+ <h3>Policy Analyst</h3>
+ <p class="BodyLevel1">One of the roles available in <a href="#XREF_65088_Administrator"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Administrator</font></span></a>. (See <a href="#XREF_98449_Roles"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Roles</font></span></a>.)</p>
+ <h3>Policy Assistants</h3>
+ <p class="BodyLevel1">A set of optional software plug-ins with supporting material and utilities, designed to automate and simplify specific kinds of workflows connected with specific user actions, such as sending e-mail with attachments or copying data to removable media. They function in combination with specific enforcers, pre&#173;defined custom obligations, and predefined policy objects.</p>
+ <h3><a name="XREF_80446_Policy_Author"></a>Policy Author</h3>
+ <p class="BodyLevel1">One of the interfaces available in <a href="#XREF_53661_Policy_Studio"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Studio</font></span></a>, where users can design and con&#173;struct and deploy policy objects. Ongoing management functions are mostly performed in the second interface, <a href="#XREF_11575_Policy_Manager"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Manager</font></span></a>.</p>
+ <h3><a name="XREF_18902_Policy_Bundle"></a>Policy Bundle</h3>
+ <p class="BodyLevel1">Refers to the set of policies and all required component definitions that are defined and active for each enforcer running in the system. Each enforcer has only one bundle stored locally at any one time, and it contains all the informa&#173;tion it requires for all policies currently deployed to it. Every heartbeat inter&#173;val, each enforcer contacts the Control Center&#160;inquiring if there are any new or updated policies that should be deployed to that enforcer; if there are, the Control Center&#160;sends a new bundle that overwrites the one currently deployed there.</p>
+ <h3>Policy Component</h3>
+ <p class="BodyLevel1">See <a href="#XREF_83872_Components"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Component</font></span></a>.</p>
+ <h3><a name="XREF_26914_Policy_Controller"></a>Policy Controller</h3>
+ <p class="BodyLevel1">Each enforcer consists of two logical components, a Policy Controller and <a href="#XREF_71700_Policy_Adapter"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Adapter</font></span></a>. The Policy Controller provides the interface to the Control Center&#160;server, and serves as the Policy Decision Point, or PDP. It comprises a set of soft&#173;ware modules that are delivered ready-to-install on the enforcer hosts. Because it is not specific to any enforcer type, it requires no customization.</p>
+ <h3><a name="XREF_29720_Policy_Decision"></a>Policy Decision Point (PDP)</h3>
+ <p class="BodyLevel1">The logical point, at each <a href="#XREF_86617_Policy_Enforcer"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Enforcer</font></span></a>&#160;where the Policy Controller evaluates the action some subject is performing or requesting, weighs it against all cur&#173;rently deployed policies relevant to that action, and decides whether to enforce a policy or not.</p>
+ <h3><a name="XREF_86617_Policy_Enforcer"></a>Policy Enforcer</h3>
+ <p class="BodyLevel1">The generic term for the Control Center&#160;clients that monitor document access and use, and enforce policies at the point of user. There are several types of policy enforcers pre-built to work on specific platforms and enforce specific sys&#173;tems, such as Windows desktops, MS Office Communicator, MS Outlook, or Linux systems. In addition, the Policy Adapter SDK enables users to create custom enforcers that can enforce policies on, for example, in-house legacy applica&#173;tions, or on third-party applications for which pre-built enforcers are not yet available.</p>
+ <p class="BodyLevel1">Each policy enforcer consists of two logical components, a Policy Controller and a <a href="#XREF_71700_Policy_Adapter"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Adapter</font></span></a>.</p>
+ <h3><a name="XREF_92741_Policy_Enforcer"></a>Policy Enforcer Configuration</h3>
+ <p class="BodyLevel1">The third tab in the <a href="#XREF_65088_Administrator"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Administrator</font></span></a>&#160;main window, where you define and apply <a href="#XREF_83932_Profile"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Enforcer Profile</font></span></a>s.</p>
+ <h3><a name="XREF_34585_Policy_Enforcement"></a>Policy Enforcement Point (PEP)</h3>
+ <p class="BodyLevel1">The software component within each <a href="#XREF_86617_Policy_Enforcer"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Enforcer</font></span></a>&#160;that intercepts user events and makes policy decisions.</p>
+ <h3>Policy Enforcer <a name="XREF_83932_Profile"></a>Profile</h3>
+ <p class="BodyLevel1">A named set of configuration settings you can define in <a href="#XREF_65088_Administrator"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Administrator</font></span></a>, then assign to any policy enforcers in your network. You define profiles on the <a href="#XREF_92741_Policy_Enforcer"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Enforcer Configuration</font></span></a> tab.</p>
+ <h3><a name="XREF_10356_Policy_Enforcer"></a>Policy Enforcer Status</h3>
+ <p class="BodyLevel1">One of sub-tabs available on the <a href="#XREF_65088_Administrator"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Administrator</font></span></a>’s Status tab. The grid on this page lets you monitor various useful indicators of the status of all enforcers in the network, and also provides a filter that lets you focus in on only certain cat&#173;egories of enforcers.</p>
+ <h3><a name="XREF_11575_Policy_Manager"></a>Policy Manager</h3>
+ <p class="BodyLevel1">One of the interfaces available in <a href="#XREF_53661_Policy_Studio"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Studio</font></span></a>, where users can perform various activity connected with the ongoing management of policies and components once they have been constructed in <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>.</p>
+ <h3>Policy Map</h3>
+ <p class="BodyLevel1">The optimized policy packages that are deployed to each policy enforcer and allow real-time evaluation and enforcement even when disconnected from the network.</p>
+ <h3>Policy Master</h3>
+ <p class="BodyLevel1">A database maintained by the Control Center, where the Policy Management Server creates and stores definitions of policy objects and information on where and how they are deployed. It may be located either on the internal PostgreSQL database, or on an external one.</p>
+ <h3>Policy Object</h3>
+ <p class="BodyLevel1">The generic term sometimes used to referring to policies and policy components both.</p>
+ <h3>Policy Management Server</h3>
+ <p class="BodyLevel1">A server component of the Control Center, responsible for policy management including policy creation and editing, deployment and status tracking, and life&#173;cycle management.</p>
+ <h3><a name="XREF_53661_Policy_Studio"></a>Policy Studio</h3>
+ <p class="BodyLevel1">One of the three user applications in Control Center. Used for modeling compo&#173;nents, constructing policies, and managing the deployment of components and policies. It provides two distinct interfaces, <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>&#160;and <a href="#XREF_11575_Policy_Manager"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Manager</font></span></a>.</p>
+ <h3><a name="XREF_15278_Policy_Subject"></a>Policy Subject</h3>
+ <p class="BodyLevel1">This term is used in two ways.</p>
+ <p class="BodyLevel1">1) Users whose activity is subject to control by a policy. That is, any actual per&#173;son in the network who is using a <a href="#XREF_74183_Resource"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Resource</font></span></a> or a computer that is under the con&#173;trol of one or more policies.</p>
+ <p class="BodyLevel1">2) In the grammatical structure of a policy, the Subject consists of the User, the Computer, and the Application, all taken together. Because they are linked this way, these three types of components are grouped together on the Subjects tab in <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>.</p>
+ <h3><a name="XREF_86790_Policy_Tree"></a>Policy Tree</h3>
+ <p class="BodyLevel1">In both <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>&#160;and <a href="#XREF_11575_Policy_Manager"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Manager</font></span></a>, the upper of the two small panes at the left side of the main screen, displaying the folder structure where your pol&#173;icies are organized. In <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>, the tree displays both folder structure and all policies; in <a href="#XREF_11575_Policy_Manager"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Manager</font></span></a> the tree displays the folder structure only; poli&#173;cies themselves are displayed in the Object Grid pane.</p>
+ <h3>Preview Pane</h3>
+ <p class="BodyLevel1">An secondary pane in <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>&#160;main window that you can open to view the actual entities that would be represented by a component, or governed by a policy, as it is currently expressed. This pane is a useful tool for testing and debugging your policies as you work, though generally it is only opened as needed.</p>
+ <h3>Profile</h3>
+ <p class="BodyLevel1">See <a href="#XREF_83932_Profile"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Enforcer Profile</font></span></a>.</p>
+ <h3>Property Manager</h3>
+ <p class="BodyLevel1">A system utility that provides simple way to view and customize the properties (technically, LDAP attributes) of users, hosts and applications enrolled in Control Center.</p>
+ <h3>Report</h3>
+ <p class="BodyLevel1">The results of a query run on the information stored in the <a href="#XREF_85982_Activity_Journal"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Activity Journal</font></span></a>, showing some combination of details about information access and use and pol&#173;icy enforcement in the network. Reports can be displayed in detail (grid) for&#173;mat, or as bar charts.</p>
+ <h3>Report Administrator</h3>
+ <p class="BodyLevel1">One of the roles available in <a href="#XREF_65088_Administrator"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Administrator</font></span></a>. (See <a href="#XREF_98449_Roles"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Roles</font></span></a>.)</p>
+ <h3>Report Query</h3>
+ <p class="BodyLevel1">The group of filter settings available in <a href="#XREF_88904_Reporter"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Reporter</font></span></a> that control how a report con&#173;tent will be extracted from the <a href="#XREF_85982_Activity_Journal"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Activity Journal</font></span></a>.</p>
+ <h3><a name="XREF_32130_Report_Server"></a>Report Server</h3>
+ <p class="BodyLevel1">A major component of the Control Center, responsible for storing, managing, and serving data on end-user activity and policy enforcement. This information is stored in the <a href="#XREF_85982_Activity_Journal"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Activity Journal</font></span></a>&#160;database. Provides a back end for the <a href="#XREF_88904_Reporter"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Reporter</font></span></a>&#160;web application.</p>
+ <h3><a name="XREF_93719_Report_Settings"></a>Report Settings</h3>
+ <p class="BodyLevel1">The group of format settings available in <a href="#XREF_88904_Reporter"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Reporter</font></span></a>&#160;that control how a report’s output will be displayed.</p>
+ <h3><a name="XREF_88904_Reporter"></a>Reporter</h3>
+ <p class="BodyLevel1">One of the three user applications in Control Center. Reporter is a web applica&#173;tion for creating reports and performing forensics. It provides a front end for the <a href="#XREF_32130_Report_Server"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Report Server</font></span></a>.</p>
+ <h3><a name="XREF_74183_Resource"></a>Resource</h3>
+ <p class="BodyLevel1">In the Control Center&#160;system, information resources are document components that may be included in policy definitions. They provide the grammatical object of actions in the ACPL language.</p>
+ <h3><a name="XREF_98449_Roles"></a>Roles</h3>
+ <p class="BodyLevel1">There are several predefined roles—Business Analyst, Policy Administrator, Pol&#173;icy Analyst, Report Administrator and System Administrator—available to be assigned to the users defined in <a href="#XREF_65088_Administrator"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Administrator</font></span></a>. They are simply named sets of permission settings governing how a user can access Control Center&#160;applications and edit components and policies. There are default settings for each, but they can be customized however you like. You control these settings on the Roles sub-tab of the Users and Roles tab.</p>
+ <h3><a name="XREF_53270_Scheduled"></a>Scheduled</h3>
+ <p class="BodyLevel1">An intermediate state that objects can occupy, in the standard object model. You can deploy components and policies either immediately, or at some speci&#173;fied future time. In the latter case, the object is in a distinct state, Scheduled for Deployment.</p>
+ <h3><a name="XREF_84392_Shared_Reports"></a>Shared Reports</h3>
+ <p class="BodyLevel1">Whenever you define a report in <a href="#XREF_88904_Reporter"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Reporter</font></span></a>, you have the option of marking it as shared, which makes it available (but not editable) to other users. All shared reports organized on a separate tab in the application.</p>
+ <h3>Site Component</h3>
+ <p class="BodyLevel1">A collection of computer components with shared characteristics that repre&#173;sents some logical entity, such as a branch office or a building on a corporate campus. Sites are not imported from your LDAP directory directly; rather they are manually defined as one or more ranges of IP addresses, whose properties are then imported and marked as a special kind of component, available for use when defining policies.</p>
+ <h3>States</h3>
+ <p class="BodyLevel1"><a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>&#160;objects—policies and components—go through various states in their life cycle. There are seven possible states: Editing, Submitted for Deploy&#173;ment, Pending Deployment, Deployed, Submitted for Deactivation, Pending Deactivation, Deactivated, and Deleted. The state an object is limits the kinds of actions you can perform on it.</p>
+ <h3>Status Bar</h3>
+ <p class="BodyLevel1">The bar at the very bottom of the editing pane in <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>, which displays the current status of the currently active object, along with buttons for per&#173;forming any status change actions appropriate at a given time.</p>
+ <h3><a name="XREF_58254_Subject"></a>Subject</h3>
+ <p class="BodyLevel1">See <a href="#XREF_15278_Policy_Subject"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Subject</font></span></a>.</p>
+ <h3>Submit</h3>
+ <p class="BodyLevel1">The action <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a> users take to mark a policy or component as being fin&#173;ished and ready to deploy. When you click the Submit button, the active object is placed in Submitted state, and may be deployed.</p>
+ <h3>System Administrator</h3>
+ <p class="BodyLevel1">One of the roles available in <a href="#XREF_65088_Administrator"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Administrator</font></span></a>. (See <a href="#XREF_98449_Roles"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Roles</font></span></a>.)</p>
+ <h3>System Status</h3>
+ <p class="BodyLevel1">The upper left pane on the Status tab in <a href="#XREF_65088_Administrator"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Administrator</font></span></a>’s main window, display&#173;ing the number of enforcers that have failed to connect within the last 24 hours, and the number to which the latest version of some policy or component has not yet been deployed.</p>
+ <h3><a name="XREF_93095_User_Component"></a>User Component</h3>
+ <p class="BodyLevel1">One of the five basic types of <a href="#XREF_83872_Components"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Component</font></span></a>s you can define in <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>&#160;to represent classes of entities in the physical environment—in this case, people in the organization. User components can be defined based on any of the proper&#173;ties your network users have defined in your LDAP directory: name, title, department, salary, and so on.</p>
+ <h3>Users and Roles</h3>
+ <p class="BodyLevel1">The middle tab on the <a href="#XREF_65088_Administrator"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Administrator</font></span></a>&#160;main window. This is where you define and configure Control Center&#160;users, user groups, and roles. Control Center&#160;Users refer to the personnel authorized to access and use the three applications in Control Center. They should not be confused with the <a href="#XREF_93095_User_Component"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >User Component</font></span></a>s you define in <a href="#XREF_80446_Policy_Author"><span class="Emphasis" style="color   : #0000ff; "><font color="blue" >Policy Author</font></span></a>.</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

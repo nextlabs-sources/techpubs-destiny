@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Enrolling Location Sites</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\EnrollOthers.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Enrolling Other Entities\nEnrolling Location Sites");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Enrolling_Other_Entities.htm\">Enrolling Other Entities<\/a> &gt; Enrolling Location Sites<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_68202_Enrolling_Sites"></a>Enrolling Location Sites</h1>
+ <p class="BodyLevel1">A <span style="font-style : italic; "><i>location site</i></span>&#160;is a Control Center&#160;term referring to a group of hosts that you want to consider as a single location because they share certain characteristics. These may be geographical, such as all computers at the Boston branch office, or virtual, such as all users connecting via a VPN. You define a site by creating a <span style="font-style : italic; "><i>locations file</i></span>&#160;that specifies one or more IP addresses or ranges of addresses and gives each a name, then using a utility called <span style="font-style : italic; "><i>Import Locations</i></span>&#160;to enroll the information from this file.</p>
+ <p class="BodyLevel1">Once defined and enrolled, sites are not themselves components, but rather are available as a property of computer components, allowing you to write policies that refer to a group of hosts based on their location.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Site.jpg" style="width : 211.464pt; height : 91.584pt; " id="image4" src="Site.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="BodyLevel1">To enroll sites, you use the Import Locations utility to extract site information from a locations file and add it to Control Center’s Information Network Direc&#173;tory. Before you do this, you need to create a locations file manually. You can give this file any name you like.</p>
+ <p class="BodyLevel1">By default, the Import Locations utility (<span style="font-style : italic; "><i>importLocation.bat</i></span>) is installed in the &lt;installDirectory&gt;\Control Center\tools folder. You should run it from that loca&#173;tion.</p>
+ <p class="BodyLevel1">To enroll a site, perform the following procedure:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_28866_1_Create_a_text"></a>Create your locations file. This is a text file containing any number of location definitions, one per line. Each line has the format</p>
+</li>
+  <h5><span class="FM_screencode">&#160;&#160;&#160;&#160;&#160;</span>&lt;LocationName&gt; “&lt;AddressMask&gt;”</h5>
+  <p class="Title">where &lt;<span class="FM_codeItalics" style="font-family : Courier New; font-style : italic; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;"><i>LocationName</i></font></span>&gt; is the name by which you want to refer to the site when referring to it in Control Center&#160;tools such as Policy Author, and &lt;<span class="FM_codeItalics" style="font-family : Courier New; font-style : italic; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;"><i>AddressMask&gt;</i></font></span>&#160;is a CIDR-like mask for the 32-bit IP address of a machine that is in the given location. Note the following requirements:</p>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Each address mask must be enclosed in double quotes</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The location name may not contain spaces</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The two elements must be separated by a space</p>
+
+  <p class="Title">For example, to define a location called VPN that represents all PCs con&#173;necting through a virtual private network, you might create the following entry:</p>
+  <h5><span class="FM_screencode"> &#160;&#160;&#160;&#160;VPN &quot;192.168.254.0/24&quot;</span></h5>
+  <p class="Title">Create additional similar lines for all the other hosts that are part of the VPN group. Here is another example:</p>
+  <h5><span class="FM_screencode"> &#160;&#160;&#160;&#160;intranet “10.0.0.0/8”</span></h5>
+  <p class="Title">You can also put comments in the file by beginning each comment line with #. For example:</p>
+  <h5><span class="FM_screencode"># The following lines define the machines in the<br /># Boston office</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change to the directory &lt;<span class="FM_italics" style="font-style : italic; "><i>InstallDir</i></span>&gt;\tools. By default, this is:</p>
+</li>
+  <h5><span class="FM_screencode">\Program </span>Files\NextLabs\PolicyServer<span class="FM_screencode">\tools\</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_57545_3_Run_the_Import"></a>Run the Import Locations utility with appropriate values for all parame&#173;ters, as shown below. Note that this line must provide the name and path of the locations file and connection information for your system database. The last parameter, <span style="font-style : italic; "><i>-i</i></span>, is required only if the database type is Oracle or SQL Server.</p>
+</li>
+ </ol>
+ <h5>importLocation.bat -l <span class="FM_screencode">&lt;</span><span class="FM_codeItalics">LocationsFile&gt;</span> -u &lt;DB_user&gt; -w &lt;DB_password&gt; -s &lt;DB_server&gt; -p <span class="FM_screencode">&lt;</span><span class="FM_codeItalics">DB_port&gt;</span> -d &lt;oracle|post&#173;gres|SQLServer&gt; [-i &lt;instance&gt;]</h5>
+ <p class="BodyLevel1">When the utility finishes running, all the locations defined in your input file will be present in the Information Network Directory, and you can use the sites you enrolled as values for the Site property when defining Computer components in Policy Studio.</p>
+ <p class="BodyLevel1">You can use the command <span style="font-style : italic; "><i>importlocation.bat -h</i></span>&#160;to display a help screen with information on using this utility.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

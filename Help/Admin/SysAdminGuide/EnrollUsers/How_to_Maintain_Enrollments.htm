@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>How to Maintain Enrollments</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\EnrollUsers.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Enrolling Users, Hosts, and Groups\nHow to Maintain Enrollments");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Enrolling_Users_Hosts_and_Groups.htm\">Enrolling Users, Hosts, and Groups<\/a> &gt; How to Maintain Enrollments<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_75745_Maintaining"></a>How to Maintain Enrollments</h1>
+ <p class="BodyLevel1">Once you have enrolled users, groups and hosts into your system, you will need to keep the information about them up to date. To help with this, Control Cen&#173;ter provides utilities for updating and synchronizing enrollments. </p>
+ <h2>Updating vs. Synchronizing</h2>
+ <p class="BodyLevel1">Because the enrollment name is the same as the domain or Domain Group<span style="color   : #ff0000; "><font color="red" >&#160;</font></span>name, you can only perform one enrollment from each domain or Domain Group<span style="color   : #ff0000; "><font color="red" >&#160;</font></span>(again, the term “domain” refers to the location where enrollment information is stored, not a network domain). If you later want to change the entities enrolled from an existing domain or Domain Group—for example, add new entity types or different roots, or delete a subdomain from a Domain Group—you must perform an <span style="font-style : italic; "><i>-update</i></span>. Note that this command changes only the data structure of the enrollment; it does not import the data itself. For this reason, you should run a <span style="font-style : italic; "><i>-sync</i></span> command after all updates.</p>
+ <p class="BodyLevel1">If you only need to refresh the enrolled data without redefining the structure of the enrollment—that is, leaving the entity types and other metadata the same—you use the <span style="font-style : italic; "><i>-sync</i></span>&#160;command. (This is why the <span style="font-style : italic; "><i>-update</i></span> command includes the def&#173;inition file parameter, while the <span style="font-style : italic; "><i>-sync</i></span> command does not.)</p>
+ <p class="BodyLevel1">The table below summarizes the various options available for updating and syn&#173;chronizing your enrollments. Details on all procedures are provided in the fol&#173;lowing sections of this chapter.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 486.07pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 17.700pt; background : #ffffff;border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">&nbsp;</p>
+</th>
+  <th style="width : 156.125pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading"> Update</p>
+</th>
+  <th style="width : 156.125pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Manual Sync</p>
+</th>
+  <th style="width : 156.125pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Scheduled Sync</p>
+</th>
+</tr>
+  <tr style=" height : 47.00pt;">
+  <td style="width : 17.700pt; background : #1f8c4a;border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p class="CellHeading">LDAP Directory</p>
+</td>
+  <td style="width : 156.125pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">YES: Run <span style="font-style : italic; "><i>enrollMgr -update</i></span>&#160;with Type=DIR, and specify the enrollment name. Both definition and connection files are required. Also, you must run the Sync procedure after updating.</p>
+</td>
+  <td style="width : 156.125pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">YES: Run <span style="font-style : italic; "><i>enrollMgr -sync</i></span>, and specify enrollment name. No auxiliary files are required.</p>
+</td>
+  <td style="width : 156.125pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">YES: Sync time and interval are based on the last two parameters in the definition file.</p>
+</td>
+</tr>
+  <tr style=" height : 71.00pt;">
+  <td style="width : 156.125pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Effect: The data structure for this enrollment is replaced in the Information Network Directory, with the metadata from the directory specified in the connection file, according to the syntax specified in the definition file. Update does not import the data itself; this is why you must run a Sync after updating.</p>
+</td>
+  <td colspan="2" style="width : 312.250pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Effect: Based on the enrollment name, Control Center retrieves the connection and definition information from its internal tables, and synchronizes its Information Network Directory data to the data in the specified enrollment domain or subdomains (in the case of a Domain Group).&#160;No change can be made to the structure of the entities. Any changed information is updated, any entities that have been removed from the directory are removed from the IND, and any entities that have been added to the directory are added to the IND.</p>
+</td>
+</tr>
+  <tr style=" height : 146.00pt;">
+  <td style="width : 17.700pt; background : #1f8c4a;border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p class="CellHeading">LDIF File</p>
+</td>
+  <td style="width : 156.125pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><span style="font-weight : bold; "><b>YES</b></span>: Run <span style="font-style : italic; "><i>enrollMgr -update</i></span>&#160;with type=LDIF and specify enrollment name. The definition file is required, and you must run a <span style="font-style : italic; "><i>Sync</i></span>&#160;command after the update.</p>
+</td>
+  <td style="width : 156.125pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><span style="font-weight : bold; "><b>YES</b></span>: Run <span style="font-style : italic; "><i>enrollMgr -sync</i></span>, and specify enrollment name. No auxiliary files are required.</p>
+</td>
+  <td style="width : 156.125pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><span style="font-weight : bold; "><b>NO if a single domain enrollment: <br /></b></span>For single domain enrollments, the scheduled sync depends on a connection file, which LDIF File enrollments do not use. You should manually update the enrollment procedure using <span style="font-style : italic; "><i>enrollMgr</i></span>&#160;<span style="font-style : italic; "><i>update</i></span>, with type=DIR.</p>
+  <p class="CellBody"><span style="font-weight : bold; "><b>YES if part of a DOMAIN GROUP:</b></span>&#160;<br />For Domain Group Enrollments, an LDIF file may be listed in a configuration file alongside other kinds of enrollment types. When a scheduled sync occurs, Enrollment Manager will detect if the LDIF file has been updated since the last sync. If there is new information in the LDIF file, it will be synced at the scheduled time.</p>
+</td>
+</tr>
+  <tr style=" height : 95.00pt;">
+  <td style="width : 156.125pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><span style="font-weight : bold; "><b>Effect</b></span>: The data structure for this enrollment is replaced in the Information Network Directory, by the metadata from the LDIF file specified in the definition file, according to the syntax specified in the definition file.</p>
+</td>
+  <td style="width : 156.125pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><span style="font-weight : bold; "><b>Effect</b></span>: Based on the enrollment name, Control Center retrieves the LDIF file name and path from its internal tables, and synchronizes its Information Network Directory data to the contents of the LDIF file. Any changed information is updated, any entities that are no longer present in the LDIF file are removed from the IND, and any that have been added to the file are added to the IND.</p>
+</td>
+  <td style="width : 156.125pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody"><span style="font-weight : bold; "><b>Effect</b></span>: Is the LDIF file has been updated and not synced, Control Center retrieves the LDIF file name and path from its internal tables, and synchronizes its Information Network Directory data to the contents of the LDIF file. Any changed information is updated, any entities that are no longer present in the LDIF file are removed from the IND, and any that have been added to the file are added to the IND.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h2><a name="XREF_44506_Updating_Directory"></a>Updating Directory Enrollments (Single Domain)</h2>
+ <p class="BodyLevel1">You should use the <span style="font-style : italic; "><i>-update</i></span>&#160;command whenever you want to enroll different types of entities or a changed data structure from a domain you have already enrolled. This requires a definition file, where the different entities are speci&#173;fied. Note that the update process imports new metadata from the source into CE; to import the data itself, you must perform a manual sync after the update. </p>
+ <p class="BodyLevel1">To update user, group and host data from an LDAP directory, perform the follow&#173;ing steps.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Make sure you have the information you will need to supply the required arguments to the enrollment utilities. This includes:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The unique name of the enrollment you are updating, which is the same as the domain name.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The host name of the Control Center, and its port number (8443, by default). In many cases this is the same host where you are running com&#173;mand window, but you may be running the enrollment remotely.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The user name of an authorized Control Center administrator.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The utility security password.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The name of the connection and definition files you have prepared for this enrollment. (See <a href="About_Enrollment_Input_Files.htm#XREF_38273_Optional_InputFiles">About Enrollment Input Files</a>.)</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Optionally, the name of the filter file, if you are using one. (See <a href="About_Enrollment_Input_Files.htm#XREF_38273_Optional_InputFiles">About Enrollment Input Files</a>.)</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Control Center host, open a console window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change to the directory where the Enrollment Manager is installed—by default,</p>
+</li>
+  <h5><span class="FM_screencode">\Program F</span>iles\NextLabs\PolicyServer<span class="FM_screencode">\tools\enrollment</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">At the prompt, run the <span style="font-style : italic; "><i>-update</i></span> command as follows, filling in the appro&#173;priate values for the arguments:</p>
+</li>
+  <h5>enrollmgr -update -t DIR -n &lt;domain_name&gt; -s &lt;server&gt; -p &lt;port&gt; -u &lt;username&gt; &#160;-w &lt;passwd&gt; -a &lt;ad_connection_file&gt; -d &lt;definitionfile&gt; [-f &lt;filterfile&gt;] </h5>
+  <p class="Title">When this utility runs, it reads the directory specified in the connection file, transforms its contents into the format Control Center requires, and performs the enrollment. For descriptions of all command line arguments, see <a><span class="FM_blue">Command Line Arguments, Enrollment Manager</span></a>.</p>
+  <p class="Title">When this step is complete, a success message will display.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When the update is finished, you will have updated the data structure in Control Center, but no new data content has been imported. To do that, you have to run the <span style="font-style : italic; "><i>-sync</i></span>&#160;command as a separate operation. For details, see <a href="#XREF_23028_Synchronizing">Synchronizing Enrollments</a>.</p>
+</li>
+ </ol>
+ <h2><a name="XREF_16464_Updating_LDIF_File"></a>Updating LDIF File Enrollments (Single Domain)</h2>
+ <p class="BodyLevel1">You can also use the <span style="font-style : italic; "><i>-update</i></span>&#160;command to update user and host information in the Control Center Information Network Directory, based on the content of an LDIF file. Again, this command updates metadata only; the <span style="font-style : italic; "><i>-sync</i></span>&#160;command updates the data itself.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Make sure you have the information you will need to supply the required arguments to the enrollment utilities. This includes:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The unique name of the enrollment you are updating, which is the same as the domain name.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The host name of the Control Center, and its port number (8443, by default). In many cases this is the same host where you are running the command window, but you may be running the enrollment remotely.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The user name of an authorized Control Center administrator.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The utility security password.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The name of the definition file you have prepared for this enrollment. (See <a href="About_Enrollment_Input_Files.htm#XREF_38273_Optional_InputFiles">About Enrollment Input Files</a>.) </p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Control Center host, open a console window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change to the directory where the Enrollment Manager is installed—by default,</p>
+</li>
+  <h5>\Program Files\NextLabs\PolicyServer\tools\enrollment</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">At the prompt, run the <span style="font-style : italic; "><i>-update</i></span> command as follows, filling in the appro&#173;priate values for the arguments:</p>
+</li>
+  <h5>enrollmgr -update -t LDIF -n &lt;domain_name&gt; -s &lt;server&gt; -p &lt;port&gt; -u &lt;username&gt; -w &lt;passwd&gt; -d &lt;definitionfile&gt; </h5>
+  <p class="Title">When this command runs, it reads the specified LDIF file, transforms its contents into the format Control Center requires, and performs the enrollment. For descriptions of all command line arguments, see <a><span class="FM_blue">Com&#173;mand Line Arguments, Enrollment Manager</span></a>.</p>
+  <p class="Title">When this step is complete, a success message will display.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When the update is finished, you will have updated the data structure in Control Center, but no new data content has been imported. To do that, you have to run the <span style="font-style : italic; "><i>-sync</i></span>&#160;command as a separate operation. For details, see below.</p>
+</li>
+ </ol>
+ <h2>Updating Domain Group Enrollments</h2>
+ <p class="BodyLevel1">If you make changes to any of the input files for the subdomains for an existing Domain Group enrollment, or add or delete subdomains for an enrolled Domain Group, you will need to perform the following procedure to update the enroll&#173;ment:&#160;</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Make relevant changes to all input files and the Domain Group configura&#173;tion file, as required. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Control Center host, open a console window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change to the directory where the Enrollment Manager is installed—by default,</p>
+</li>
+  <h5><span class="FM_screencode">\Program F</span>iles\NextLabs\PolicyServer<span class="FM_screencode">\tools\enrollment</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">At the prompt, run the <span class="GreyBold">-update </span>command as follows, filling in the appro&#173;priate values for the arguments:</p>
+</li>
+  <h5>enrollmgr -update -s &lt;server&gt; -p &lt;port&gt; -n &lt;Domain Name&gt; <br />-t DOMAINGROUP -g &lt;DomainGroup configuration file&gt; <br />-u &lt;username&gt; -w &lt;passwd&gt; </h5>
+  <p class="Title">When this utility runs, it starts processing the first subdomain, reads the information from the connection file, transforms its contents into the for&#173;mat Control Center requires, and performs the enrollment. For descrip&#173;tions of all command line arguments, see <a><span class="FM_blue">Command Line Arguments, Enrollment Manager</span></a>.</p>
+  <p class="Title">When this step is complete, a success message displays.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When the update is finished, you will have updated the data structure in Control Center, but no new data content has been imported. To do that, you have to run the <span style="font-style : italic; "><i>-sync</i></span>&#160;command as a separate operation. For details, see <a href="#XREF_23028_Synchronizing">Synchronizing Enrollments</a>.</p>
+</li>
+ </ol>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>A subdomain type cannot be changed through an <span class="GreyBold">-update</span>&#160;alone. For example, you cannot change a configuration file to for a subdomain from type DIR, to type Portal, and then run the update. Instead, you must delete the existing subdomain (see <a href="How_to_Perform_Other_Management_Functions.htm#XREF_99346_Deleting_from">Deleting Domain Group Enrollments</a>), change the type for the subdomain in the configuration file, and then run the update with the new subdomain type. The new subdomain with the adjusted type will be created upon the next sync.</p>
+ <h2><a name="XREF_23028_Synchronizing"></a>Synchronizing Enrollments</h2>
+ <p class="BodyLevel1">The entities in network domains change frequently, and you need to ensure that any changes are updated into Control Center. To do this, you can use the <span style="font-style : italic; "><i>-sync</i></span>&#160;command, which synchronizes one or more enrollments with their originating domains in the LDAP directory. By using this command, you can keep the Control Center Information Network Directory up to date with changes in your organiza&#173;tion. Bear in mind you can only synchronize the same data you have already enrolled; if you need to change the structure of the entities enrolled from a domain, you need to use the <span style="font-style : italic; "><i>-update</i></span> command.</p>
+ <p class="BodyLevel1">You can perform manual synchronizations for either directory- or file-based enrollments, but you can schedule automatic synchronizations only for direc&#173;tory-based ones. If you have enrolled AD data from more than one domain, you can set both to sync automatically, but they must be scheduled to run at differ&#173;ent times—the sync processes must not overlap.</p>
+ <p class="BodyLevel1">Note that if the Control Center&#160;encounters any problem that prevents it from completing a sync procedure, it will send a notification e-mail message to the default address defined in the config file’s <span class="GreyBold">&lt;MessageHandlers&gt;</span>&#160;section. This message will contain details about the problem, for troubleshooting purposes. </p>
+ <h3><a name="XREF_80196_Manual"></a>Manual Synchronization</h3>
+ <p class="BodyLevel1">The <span style="font-style : italic; "><i>-sync</i></span>&#160;command reuses the parameters provided the last time the enroll command was called for the specified enrollments—including the references to the appropriate definition and connection files—based on the enrollment name parameter (-n). The -sync command is the same for single domain or Domain Group enrollments. Note that when you manually sync subdomains, you supply the name of the subdomain as the Domain name (<span class="GreyBold">-n</span> below). For LDAP enroll&#173;ments, the connection file will provide the information for the LDAP directory you want to sync to; for LDIF files, the definition file contains the required file and path information.</p>
+ <p class="BodyLevel1">If you need to change the parameters for any of the enrollments (for example, to change the security password), use the -<span style="font-style : italic; "><i>enroll</i></span>&#160;command again with the desired enrollment name, using the new parameters.</p>
+ <p class="BodyLevel1">To synchronize your user and host data from an LDAP directory, perform the fol&#173;lowing steps.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Make sure you have the information you will need to supply the required arguments to the enrollment utilities. This includes:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The unique name of the enrollment you are updating, which is the same as the domain name.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The host name of the Control Center, and its port number (8443, by default). In many cases this is the same host where you are running com&#173;mand window, but you may be running the enrollment remotely.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The user name of an authorized Control Center administrator.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The utility security password.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Control Center host, open a console window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change to the directory where the Enrollment Manager is installed—by default,</p>
+</li>
+  <h5>\Program Files\Nextlabs\PolicyServer\tools\enrollment</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">At the prompt, run the <span style="font-style : italic; "><i>-sync</i></span> command as follows, filling in the appropri&#173;ate values for the arguments:</p>
+</li>
+  <h5>enrollmgr -sync -n &lt;domain_name&gt; -s &lt;server&gt; -p &lt;port&gt; -u &lt;username&gt; -w &lt;passwd&gt;</h5>
+  <p class="Title">(For descriptions of all command line arguments, see <a><span class="FM_blue">Command Line Argu&#173;ments, Enrollment Manager</span></a>.) When this utility runs, it reads either the LDAP directory or the LDIF file on which the specified enrollment is based (the connection and file information is stored in Control Center’s internal tables), and refreshes all relevant information in the Network Information Directory.</p>
+  <p class="Title">When this step is complete, a success message will display.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">(Optional) If you want to review your progress so far, you can see a list of enrollments you’ve created by running the command:</p>
+</li>
+ </ol>
+ <h5>enrollmgr -list -s &lt;server&gt; -p &lt;port&gt; -u &lt;username&gt; -w &lt;passwd&gt;</h5>
+ <p class="Title">For details on the <span style="font-style : italic; "><i>-list</i></span>&#160;command, see <a href="How_to_Perform_Other_Management_Functions.htm#XREF_49130_Confirming">Checking Enrollments</a>. </p>
+ <h3><a name="XREF_49613_Scheduled"></a>Scheduled Synchronization</h3>
+ <p class="BodyLevel1">You can configure an enrollment to be automatically synchronized on a regular schedule. This is recommended for all production implementations. To set this up, simply provide a value for the last two parameters in the connection file (for single domain enrollment) or the configuration file (for Domain Group enroll&#173;ment):</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>ScheduledSyncTime</b></span>: The date and time when the first autosynchroniza&#173;tion will be performed;</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>ScheduledSyncInterval</b></span>: The interval, in minutes, at which the sync will occur, after the time specified in the previous parameter. A zero value here disables the autosync feature. </p>
+
+ <p class="BodyLevel1">For an example for a single domain enrollment, see <a href="About_Enrollment_Input_Files.htm#XREF_39980_Sample_Active">Sample Directory Connection File (ad.sample.default.conn)</a>. For an example Domain Group enrollment, see <a href="How_to_Enroll_Users_and_Hosts.htm#XREF_11658_How_to_Enroll_a">How to Enroll a Domain Group</a>.</p>
+ <p class="BodyLevel1">This option is available only for enrollments from LDAP directories, not from LDIF files. For those, you can perform a manual synchronization, using the <span style="font-style : italic; "><i>enrollMgr -sync -t LDIF</i></span> command.</p>
+ <p class="BodyLevel1">Scheduled synchronizations should be done frequently, to ensure that your Con&#173;trol Center policies are consistent with the actual network entities. As a rule, you should configure this to run at least every 24 hours (ScheduledSyncInterval = 1440).</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>You cannot synchronize more than one domain (i.e., more than one Active Directory) at the same time—one of them will fail. If you have enrollments from multiple domains, be sure to schedule the automatic sync operations so that they do not overlap.</p>
+ <h3>Scheduled Synchronizations for Domain Group Enrollments</h3>
+ <p class="BodyLevel1">Enrollment Manager synchronizes domains one at a time. When you schedule synchronization intervals for a Domain Group, you should allow enough time for all subdomains to be processed. In other words, if a Domain Group is set to begin a new synchronization while a subdomain is still being processed, you will have two overlapping processes, which is not efficient and can impact system perfor&#173;mance.</p>
+ <p class="BodyLevel1">To avoid this, it is suggested that you run a trial synchronization when you first enroll a Domain Group and note the time it takes to complete. You can use this information to determine the proper interval to avoid overlap between sched&#173;uled syncs. To update the sync times, modify the configuration file, run the <span class="GreyBold">-update</span>&#160;command to update the enrollment, and the run a <span class="GreyBold">-list</span>&#160;to confirm the changes.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>How to Perform Other Management Functions</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_Admin_77\AdminGuide_FM\EnrollUsers.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Enrolling Users, Hosts, and Groups\nHow to Perform Other Management Functions");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../AdministratorUserGuideTOC.html", "", "&gt;", "Administrator&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Enrolling_Users_Hosts_and_Groups.htm\">Enrolling Users, Hosts, and Groups<\/a> &gt; How to Perform Other Management Functions<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../AdministratorUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1>How to Perform Othe<a name="XREF_71620_Management"></a>r Management Functions</h1>
+ <p class="BodyLevel1">The last two of the Enrollment Manager commands are provided not for enroll&#173;ing entities per se, but to help with managing your enrollments in various ways, later on. These include:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_49130_Confirming">Checking Enrollments</a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_42040_Deleting_an">Deleting Single Domain Enrollments </a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_26656_Acessing">Assessing Enrollment Help (Usage)</a></p>
+
+ <h2><a name="XREF_49130_Confirming"></a>Checking Enrollments</h2>
+ <p class="BodyLevel1">You can use the Enrollment Manager’s <span style="font-style : italic; "><i>-list</i></span>&#160;command at any time to check which domains have been enrolled. This command generates a list of all current enrollments that were created with the <span style="font-style : italic; "><i>-enroll</i></span> command; each of these repre&#173;sents one domain. Note that the list does not include any domains that were enrolled but later dropped using the <span style="font-style : italic; "><i>-delete</i></span> command.</p>
+ <p class="BodyLevel1">Note also that this command returns a list of <span style="font-style : italic; "><i>enrollments</i></span>, not of the network objects (users, PCs, servers, etc.) actually imported. To confirm these, you can open Policy Studio and use the Lookup button to view enrolled entities of each type.</p>
+ <p class="BodyLevel1">To use the <span style="font-style : italic; "><i>-list</i></span> command:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the host where the Management Server component of the Control Center is installed, open a console window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change to the directory &lt;<span class="FM_italics" style="font-style : italic; "><i>InstallDir</i></span>&gt;\tools\enrollment. By default, this is:</p>
+</li>
+  <h5><span class="FM_screencode">\Progra</span>m Files\NextLabs\PolicyServer\tools\enrollme<span class="FM_screencode">nt</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">At the prompt, run the <span style="font-style : italic; "><i>-list</i></span>&#160;command as follows, filling in the appropriate values for the arguments:</p>
+</li>
+ </ol>
+ <h5>enrollmgr -list -s &lt;server&gt; -p &lt;port&gt; -u &lt;username&gt; -w &lt;passwd&gt;</h5>
+ <p class="Title">This will return a list of all enrollments, with the following information:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Name of the enrollment</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Type of enrollment (Domain Groups and subdomains both display in the list)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Source of the enrolled data</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>A (filtered) tag indicates that the data was enrolled using an inclusive fil&#173;ter, as described on <a href="About_Enrollment_Input_Files.htm#XREF_23666_Filter_Files">Filter Files</a>.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>A (pending) tag indicates that the enrollment will not occur until the next time <span class="FM_screencode" style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">synchronize.bat</font></span>&#160;runs; that is, <span class="FM_screencode" style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">enroll.bat</font></span>&#160;was called with the argument <span class="FM_screencode" style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">-z TRUE</font></span>. </p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Date when the enrollment was last updated</p>
+
+ <h2><a name="XREF_42040_Deleting_an"></a>Deleting Single Domain Enrollments </h2>
+ <p class="BodyLevel1">If you want to delete an enrollment from your Control Center system for any reason, you can use the Enrollment Manager’s <span style="font-style : italic; "><i>-delete</i></span>&#160;command. This command removes the enrollment entry from the Information Network Directory tables, so that no more updates or syncs can be performed on it. Thus if the enrollment was set up to be automatically synchronized, <span style="font-style : italic; "><i>-delete</i></span>&#160;cancels that feature. </p>
+ <p class="BodyLevel1">An important case where you would need to use the delete command, is any time a single enrollment fails and you need to perform it again. In such cases, the failed enrollment must be manually deleted before any subsequent attempt can succeed.</p>
+ <p class="BodyLevel1">You should run the <span style="font-style : italic; "><i>-delete</i></span>&#160;command from wherever the Enrollment Manager is installed—by default, &lt;installDirectory&gt;\ControlCenter\tools\enrollment. You should run it from that location.</p>
+ <p class="BodyLevel1">To use the <span style="font-style : italic; "><i>-delete</i></span> command:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the host where the Management Server component of the Control Cen&#173;ter is installed, open a console window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Change to the directory &lt;<span class="FM_italics" style="font-style : italic; "><i>InstallDir</i></span>&gt;\tools\enrollment. By default, this is:</p>
+</li>
+  <h5><span class="FM_screencode">\Program</span> Files\NextLabs\PolicyServer\tool<span class="FM_screencode">s\enrollment</span></h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">At the prompt, run the <span style="font-style : italic; "><i>-delete</i></span> command as follows, filling in the appro&#173;priate values for the arguments:</p>
+</li>
+ </ol>
+ <h5>enrollmgr -delete -n &lt;domain_name&gt; -s &lt;server&gt; -p &lt;port&gt; -u &lt;username&gt; -w &lt;passwd&gt; </h5>
+ <p class="BodyLevel1">Once the enrollment has been deleted, you will see a confirmation message. If you wish, you can use the <span style="font-style : italic; "><i>-list</i></span> command to check the deletion.</p>
+ <p class="BodyLevel1">Note that after you have deleted an enrollment, any policy components based on the objects in that enrollment will no longer work. For this reason, if you need to change the contents of an enrollment, it is preferable to use Enrollment Manager to update and then re-sync it, rather than deleting altogether.</p>
+ <h2><a name="XREF_99346_Deleting_from"></a>Deleting Domain Group Enrollments</h2>
+ <p class="BodyLevel1">The process for deleting enrollments for a Domain Group is a little more com&#173;plex than for single domain enrollments. For instance, you can delete subdo&#173;mains from a Domain Group enrollment, while leaving the Domain Group and the rest of the subdomains intact. You could also delete an entire Domain Group along with all its associated subdomains. This section describes these proce&#173;dures.</p>
+ <p class="BodyLevel1">Note that before deleting a subdomain, an Administrator may want to ensure that information within that subdomain is not referenced by another subdomain. If this is the case, when the source subdomain is deleted, the related element in the related domain may not be enrolled properly.</p>
+ <h3>Deleting a Subdomain From a Domain Group</h3>
+ <p class="BodyLevel1">Perform the following steps to delete a subdomain from a Domain Group:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the <span class="GreyBold">-delete </span>command for the enrollment name <span class="GreyBold">(-n)</span> of the subdo&#173;main.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Remove the subdomain from the configuration file. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run an <span class="GreyBold">-update </span>to update the new configuration file in the Control Cen&#173;ter.</p>
+</li>
+ </ol>
+ <p class="Title">Upon the next <span class="GreyBold">-sync</span>, enrollment manager will reference the new configu&#173;ration file and not attempt to update the deleted subdomain. If the <br /><span class="GreyBold">-update</span>&#160;step is skipped, and the configuration file still contains a deleted subdomain, Enrollment Manager will attempt to create the new enroll&#173;ment.</p>
+ <h3>Deleting a Domain Group</h3>
+ <p class="BodyLevel1">To properly delete an entire Domain Group (meaning all the top-level group as well as all subdomains), follow these steps:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the <span class="GreyBold">-delete</span> command for the enrollment name (<span class="GreyBold">-n</span>) of all subdo&#173;mains for the domain group. Each must be deleted individually.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the <span class="GreyBold">-delete</span> command for the enrollment name (<span class="GreyBold">-n</span>) of the Domain Group.</p>
+</li>
+ </ol>
+ <h2><a name="XREF_26656_Acessing"></a>Assessing Enrollment Help (Usage)</h2>
+ <p class="BodyLevel1">You can always use the <span class="GreyBold">enrollmgr -h</span> command to display a list of all valid com&#173;mands and their arguments. (The command <span class="GreyBold">-help </span>is also supported.)</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

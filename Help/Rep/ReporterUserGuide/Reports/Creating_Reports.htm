@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Creating Reports</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Users\mlittle\Desktop\CC_Reporter_70\FM\Reports.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using Reports\nCreating Reports");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../ReporterUserGuideTOC.html", "", "&gt;", "Reporter&nbsp;", "../Welcome/Welcome_to_7_0.htm");
+document.write("<a href=\"Using_Reports.htm\">Using Reports<\/a> &gt; Creating Reports<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../ReporterUserGuideTOC.html");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_75237_Defining_Reports"></a>Creating Reports</h1>
+ <p class="BodyLevel1">In Control Center, a <span class="FM_italics" style="font-style : italic; "><i>report</i></span>&#160;is a formatted view of a particular set of information extracted from the Activity Journal. You define a report by specifying the <span style="font-style : italic; "><i>query definition</i></span>—that is, one or more filters for the data contents you want in the report—and the <span style="font-style : italic; "><i>runtime report settings</i></span>, which determine how the report will actually run. The following table shows the available options for both catego&#173;ries. </p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>Reports may not display properly in Internet Explorer 9 unless the browser is set to compatibility mode.</p>
+ <p class="BodyLevel1"></p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.57pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 64.374pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Setting</p>
+</th>
+  <th style="width : 296.196pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td colspan="2" style="width : 360.571pt; background : #ffffff;border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Query Criteria</p>
+</td>
+</tr>
+  <tr style=" height : 53.00pt;">
+  <td style="width : 64.374pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Search</p>
+</td>
+  <td style="width : 296.196pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Provides two options: <span style="font-style : italic; "><i>Policy Activity</i></span>, or <span style="font-style : italic; "><i>Document Activity</i></span>.</p>
+  <p class="CellBody">For Policy Activity, the report will show all qualified instances of policies being enforced, consistent with the other query criteria.</p>
+  <p class="CellBody">For Document Activity, the report will show all activity in the system, consistent with the other query criteria—whether any policies were involved or not.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 64.374pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">User</p>
+</td>
+  <td style="width : 296.196pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies one or more users whose activity this report will show. Click on the Lookup button to open the search window, where you can select from all currently defined users.</p>
+</td>
+</tr>
+  <tr style=" height : 61.00pt;">
+  <td style="width : 64.374pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Action</p>
+</td>
+  <td style="width : 296.196pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies one or more actions on which to filter this report. The scroll list shows all currently defined actions; press Ctrl to select more than one from the list.</p>
+  <p class="CellBody">Note that the actions available to filter by are different for Policy Activity and Document Activity reports. </p>
+  <p class="CellBody">Also, because policies involving Paste actions do not support logging obligations, instances of their enforcement will not be included in any reports.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 64.374pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Resource</p>
+</td>
+  <td style="width : 296.196pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies a resource path on which to filter this report. Note that you can filter only by location (path)-based resources, not by file property-based ones.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 64.374pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Policy</p>
+</td>
+  <td style="width : 296.196pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies one or more policies on which to filter this report. Click on the Lookup button to open the search window, where you can select from all currently defined policies.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 64.374pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Enforcements</p>
+</td>
+  <td style="width : 296.196pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Allows you to filter on enforcements: Allow\Monitor, Deny, or both.</p>
+</td>
+</tr>
+  <tr style=" height : 59.00pt;">
+  <td style="width : 64.374pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Event Level</p>
+</td>
+  <td style="width : 296.196pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Allows you to select the level of event verbosity your report will contain:</p>
+  <ul type="disc" style="">
+   <li style="">
+   <p class="CellBody">User-level events only (default)</p>
+</li>
+   <li style="">
+   <p class="CellBody">Application- and user-level events</p>
+</li>
+   <li style="">
+   <p class="CellBody">All system, application, and user-level events</p>
+</li>
+  </ul>
+  <p class="CellBody">As a rule, you should leave this setting at the default, User Events only.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td colspan="2" style="width : 360.571pt; background : #ffffff;border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Runtime Report Settings</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 64.374pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Show</p>
+</td>
+  <td style="width : 296.196pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Specifies the report display format: either an Event Details (tabular grid) or one of the grouped bar charts as described in <a><span class="FM_blue">Available Report “Show” Formats</span></a>.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 64.374pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">From</p>
+</td>
+  <td style="width : 296.196pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Defines the start date of the interval this report will cover. Click on the calendar icon to choose a date, or type it manually.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 64.374pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">To</p>
+</td>
+  <td style="width : 296.196pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Defines the end dates of the interval this report will cover. Click on the calendar icon to choose a date, or type it manually.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <p class="BodyLevel1">When you run a report, Reporter compares the information currently in the Activity Journal to the report criteria, selects the matching information (if any), calculates the totals, and displays the results in the format you have selected in the Show field.</p>
+ <p class="BodyLevel1">Once you define and save a report, it is listed in the Saved Reports pane. The report’s creator can modify or delete the definition of the report; if the report is shared, others can run it and view the results, but cannot modify or delete it.</p>
+ <h2>Policy&nbsp;Activity&nbsp;vs. Document&nbsp;Activity</h2>
+ <p class="BodyLevel1">Whenever you create a new report, you must designate it as one of two types:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Policy Activity Report</b></span>: Provides information that is directly related to enforcement of policies. For example, you could generate a report list&#173;ing all users who tried to open documents that are restricted by a cur&#173;rently deployed policy.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Document Activity Report</b></span>: Provides information that is automatically recorded in the Activity Journal but is not necessarily related to policy enforcement. For example, you can generate a report of all cases when someone stopped a Desktop Enforcer, or read its log files; or when users logged in and out. The exact type of information available depends on the Document Activity Audit Level of the relevant enforcer profile(s).</p>
+
+ <p class="BodyLevel1">Depending on which type you select, a different set of query fields will display, as shown in the following figure. There are two key differences between these two interfaces:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Policy Activity reports allow you to specify the name of the policy or pol&#173;icies you are interested in, and the enforcement results; while docu&#173;ment activity reports do not.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The two types present a different set of Actions on which to filter your query. For details, see <a href="Report_Definition_Guidelines.htm#XREF_39459_Filtering_by_Action">Filtering by Action</a>.</p>
+
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Reports00008.jpg" style="width : 486.418pt; height : 347.893pt; " id="image3" src="Reports00008.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Policy Activity vs. Document Activity Queries</p>
+ <h2><a name="XREF_96590_Creating_a_New"></a>Defining a New&nbsp;Report</h2>
+ <p class="BodyLevel1">To define a new report, go to the&#160;My Reports tab and click the New button, to display the report’s details in the main Report pane. All fields are open for edit&#173;ing.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="NewReportButton.jpg" style="width : 154.728pt; height : 109.080pt; " id="image4" src="NewReportButton.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="BodyLevel1">When you are creating a a new report, you define both the runtime settings and the query definition. For the runtime settings, </p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Show field, select the output format you want for the report. <a><span class="FM_blue">Avail&#173;able Report “Show” Formats</span></a>&#160;provides information on all available formats; for more details and examples, see <a href="Working_with_Reports.htm#XREF_51357_Working_with">Working with Reports</a>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the <span style="font-weight : bold; "><b>To</b></span>&#160;and <span style="font-weight : bold; "><b>From</b></span>&#160;fields, define the time period of the user activity you want the report to reflect. You can click on the calendar icon to open the date picker tool, or type the values directly, in a MM DD YYYY format.</p>
+<table width="100%">
+ <tr>
+ <td>
+  <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.00pt;" cellspacing="0" align="center">
+   <caption align="center">
+   </caption>
+   <tr style=" height : 16.00pt;background : #1f8c4a;">
+   <th style="width : 82.950pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellHeading">Format</p>
+</th>
+   <th style="width : 277.050pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellHeading">Description</p>
+</th>
+</tr>
+   <tr style=" height : 31.00pt;">
+   <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">Event Details</p>
+</td>
+   <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">A tabular (row and column) presentation of all data that matches the report criteria. No totals are calculated (except for the total number of records).</p>
+</td>
+</tr>
+   <tr style=" height : 23.00pt;">
+   <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">Group by Policy</p>
+</td>
+   <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">A bar chart representing enforcement instances for each policy covered by the report.</p>
+</td>
+</tr>
+   <tr style=" height : 23.00pt;">
+   <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">Group by Resource</p>
+</td>
+   <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">A pie chart representing instances of some specified action or enforcement for each resource covered by the report.</p>
+</td>
+</tr>
+   <tr style=" height : 39.00pt;">
+   <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">Group by Time</p>
+</td>
+   <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">A bar chart representing instances per day or month of the event or enforcement covered by the report. If the report period is one month or less, the data is totaled by day. If the time period is more than a month, the data is totaled by month.</p>
+</td>
+</tr>
+   <tr style=" height : 23.00pt;">
+   <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p style="font-weight : bold; font-size  : 8.0pt;">Group by User</p>
+</td>
+   <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">A bar chart representing the number of specified events or enforcement instances per each user covered in the report.</p>
+</td>
+</tr>
+  </table>
+</td></tr>
+</table>
+  <p class="BodyLevel1"></p>
+</li>
+  <p class="BodyLevel1">For the query definition settings, </p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">For <span style="font-weight : bold; "><b>User</b></span>, specify one or more users you want to filter the report by. You can type these in manually; if you type more than one, separate them by commas. However, it is more reliable to use the browser tool (click the Lookup button), which displays the Users Lookup Window, where you can browse through all users currently defined in your Information Network Directory (see the following figure).</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="SearchWindow.jpg" style="width : 483.120pt; height : 192.888pt; " id="image5" src="SearchWindow.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Users Lookup Window</p>
+  <p class="Title">This window lets you browse for users and user components. Select an item in the list to display it in the Users to Add field at upper left; click the Add button when you are finished.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">For <span style="font-weight : bold; "><b>Resource Path</b></span>, type the network path of the resource you want to fil&#173;ter by. Note that you can only filter by location (path)-based resources, not by those based on file properties.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><span style="font-style : italic; "><i>For Policy Activity reports only</i></span>: Specify one or more <span style="font-weight : bold; "><b>Policies</b></span>, using the Lookup button to open a search window that resembles the User search window. You can also type policy names manually; for more than one, sep&#173;arate them by commas.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">For <span style="font-weight : bold; "><b>Action</b></span>, select the action or actions you want to show in this report. The list of available actions is not customizable, and the contents differ depending on whether you selected Policy Activity or Document Activity. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><span style="font-style : italic; "><i>For Policy Activity reports only</i></span>: For <span style="font-weight : bold; "><b>Enforcements</b></span>, specify the type of enforcement effects you want the report to focus on:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Allow/Monitor</b></span>: Instances when the policy permitted the user to perform the action covered by the policy. Note that the report results always depend on what information was logged. If the policy does not have any On Allow logging obligation specified, then this report will not return any On Allow data whether you check this box or not.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Deny</b></span>: Instances when the policy did not allow the user to perform the action.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Both:</b></span> All instances when the policy was enforced, with either Allow/Monitor or Deny effect.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><span style="font-weight : bold; "><b>Event </b></span><span style="font-weight : bold; "><b>Level</b></span>: As a rule, you should leave this setting at the default, User Events only. This setting significantly reduces the amount of system “noise”—i.e., application- or system-level events that are accurately logged, but are generally not helpful in monitoring your policy or user activity. Higher verbosity levels are likely to include significant volumes of event logging that is not directly useful for standard policy monitoring purposes.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the Run button at the upper right, to run the report.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1">After the report runs, the data results will display in the Report pane, and the Selected Report Details pane will show the report’s query definition and runtime settings. This pane is also where you save the report and, optionally, mark it as shared.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Selected Report Details pane, place the default name <span style="font-style : italic; "><i>NewReport</i></span>&#160;with an actual, descriptive name for this report. Optionally, provide a description in the Description field. This is helpful to other users if you plan to share the report.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">To share the report, check the Is Shared box. All reports with this check&#173;box enabled will be available for other Reporter users to run. However, only you will be able to edit the query definition. </p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="SelRepDetails.jpg" style="width : 134.136pt; height : 189.864pt; " id="image6" src="SelRepDetails.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the Save button to save the report. At this point, it is added to the list in the Saved Reports.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1">Although the report definition details are displayed in this pane, they are not in editable mode. The Edit button at the bottom of this pane lets you go back to the editable query definition in the main </p>
+ <h2><a name="XREF_75792_Running_and"></a>Running an Existing&nbsp;Report</h2>
+ <p class="BodyLevel1">You can run any report listed in the Saved Reports. As we mentioned earlier, that includes all of your own reports, and any reports that other report owners have designated as shared. </p>
+ <p class="BodyLevel1">To run an existing report,</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the name of the report you want to run. The definition of that report appear in the main Report pane.</p>
+</li>
+  <p class="Title">If you own the report, all query definition and the runtime setting fields are open for editing. You can change any of the settings, if you wish, or run the report as is.</p>
+  <p class="Title">If the report is shared by another owner, the runtime settings are open for editing, but the query definition fields are disabled, and must be used as is.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">For the Show setting, either leave the default value, or select another output format if you prefer.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">For the to and From setting, specify a start date and an end date to define the <span style="font-style : italic; "><i>report period</i></span> (see below).</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click Run Report. When Reporter finishes generating the report, it displays the results in the format you selected.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">If you own the report, you can also click the Edit button to go back to edit mode in the Report pane, to adjust the report’s definition before saving.</p>
+</li>
+ </ol>
+ <h3>About the Report Period</h3>
+ <p class="BodyLevel1">The report period refers to the span in which the data about the activity you were interested in was logged in the Activity Journal. The Report Server only saves data in that set of tables for a limited period of time before moving it to a different set of Archive tables. It is possibly to define a query that includes data that has already been archived—in other words, a query whose report period begins at some time earlier than the oldest data stored in the Activity Journal. In such cases, Reporter will display an error message displaying the date of the earliest available data. The report will generate, but will reflect only the cur&#173;rently available data. You then have the option of using the report as is; redefin&#173;ing the report period (setting a later start date) and rerunning it; or unarchiving the data in question so that it is once again available in the Activity Journal, and then rerunning the report.</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>For more details on Report Server’s data management features, includ&#173;ing archiving and unarchiving, refer to the “Database Management” chapter of the Control Center <span style="font-style : italic; "><i>Administrator’s Guide</i></span>.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>
